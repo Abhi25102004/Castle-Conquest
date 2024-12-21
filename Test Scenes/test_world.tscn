@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi367bqvb1tm6"]
+
+[ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Player/warrior.tscn" id="1_ocvvy"]
+[ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Non Player/torch.tscn" id="2_fkueo"]
+
+[node name="Test World" type="Node2D"]
+
+[node name="Warrior" parent="." instance=ExtResource("1_ocvvy")]
+position = Vector2(-502, -1)
+
+[node name="Torch" parent="." instance=ExtResource("2_fkueo")]
+position = Vector2(539, 0)
+
+[node name="Camera" type="Camera2D" parent="."]
