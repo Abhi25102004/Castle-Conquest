@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr1fhrwur8g48"]
+
+[ext_resource type="Script" path="res://Game Logic Parts/placement.gd" id="1_ljneb"]
+[ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Player/warrior.tscn" id="2_ol6ik"]
+
+[node name="Placement" type="Node2D"]
+script = ExtResource("1_ljneb")
+PlayerCharacter = ExtResource("2_ol6ik")

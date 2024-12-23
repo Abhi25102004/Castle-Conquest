@@ -126,7 +126,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eef46")
 }],
-"loop": false,
+"loop": true,
 "name": &"Idle",
 "speed": 10.0
 }, {
@@ -158,16 +158,19 @@ animations = [{
 radius = 19.0
 height = 56.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qsnef"]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rcu6"]
 
 [node name="Torch" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_ykrxj")
+health = 60
+attack = 10
+speed = 1.2
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8ltwf")
-animation = &"Idle"
+animation = &"Run"
+autoplay = "Run"
 flip_h = true
 
 [node name="HitBox" type="Area2D" parent="."]
@@ -182,10 +185,9 @@ shape = SubResource("CapsuleShape2D_xcoii")
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(-70, 0)
+position = Vector2(-40, 0)
 rotation = -1.5659
-shape = SubResource("CircleShape2D_qsnef")
+shape = SubResource("RectangleShape2D_0rcu6")
 
-[connection signal="area_entered" from="HitBox" to="." method="HitBoxEntered"]
-[connection signal="area_entered" from="HurtBox" to="." method="HurtBoxEntered"]
-[connection signal="area_exited" from="HurtBox" to="." method="HurtBoxExited"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_exited" from="HurtBox" to="." method="_on_hurt_box_area_exited"]

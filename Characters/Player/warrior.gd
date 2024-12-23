@@ -1,66 +1,53 @@
 extends Node2D
 
-signal GiveDamageToEnemy
+signal GiveDamageToGoblin
 
 # constant 
-const MaxHealth : int = 100
 enum States { Idle, Attack }
-enum AttackType { Emit , Normal }
 
 # variables
 var Warrior : States = States.Idle
-var WarrorAttackType : AttackType = AttackType.Emit
-var health : int = MaxHealth
-var EnemyArray : Array = []
-var waitTime : float = 0.6
+@export var health : int
+@export var attack : int 
+@export var speed : float  
+var canCharacterAttack : bool = false
+var Game_State : bool = true
 
 # nodes and scenes
 @onready var animations: AnimatedSprite2D = $Animations
-@export var Attack_wave : PackedScene 
-@onready var marker_2d: Marker2D = $Marker2D
 
-func _process(delta: float) -> void:
-	match Warrior:
-		States.Idle:
-			animations.play("Idle")
-			await animations.animation_finished
-			Warrior = States.Attack if EnemyArray.size() else States.Idle
-			
-		States.Attack:
-				animations.play("Attack")
-				await animations.animation_finished
-				Warrior = States.Idle
-				waitTime -= delta
-				if waitTime <= 0:
-					match WarrorAttackType:
-						AttackType.Emit:
-							var attack : Node2D = Attack_wave.instantiate()
-							attack.global_position = marker_2d.global_position
-							get_parent().add_child(attack)
-						AttackType.Normal:
-							GiveDamageToEnemy.emit(9)
-					waitTime = 0.6
+func _process(_delta: float) -> void:
+	if Game_State:
+		Game_State = !Game_State
+		Game_Loop()
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	EnemyArray.append(area.get_parent())
+	canCharacterAttack = true
+	GiveDamageToGoblin.connect(Callable(area.get_parent(),"Take_Damage_from_knight"))
 
-func TakeDamage(Power : int) -> void:
+func _on_hurt_box_area_exited(area: Area2D) -> void:
+	canCharacterAttack = false
+	GiveDamageToGoblin.disconnect(Callable(area.get_parent(),"Take_Damage_from_knight"))
+
+func Take_Damage_from_Goblin(Power : int) -> void:
 	health -= Power
 	if health <= 0:
 		queue_free()
 
-func _on_hit_box_area_entered(area: Area2D) -> void:
-	WarrorAttackType = AttackType.Normal
-	var Torch : Node2D = area.get_parent()
-	if Torch.name == "Torch":
-		connect("GiveDamageToEnemy",Callable(Torch,"TakeDamage"))
-
-func _on_hit_box_area_exited(area: Area2D) -> void:
-	Warrior = States.Idle
-	var Torch : Node2D = area.get_parent()
-	if Torch.name == "Torch":
-		disconnect("GiveDamageToEnemy",Callable(Torch,"TakeDamage"))
-
-func CheckIfDead(NodeToRemove : Node2D):
-	NodeToRemove.disconnect("IfDead",CheckIfDead)
-	EnemyArray.remove_at(EnemyArray.find(NodeToRemove))
+func Game_Loop() -> void :
+	
+	match Warrior:
+		
+		States.Idle:
+			Warrior = States.Attack if canCharacterAttack else Warrior
+			animations.play("Idle")
+		
+		States.Attack:
+			Warrior = States.Idle
+			await get_tree().create_timer(speed).timeout
+			animations.play("Attack" if randf() > 0.5 else "Attack_2")
+			await animations.animation_finished
+			print_debug("Do damage to Goblin")
+			GiveDamageToGoblin.emit(10)
+		
+	Game_State = !Game_State

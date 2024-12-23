@@ -1,62 +1,56 @@
 extends Node2D
 
-signal GiveDamage
-signal IfDead
+signal GiveDamageToKnight
 
 const MaxHealth : int = 100
 const Speed : int = 65
 enum States { Idle, Run, Attack }
 
-var Warrior : States = States.Run
-var health : int = MaxHealth
-var waitTime : float = 0.6
-var Power : int = randi_range(5,10)
+var Torch : States = States.Run
+
+@export var health : int
+@export var attack : int 
+@export var speed : float 
+
+var Game_State : bool = true
 
 @onready var animations: AnimatedSprite2D = $Animations
 
-func _ready() -> void:
-	add_to_group("1st Row")
-
 func _process(delta: float) -> void:
-	match Warrior:
+	if Game_State:
+		Game_State = !Game_State
+		Game_Loop(delta)
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	Torch = States.Idle
+	GiveDamageToKnight.connect(Callable(area.get_parent(),"Take_Damage_from_Goblin"))
+
+func _on_hurt_box_area_exited(area: Area2D) -> void:
+	Torch = States.Run
+	GiveDamageToKnight.disconnect(Callable(area.get_parent(),"Take_Damage_from_Goblin"))
+
+func Take_Damage_from_knight(Power : int) -> void:
+	health -= Power
+	if health <= 0:
+		queue_free()
+
+func Game_Loop(delta: float) -> void:
+	
+	match Torch:
+		
 		States.Idle:
+			Torch = States.Attack
 			animations.play("Idle")
-			await animations.animation_finished
-			Warrior = States.Attack
 		
 		States.Run:
 			animations.play("Run")
 			position.x -= Speed * delta
 			
 		States.Attack:
+			Torch = States.Idle
+			await get_tree().create_timer(speed).timeout
 			animations.play("Attack")
 			await animations.animation_finished
-			Warrior = States.Idle
-			waitTime -= delta
-			if waitTime <= 0:
-				GiveDamage.emit(Power)
-				waitTime = 0.6
-
-func HurtBoxEntered(area: Area2D) -> void:
-	Warrior = States.Attack
-	var WarriorNode : Node2D = area.get_parent()
-	connect("GiveDamage",Callable(WarriorNode,"TakeDamage"))
-
-func HurtBoxExited(area: Area2D) -> void:
-	Warrior = States.Run
-	var WarriorNode : Node2D = area.get_parent()
-	disconnect("GiveDamage",Callable(WarriorNode,"TakeDamage"))
-
-func HitBoxEntered(area: Area2D) -> void:
-	var NodeName : Node2D = area.get_parent()
-	match NodeName.name:
-		"Attack Wave":
-			TakeDamage(NodeName.Power)
-		"Warrior":
-			connect("IfDead",Callable(NodeName,"CheckIfDead"))
-
-func TakeDamage(Power : int) -> void:
-	health -= Power
-	if health <= 0:
-		IfDead.emit($".")
-		queue_free()
+			GiveDamageToKnight.emit(attack)
+	
+	Game_State = !Game_State
