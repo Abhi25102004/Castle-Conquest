@@ -1,6 +1,7 @@
 extends Node2D
 
 signal GiveDamageToGoblin
+signal KnightDied
 
 # constant 
 enum States { Idle, Attack }
@@ -32,6 +33,7 @@ func _on_hurt_box_area_exited(area: Area2D) -> void:
 func Take_Damage_from_Goblin(Power : int) -> void:
 	health -= Power
 	if health <= 0:
+		KnightDied.emit()
 		queue_free()
 
 func Game_Loop() -> void :

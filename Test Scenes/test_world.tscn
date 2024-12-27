@@ -1,14 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bi367bqvb1tm6"]
 
-[ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Player/warrior.tscn" id="1_ocvvy"]
-[ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Non Player/torch.tscn" id="2_fkueo"]
+[ext_resource type="PackedScene" uid="uid://cr0h6gmwds5na" path="res://Game Logic Parts/placement.tscn" id="1_f2s5d"]
+[ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Non Player/torch.tscn" id="2_6kpef"]
 
 [node name="Test World" type="Node2D"]
 
-[node name="Warrior" parent="." instance=ExtResource("1_ocvvy")]
-position = Vector2(-502, -1)
-
-[node name="Torch" parent="." instance=ExtResource("2_fkueo")]
-position = Vector2(-297, 0)
+[node name="Placement" parent="." instance=ExtResource("1_f2s5d")]
+Torch = ExtResource("2_6kpef")
 
 [node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)

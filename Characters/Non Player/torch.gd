@@ -1,6 +1,7 @@
 extends Node2D
 
 signal GiveDamageToKnight
+signal GoblinDied
 
 const MaxHealth : int = 100
 const Speed : int = 65
@@ -32,6 +33,7 @@ func _on_hurt_box_area_exited(area: Area2D) -> void:
 func Take_Damage_from_knight(Power : int) -> void:
 	health -= Power
 	if health <= 0:
+		GoblinDied.emit()
 		queue_free()
 
 func Game_Loop(delta: float) -> void:
