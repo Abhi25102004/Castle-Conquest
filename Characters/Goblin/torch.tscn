@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cr10cstnr5c7h"]
 
 [ext_resource type="Texture2D" uid="uid://1fex2qkbhxx8" path="res://Assets/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="1_qawj5"]
-[ext_resource type="Script" path="res://Characters/Non Player/torch.gd" id="1_ykrxj"]
+[ext_resource type="Script" path="res://Characters/Goblin/torch.gd" id="1_ykrxj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_58aea"]
 atlas = ExtResource("1_qawj5")

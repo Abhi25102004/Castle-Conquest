@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bi367bqvb1tm6"]
 
 [ext_resource type="PackedScene" uid="uid://cr0h6gmwds5na" path="res://Game Logic Parts/placement.tscn" id="1_f2s5d"]
-[ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Non Player/torch.tscn" id="2_6kpef"]
+[ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Goblin/torch.tscn" id="2_6kpef"]
 
 [node name="Test World" type="Node2D"]
 
