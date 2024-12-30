@@ -8,15 +8,16 @@ const Speed : int = 65
 enum States { Idle, Run, Attack }
 
 var Torch : States = States.Run
+var CharacterName : String = "barrel"
+
 
 @export var health : int
 @export var attack : int 
 @export var speed : float 
 
 var Game_State : bool = true
-var CharacterName : String = "torch"
 
-@onready var animations: AnimatedSprite2D = $Animations
+@onready var animations: AnimatedSprite2D = $AnimatedSprite2D
 
 func _process(delta: float) -> void:
 	if Game_State:
@@ -44,16 +45,19 @@ func Game_Loop(delta: float) -> void:
 		States.Idle:
 			Torch = States.Attack
 			animations.play("Idle")
+			await animations.animation_finished
 		
 		States.Run:
 			animations.play("Run")
 			position.x -= Speed * delta
 			
 		States.Attack:
-			Torch = States.Idle
-			await get_tree().create_timer(speed).timeout
 			animations.play("Attack")
-			await animations.animation_finished
+			await get_tree().create_timer(speed).timeout
 			GiveDamageToKnight.emit(attack)
+			animations.play("Explosion")
+			await animations.animation_finished
+			GoblinDied.emit()
+			queue_free()
 	
 	Game_State = !Game_State

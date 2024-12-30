@@ -13,10 +13,11 @@ var Warrior : States = States.Idle
 @export var speed : float  
 var canCharacterAttack : bool = false
 var Game_State : bool = true
-var CharacterName : String = "warrior"
+var CharacterName : String = "pawn"
+
 
 # nodes and scenes
-@onready var animations: AnimatedSprite2D = $Animations
+@onready var animations: AnimatedSprite2D = $AnimatedSprite2D
 
 func _process(_delta: float) -> void:
 	if Game_State:

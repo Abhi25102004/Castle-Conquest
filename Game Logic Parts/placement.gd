@@ -1,13 +1,16 @@
 extends Node2D
 
+signal ChangeLable
+
 @export var Positions_X : Array[float]
 @export var Positions_Y : Array[float]
 @export var Warrior : PackedScene
-@export var Torch : PackedScene
+@export var Torch : Array[PackedScene] = []
 
 var canAdd : bool = true
 var Vector_Array : Array[Vector2] = []
 var Enemy_Array : Array[Vector2] = []
+var Name : String = "pawn"
 
 var CharacterCount : Vector2 = Vector2i.ZERO
 
@@ -37,7 +40,8 @@ func _input(_event: InputEvent) -> void:
 
 func Add_Enemy() -> void:
 	await get_tree().create_timer(randf()*5).timeout
-	var Enemy : Node2D = Torch.instantiate()
+	var New_Enemy : PackedScene = Torch.pick_random() as PackedScene
+	var Enemy : Node2D = New_Enemy.instantiate()
 	Enemy.global_position = Enemy_Array.pick_random()
 	Enemy.GoblinDied.connect(Callable(self,"EnemyCounter"))
 	add_child(Enemy)
@@ -49,4 +53,20 @@ func PlayerCounter() -> void:
 
 func EnemyCounter() -> void:
 	CharacterCount.y -= 1
-	
+
+func _on_button_ui_type_of_knight(Spawn : PackedScene) -> void:
+	Warrior = Spawn
+
+func _on_child_entered_tree(node: Node) -> void:
+	match node.CharacterName:
+		"pawn":
+			ChangeLable.emit(-10)
+		"warrior":
+			ChangeLable.emit(-20)
+
+func _on_child_exiting_tree(node: Node) -> void:
+	match node.CharacterName:
+		"barrel":
+			ChangeLable.emit(10)
+		"torch":
+			ChangeLable.emit(20)

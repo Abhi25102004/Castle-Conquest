@@ -162,6 +162,7 @@ height = 56.0
 
 [node name="Torch" type="Node2D"]
 texture_filter = 1
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_ykrxj")
 health = 60
 attack = 10
@@ -169,7 +170,7 @@ speed = 1.2
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8ltwf")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Run"
 flip_h = true
 

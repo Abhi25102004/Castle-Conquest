@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://07wwdrpvw6nx"]
+[gd_scene load_steps=18 format=3 uid="uid://07wwdrpvw6nx"]
 
 [ext_resource type="Script" path="res://Characters/Knight/warrior.gd" id="1_emuw8"]
 [ext_resource type="Texture2D" uid="uid://cpbudvygxm040" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_kibj4"]
@@ -26,30 +26,6 @@ region = Rect2(768, 384, 192, 192)
 [sub_resource type="AtlasTexture" id="AtlasTexture_m713u"]
 atlas = ExtResource("1_kibj4")
 region = Rect2(960, 384, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c0jqo"]
-atlas = ExtResource("1_kibj4")
-region = Rect2(0, 576, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aj3vv"]
-atlas = ExtResource("1_kibj4")
-region = Rect2(192, 576, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6pfgi"]
-atlas = ExtResource("1_kibj4")
-region = Rect2(384, 576, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4hna"]
-atlas = ExtResource("1_kibj4")
-region = Rect2(576, 576, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_beq82"]
-atlas = ExtResource("1_kibj4")
-region = Rect2(768, 576, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5s8c"]
-atlas = ExtResource("1_kibj4")
-region = Rect2(960, 576, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bnt1y"]
 atlas = ExtResource("1_kibj4")
@@ -102,29 +78,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c0jqo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aj3vv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6pfgi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m4hna")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_beq82")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l5s8c")
-}],
-"loop": false,
-"name": &"Attack_2",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_bnt1y")
 }, {
 "duration": 1.0,
@@ -155,6 +108,7 @@ height = 62.0
 
 [node name="Warrior" type="Node2D"]
 texture_filter = 1
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_emuw8")
 health = 100
 attack = 20

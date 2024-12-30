@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://n6lfbaa5hcii"]
+
+[ext_resource type="PackedScene" uid="uid://ceby6oqyqicd4" path="res://Characters/Knight/pawn.tscn" id="1_3vkvh"]
+[ext_resource type="PackedScene" uid="uid://dm7teraw3nh7c" path="res://Characters/Goblin/barrel.tscn" id="2_uayny"]
+
+[node name="compatablity test" type="Node2D"]
+
+[node name="Pawn" parent="." instance=ExtResource("1_3vkvh")]
+position = Vector2(-10, 0)
+
+[node name="Barrel" parent="." instance=ExtResource("2_uayny")]
+position = Vector2(87, 0)

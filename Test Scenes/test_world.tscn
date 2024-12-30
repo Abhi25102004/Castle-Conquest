@@ -1,12 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi367bqvb1tm6"]
+[gd_scene load_steps=6 format=3 uid="uid://bi367bqvb1tm6"]
 
 [ext_resource type="PackedScene" uid="uid://cr0h6gmwds5na" path="res://Game Logic Parts/placement.tscn" id="1_f2s5d"]
 [ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Goblin/torch.tscn" id="2_6kpef"]
+[ext_resource type="PackedScene" uid="uid://ceby6oqyqicd4" path="res://Characters/Knight/pawn.tscn" id="3_bisvk"]
+[ext_resource type="PackedScene" uid="uid://dm7teraw3nh7c" path="res://Characters/Goblin/barrel.tscn" id="3_kfer0"]
+[ext_resource type="PackedScene" uid="uid://cg1p0py3tkcy1" path="res://User Interface/button_ui.tscn" id="4_psnk1"]
 
 [node name="Test World" type="Node2D"]
 
 [node name="Placement" parent="." instance=ExtResource("1_f2s5d")]
-Torch = ExtResource("2_6kpef")
+Warrior = ExtResource("3_bisvk")
+Torch = Array[PackedScene]([ExtResource("2_6kpef"), ExtResource("3_kfer0")])
+
+[node name="Button UI" parent="." instance=ExtResource("4_psnk1")]
+offset_left = -793.0
+offset_top = -399.0
+offset_right = -793.0
+offset_bottom = -399.0
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(0.9, 0.9)
+
+[connection signal="ChangeLable" from="Placement" to="Button UI" method="_on_placement_change_lable"]
+[connection signal="child_entered_tree" from="Placement" to="Placement" method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="Placement" to="Placement" method="_on_child_exiting_tree"]
+[connection signal="Type_Of_Knight" from="Button UI" to="Placement" method="_on_button_ui_type_of_knight"]
