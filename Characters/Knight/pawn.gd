@@ -8,9 +8,9 @@ enum States { Idle, Attack }
 
 # variables
 var Warrior : States = States.Idle
-@export var health : int
-@export var attack : int 
-@export var speed : float  
+@export var health : int = randi_range(50,80)
+@export var attack : int = randi_range(10,20)
+@export var speed : float  = randf_range(1.2,1.5)
 var canCharacterAttack : bool = false
 var Game_State : bool = true
 var CharacterName : String = "pawn"

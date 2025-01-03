@@ -3,29 +3,29 @@
 [ext_resource type="Script" path="res://Characters/Knight/pawn.gd" id="1_8k5qk"]
 [ext_resource type="Texture2D" uid="uid://cjbvmdlb3gejl" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="1_31t5t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xqrlo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dpde"]
 atlas = ExtResource("1_31t5t")
-region = Rect2(0, 384, 192, 192)
+region = Rect2(0, 576, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6v7xg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsfxy"]
 atlas = ExtResource("1_31t5t")
-region = Rect2(192, 384, 192, 192)
+region = Rect2(192, 576, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uhm8c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yspu"]
 atlas = ExtResource("1_31t5t")
-region = Rect2(384, 384, 192, 192)
+region = Rect2(384, 576, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tda2s"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3qo2"]
 atlas = ExtResource("1_31t5t")
-region = Rect2(576, 384, 192, 192)
+region = Rect2(576, 576, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ukccm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3sss"]
 atlas = ExtResource("1_31t5t")
-region = Rect2(768, 384, 192, 192)
+region = Rect2(768, 576, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ids7r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbmx6"]
 atlas = ExtResource("1_31t5t")
-region = Rect2(960, 384, 192, 192)
+region = Rect2(960, 576, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3t06"]
 atlas = ExtResource("1_31t5t")
@@ -55,22 +55,22 @@ region = Rect2(960, 0, 192, 192)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xqrlo")
+"texture": SubResource("AtlasTexture_8dpde")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6v7xg")
+"texture": SubResource("AtlasTexture_qsfxy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uhm8c")
+"texture": SubResource("AtlasTexture_1yspu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tda2s")
+"texture": SubResource("AtlasTexture_j3qo2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ukccm")
+"texture": SubResource("AtlasTexture_v3sss")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ids7r")
+"texture": SubResource("AtlasTexture_jbmx6")
 }],
 "loop": false,
 "name": &"Attack",
@@ -108,7 +108,7 @@ height = 52.0
 
 [node name="Pawn" type="Node2D"]
 texture_filter = 1
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.3, 1.3)
 script = ExtResource("1_8k5qk")
 health = 50
 attack = 10
@@ -130,7 +130,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(40, 0)
+position = Vector2(30, 0)
 shape = SubResource("RectangleShape2D_54451")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurt_box_area_entered"]

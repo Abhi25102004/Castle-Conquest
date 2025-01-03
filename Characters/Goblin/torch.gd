@@ -4,14 +4,14 @@ signal GiveDamageToKnight
 signal GoblinDied
 
 const MaxHealth : int = 100
-const Speed : int = 65
+var Speed : int = randi_range(80,120)
 enum States { Idle, Run, Attack }
 
 var Torch : States = States.Run
 
-@export var health : int
-@export var attack : int 
-@export var speed : float 
+@export var health : int = randi_range(50,80)
+@export var attack : int = randi_range(15,25)
+@export var speed : float  = randf_range(1.2,1.5)
 
 var Game_State : bool = true
 var CharacterName : String = "torch"

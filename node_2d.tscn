@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceavr4taum2tg"]
+
+[ext_resource type="PackedScene" uid="uid://dj4natrlfejt7" path="res://User Interface/game_user_interface.tscn" id="1_tueos"]
+[ext_resource type="PackedScene" uid="uid://cr0h6gmwds5na" path="res://Game Logic Parts/placement.tscn" id="2_nx5g6"]
+
+[node name="Node2D" type="Node2D"]
+texture_filter = 1
+scale = Vector2(1.5, 1.3)
+
+[node name="Game User Interface" parent="." instance=ExtResource("1_tueos")]
+offset_right = 1279.0
+offset_bottom = 831.0
+
+[node name="Placement" parent="." instance=ExtResource("2_nx5g6")]
