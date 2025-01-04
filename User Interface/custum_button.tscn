@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bchfui5nqukg"]
+
+[ext_resource type="Texture2D" uid="uid://dk0bs6avh1mgw" path="res://Assets/UI/Buttons/Button_Blue.png" id="1_qckem"]
+[ext_resource type="Texture2D" uid="uid://bkm1st7h5862f" path="res://Assets/UI/Buttons/Button_Blue_Pressed.png" id="2_nk4w6"]
+[ext_resource type="Script" path="res://User Interface/custum_button.gd" id="3_0upwi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aes8h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t3qvp"]
+texture = ExtResource("1_qckem")
+texture_margin_left = 17.0
+texture_margin_top = 12.0
+texture_margin_right = 19.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jb1vu"]
+texture = ExtResource("2_nk4w6")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 20.0
+
+[node name="Custum Button" type="Button"]
+texture_filter = 1
+offset_right = 135.0
+offset_bottom = 129.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aes8h")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_t3qvp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t3qvp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jb1vu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_t3qvp")
+script = ExtResource("3_0upwi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
+offset_right = -16.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40

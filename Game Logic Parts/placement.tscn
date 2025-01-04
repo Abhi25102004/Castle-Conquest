@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr0h6gmwds5na"]
+[gd_scene load_steps=5 format=3 uid="uid://cr0h6gmwds5na"]
 
 [ext_resource type="PackedScene" uid="uid://bvf4g4smlwn0r" path="res://Game Logic Parts/Custom_Marker.tscn" id="1_kt0nb"]
 [ext_resource type="Script" path="res://Game Logic Parts/placement.gd" id="1_ydp36"]
 [ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Goblin/torch.tscn" id="2_1or7j"]
-[ext_resource type="PackedScene" uid="uid://0k6eh7nhfmk3" path="res://User Interface/hover_position.tscn" id="3_iwu3t"]
 [ext_resource type="PackedScene" uid="uid://dm7teraw3nh7c" path="res://Characters/Goblin/barrel.tscn" id="3_m0btg"]
 
 [node name="Placement" type="Node2D"]
@@ -133,9 +132,6 @@ position = Vector2(1950, 663)
 
 [node name="Custom_Marker4" parent="Enemy Spawner" instance=ExtResource("1_kt0nb")]
 position = Vector2(1950, 849)
-
-[node name="Hover Position" parent="." instance=ExtResource("3_iwu3t")]
-visible = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25

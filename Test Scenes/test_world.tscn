@@ -17,5 +17,5 @@ Character_information = {
 
 [node name="Knight" type="Node2D" parent="."]
 
-[connection signal="Create_Knight" from="Game User Interface" to="Placement" method="_on_game_user_interface_create_knight"]
+[connection signal="Place_Character" from="Game User Interface" to="Placement" method="Game_UI_Signal"]
 [connection signal="HasBeenCreated" from="Placement" to="Game User Interface" method="_on_placement_has_been_created"]

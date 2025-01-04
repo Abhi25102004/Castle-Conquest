@@ -9,7 +9,7 @@ signal HasBeenCreated
 
 var canAdd = true
 var Placement_marker : Marker2D = null
-var character : String
+var Player_character : String
 
 @export var Character_information: Dictionary = {}
 @export var Torch : Array[PackedScene] = []
@@ -25,10 +25,6 @@ func _on_timer_timeout() -> void:
 				Minimum_value = marker.Check_Distance()
 				Placement_marker = marker
 	Placement_marker.Enable_Selection()
-
-func _on_game_user_interface_create_knight(Character : String) -> void:
-	timer.start()
-	character = Character
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("MouseClick") and Placement_marker:
@@ -40,10 +36,10 @@ func _process(_delta: float) -> void:
 					break
 		else:
 			Placement_marker.Reserved = true
-			var node : Node2D = Character_information[character.to_lower()].instantiate()
+			var node : Node2D = Character_information[Player_character.to_lower()].instantiate()
 			node.global_position = Placement_marker.global_position
 			Knight.add_child(node)
-			HasBeenCreated.emit(30 if character == "pawn" else 75)
+			HasBeenCreated.emit(30 if Player_character == "pawn" else 75)
 			
 		timer.stop()
 		Placement_marker.Disable_Selection()
@@ -60,3 +56,8 @@ func Add_enemy() -> void:
 	Enemy.GoblinDied.connect(Callable(self,"EnemyCounter"))
 	add_child(Enemy)
 	canAdd = !canAdd
+
+
+func Game_UI_Signal(character:String) -> void:
+	timer.start()
+	Player_character = character
