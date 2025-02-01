@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://db5ih2qe0e52o"]
+
+[ext_resource type="PackedScene" uid="uid://bf22joai6fnrd" path="res://Map/level_base.tscn" id="1_y542k"]
+[ext_resource type="PackedScene" uid="uid://dj4natrlfejt7" path="res://User Interface/game_user_interface.tscn" id="2_8dgfc"]
+[ext_resource type="PackedScene" uid="uid://ycwicewcvawm" path="res://Game Logic Parts/enemy.tscn" id="3_rmn0f"]
+
+[node name="Connector Node" type="Node2D"]
+
+[node name="Level_Base" parent="." instance=ExtResource("1_y542k")]
+
+[node name="Game User Interface" parent="." instance=ExtResource("2_8dgfc")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_rmn0f")]
+
+[connection signal="Add_Money" from="Enemy" to="Game User Interface" method="Increase_Money"]

@@ -15,6 +15,7 @@ var Torch : States = States.Run
 
 var Game_State : bool = true
 var CharacterName : String = "torch"
+var canCharacterAttack : bool = false
 
 @onready var animations: AnimatedSprite2D = $Animations
 
@@ -24,11 +25,11 @@ func _process(delta: float) -> void:
 		Game_Loop(delta)
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	Torch = States.Idle
+	canCharacterAttack = true
 	GiveDamageToKnight.connect(Callable(area.get_parent(),"Take_Damage_from_Goblin"))
 
 func _on_hurt_box_area_exited(area: Area2D) -> void:
-	Torch = States.Run
+	canCharacterAttack = false
 	GiveDamageToKnight.disconnect(Callable(area.get_parent(),"Take_Damage_from_Goblin"))
 
 func Take_Damage_from_knight(Power : int) -> void:
@@ -42,10 +43,11 @@ func Game_Loop(delta: float) -> void:
 	match Torch:
 		
 		States.Idle:
-			Torch = States.Attack
+			Torch = States.Attack if canCharacterAttack else States.Run
 			animations.play("Idle")
 		
 		States.Run:
+			Torch = States.Idle if canCharacterAttack else Torch
 			animations.play("Run")
 			position.x -= Speed * delta
 			

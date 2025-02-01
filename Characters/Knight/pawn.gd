@@ -1,4 +1,4 @@
-extends Node2D
+'''extends Node2D
 
 signal GiveDamageToGoblin
 signal KnightDied
@@ -8,7 +8,7 @@ enum States { Idle, Attack }
 
 # variables
 var Warrior : States = States.Idle
-@export var health : int = randi_range(50,80)
+@export var health : int = 
 @export var attack : int = randi_range(10,20)
 @export var speed : float  = randf_range(1.2,1.5)
 var canCharacterAttack : bool = false
@@ -54,3 +54,24 @@ func Game_Loop() -> void :
 			GiveDamageToGoblin.emit(10)
 		
 	Game_State = !Game_State
+'''
+extends Knight_Class
+
+signal GiveDamageToGoblin
+
+func Setter() -> void:
+	CharacterName = "pawn"
+	Health = randi_range(50,80)
+	Attack = randi_range(10,20)
+	Attack_Speed = randf_range(1.2,1.5)
+
+func HurtBox_Entered(area: Area2D) -> void:
+	canAttack = true
+	GiveDamageToGoblin.connect(Callable(area.get_parent(),"Take_Damage_from_knight"))
+
+func HurtBox_Exited(area: Area2D) -> void:
+	canAttack = false
+	GiveDamageToGoblin.disconnect(Callable(area.get_parent(),"Take_Damage_from_knight"))
+
+func OnAttack() -> void:
+	GiveDamageToGoblin.emit(Attack)

@@ -1,139 +1,234 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr0h6gmwds5na"]
+[gd_scene load_steps=2 format=3 uid="uid://cr0h6gmwds5na"]
 
-[ext_resource type="PackedScene" uid="uid://bvf4g4smlwn0r" path="res://Game Logic Parts/Custom_Marker.tscn" id="1_kt0nb"]
-[ext_resource type="Script" path="res://Game Logic Parts/placement.gd" id="1_ydp36"]
-[ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Goblin/torch.tscn" id="2_1or7j"]
-[ext_resource type="PackedScene" uid="uid://dm7teraw3nh7c" path="res://Characters/Goblin/barrel.tscn" id="3_m0btg"]
+[ext_resource type="PackedScene" uid="uid://vf5uosbsdh18" path="res://User Interface/hover_button.tscn" id="2_mk347"]
 
-[node name="Placement" type="Node2D"]
-script = ExtResource("1_ydp36")
-Torch = Array[PackedScene]([ExtResource("2_1or7j"), ExtResource("3_m0btg")])
+[node name="Placement" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
 
-[node name="Row Container" type="Node2D" parent="."]
+[node name="Hover_Button" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
 
-[node name="Row 1" type="Node2D" parent="Row Container"]
-position = Vector2(0, 5)
+[node name="Hover_Button2" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 186.0
+offset_right = 368.0
 
-[node name="Custom_Marker2" parent="Row Container/Row 1" instance=ExtResource("1_kt0nb")]
-position = Vector2(553.5, 291)
+[node name="Hover_Button3" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 372.0
+offset_right = 554.0
 
-[node name="Custom_Marker3" parent="Row Container/Row 1" instance=ExtResource("1_kt0nb")]
-position = Vector2(722.5, 291)
+[node name="Hover_Button4" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 558.0
+offset_right = 740.0
 
-[node name="Custom_Marker4" parent="Row Container/Row 1" instance=ExtResource("1_kt0nb")]
-position = Vector2(891.5, 291)
+[node name="Hover_Button5" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 744.0
+offset_right = 926.0
 
-[node name="Custom_Marker5" parent="Row Container/Row 1" instance=ExtResource("1_kt0nb")]
-position = Vector2(1060.5, 291)
+[node name="Hover_Button6" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 930.0
+offset_right = 1112.0
 
-[node name="Custom_Marker6" parent="Row Container/Row 1" instance=ExtResource("1_kt0nb")]
-position = Vector2(1229.5, 291)
+[node name="Hover_Button7" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1116.0
+offset_right = 1298.0
 
-[node name="Custom_Marker7" parent="Row Container/Row 1" instance=ExtResource("1_kt0nb")]
-position = Vector2(1398.5, 291)
+[node name="Hover_Button8" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1302.0
+offset_right = 1484.0
 
-[node name="Custom_Marker8" parent="Row Container/Row 1" instance=ExtResource("1_kt0nb")]
-position = Vector2(1567.5, 291)
+[node name="Hover_Button9" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1488.0
+offset_right = 1670.0
 
-[node name="Custom_Marker9" parent="Row Container/Row 1" instance=ExtResource("1_kt0nb")]
-position = Vector2(1736.5, 291)
+[node name="Hover_Button10" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_top = 186.0
+offset_bottom = 368.0
 
-[node name="Row 2" type="Node2D" parent="Row Container"]
-position = Vector2(0, 5)
+[node name="Hover_Button11" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 186.0
+offset_top = 186.0
+offset_right = 368.0
+offset_bottom = 368.0
 
-[node name="Custom_Marker2" parent="Row Container/Row 2" instance=ExtResource("1_kt0nb")]
-position = Vector2(553.5, 477)
+[node name="Hover_Button12" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 372.0
+offset_top = 186.0
+offset_right = 554.0
+offset_bottom = 368.0
 
-[node name="Custom_Marker3" parent="Row Container/Row 2" instance=ExtResource("1_kt0nb")]
-position = Vector2(722.5, 477)
+[node name="Hover_Button13" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 558.0
+offset_top = 186.0
+offset_right = 740.0
+offset_bottom = 368.0
 
-[node name="Custom_Marker4" parent="Row Container/Row 2" instance=ExtResource("1_kt0nb")]
-position = Vector2(891.5, 477)
+[node name="Hover_Button14" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 744.0
+offset_top = 186.0
+offset_right = 926.0
+offset_bottom = 368.0
 
-[node name="Custom_Marker5" parent="Row Container/Row 2" instance=ExtResource("1_kt0nb")]
-position = Vector2(1060.5, 477)
+[node name="Hover_Button15" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 930.0
+offset_top = 186.0
+offset_right = 1112.0
+offset_bottom = 368.0
 
-[node name="Custom_Marker6" parent="Row Container/Row 2" instance=ExtResource("1_kt0nb")]
-position = Vector2(1229.5, 477)
+[node name="Hover_Button16" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1116.0
+offset_top = 186.0
+offset_right = 1298.0
+offset_bottom = 368.0
 
-[node name="Custom_Marker7" parent="Row Container/Row 2" instance=ExtResource("1_kt0nb")]
-position = Vector2(1398.5, 477)
+[node name="Hover_Button17" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1302.0
+offset_top = 186.0
+offset_right = 1484.0
+offset_bottom = 368.0
 
-[node name="Custom_Marker8" parent="Row Container/Row 2" instance=ExtResource("1_kt0nb")]
-position = Vector2(1567.5, 477)
+[node name="Hover_Button18" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1488.0
+offset_top = 186.0
+offset_right = 1670.0
+offset_bottom = 368.0
 
-[node name="Custom_Marker9" parent="Row Container/Row 2" instance=ExtResource("1_kt0nb")]
-position = Vector2(1736.5, 477)
+[node name="Hover_Button19" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_top = 372.0
+offset_bottom = 554.0
 
-[node name="Row 3" type="Node2D" parent="Row Container"]
-position = Vector2(0, 5)
+[node name="Hover_Button20" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 186.0
+offset_top = 372.0
+offset_right = 368.0
+offset_bottom = 554.0
 
-[node name="Custom_Marker2" parent="Row Container/Row 3" instance=ExtResource("1_kt0nb")]
-position = Vector2(553.5, 663)
+[node name="Hover_Button21" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 372.0
+offset_top = 372.0
+offset_right = 554.0
+offset_bottom = 554.0
 
-[node name="Custom_Marker3" parent="Row Container/Row 3" instance=ExtResource("1_kt0nb")]
-position = Vector2(722.5, 663)
+[node name="Hover_Button22" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 558.0
+offset_top = 372.0
+offset_right = 740.0
+offset_bottom = 554.0
 
-[node name="Custom_Marker4" parent="Row Container/Row 3" instance=ExtResource("1_kt0nb")]
-position = Vector2(891.5, 663)
+[node name="Hover_Button23" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 744.0
+offset_top = 372.0
+offset_right = 926.0
+offset_bottom = 554.0
 
-[node name="Custom_Marker5" parent="Row Container/Row 3" instance=ExtResource("1_kt0nb")]
-position = Vector2(1060.5, 663)
+[node name="Hover_Button24" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 930.0
+offset_top = 372.0
+offset_right = 1112.0
+offset_bottom = 554.0
 
-[node name="Custom_Marker6" parent="Row Container/Row 3" instance=ExtResource("1_kt0nb")]
-position = Vector2(1229.5, 663)
+[node name="Hover_Button25" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1116.0
+offset_top = 372.0
+offset_right = 1298.0
+offset_bottom = 554.0
 
-[node name="Custom_Marker7" parent="Row Container/Row 3" instance=ExtResource("1_kt0nb")]
-position = Vector2(1398.5, 663)
+[node name="Hover_Button26" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1302.0
+offset_top = 372.0
+offset_right = 1484.0
+offset_bottom = 554.0
 
-[node name="Custom_Marker8" parent="Row Container/Row 3" instance=ExtResource("1_kt0nb")]
-position = Vector2(1567.5, 663)
+[node name="Hover_Button27" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1488.0
+offset_top = 372.0
+offset_right = 1670.0
+offset_bottom = 554.0
 
-[node name="Custom_Marker9" parent="Row Container/Row 3" instance=ExtResource("1_kt0nb")]
-position = Vector2(1736.5, 663)
+[node name="Hover_Button28" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_top = 558.0
+offset_bottom = 740.0
 
-[node name="Row 4" type="Node2D" parent="Row Container"]
-position = Vector2(0, 5)
+[node name="Hover_Button29" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 186.0
+offset_top = 558.0
+offset_right = 368.0
+offset_bottom = 740.0
 
-[node name="Custom_Marker2" parent="Row Container/Row 4" instance=ExtResource("1_kt0nb")]
-position = Vector2(553.5, 849)
+[node name="Hover_Button30" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 372.0
+offset_top = 558.0
+offset_right = 554.0
+offset_bottom = 740.0
 
-[node name="Custom_Marker3" parent="Row Container/Row 4" instance=ExtResource("1_kt0nb")]
-position = Vector2(722.5, 849)
+[node name="Hover_Button31" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 558.0
+offset_top = 558.0
+offset_right = 740.0
+offset_bottom = 740.0
 
-[node name="Custom_Marker4" parent="Row Container/Row 4" instance=ExtResource("1_kt0nb")]
-position = Vector2(891.5, 849)
+[node name="Hover_Button32" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 744.0
+offset_top = 558.0
+offset_right = 926.0
+offset_bottom = 740.0
 
-[node name="Custom_Marker5" parent="Row Container/Row 4" instance=ExtResource("1_kt0nb")]
-position = Vector2(1060.5, 849)
+[node name="Hover_Button33" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 930.0
+offset_top = 558.0
+offset_right = 1112.0
+offset_bottom = 740.0
 
-[node name="Custom_Marker6" parent="Row Container/Row 4" instance=ExtResource("1_kt0nb")]
-position = Vector2(1229.5, 849)
+[node name="Hover_Button34" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1116.0
+offset_top = 558.0
+offset_right = 1298.0
+offset_bottom = 740.0
 
-[node name="Custom_Marker7" parent="Row Container/Row 4" instance=ExtResource("1_kt0nb")]
-position = Vector2(1398.5, 849)
+[node name="Hover_Button35" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1302.0
+offset_top = 558.0
+offset_right = 1484.0
+offset_bottom = 740.0
 
-[node name="Custom_Marker8" parent="Row Container/Row 4" instance=ExtResource("1_kt0nb")]
-position = Vector2(1567.5, 849)
-
-[node name="Custom_Marker9" parent="Row Container/Row 4" instance=ExtResource("1_kt0nb")]
-position = Vector2(1736.5, 849)
-
-[node name="Enemy Spawner" type="Node2D" parent="."]
-
-[node name="Custom_Marker" parent="Enemy Spawner" instance=ExtResource("1_kt0nb")]
-position = Vector2(1950, 291)
-
-[node name="Custom_Marker2" parent="Enemy Spawner" instance=ExtResource("1_kt0nb")]
-position = Vector2(1950, 477)
-
-[node name="Custom_Marker3" parent="Enemy Spawner" instance=ExtResource("1_kt0nb")]
-position = Vector2(1950, 663)
-
-[node name="Custom_Marker4" parent="Enemy Spawner" instance=ExtResource("1_kt0nb")]
-position = Vector2(1950, 849)
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Hover_Button36" parent="." instance=ExtResource("2_mk347")]
+layout_mode = 2
+offset_left = 1488.0
+offset_top = 558.0
+offset_right = 1670.0
+offset_bottom = 740.0

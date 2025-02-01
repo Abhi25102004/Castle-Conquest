@@ -1,21 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi367bqvb1tm6"]
+[gd_scene load_steps=4 format=3 uid="uid://bi367bqvb1tm6"]
 
 [ext_resource type="PackedScene" uid="uid://dj4natrlfejt7" path="res://User Interface/game_user_interface.tscn" id="1_6yk4e"]
 [ext_resource type="PackedScene" uid="uid://cr0h6gmwds5na" path="res://Game Logic Parts/placement.tscn" id="1_f2s5d"]
-[ext_resource type="PackedScene" uid="uid://ceby6oqyqicd4" path="res://Characters/Knight/pawn.tscn" id="3_bisvk"]
-[ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Knight/warrior.tscn" id="4_c8vl3"]
+[ext_resource type="PackedScene" uid="uid://bf22joai6fnrd" path="res://Map/level_base.tscn" id="3_o3y55"]
 
 [node name="Test World" type="Node2D"]
 
 [node name="Game User Interface" parent="." instance=ExtResource("1_6yk4e")]
 
+[node name="Level_Base" parent="." instance=ExtResource("3_o3y55")]
+
 [node name="Placement" parent="." instance=ExtResource("1_f2s5d")]
-Character_information = {
-"pawn": ExtResource("3_bisvk"),
-"warrior": ExtResource("4_c8vl3")
-}
 
 [node name="Knight" type="Node2D" parent="."]
+
+[node name="Enemy" type="Node2D" parent="."]
 
 [connection signal="Place_Character" from="Game User Interface" to="Placement" method="Game_UI_Signal"]
 [connection signal="HasBeenCreated" from="Placement" to="Game User Interface" method="_on_placement_has_been_created"]

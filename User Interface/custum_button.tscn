@@ -22,6 +22,7 @@ texture_margin_bottom = 20.0
 
 [node name="Custum Button" type="Button"]
 texture_filter = 1
+custom_minimum_size = Vector2(150, 150)
 offset_right = 135.0
 offset_bottom = 129.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_aes8h")

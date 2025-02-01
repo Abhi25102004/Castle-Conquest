@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqkgords1s5q2"]
+
+[ext_resource type="Texture2D" uid="uid://c4vm0gubhbg8u" path="res://Assets/Terrain/Water/Rocks/Rocks_01.png" id="1_jilkm"]
+[ext_resource type="Texture2D" uid="uid://cwjvlxw0i7gs1" path="res://Assets/Terrain/Water/Rocks/Rocks_02.png" id="2_heuok"]
+[ext_resource type="Texture2D" uid="uid://dhdaexlupplwf" path="res://Assets/Terrain/Water/Rocks/Rocks_03.png" id="3_yggws"]
+[ext_resource type="Texture2D" uid="uid://hcpdmw64lsvh" path="res://Assets/Terrain/Water/Rocks/Rocks_04.png" id="4_5jpr7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcx6t"]
+texture = ExtResource("1_jilkm")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/animation_columns = 8
+0:0/animation_speed = 10.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_koxgw"]
+texture = ExtResource("2_heuok")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/animation_columns = 8
+0:0/animation_speed = 10.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7qls"]
+texture = ExtResource("3_yggws")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/animation_columns = 8
+0:0/animation_speed = 10.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qocr"]
+texture = ExtResource("4_5jpr7")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/animation_columns = 8
+0:0/animation_speed = 10.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_18mi7"]
+tile_layout = 4
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_fcx6t")
+sources/1 = SubResource("TileSetAtlasSource_koxgw")
+sources/2 = SubResource("TileSetAtlasSource_s7qls")
+sources/3 = SubResource("TileSetAtlasSource_6qocr")
+
+[node name="Rock" type="TileMapLayer"]
+tile_set = SubResource("TileSet_18mi7")

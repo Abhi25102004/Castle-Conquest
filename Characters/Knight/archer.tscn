@@ -1,0 +1,152 @@
+[gd_scene load_steps=21 format=3 uid="uid://dyboryr0fcfy4"]
+
+[ext_resource type="Script" path="res://Characters/Knight/archer.gd" id="1_a1f5v"]
+[ext_resource type="Texture2D" uid="uid://btok5hx82paj4" path="res://Assets/Factions/Knights/Troops/Archer/Blue/Archer_Blue.png" id="2_6h0nq"]
+[ext_resource type="PackedScene" uid="uid://dpeu6ph6fgu7e" path="res://Characters/Knight/arrow.tscn" id="2_smaxu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l45o3"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(0, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jt2x"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(192, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4d8j"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(384, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ixw"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(576, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phick"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(768, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88pg1"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(960, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k5gn"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(1152, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6m72"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(1344, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsemx"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u53l8"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwoc0"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1rtu"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp78d"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73otw"]
+atlas = ExtResource("2_6h0nq")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tvbel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l45o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jt2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4d8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ixw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phick")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88pg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k5gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6m72")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsemx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u53l8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwoc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1rtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp78d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73otw")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aohv4"]
+radius = 17.0
+height = 54.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n4hs0"]
+
+[node name="Archer" type="Node2D"]
+texture_filter = 1
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_a1f5v")
+Arrow_Scene = ExtResource("2_smaxu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tvbel")
+animation = &"Idle"
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_aohv4")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(845, 0)
+shape = SubResource("CircleShape2D_n4hs0")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(37, 10)
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_exited" from="Hurtbox" to="." method="_on_hurt_box_area_exited"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcf7iih65hrqe"]
+
+[ext_resource type="Texture2D" uid="uid://m8qmi8df36bo" path="res://Assets/Terrain/Water/Foam/Foam.png" id="1_bfayf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkrwe"]
+texture = ExtResource("1_bfayf")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/animation_columns = 8
+0:0/animation_speed = 10.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_x1ng1"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_gkrwe")
+
+[node name="Foam" type="TileMapLayer"]
+tile_set = SubResource("TileSet_x1ng1")
