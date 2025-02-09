@@ -1,83 +1,140 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo1o2cy4273kv"]
+[gd_scene load_steps=21 format=3 uid="uid://bo1o2cy4273kv"]
 
 [ext_resource type="Texture2D" uid="uid://dteg2s7sfx5q" path="res://Assets/Factions/Goblins/Troops/TNT/Dynamite/Dynamite.png" id="1_edmsv"]
 [ext_resource type="Script" path="res://Characters/Goblin/dynamite.gd" id="1_tdrhq"]
+[ext_resource type="Texture2D" uid="uid://dgk633v0v2hiv" path="res://Assets/Effects/Explosion/Explosions.png" id="2_sopj1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6d8y"]
+atlas = ExtResource("2_sopj1")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olrm6"]
+atlas = ExtResource("2_sopj1")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irouv"]
+atlas = ExtResource("2_sopj1")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn013"]
+atlas = ExtResource("2_sopj1")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpj0p"]
+atlas = ExtResource("2_sopj1")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_144wo"]
+atlas = ExtResource("2_sopj1")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8ehq"]
+atlas = ExtResource("2_sopj1")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ak5e"]
+atlas = ExtResource("2_sopj1")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mshlc"]
+atlas = ExtResource("2_sopj1")
+region = Rect2(1536, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw67a"]
+atlas = ExtResource("1_edmsv")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3n86"]
+atlas = ExtResource("1_edmsv")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jp1q"]
+atlas = ExtResource("1_edmsv")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3r0p"]
+atlas = ExtResource("1_edmsv")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvmwt"]
+atlas = ExtResource("1_edmsv")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg4vm"]
+atlas = ExtResource("1_edmsv")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t2j8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6d8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olrm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irouv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn013")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpj0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_144wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8ehq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ak5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mshlc")
+}],
+"loop": false,
+"name": &"Blast",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw67a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3n86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jp1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3r0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvmwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg4vm")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_toqho"]
 radius = 3.95405
 height = 38.4311
 
-[sub_resource type="Animation" id="Animation_ej8j0"]
-resource_name = "motion"
-length = 0.6
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_8qw05"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_alyr3"]
-_data = {
-"RESET": SubResource("Animation_8qw05"),
-"motion": SubResource("Animation_ej8j0")
-}
-
 [node name="Dynamite" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_tdrhq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_edmsv")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t2j8a")
+animation = &"Idle"
+autoplay = "Idle"
 flip_h = true
-hframes = 6
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
@@ -86,11 +143,5 @@ collision_layer = 8
 position = Vector2(0, 2)
 rotation = -0.532325
 shape = SubResource("CapsuleShape2D_toqho")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_alyr3")
-}
-autoplay = "motion"
 
 [connection signal="area_entered" from="Area2D" to="." method="Remove_Arrow"]

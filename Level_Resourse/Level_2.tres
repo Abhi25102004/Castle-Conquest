@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Level_Information" load_steps=2 format=3 uid="uid://bghf2y55owda6"]
+
+[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="1_mi5r2"]
+
+[resource]
+script = ExtResource("1_mi5r2")
+Level_Name = "Learning Defense"
+Completed = false
+Money_Required = 150
+Torch_Amount = 12
+TNT_Amount = 0
+Barrel_Amount = 0

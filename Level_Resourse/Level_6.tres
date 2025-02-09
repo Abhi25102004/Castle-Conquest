@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Level_Information" load_steps=2 format=3 uid="uid://by8jm2qdqv8yu"]
+
+[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="1_u3wqj"]
+
+[resource]
+script = ExtResource("1_u3wqj")
+Level_Name = "Defensive Challenges"
+Completed = false
+Money_Required = 350
+Torch_Amount = 30
+TNT_Amount = 12
+Barrel_Amount = 3

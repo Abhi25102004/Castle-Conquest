@@ -1,17 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://n6lfbaa5hcii"]
 
 [ext_resource type="Script" path="res://Test Scenes/compatablity_test.gd" id="1_s5jwm"]
-[ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Knight/warrior.tscn" id="2_vfp1t"]
-[ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Goblin/torch.tscn" id="3_0pjuq"]
+[ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Knight/warrior.tscn" id="3_5i5gn"]
+[ext_resource type="PackedScene" uid="uid://d15snjy675c0u" path="res://Characters/Goblin/tnt.tscn" id="6_l352m"]
 
 [node name="compatablity test" type="Node2D"]
 script = ExtResource("1_s5jwm")
 
-[node name="Warrior" parent="." instance=ExtResource("2_vfp1t")]
-position = Vector2(164, 202)
-Health = null
-Attack = null
-Attack_Speed = null
+[node name="TNT" parent="." instance=ExtResource("6_l352m")]
+position = Vector2(1564, 344)
 
-[node name="Torch" parent="." instance=ExtResource("3_0pjuq")]
-position = Vector2(693, 207)
+[node name="Warrior" parent="." instance=ExtResource("3_5i5gn")]
+position = Vector2(558, 353)

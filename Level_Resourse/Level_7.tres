@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Level_Information" load_steps=2 format=3 uid="uid://br2takgi8cgn8"]
+
+[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="1_fdyi6"]
+
+[resource]
+script = ExtResource("1_fdyi6")
+Level_Name = "Coordinated Attack"
+Completed = false
+Money_Required = 400
+Torch_Amount = 20
+TNT_Amount = 15
+Barrel_Amount = 5

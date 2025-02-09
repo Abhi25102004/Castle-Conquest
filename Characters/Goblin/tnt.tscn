@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://d15snjy675c0u"]
+[gd_scene load_steps=25 format=3 uid="uid://d15snjy675c0u"]
 
 [ext_resource type="Texture2D" uid="uid://bxr05ksimpx1p" path="res://Assets/Factions/Goblins/Troops/TNT/Red/TNT_Red.png" id="1_ogcf0"]
 [ext_resource type="Script" path="res://Characters/Goblin/tnt.gd" id="1_tvshf"]
-[ext_resource type="PackedScene" uid="uid://bo1o2cy4273kv" path="res://Characters/Goblin/dynamite.tscn" id="2_47jel"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_devgo"]
 atlas = ExtResource("1_ogcf0")
@@ -161,11 +160,17 @@ height = 52.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h4ryt"]
 
-[node name="TNT" type="Node2D"]
+[node name="TNT" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node")]
 texture_filter = 1
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_tvshf")
-Dynamite = ExtResource("2_47jel")
+Health = 40
+Attack = 15
+Attack_Speed = 0.8
+Speed = 80
+CharacterName = "tnt"
+Animated_node = NodePath("AnimatedSprite2D")
+HurtBox_node = NodePath("HurtBox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lbdnb")
@@ -190,7 +195,7 @@ shape = SubResource("CircleShape2D_h4ryt")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-36.9231, 9.53674e-07)
 
-[connection signal="area_entered" from="HitBox" to="." method="_on_hurt_box_area_entered"]
-[connection signal="area_exited" from="HitBox" to="." method="_on_hurt_box_area_exited"]
+[connection signal="area_entered" from="HitBox" to="." method="HurtBox_Entered"]
+[connection signal="area_exited" from="HitBox" to="." method="HurtBox_Exited"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_exited" from="HurtBox" to="." method="_on_hurt_box_area_exited"]

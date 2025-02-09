@@ -110,12 +110,16 @@ height = 62.0
 texture_filter = 1
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_emuw8")
+CharacterName = "warrior"
+Health = 100
+Attack = 20
+Attack_Speed = 1.5
 Animated_node = NodePath("Animations")
 HurtBox_node = NodePath("HurtBox")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fu7y2")
-animation = &"Attack"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="HitBox" type="Area2D" parent="."]

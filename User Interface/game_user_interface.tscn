@@ -1,19 +1,20 @@
-[gd_scene load_steps=25 format=3 uid="uid://dj4natrlfejt7"]
+[gd_scene load_steps=26 format=3 uid="uid://dj4natrlfejt7"]
 
 [ext_resource type="Script" path="res://User Interface/game_user_interface.gd" id="1_h2gpb"]
+[ext_resource type="FontFile" uid="uid://rqcdlimg1btm" path="res://Fonts/Comic Sans MS.ttf" id="2_5ncxl"]
 [ext_resource type="PackedScene" uid="uid://bchfui5nqukg" path="res://User Interface/custum_button.tscn" id="2_a7d2l"]
 [ext_resource type="Texture2D" uid="uid://bj8y5ygowc4pg" path="res://Assets/UI/Ribbons/Ribbon_Yellow_3Slides.png" id="2_ieb5n"]
 [ext_resource type="Texture2D" uid="uid://cvuoaqvekvhyg" path="res://Assets/UI/Buttons/Button_Red.png" id="3_2ja6n"]
 [ext_resource type="Texture2D" uid="uid://drgcesc7p4043" path="res://Assets/UI/Buttons/Button_Red_Pressed.png" id="3_3uw0e"]
 [ext_resource type="Texture2D" uid="uid://bjx6gwad7kney" path="res://Assets/UI/Banners/Banner_Horizontal.png" id="3_qc0se"]
-[ext_resource type="Texture2D" uid="uid://b6mew1j01vupy" path="res://Assets/UI/Icons/Pressed_07.png" id="4_ls13n"]
 [ext_resource type="Texture2D" uid="uid://cn1tffbh3q3ue" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/warrior_icon.png" id="5_4pvt4"]
 [ext_resource type="PackedScene" uid="uid://vf5uosbsdh18" path="res://User Interface/hover_button.tscn" id="5_fnbrd"]
-[ext_resource type="Texture2D" uid="uid://q10aixmkmhq5" path="res://Assets/UI/Icons/Pressed_01.png" id="5_t38gf"]
-[ext_resource type="Texture2D" uid="uid://bkm8kmg1ptbnp" path="res://Assets/UI/Icons/Pressed_02.png" id="6_nfu20"]
+[ext_resource type="Texture2D" uid="uid://curimxwxr3tsd" path="res://Assets/UI/Icons/Regular_03.png" id="6_a4dss"]
 [ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Knight/warrior.tscn" id="6_nsg1e"]
 [ext_resource type="Texture2D" uid="uid://djp2d31y2dyu1" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Blue_Pawn_icon.png" id="7_norpy"]
+[ext_resource type="Texture2D" uid="uid://c2sj7c687d2s3" path="res://Assets/UI/Icons/Regular_02.png" id="7_o12hk"]
 [ext_resource type="PackedScene" uid="uid://ceby6oqyqicd4" path="res://Characters/Knight/pawn.tscn" id="8_4jkkd"]
+[ext_resource type="Texture2D" uid="uid://dypndckq0k1en" path="res://Assets/UI/Icons/Regular_01.png" id="8_jacqb"]
 [ext_resource type="Texture2D" uid="uid://c2yo6sqssrx6q" path="res://Assets/Factions/Knights/Troops/Archer/Blue/Archer_icon.png" id="9_vn6de"]
 [ext_resource type="PackedScene" uid="uid://dyboryr0fcfy4" path="res://Characters/Knight/archer.tscn" id="10_nk7vq"]
 
@@ -79,15 +80,38 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_sn6tn")
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("2_5ncxl")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_3xijl")
-text = "Money : 100"
+text = "Money : 0"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer"]
+[node name="Sound Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_bbhgb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bbhgb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer/Sound Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_a4dss")
+
+[node name="Settings Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
@@ -96,16 +120,17 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_bbhgb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer/Button"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer/Settings Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_ls13n")
+texture = ExtResource("7_o12hk")
 
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer"]
+[node name="Quite Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
@@ -114,32 +139,14 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_bbhgb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer/Button2"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer/Quite Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_t38gf")
-
-[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_bbhgb")
-theme_override_styles/hover = SubResource("StyleBoxTexture_bbhgb")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
-theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer/Button3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_nfu20")
+texture = ExtResource("8_jacqb")
 
 [node name="Middle" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -274,18 +281,21 @@ size_flags_vertical = 4
 
 [node name="Custum Button" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5ncxl")
 image = ExtResource("5_4pvt4")
 value = 75
 Scene = ExtResource("6_nsg1e")
 
 [node name="Custum Button2" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5ncxl")
 image = ExtResource("7_norpy")
 value = 30
 Scene = ExtResource("8_4jkkd")
 
 [node name="Custum Button3" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5ncxl")
 image = ExtResource("9_vn6de")
 value = 50
 Scene = ExtResource("10_nk7vq")

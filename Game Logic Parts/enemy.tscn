@@ -1,20 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://ycwicewcvawm"]
+[gd_scene load_steps=3 format=3 uid="uid://ycwicewcvawm"]
 
 [ext_resource type="Script" path="res://Game Logic Parts/enemy.gd" id="1_r3obk"]
-[ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Goblin/torch.tscn" id="2_ivxwq"]
-[ext_resource type="PackedScene" uid="uid://dm7teraw3nh7c" path="res://Characters/Goblin/barrel.tscn" id="3_2vd16"]
-[ext_resource type="PackedScene" uid="uid://d15snjy675c0u" path="res://Characters/Goblin/tnt.tscn" id="4_qfbjs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m077e"]
+size = Vector2(67, 1081)
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_r3obk")
-Enemy_Collection = Array[Dictionary]([{
-"delay": 5,
-"scene": ExtResource("2_ivxwq")
-}, {
-"delay": 15,
-"scene": ExtResource("3_2vd16")
-}, {
-"delay": 10,
-"scene": ExtResource("4_qfbjs")
-}])
-Enemy_positions = Array[int]([178, 364, 550, 736])
+
+[node name="Danger Zone" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Danger Zone"]
+position = Vector2(35.5, 539.5)
+shape = SubResource("RectangleShape2D_m077e")
+
+[connection signal="area_entered" from="Danger Zone" to="." method="Danger_Area_Entered"]

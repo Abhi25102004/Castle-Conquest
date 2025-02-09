@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Level_Information" load_steps=2 format=3 uid="uid://bstcapxlulbt4"]
+
+[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="1_yfdrh"]
+
+[resource]
+script = ExtResource("1_yfdrh")
+Level_Name = " Strength in Combat"
+Completed = false
+Money_Required = 300
+Torch_Amount = 25
+TNT_Amount = 10
+Barrel_Amount = 0

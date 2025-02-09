@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Level_Information" load_steps=2 format=3 uid="uid://btnmtu7io6mgj"]
+
+[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="1_o7qn4"]
+
+[resource]
+script = ExtResource("1_o7qn4")
+Level_Name = "Final Showdown"
+Completed = false
+Money_Required = 600
+Torch_Amount = 50
+TNT_Amount = 30
+Barrel_Amount = 10

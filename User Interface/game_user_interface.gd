@@ -4,9 +4,9 @@ extends CanvasLayer
 @onready var Character_Buttons: HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer
 @onready var Money_Counter: Label = $PanelContainer/MarginContainer/VBoxContainer/Header/Label
 
-@export var cost : int = 0
-@export var Character_Scene : PackedScene = null
-@export var Money : int = 400
+var cost : int = 0
+var Character_Scene : PackedScene = null
+var Money : int = 0
 
 func Placement_Button_Pressed(child : Button) -> void:
 	if !child.placed and Money >= cost:
@@ -39,3 +39,5 @@ func _ready() -> void:
 	for child in Character_Buttons.get_children():
 		if child is Button:
 			child.pressed.connect(Add_Character.bind(child))
+	
+	%"Quite Button".pressed.connect(func(): get_tree().change_scene_to_file("res://User Interface/level_interface.tscn"))

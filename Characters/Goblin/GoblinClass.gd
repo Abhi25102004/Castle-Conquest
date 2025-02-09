@@ -1,21 +1,20 @@
 extends Node2D
 
-class_name Knight_Class
+class_name Goblin_Class
 
-signal KnightDied
+signal GoblinDied
 
-# constant 
-enum States { Idle, Attack }
+enum States { Idle, Run, Attack }
 
-# variables
-var Knight : States = States.Idle
-var canAttack : bool = false
-var Game_State : bool = true
-
-@export var CharacterName : String
 @export var Health : int
 @export var Attack : int
 @export var Attack_Speed : float
+@export var Speed : int
+@export var CharacterName : String
+
+var Goblin : States = States.Run
+var Game_State : bool = true
+var canAttack : bool = false
 
 @export var Animated_node : AnimatedSprite2D
 @export var HurtBox_node : Area2D
@@ -28,26 +27,30 @@ func HurtBox_Entered(_area: Area2D) -> void:
 
 func HurtBox_Exited(_area: Area2D) -> void:
 	pass
-
+	
 func OnAttack() -> void:
 	pass
 
-func Take_Damage_from_Goblin(Power : int) -> void:
+func Take_Damage_from_knight(Power : int) -> void:
 	Health -= Power
 	if Health <= 0:
 		Character_Death()
 
 func Character_Death() -> void:
-	KnightDied.emit()
+	GoblinDied.emit()
 	queue_free()
 
-func Game_Loop() -> void :
-	match Knight:
+func Game_Loop(delta: float) -> void:
+	match Goblin:
 		States.Idle:
-			Knight = States.Attack if canAttack else Knight
+			Goblin = States.Attack if canAttack else States.Run
 			Animations.play("Idle")
+		States.Run:
+			Goblin = States.Idle if canAttack else Goblin
+			Animations.play("Run")
+			position.x -= Speed * delta
 		States.Attack:
-			Knight = States.Idle
+			Goblin = States.Idle
 			await get_tree().create_timer(Attack_Speed).timeout
 			Animations.play("Attack")
 			await Animations.animation_finished
@@ -58,7 +61,7 @@ func _ready() -> void:
 	HurtBox.area_entered.connect(HurtBox_Entered)
 	HurtBox.area_exited.connect(HurtBox_Exited)
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if Game_State:
 		Game_State = false
-		Game_Loop()
+		Game_Loop(delta)
