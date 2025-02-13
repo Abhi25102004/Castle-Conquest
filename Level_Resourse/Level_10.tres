@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_o7qn4")
-Level_Name = "Final Showdown"
-Completed = false
+Level_number = 10
+Level_Name = "Level 10 : Final Showdown"
 Money_Required = 600
 Torch_Amount = 50
 TNT_Amount = 30

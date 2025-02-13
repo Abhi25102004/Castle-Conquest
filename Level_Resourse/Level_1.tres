@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_1h48h")
-Level_Name = "The war has began"
-Completed = false
+Level_number = 1
+Level_Name = "Level 1 : The First Siege"
 Money_Required = 100
-Torch_Amount = 10
+Torch_Amount = 8
 TNT_Amount = 0
 Barrel_Amount = 0

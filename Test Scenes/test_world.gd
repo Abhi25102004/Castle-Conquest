@@ -3,7 +3,7 @@ extends Node2D
 @onready var Game_user_interface: CanvasLayer = $"Game User Interface"
 @onready var Enemy_node: Node2D = $Enemy
 
-@export var Level_list : Array[Level_Information] = []
+@export var Level_list : Dictionary
 
 var current_level : Level_Information
 
@@ -12,7 +12,10 @@ func Change_Scene() -> void:
 
 func _ready() -> void:
 	Enemy_node.Level_Completed.connect(func():
-		current_level.set("Completed",true)
+		var SaveFile : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
+		if current_level.Level_number not in SaveFile.level_Played:
+			SaveFile.level_Played.append(current_level.Level_number)
+		ResourceSaver.save(SaveFile,"user://SaveFiles/Level_Details.tres")
 		call_deferred("Change_Scene")
 		
 	)
@@ -23,8 +26,8 @@ func _ready() -> void:
 	Enemy_node.Player_Lost.connect(func():
 		call_deferred("Change_Scene")
 	)
-	var level_S : Level_Selection = ResourceLoader.load("res://Level_Resourse/Level_select.tres")
-	current_level = level_S.level
+	var level_S : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
+	current_level = Level_list[level_S.Current_Level]
 	Enemy_node.Enemy_Information[0]["amount"] = current_level.Torch_Amount
 	Enemy_node.Enemy_Information[1]["amount"] = current_level.TNT_Amount
 	Enemy_node.Enemy_Information[2]["amount"] = current_level.Barrel_Amount

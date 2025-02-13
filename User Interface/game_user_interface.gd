@@ -3,7 +3,9 @@ extends CanvasLayer
 @onready var Placement_Buttons: GridContainer = $PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer
 @onready var Character_Buttons: HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer
 @onready var Money_Counter: Label = $PanelContainer/MarginContainer/VBoxContainer/Header/Label
+@onready var progress_bar: ProgressBar = $"PanelContainer/MarginContainer/VBoxContainer/Header/Progress Level/HBoxContainer2/ProgressBar"
 
+var Level_Completed : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
 var cost : int = 0
 var Character_Scene : PackedScene = null
 var Money : int = 0
@@ -31,13 +33,21 @@ func Increase_Money() -> void:
 	Money += randi_range(50,100)
 	Money_Counter.text = "Money : " + str(Money) 
 
+func Progress_Bar_Setter(number: int) -> void:
+	progress_bar.min_value = 0
+	progress_bar.max_value = number
+
+func Progress_Bar_Update(number: int) -> void:
+	progress_bar.value = number
+
 func _ready() -> void:
 	for child in Placement_Buttons.get_children():
 		if child is Button:
 			child.pressed.connect(Placement_Button_Pressed.bind(child))
 	
 	for child in Character_Buttons.get_children():
-		if child is Button:
-			child.pressed.connect(Add_Character.bind(child))
+		if child is Button and child.name in Level_Completed.Available_Buttons:
+			child.visible = true
+		child.pressed.connect(Add_Character.bind(child))
 	
 	%"Quite Button".pressed.connect(func(): get_tree().change_scene_to_file("res://User Interface/level_interface.tscn"))

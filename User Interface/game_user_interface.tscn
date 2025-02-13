@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://dj4natrlfejt7"]
+[gd_scene load_steps=32 format=3 uid="uid://dj4natrlfejt7"]
 
 [ext_resource type="Script" path="res://User Interface/game_user_interface.gd" id="1_h2gpb"]
-[ext_resource type="FontFile" uid="uid://rqcdlimg1btm" path="res://Fonts/Comic Sans MS.ttf" id="2_5ncxl"]
 [ext_resource type="PackedScene" uid="uid://bchfui5nqukg" path="res://User Interface/custum_button.tscn" id="2_a7d2l"]
+[ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="2_beoc8"]
 [ext_resource type="Texture2D" uid="uid://bj8y5ygowc4pg" path="res://Assets/UI/Ribbons/Ribbon_Yellow_3Slides.png" id="2_ieb5n"]
 [ext_resource type="Texture2D" uid="uid://cvuoaqvekvhyg" path="res://Assets/UI/Buttons/Button_Red.png" id="3_2ja6n"]
 [ext_resource type="Texture2D" uid="uid://drgcesc7p4043" path="res://Assets/UI/Buttons/Button_Red_Pressed.png" id="3_3uw0e"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c2sj7c687d2s3" path="res://Assets/UI/Icons/Regular_02.png" id="7_o12hk"]
 [ext_resource type="PackedScene" uid="uid://ceby6oqyqicd4" path="res://Characters/Knight/pawn.tscn" id="8_4jkkd"]
 [ext_resource type="Texture2D" uid="uid://dypndckq0k1en" path="res://Assets/UI/Icons/Regular_01.png" id="8_jacqb"]
+[ext_resource type="Texture2D" uid="uid://b821201aprn50" path="res://Assets/UI/Ribbons/Ribbon_Red_3Slides.png" id="9_bwa5f"]
 [ext_resource type="Texture2D" uid="uid://c2yo6sqssrx6q" path="res://Assets/Factions/Knights/Troops/Archer/Blue/Archer_icon.png" id="9_vn6de"]
 [ext_resource type="PackedScene" uid="uid://dyboryr0fcfy4" path="res://Characters/Knight/archer.tscn" id="10_nk7vq"]
 
@@ -45,6 +46,17 @@ texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 25.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wkcck"]
+texture = ExtResource("9_bwa5f")
+texture_margin_left = 70.0
+texture_margin_top = 20.0
+texture_margin_right = 70.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5n0sc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5206"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hww5i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hihls"]
@@ -53,6 +65,10 @@ texture_margin_left = 64.0
 texture_margin_top = 63.0
 texture_margin_right = 64.0
 texture_margin_bottom = 54.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jxvb6"]
+
+[sub_resource type="PackedScene" id="PackedScene_byy54"]
 
 [node name="Game Logic" type="CanvasLayer"]
 script = ExtResource("1_h2gpb")
@@ -80,8 +96,8 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_sn6tn")
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_5ncxl")
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("2_beoc8")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_3xijl")
 text = "Money : 0"
 
@@ -147,6 +163,35 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_jacqb")
+
+[node name="Progress Level" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_wkcck")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Header/Progress Level"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Header/Progress Level/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_beoc8")
+theme_override_font_sizes/font_size = 30
+text = "Level Progress"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/Header/Progress Level/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_beoc8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/background = SubResource("StyleBoxEmpty_5n0sc")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_n5206")
+step = 1.0
 
 [node name="Middle" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -279,23 +324,37 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Custum Button" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+[node name="Pawn" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5ncxl")
-image = ExtResource("5_4pvt4")
-value = 75
-Scene = ExtResource("6_nsg1e")
-
-[node name="Custum Button2" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5ncxl")
+theme_override_fonts/font = ExtResource("2_beoc8")
 image = ExtResource("7_norpy")
 value = 30
 Scene = ExtResource("8_4jkkd")
 
-[node name="Custum Button3" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+[node name="Tree" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5ncxl")
+image = SubResource("CompressedTexture2D_jxvb6")
+Scene = SubResource("PackedScene_byy54")
+
+[node name="Hut" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+visible = false
+layout_mode = 2
+
+[node name="Archer" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_beoc8")
 image = ExtResource("9_vn6de")
 value = 50
 Scene = ExtResource("10_nk7vq")
+
+[node name="Warrior" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_beoc8")
+image = ExtResource("5_4pvt4")
+value = 75
+Scene = ExtResource("6_nsg1e")
+
+[node name="Tower" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+visible = false
+layout_mode = 2

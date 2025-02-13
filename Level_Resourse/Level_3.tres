@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_c4ms1")
-Level_Name = "Economy Matters"
-Completed = false
+Level_number = 3
+Level_Name = "Level 3 : Explosive Trouble"
 Money_Required = 200
 Torch_Amount = 15
 TNT_Amount = 3

@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_u3wqj")
-Level_Name = "Defensive Challenges"
-Completed = false
+Level_number = 6
+Level_Name = "Level 6 : Defensive Challenges"
 Money_Required = 350
 Torch_Amount = 30
 TNT_Amount = 12

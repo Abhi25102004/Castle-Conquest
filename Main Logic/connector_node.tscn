@@ -11,5 +11,3 @@
 [node name="Game User Interface" parent="." instance=ExtResource("2_8dgfc")]
 
 [node name="Enemy" parent="." instance=ExtResource("3_rmn0f")]
-
-[connection signal="Add_Money" from="Enemy" to="Game User Interface" method="Increase_Money"]

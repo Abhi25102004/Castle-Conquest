@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_fdyi6")
-Level_Name = "Coordinated Attack"
-Completed = false
+Level_number = 7
+Level_Name = "Level 7 : Coordinated Attack"
 Money_Required = 400
 Torch_Amount = 20
 TNT_Amount = 15

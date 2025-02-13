@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://rqcdlimg1btm"
-path="res://.godot/imported/Comic Sans MS.ttf-2312ea13df1d4c7e14bf5479791468fa.fontdata"
+uid="uid://ckokmluf2sw7q"
+path="res://.godot/imported/IMFellEnglish-Regular.ttf-10bb191ab53a10861de7bc4af2a3c569.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Comic Sans MS.ttf"
-dest_files=["res://.godot/imported/Comic Sans MS.ttf-2312ea13df1d4c7e14bf5479791468fa.fontdata"]
+source_file="res://Fonts/IMFellEnglish-Regular.ttf"
+dest_files=["res://.godot/imported/IMFellEnglish-Regular.ttf-10bb191ab53a10861de7bc4af2a3c569.fontdata"]
 
 [params]
 

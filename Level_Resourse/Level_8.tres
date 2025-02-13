@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_w4mcm")
-Level_Name = "Increased Complexity"
-Completed = false
+Level_number = 8
+Level_Name = "Level 8 : Increased Complexity"
 Money_Required = 450
 Torch_Amount = 30
 TNT_Amount = 20

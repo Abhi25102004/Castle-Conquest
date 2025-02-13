@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_yfdrh")
-Level_Name = " Strength in Combat"
-Completed = false
+Level_number = 5
+Level_Name = " Level 5 : Strength in Combat"
 Money_Required = 300
 Torch_Amount = 25
 TNT_Amount = 10

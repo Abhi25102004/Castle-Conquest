@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bchfui5nqukg"]
+[gd_scene load_steps=8 format=3 uid="uid://bchfui5nqukg"]
 
 [ext_resource type="Texture2D" uid="uid://dk0bs6avh1mgw" path="res://Assets/UI/Buttons/Button_Blue.png" id="1_qckem"]
 [ext_resource type="Texture2D" uid="uid://bkm1st7h5862f" path="res://Assets/UI/Buttons/Button_Blue_Pressed.png" id="2_nk4w6"]
 [ext_resource type="Script" path="res://User Interface/custum_button.gd" id="3_0upwi"]
+[ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="4_l5lln"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aes8h"]
 
@@ -30,6 +31,8 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_t3qvp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_t3qvp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jb1vu")
 theme_override_styles/normal = SubResource("StyleBoxTexture_t3qvp")
+alignment = 2
+vertical_icon_alignment = 0
 script = ExtResource("3_0upwi")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -50,4 +53,5 @@ offset_right = -16.0
 offset_bottom = 55.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_l5lln")
 theme_override_font_sizes/font_size = 40

@@ -21,6 +21,9 @@ var Enemy_Information : Array[Dictionary] = [
 		"delay":15
 	}
 ]
+
+@onready var game_user_interface: CanvasLayer = $"../Game User Interface"
+
 var Enemy_positions : Array[int] = [178, 364, 550, 736]
 var PickUp : Array[Dictionary] = []
 var Total_Enemies : int = 0
@@ -34,6 +37,7 @@ func Add_Enemies() -> void:
 			PickUp.append(enemies)
 			Total_Enemies += enemies["amount"]
 	await get_tree().create_timer(5).timeout
+	game_user_interface.Progress_Bar_Setter(Total_Enemies)
 	Creater_Enemy()
 
 func Creater_Enemy() -> void:
@@ -44,6 +48,7 @@ func Creater_Enemy() -> void:
 	Current_Enemies += 1
 	Enemy_character.GoblinDied.connect(func(): 
 		Enemies_Killed += 1
+		game_user_interface.Progress_Bar_Update(Enemies_Killed)
 		if Total_Enemies == Enemies_Killed:
 			Level_Completed.emit()
 		Update_Money.emit(50))

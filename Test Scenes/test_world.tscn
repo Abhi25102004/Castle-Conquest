@@ -1,16 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi367bqvb1tm6"]
+[gd_scene load_steps=15 format=3 uid="uid://bi367bqvb1tm6"]
 
 [ext_resource type="PackedScene" uid="uid://dj4natrlfejt7" path="res://User Interface/game_user_interface.tscn" id="1_6yk4e"]
 [ext_resource type="Script" path="res://Test Scenes/test_world.gd" id="1_mp6vc"]
-[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="2_77h48"]
 [ext_resource type="Resource" uid="uid://bqcjuwar5w4u3" path="res://Level_Resourse/Level_1.tres" id="2_ead2u"]
 [ext_resource type="Resource" uid="uid://bghf2y55owda6" path="res://Level_Resourse/Level_2.tres" id="3_jsv4o"]
 [ext_resource type="PackedScene" uid="uid://bf22joai6fnrd" path="res://Map/level_base.tscn" id="3_o3y55"]
+[ext_resource type="Resource" uid="uid://cfbdo4iu53vgd" path="res://Level_Resourse/Level_3.tres" id="4_6tqxl"]
 [ext_resource type="PackedScene" uid="uid://ycwicewcvawm" path="res://Game Logic Parts/enemy.tscn" id="4_phieu"]
+[ext_resource type="Resource" uid="uid://cv676bwaem3j3" path="res://Level_Resourse/Level_4.tres" id="5_kjgj8"]
+[ext_resource type="Resource" uid="uid://bstcapxlulbt4" path="res://Level_Resourse/Level_5.tres" id="6_jmxya"]
+[ext_resource type="Resource" uid="uid://by8jm2qdqv8yu" path="res://Level_Resourse/Level_6.tres" id="7_tbb6k"]
+[ext_resource type="Resource" uid="uid://br2takgi8cgn8" path="res://Level_Resourse/Level_7.tres" id="8_yrpsc"]
+[ext_resource type="Resource" uid="uid://j5u2hj8rju2u" path="res://Level_Resourse/Level_8.tres" id="9_eynhx"]
+[ext_resource type="Resource" uid="uid://cwl0hdsvjbhpf" path="res://Level_Resourse/Level_9.tres" id="10_erwo0"]
+[ext_resource type="Resource" uid="uid://btnmtu7io6mgj" path="res://Level_Resourse/Level_10.tres" id="11_u2qw7"]
 
 [node name="Main_Scene" type="Node2D"]
 script = ExtResource("1_mp6vc")
-Level_list = Array[ExtResource("2_77h48")]([ExtResource("2_ead2u"), ExtResource("3_jsv4o")])
+Level_list = {
+1: ExtResource("2_ead2u"),
+2: ExtResource("3_jsv4o"),
+3: ExtResource("4_6tqxl"),
+4: ExtResource("5_kjgj8"),
+5: ExtResource("6_jmxya"),
+6: ExtResource("7_tbb6k"),
+7: ExtResource("8_yrpsc"),
+8: ExtResource("9_eynhx"),
+9: ExtResource("10_erwo0"),
+10: ExtResource("11_u2qw7")
+}
 
 [node name="Game User Interface" parent="." instance=ExtResource("1_6yk4e")]
 

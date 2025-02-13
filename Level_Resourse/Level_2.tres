@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_mi5r2")
-Level_Name = "Learning Defense"
-Completed = false
-Money_Required = 150
-Torch_Amount = 12
-TNT_Amount = 0
+Level_number = 2
+Level_Name = "Level 2 : Goblin Assault"
+Money_Required = 125
+Torch_Amount = 10
+TNT_Amount = 2
 Barrel_Amount = 0

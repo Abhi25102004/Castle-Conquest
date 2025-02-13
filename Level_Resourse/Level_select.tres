@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Level_Selection" load_steps=3 format=3]
-
-[ext_resource type="Resource" path="res://Level_Resourse/Level_4.tres" id="1_fu6sv"]
-[ext_resource type="Script" path="res://Level_Resourse/level_selection.gd" id="2_ftfbe"]
-
-[resource]
-script = ExtResource("2_ftfbe")
-level = ExtResource("1_fu6sv")
