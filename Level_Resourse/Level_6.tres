@@ -5,8 +5,9 @@
 [resource]
 script = ExtResource("1_u3wqj")
 Level_number = 6
-Level_Name = "Level 6 : Defensive Challenges"
-Money_Required = 350
-Torch_Amount = 30
-TNT_Amount = 12
-Barrel_Amount = 3
+Level_Name = "Level 6 : The Gold Rush"
+Money_Required = 225
+Torch_Amount = 15
+TNT_Amount = 6
+Barrel_Amount = 4
+Reward = "Sheep"

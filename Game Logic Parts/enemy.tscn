@@ -10,10 +10,24 @@ script = ExtResource("1_r3obk")
 
 [node name="Danger Zone" type="Area2D" parent="."]
 collision_layer = 16
-collision_mask = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Danger Zone"]
 position = Vector2(35.5, 539.5)
 shape = SubResource("RectangleShape2D_m077e")
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Markers"]
+position = Vector2(2000, 221)
+
+[node name="Marker2D2" type="Marker2D" parent="Markers"]
+position = Vector2(2000, 407)
+
+[node name="Marker2D3" type="Marker2D" parent="Markers"]
+position = Vector2(2000, 593)
+
+[node name="Marker2D4" type="Marker2D" parent="Markers"]
+position = Vector2(2000, 779)
 
 [connection signal="area_entered" from="Danger Zone" to="." method="Danger_Area_Entered"]

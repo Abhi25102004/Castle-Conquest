@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://bw57kit6ars5y"]
+
+[ext_resource type="Texture2D" uid="uid://b16k7o0lk4hat" path="res://Assets/Resources/Trees/Tree.png" id="1_2ak02"]
+[ext_resource type="Script" path="res://Characters/Extras/tree.gd" id="1_d02y0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx6jm"]
+atlas = ExtResource("1_2ak02")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_senmw"]
+atlas = ExtResource("1_2ak02")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj317"]
+atlas = ExtResource("1_2ak02")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmwtr"]
+atlas = ExtResource("1_2ak02")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnfup"]
+atlas = ExtResource("1_2ak02")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw40y"]
+atlas = ExtResource("1_2ak02")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pc1vq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx6jm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_senmw")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj317")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmwtr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnfup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw40y")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xebhw"]
+radius = 63.0
+height = 150.0
+
+[node name="Tree" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_d02y0")
+CharacterName = "tree"
+Health = 300
+Cost = 60
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -48)
+sprite_frames = SubResource("SpriteFrames_pc1vq")
+animation = &"Idle"
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -48)
+shape = SubResource("CapsuleShape2D_xebhw")

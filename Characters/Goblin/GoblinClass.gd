@@ -11,6 +11,7 @@ enum States { Idle, Run, Attack }
 @export var Attack_Speed : float
 @export var Speed : int
 @export var CharacterName : String
+@export var Cost : int
 
 var Goblin : States = States.Run
 var Game_State : bool = true
@@ -37,7 +38,7 @@ func Take_Damage_from_knight(Power : int) -> void:
 		Character_Death()
 
 func Character_Death() -> void:
-	GoblinDied.emit()
+	GoblinDied.emit(Cost)
 	queue_free()
 
 func Game_Loop(delta: float) -> void:

@@ -164,11 +164,12 @@ height = 52.0
 texture_filter = 1
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_tvshf")
-Health = 40
-Attack = 15
-Attack_Speed = 0.8
+Health = 100
+Attack = 30
+Attack_Speed = 0.6
 Speed = 80
 CharacterName = "tnt"
+Cost = 50
 Animated_node = NodePath("AnimatedSprite2D")
 HurtBox_node = NodePath("HurtBox")
 
@@ -189,7 +190,11 @@ shape = SubResource("CapsuleShape2D_cbot5")
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(-845, 0)
+position = Vector2(-187, 0)
+shape = SubResource("CircleShape2D_h4ryt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-374, 0)
 shape = SubResource("CircleShape2D_h4ryt")
 
 [node name="Marker2D" type="Marker2D" parent="."]

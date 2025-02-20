@@ -8,3 +8,4 @@ class_name Level_Information
 @export var Torch_Amount : int
 @export var TNT_Amount : int
 @export var Barrel_Amount : int
+@export var Reward : String = ""

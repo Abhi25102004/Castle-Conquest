@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 func _ready() -> void:
 	var directory = DirAccess.open("user://")

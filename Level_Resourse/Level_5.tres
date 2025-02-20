@@ -5,8 +5,9 @@
 [resource]
 script = ExtResource("1_yfdrh")
 Level_number = 5
-Level_Name = " Level 5 : Strength in Combat"
-Money_Required = 300
-Torch_Amount = 25
-TNT_Amount = 10
-Barrel_Amount = 0
+Level_Name = " Level 5 : Barrels of Chaos"
+Money_Required = 200
+Torch_Amount = 10
+TNT_Amount = 4
+Barrel_Amount = 2
+Reward = "Gold Mine"

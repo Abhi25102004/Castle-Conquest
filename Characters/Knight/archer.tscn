@@ -125,9 +125,10 @@ texture_filter = 1
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_a1f5v")
 CharacterName = "archer"
-Health = 40
-Attack = 15
-Attack_Speed = 0.8
+Health = 80
+Attack = 25
+Attack_Speed = 1.2
+Cost = 75
 Animated_node = NodePath("AnimatedSprite2D")
 HurtBox_node = NodePath("Hurtbox")
 
@@ -146,11 +147,19 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(845, 0)
+position = Vector2(187, 0)
+shape = SubResource("CircleShape2D_n4hs0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(374, 0)
+shape = SubResource("CircleShape2D_n4hs0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(561, 0)
 shape = SubResource("CircleShape2D_n4hs0")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(37, 10)
 
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurt_box_area_entered"]
-[connection signal="area_exited" from="Hurtbox" to="." method="_on_hurt_box_area_exited"]
+[connection signal="area_entered" from="Hitbox" to="." method="HurtBox_Entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="HurtBox_Exited"]

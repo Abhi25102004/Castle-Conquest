@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-@onready var Placement_Buttons: GridContainer = $PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer
-@onready var Character_Buttons: HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer
-@onready var Money_Counter: Label = $PanelContainer/MarginContainer/VBoxContainer/Header/Label
-@onready var progress_bar: ProgressBar = $"PanelContainer/MarginContainer/VBoxContainer/Header/Progress Level/HBoxContainer2/ProgressBar"
+@onready var Placement_Buttons: GridContainer = $Middle/GridContainer
+@onready var Character_Buttons: HBoxContainer = $Bottom/HBoxContainer
+@onready var Money_Counter: Label = $Header/Label
+@onready var progress_bar: ProgressBar = $"Header/Progress Level/HBoxContainer2/ProgressBar"
 
 var Level_Completed : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
 var cost : int = 0
@@ -19,11 +19,12 @@ func Placement_Button_Pressed(child : Button) -> void:
 			Money = (Money - cost) if (Money - cost) >= 0 else 0
 			Money_Counter.text = "Money : " + str(Money) 
 			Character_Scene = null
-			cost = 0
 	else:
 		child.placed = false
-		child.Remove_Scene()
-		
+		cost = child.Remove_Scene()
+		Money = (Money + cost) if (Money + cost) >= 0 else 0
+		Money_Counter.text = "Money : " + str(Money) 
+	cost = 0
 
 func Add_Character(child : Button) -> void:
 	Character_Scene = child.Scene

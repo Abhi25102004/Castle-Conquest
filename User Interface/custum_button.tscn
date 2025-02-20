@@ -23,16 +23,18 @@ texture_margin_bottom = 20.0
 
 [node name="Custum Button" type="Button"]
 texture_filter = 1
-custom_minimum_size = Vector2(150, 150)
-offset_right = 135.0
-offset_bottom = 129.0
+custom_minimum_size = Vector2(175, 175)
+offset_right = 200.0
+offset_bottom = 200.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_aes8h")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_t3qvp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_t3qvp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jb1vu")
 theme_override_styles/normal = SubResource("StyleBoxTexture_t3qvp")
 alignment = 2
+icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
 script = ExtResource("3_0upwi")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -40,18 +42,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -62.0
-offset_right = -16.0
-offset_bottom = 55.0
+offset_left = -69.0
+offset_right = -15.0
+offset_bottom = 52.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_l5lln")
 theme_override_font_sizes/font_size = 40
+horizontal_alignment = 2

@@ -5,8 +5,9 @@
 [resource]
 script = ExtResource("1_cbwpt")
 Level_number = 9
-Level_Name = "Level 9 : Goblin Commander’s Forces"
-Money_Required = 500
-Torch_Amount = 40
-TNT_Amount = 25
+Level_Name = "Level 9 : Siege of the Goblins"
+Money_Required = 300
+Torch_Amount = 30
+TNT_Amount = 12
 Barrel_Amount = 8
+Reward = ""

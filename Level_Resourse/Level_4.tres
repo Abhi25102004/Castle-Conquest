@@ -5,8 +5,9 @@
 [resource]
 script = ExtResource("1_8ntuq")
 Level_number = 4
-Level_Name = "Level 4 : Using Range Effectively"
-Money_Required = 250
-Torch_Amount = 20
+Level_Name = "Level 4 : Towers and Tactics"
+Money_Required = 175
+Torch_Amount = 15
 TNT_Amount = 6
 Barrel_Amount = 0
+Reward = "Warrior"

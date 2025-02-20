@@ -1,7 +1,9 @@
 extends Control
 
 @onready var Level_Grid: GridContainer = $PanelContainer/MarginContainer/VBoxContainer/GridContainer
+
 @export var Level_Value : Dictionary
+
 var Level_Completed : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
 
 func On_Button_Pressed(number: int) -> void:

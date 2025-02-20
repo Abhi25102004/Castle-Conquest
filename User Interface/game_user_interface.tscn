@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dj4natrlfejt7"]
+[gd_scene load_steps=30 format=3 uid="uid://dj4natrlfejt7"]
 
 [ext_resource type="Script" path="res://User Interface/game_user_interface.gd" id="1_h2gpb"]
 [ext_resource type="PackedScene" uid="uid://bchfui5nqukg" path="res://User Interface/custum_button.tscn" id="2_a7d2l"]
@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bj8y5ygowc4pg" path="res://Assets/UI/Ribbons/Ribbon_Yellow_3Slides.png" id="2_ieb5n"]
 [ext_resource type="Texture2D" uid="uid://cvuoaqvekvhyg" path="res://Assets/UI/Buttons/Button_Red.png" id="3_2ja6n"]
 [ext_resource type="Texture2D" uid="uid://drgcesc7p4043" path="res://Assets/UI/Buttons/Button_Red_Pressed.png" id="3_3uw0e"]
-[ext_resource type="Texture2D" uid="uid://bjx6gwad7kney" path="res://Assets/UI/Banners/Banner_Horizontal.png" id="3_qc0se"]
 [ext_resource type="Texture2D" uid="uid://cn1tffbh3q3ue" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/warrior_icon.png" id="5_4pvt4"]
-[ext_resource type="PackedScene" uid="uid://vf5uosbsdh18" path="res://User Interface/hover_button.tscn" id="5_fnbrd"]
+[ext_resource type="PackedScene" uid="uid://b5fdmhnpga6lt" path="res://User Interface/hover_button.tscn" id="5_fnbrd"]
 [ext_resource type="Texture2D" uid="uid://curimxwxr3tsd" path="res://Assets/UI/Icons/Regular_03.png" id="6_a4dss"]
 [ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Knight/warrior.tscn" id="6_nsg1e"]
 [ext_resource type="Texture2D" uid="uid://djp2d31y2dyu1" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Blue_Pawn_icon.png" id="7_norpy"]
@@ -18,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://b821201aprn50" path="res://Assets/UI/Ribbons/Ribbon_Red_3Slides.png" id="9_bwa5f"]
 [ext_resource type="Texture2D" uid="uid://c2yo6sqssrx6q" path="res://Assets/Factions/Knights/Troops/Archer/Blue/Archer_icon.png" id="9_vn6de"]
 [ext_resource type="PackedScene" uid="uid://dyboryr0fcfy4" path="res://Characters/Knight/archer.tscn" id="10_nk7vq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkkud"]
+[ext_resource type="PackedScene" uid="uid://bw57kit6ars5y" path="res://Characters/Extras/tree.tscn" id="15_3xul8"]
+[ext_resource type="Texture2D" uid="uid://57hs0w3t5uq2" path="res://Assets/Resources/Trees/Tree_icon.png" id="15_wf20l"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sn6tn"]
 
@@ -59,53 +58,33 @@ texture_margin_bottom = 30.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hww5i"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hihls"]
-texture = ExtResource("3_qc0se")
-texture_margin_left = 64.0
-texture_margin_top = 63.0
-texture_margin_right = 64.0
-texture_margin_bottom = 54.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jxvb6"]
-
-[sub_resource type="PackedScene" id="PackedScene_byy54"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxqsq"]
 
 [node name="Game Logic" type="CanvasLayer"]
 script = ExtResource("1_h2gpb")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-texture_filter = 1
-anchors_preset = 15
+[node name="Header" type="PanelContainer" parent="."]
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 125.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_qkkud")
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = -13
-
-[node name="Header" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_sn6tn")
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
+[node name="Label" type="Label" parent="Header"]
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_beoc8")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxTexture_3xijl")
 text = "Money : 0"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Header"]
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 0
 
-[node name="Sound Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer"]
+[node name="Sound Button" type="Button" parent="Header/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
@@ -117,7 +96,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
 icon_alignment = 1
 expand_icon = true
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer/Sound Button"]
+[node name="TextureRect" type="TextureRect" parent="Header/HBoxContainer/Sound Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -126,7 +105,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_a4dss")
 
-[node name="Settings Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer"]
+[node name="Settings Button" type="Button" parent="Header/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
@@ -136,7 +115,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_bbhgb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer/Settings Button"]
+[node name="TextureRect" type="TextureRect" parent="Header/HBoxContainer/Settings Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,7 +124,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_o12hk")
 
-[node name="Quite Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer"]
+[node name="Quite Button" type="Button" parent="Header/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
@@ -155,7 +134,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_bbhgb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Header/HBoxContainer/Quite Button"]
+[node name="TextureRect" type="TextureRect" parent="Header/HBoxContainer/Quite Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -164,197 +143,210 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_jacqb")
 
-[node name="Progress Level" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
+[node name="Progress Level" type="PanelContainer" parent="Header"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_wkcck")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Header/Progress Level"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Header/Progress Level"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
+size_flags_vertical = 0
 theme_override_constants/separation = 30
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Header/Progress Level/HBoxContainer2"]
+[node name="Label" type="Label" parent="Header/Progress Level/HBoxContainer2"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_beoc8")
-theme_override_font_sizes/font_size = 30
-text = "Level Progress"
+theme_override_font_sizes/font_size = 50
+text = "Level Progress   "
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/Header/Progress Level/HBoxContainer2"]
+[node name="ProgressBar" type="ProgressBar" parent="Header/Progress Level/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_beoc8")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 theme_override_styles/background = SubResource("StyleBoxEmpty_5n0sc")
 theme_override_styles/fill = SubResource("StyleBoxEmpty_n5206")
 step = 1.0
 
-[node name="Middle" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Middle" type="PanelContainer" parent="."]
+offset_left = 125.0
+offset_top = 130.0
+offset_right = 1795.0
+offset_bottom = 870.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hww5i")
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Middle"]
+[node name="GridContainer" type="GridContainer" parent="Middle"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 9
 
-[node name="Hover_Button" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button2" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button2" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button3" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button3" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button4" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button4" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button5" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button5" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button6" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button6" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button7" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button7" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button8" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button8" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button9" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button9" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button10" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button10" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button11" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button11" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button12" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button12" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button13" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button13" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button14" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button14" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button15" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button15" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button16" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button16" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button17" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button17" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button18" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button18" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button19" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button19" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button20" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button20" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button21" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button21" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button22" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button22" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button23" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button23" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button24" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button24" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button25" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button25" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button26" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button26" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button27" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button27" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button28" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button28" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button29" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button29" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button30" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button30" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button31" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button31" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button32" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button32" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button33" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button33" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button34" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button34" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button35" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button35" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button36" parent="PanelContainer/MarginContainer/VBoxContainer/Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+[node name="Hover_Button36" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Bottom" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Bottom" type="PanelContainer" parent="."]
+offset_left = 654.0
+offset_top = 882.0
+offset_right = 1466.0
+offset_bottom = 1082.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_styles/panel = SubResource("StyleBoxTexture_hihls")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cxqsq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Pawn" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+[node name="Pawn" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_beoc8")
 image = ExtResource("7_norpy")
-value = 30
+value = 50
 Scene = ExtResource("8_4jkkd")
 
-[node name="Tree" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+[node name="Tree" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
 visible = false
 layout_mode = 2
-image = SubResource("CompressedTexture2D_jxvb6")
-Scene = SubResource("PackedScene_byy54")
+image = ExtResource("15_wf20l")
+value = 60
+Scene = ExtResource("15_3xul8")
 
-[node name="Hut" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+[node name="Hut" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
 visible = false
 layout_mode = 2
+value = 125
 
-[node name="Archer" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+[node name="Archer" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_beoc8")
 image = ExtResource("9_vn6de")
-value = 50
+value = 75
 Scene = ExtResource("10_nk7vq")
 
-[node name="Warrior" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+[node name="Warrior" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_beoc8")
 image = ExtResource("5_4pvt4")
-value = 75
+value = 100
 Scene = ExtResource("6_nsg1e")
 
-[node name="Tower" parent="PanelContainer/MarginContainer/VBoxContainer/Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+[node name="Tower" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
 visible = false
 layout_mode = 2
+value = 150
