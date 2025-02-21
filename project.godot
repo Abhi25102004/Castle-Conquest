@@ -13,7 +13,7 @@ config_version=5
 config/name="Castle Conquest"
 run/main_scene="res://Main Logic/start_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Factions/Knights/Buildings/Castle/Castle_Blue.png"
 
 [display]
 
@@ -22,6 +22,7 @@ window/size/viewport_height=1080
 window/size/initial_position_type=0
 window/size/always_on_top=true
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://Assets/UI/Pointers/01.png"
 
 [input]
 

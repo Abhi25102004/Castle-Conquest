@@ -35,10 +35,10 @@ func OnAttack() -> void:
 func Take_Damage_from_knight(Power : int) -> void:
 	Health -= Power
 	if Health <= 0:
+		GoblinDied.emit(Cost)
 		Character_Death()
 
 func Character_Death() -> void:
-	GoblinDied.emit(Cost)
 	queue_free()
 
 func Game_Loop(delta: float) -> void:

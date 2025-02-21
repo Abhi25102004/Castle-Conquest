@@ -50,13 +50,7 @@ texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 
-[node name="Level Interface" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Level Interface" type="CanvasLayer"]
 script = ExtResource("1_cnmvk")
 Level_Value = {
 1: ExtResource("2_nqvcr"),
@@ -73,7 +67,6 @@ Level_Value = {
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 texture_filter = 1
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -104,7 +97,7 @@ text = "Levels"
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
 texture_filter = 1
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_stretch_ratio = 0.52
 theme_override_styles/focus = SubResource("StyleBoxTexture_1sivj")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_xoq1b")

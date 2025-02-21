@@ -59,4 +59,5 @@ func Creater_Enemy() -> void:
 		Creater_Enemy()
 
 func Danger_Area_Entered(_area: Area2D) -> void:
+	get_tree().call_group("Enemy","Character_Death")
 	Player_Lost.emit()
