@@ -5,8 +5,6 @@
 **Castle Conquest** is a 2D tower defense game developed using the Godot Engine. Set in a medieval fantasy world, the game blends kingdom-building, resource management, and tactical combat. Players must defend their castle from goblin invasions while strategically managing resources and units.
 
 ## Features
-
-- **Kingdom Building:** Place defensive structures and manage resources efficiently.
 - **Tactical Combat:** Deploy different units with unique abilities against waves of goblins.
 - **Resource Management:** Collect coins and strategically spend them on units and structures.
 - **Challenging Enemies:** Face different enemy types with unique attack patterns.
