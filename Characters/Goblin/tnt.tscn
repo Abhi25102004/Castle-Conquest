@@ -197,10 +197,9 @@ shape = SubResource("CircleShape2D_h4ryt")
 position = Vector2(-374, 0)
 shape = SubResource("CircleShape2D_h4ryt")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-65.3846, 0)
+shape = SubResource("CircleShape2D_h4ryt")
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-36.9231, 9.53674e-07)
-
-[connection signal="area_entered" from="HitBox" to="." method="HurtBox_Entered"]
-[connection signal="area_exited" from="HitBox" to="." method="HurtBox_Exited"]
-[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
-[connection signal="area_exited" from="HurtBox" to="." method="_on_hurt_box_area_exited"]

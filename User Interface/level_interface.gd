@@ -4,15 +4,13 @@ extends CanvasLayer
 
 @export var Level_Value : Dictionary
 
-var Level_Completed : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
-
 func On_Button_Pressed(number: int) -> void:
-	var level_info : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
-	level_info.Current_Level = number
-	ResourceSaver.save(level_info,"user://SaveFiles/Level_Details.tres")
+	Global.level_type = Level_Value[number]
 	get_tree().change_scene_to_file("res://Test Scenes/test_world.tscn")
 
 func _ready() -> void:
+	var Level_Completed : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
+	Global.Buttons = Level_Completed.Available_Buttons
 	for iter in range(1,11):
 		var levelButton : Button = preload("res://User Interface/Level_Button.tscn").instantiate()
 		if iter == 1 or iter-1 in Level_Completed.level_Played:

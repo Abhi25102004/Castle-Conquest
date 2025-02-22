@@ -93,11 +93,13 @@ theme_override_fonts/font = ExtResource("13_fxl5o")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxTexture_1fsc0")
 text = "Levels"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
 texture_filter = 1
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 0
 size_flags_stretch_ratio = 0.52
 theme_override_styles/focus = SubResource("StyleBoxTexture_1sivj")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_xoq1b")

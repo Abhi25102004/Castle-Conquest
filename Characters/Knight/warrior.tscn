@@ -100,11 +100,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6s54r"]
-radius = 19.0
-height = 62.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_or7ol"]
+radius = 19.2308
+height = 56.9231
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g416u"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_kli6w"]
 
 [node name="Warrior" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node")]
 texture_filter = 1
@@ -127,12 +127,12 @@ autoplay = "Idle"
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-shape = SubResource("CapsuleShape2D_6s54r")
+shape = SubResource("CapsuleShape2D_or7ol")
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(30, 0)
-shape = SubResource("RectangleShape2D_g416u")
+position = Vector2(76.9231, 0)
+shape = SubResource("CircleShape2D_kli6w")

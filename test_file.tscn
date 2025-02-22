@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bamiq8ho06v1n"]
+
+[ext_resource type="PackedScene" uid="uid://ceby6oqyqicd4" path="res://Characters/Knight/pawn.tscn" id="1_x3ign"]
+[ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Knight/warrior.tscn" id="3_pgofr"]
+[ext_resource type="PackedScene" uid="uid://dm7teraw3nh7c" path="res://Characters/Goblin/barrel.tscn" id="4_hby7a"]
+[ext_resource type="PackedScene" uid="uid://dyboryr0fcfy4" path="res://Characters/Knight/archer.tscn" id="6_pqk0d"]
+
+[node name="TestFile" type="Node2D"]
+
+[node name="Pawn" parent="." instance=ExtResource("1_x3ign")]
+position = Vector2(-486, -239)
+
+[node name="Warrior" parent="." instance=ExtResource("3_pgofr")]
+position = Vector2(-486, 2)
+
+[node name="Archer" parent="." instance=ExtResource("6_pqk0d")]
+position = Vector2(-486, 274)
+
+[node name="Barrel" parent="." instance=ExtResource("4_hby7a")]
+position = Vector2(739, 2)
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -5,10 +5,9 @@ extends CanvasLayer
 @onready var Money_Counter: Label = $Header/Label
 @onready var progress_bar: ProgressBar = $"Header/Progress Level/HBoxContainer2/ProgressBar"
 
-var Level_Completed : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
 var cost : int = 0
 var Character_Scene : PackedScene = null
-var Money : int = 0
+var Money : int = Global.level_type.Money_Required
 
 func Placement_Button_Pressed(child : Button) -> void:
 	if !child.placed and Money >= cost:
@@ -42,12 +41,14 @@ func Progress_Bar_Update(number: int) -> void:
 	progress_bar.value = number
 
 func _ready() -> void:
+	Money_Counter.text = "Money : " + str(Money) 
+	
 	for child in Placement_Buttons.get_children():
 		if child is Button:
 			child.pressed.connect(Placement_Button_Pressed.bind(child))
 	
 	for child in Character_Buttons.get_children():
-		if child is Button and child.name in Level_Completed.Available_Buttons:
+		if child is Button and child.name in Global.Buttons:
 			child.visible = true
 		child.pressed.connect(Add_Character.bind(child))
 	

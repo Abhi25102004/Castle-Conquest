@@ -15,6 +15,10 @@ run/main_scene="res://Main Logic/start_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://Assets/Factions/Knights/Buildings/Castle/Castle_Blue.png"
 
+[autoload]
+
+Global="*res://Global/Global.gd"
+
 [display]
 
 window/size/viewport_width=1920

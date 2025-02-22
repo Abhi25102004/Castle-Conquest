@@ -104,7 +104,7 @@ animations = [{
 radius = 19.0
 height = 52.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_54451"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_88qho"]
 
 [node name="Pawn" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node")]
 texture_filter = 1
@@ -134,8 +134,8 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(30, 0)
-shape = SubResource("RectangleShape2D_54451")
+position = Vector2(66.9231, 0)
+shape = SubResource("CircleShape2D_88qho")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurt_box_area_exited"]
