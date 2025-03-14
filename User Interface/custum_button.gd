@@ -10,7 +10,8 @@ signal Button_Was_Pressed
 @export var Scene : PackedScene
 
 func _ready() -> void:
-	texture_rect.texture = image
+	if image != null:
+		texture_rect.texture = image
 	label.text = str(value)
 	self.pressed.connect(Callable(self,"Pressed"))
 

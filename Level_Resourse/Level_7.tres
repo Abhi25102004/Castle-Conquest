@@ -1,13 +1,35 @@
-[gd_resource type="Resource" script_class="Level_Information" load_steps=2 format=3 uid="uid://br2takgi8cgn8"]
+[gd_resource type="Resource" script_class="Level_Information" load_steps=6 format=3 uid="uid://br2takgi8cgn8"]
 
-[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="1_fdyi6"]
+[ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Level_Resourse/level.gd" id="1_fdyi6"]
+[ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Level_Resourse/wave.gd" id="1_uovgo"]
+
+[sub_resource type="Resource" id="Resource_htb8d"]
+script = ExtResource("1_uovgo")
+Number_of_torch = 10
+Number_of_tnt = 3
+Number_of_barrel = 0
+Wave_delay = 4
+
+[sub_resource type="Resource" id="Resource_p2wef"]
+script = ExtResource("1_uovgo")
+Number_of_torch = 6
+Number_of_tnt = 3
+Number_of_barrel = 2
+Wave_delay = 3
+
+[sub_resource type="Resource" id="Resource_6td3g"]
+script = ExtResource("1_uovgo")
+Number_of_torch = 4
+Number_of_tnt = 2
+Number_of_barrel = 3
+Wave_delay = 3
 
 [resource]
 script = ExtResource("1_fdyi6")
 Level_number = 7
 Level_Name = "Level 7 : Sheep Mayhem"
-Money_Required = 250
-Torch_Amount = 20
-TNT_Amount = 8
-Barrel_Amount = 5
-Reward = "Hut"
+Money_Required = 350
+Wave1 = SubResource("Resource_htb8d")
+Wave2 = SubResource("Resource_p2wef")
+Wave3 = SubResource("Resource_6td3g")
+Reward = ""

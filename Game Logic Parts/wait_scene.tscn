@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c00o4ypg73ehr"]
 
 [ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="1_5m0bv"]
-[ext_resource type="Script" path="res://Game Logic Parts/wait_scene.gd" id="1_c7rti"]
+[ext_resource type="Script" uid="uid://c0xh53xg1hpj3" path="res://Game Logic Parts/wait_scene.gd" id="1_c7rti"]
 [ext_resource type="Texture2D" uid="uid://cjbvmdlb3gejl" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="2_02vpl"]
 
 [sub_resource type="Animation" id="Animation_hws8j"]
@@ -151,8 +151,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc4d0"]
 _data = {
-"RESET": SubResource("Animation_hws8j"),
-"ready": SubResource("Animation_wqq8l")
+&"RESET": SubResource("Animation_hws8j"),
+&"ready": SubResource("Animation_wqq8l")
 }
 
 [node name="Wait Scene" type="CanvasLayer"]

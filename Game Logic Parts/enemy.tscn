@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ycwicewcvawm"]
 
-[ext_resource type="Script" path="res://Game Logic Parts/enemy.gd" id="1_r3obk"]
+[ext_resource type="Script" uid="uid://dk10vlntwgclf" path="res://Game Logic Parts/enemy.gd" id="1_r3obk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m077e"]
 size = Vector2(67, 1081)

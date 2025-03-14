@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cr10cstnr5c7h"]
 
 [ext_resource type="Texture2D" uid="uid://1fex2qkbhxx8" path="res://Assets/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="1_qawj5"]
-[ext_resource type="Script" path="res://Characters/Goblin/torch.gd" id="1_ykrxj"]
+[ext_resource type="Script" uid="uid://celgwbga7dy5s" path="res://Characters/Goblin/torch.gd" id="1_ykrxj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_58aea"]
 atlas = ExtResource("1_qawj5")
@@ -162,9 +162,8 @@ height = 56.0
 
 [node name="Torch" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node") groups=["Enemy"]]
 texture_filter = 1
-scale = Vector2(1.3, 1.3)
 script = ExtResource("1_ykrxj")
-Health = 80
+Health = 50
 Attack = 15
 Attack_Speed = 1.0
 Speed = 120
@@ -174,6 +173,7 @@ Animated_node = NodePath("Animations")
 HurtBox_node = NodePath("HurtBox")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_8ltwf")
 animation = &"Idle"
 autoplay = "Run"
@@ -181,6 +181,7 @@ flip_h = true
 
 [node name="HitBox" type="Area2D" parent="."]
 position = Vector2(0, 5)
+scale = Vector2(1.3, 1.3)
 collision_layer = 2
 collision_mask = 4
 
@@ -188,6 +189,7 @@ collision_mask = 4
 shape = SubResource("CapsuleShape2D_xcoii")
 
 [node name="HurtBox" type="Area2D" parent="."]
+scale = Vector2(1.3, 1.3)
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]

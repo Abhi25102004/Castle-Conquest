@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://dm7teraw3nh7c"]
 
 [ext_resource type="Texture2D" uid="uid://4g3fdh6lf88h" path="res://Assets/Factions/Goblins/Troops/Barrel/Red/Barrel_Red.png" id="1_6nhee"]
-[ext_resource type="Script" path="res://Characters/Goblin/barrel.gd" id="1_7ooou"]
+[ext_resource type="Script" uid="uid://brb4ry5dj4nba" path="res://Characters/Goblin/barrel.gd" id="1_7ooou"]
 [ext_resource type="Texture2D" uid="uid://dgk633v0v2hiv" path="res://Assets/Effects/Explosion/Explosions.png" id="2_w7tfw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgep3"]
@@ -226,13 +226,12 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ds6qv"]
 _data = {
-"Explosion": SubResource("Animation_g7pv5"),
-"RESET": SubResource("Animation_lna8u")
+&"Explosion": SubResource("Animation_g7pv5"),
+&"RESET": SubResource("Animation_lna8u")
 }
 
 [node name="Barrel" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node") groups=["Enemy"]]
 texture_filter = 1
-scale = Vector2(1.3, 1.3)
 script = ExtResource("1_7ooou")
 Health = 150
 Attack = 50
@@ -244,12 +243,14 @@ Animated_node = NodePath("AnimatedSprite2D")
 HurtBox_node = NodePath("Hurtbox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_o6frg")
 animation = &"Idle"
 autoplay = "Run"
 flip_h = true
 
 [node name="Hitbox" type="Area2D" parent="."]
+scale = Vector2(1.3, 1.3)
 collision_layer = 2
 collision_mask = 4
 
@@ -258,6 +259,7 @@ position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_lpl6x")
 
 [node name="Hurtbox" type="Area2D" parent="."]
+scale = Vector2(1.3, 1.3)
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
@@ -266,10 +268,11 @@ shape = SubResource("CircleShape2D_4eaa4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("2_w7tfw")
 hframes = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ds6qv")
+&"": SubResource("AnimationLibrary_ds6qv")
 }

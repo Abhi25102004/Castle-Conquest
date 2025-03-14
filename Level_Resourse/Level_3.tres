@@ -1,13 +1,35 @@
-[gd_resource type="Resource" script_class="Level_Information" load_steps=2 format=3 uid="uid://cfbdo4iu53vgd"]
+[gd_resource type="Resource" script_class="Level_Information" load_steps=6 format=3 uid="uid://cfbdo4iu53vgd"]
 
-[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="1_c4ms1"]
+[ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Level_Resourse/level.gd" id="1_c4ms1"]
+[ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Level_Resourse/wave.gd" id="1_pej4v"]
+
+[sub_resource type="Resource" id="Resource_jn84o"]
+script = ExtResource("1_pej4v")
+Number_of_torch = 6
+Number_of_tnt = 1
+Number_of_barrel = 0
+Wave_delay = 7
+
+[sub_resource type="Resource" id="Resource_7tyb8"]
+script = ExtResource("1_pej4v")
+Number_of_torch = 6
+Number_of_tnt = 2
+Number_of_barrel = 0
+Wave_delay = 5
+
+[sub_resource type="Resource" id="Resource_mlhkg"]
+script = ExtResource("1_pej4v")
+Number_of_torch = 0
+Number_of_tnt = 3
+Number_of_barrel = 0
+Wave_delay = 6
 
 [resource]
 script = ExtResource("1_c4ms1")
 Level_number = 3
 Level_Name = "Level 3 : Explosive Trouble"
-Money_Required = 200
-Torch_Amount = 12
-TNT_Amount = 4
-Barrel_Amount = 0
+Money_Required = 300
+Wave1 = SubResource("Resource_jn84o")
+Wave2 = SubResource("Resource_7tyb8")
+Wave3 = SubResource("Resource_mlhkg")
 Reward = "Tower"

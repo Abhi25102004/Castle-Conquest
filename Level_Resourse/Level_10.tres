@@ -1,13 +1,35 @@
-[gd_resource type="Resource" script_class="Level_Information" load_steps=2 format=3 uid="uid://btnmtu7io6mgj"]
+[gd_resource type="Resource" script_class="Level_Information" load_steps=6 format=3 uid="uid://btnmtu7io6mgj"]
 
-[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="1_o7qn4"]
+[ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Level_Resourse/wave.gd" id="1_fetlg"]
+[ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Level_Resourse/level.gd" id="1_o7qn4"]
+
+[sub_resource type="Resource" id="Resource_a7tnq"]
+script = ExtResource("1_fetlg")
+Number_of_torch = 20
+Number_of_tnt = 5
+Number_of_barrel = 0
+Wave_delay = 2
+
+[sub_resource type="Resource" id="Resource_emysr"]
+script = ExtResource("1_fetlg")
+Number_of_torch = 10
+Number_of_tnt = 3
+Number_of_barrel = 4
+Wave_delay = 2
+
+[sub_resource type="Resource" id="Resource_66mcs"]
+script = ExtResource("1_fetlg")
+Number_of_torch = 10
+Number_of_tnt = 2
+Number_of_barrel = 6
+Wave_delay = 1
 
 [resource]
 script = ExtResource("1_o7qn4")
 Level_number = 10
 Level_Name = "Level 10 : The Final Stand"
-Money_Required = 350
-Torch_Amount = 40
-TNT_Amount = 15
-Barrel_Amount = 10
+Money_Required = 450
+Wave1 = SubResource("Resource_a7tnq")
+Wave2 = SubResource("Resource_emysr")
+Wave3 = SubResource("Resource_66mcs")
 Reward = ""

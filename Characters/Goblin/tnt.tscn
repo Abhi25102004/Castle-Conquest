@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://d15snjy675c0u"]
 
 [ext_resource type="Texture2D" uid="uid://bxr05ksimpx1p" path="res://Assets/Factions/Goblins/Troops/TNT/Red/TNT_Red.png" id="1_ogcf0"]
-[ext_resource type="Script" path="res://Characters/Goblin/tnt.gd" id="1_tvshf"]
+[ext_resource type="Script" uid="uid://8y58sahy3ywg" path="res://Characters/Goblin/tnt.gd" id="1_tvshf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_devgo"]
 atlas = ExtResource("1_ogcf0")
@@ -158,14 +158,14 @@ animations = [{
 radius = 17.0
 height = 52.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h4ryt"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3nqqr"]
+height = 296.0
 
 [node name="TNT" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node") groups=["Enemy"]]
 texture_filter = 1
-scale = Vector2(1.3, 1.3)
 script = ExtResource("1_tvshf")
 Health = 100
-Attack = 30
+Attack = 25
 Attack_Speed = 0.6
 Speed = 80
 CharacterName = "tnt"
@@ -174,11 +174,13 @@ Animated_node = NodePath("AnimatedSprite2D")
 HurtBox_node = NodePath("HurtBox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_lbdnb")
 animation = &"Idle"
 flip_h = true
 
 [node name="HitBox" type="Area2D" parent="."]
+scale = Vector2(1.3, 1.3)
 collision_layer = 2
 collision_mask = 4
 
@@ -187,19 +189,14 @@ position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_cbot5")
 
 [node name="HurtBox" type="Area2D" parent="."]
+scale = Vector2(1.3, 1.3)
 collision_layer = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(-187, 0)
-shape = SubResource("CircleShape2D_h4ryt")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(-374, 0)
-shape = SubResource("CircleShape2D_h4ryt")
-
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(-65.3846, 0)
-shape = SubResource("CircleShape2D_h4ryt")
+position = Vector2(-190.769, 0.76923)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3nqqr")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-36.9231, 9.53674e-07)
+scale = Vector2(1.3, 1.3)

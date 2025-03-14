@@ -6,16 +6,18 @@ signal GoblinDied
 
 enum States { Idle, Run, Attack }
 
-@export var Health : int
-@export var Attack : int
+@export var Health : float
+@export var Attack : float
 @export var Attack_Speed : float
-@export var Speed : int
+@export var Speed : float
 @export var CharacterName : String
 @export var Cost : int
+@export var Direction : int = -1
 
 var Goblin : States = States.Run
 var Game_State : bool = true
 var canAttack : bool = false
+var Knight_Array : Array[Node2D] = []
 
 @export var Animated_node : AnimatedSprite2D
 @export var HurtBox_node : Area2D
@@ -32,16 +34,18 @@ func HurtBox_Exited(_area: Area2D) -> void:
 func OnAttack() -> void:
 	pass
 
-func Take_Damage_from_knight(Power : int) -> void:
+func Take_Damage_from_knight(Power : float) -> void:
 	Health -= Power
 	if Health <= 0:
-		GoblinDied.emit(Cost)
 		Character_Death()
 
 func Character_Death() -> void:
-	queue_free()
+	GoblinDied.emit()
+	Global.emit_signal("Add_Money",Cost)
+	call_deferred("queue_free")
 
 func Game_Loop(delta: float) -> void:
+	canAttack = true if !Knight_Array.is_empty() else false
 	match Goblin:
 		States.Idle:
 			Goblin = States.Attack if canAttack else States.Run
@@ -49,7 +53,7 @@ func Game_Loop(delta: float) -> void:
 		States.Run:
 			Goblin = States.Idle if canAttack else Goblin
 			Animations.play("Run")
-			position.x -= Speed * delta
+			position.x += Speed * delta * Direction
 		States.Attack:
 			Goblin = States.Idle
 			await get_tree().create_timer(Attack_Speed).timeout
@@ -59,6 +63,8 @@ func Game_Loop(delta: float) -> void:
 	Game_State = true
 
 func _ready() -> void:
+	Health *= Global.Difficulty
+	Attack *= Global.Difficulty
 	HurtBox.area_entered.connect(HurtBox_Entered)
 	HurtBox.area_exited.connect(HurtBox_Exited)
 

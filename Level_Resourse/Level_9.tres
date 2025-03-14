@@ -1,13 +1,35 @@
-[gd_resource type="Resource" script_class="Level_Information" load_steps=2 format=3 uid="uid://cwl0hdsvjbhpf"]
+[gd_resource type="Resource" script_class="Level_Information" load_steps=6 format=3 uid="uid://cwl0hdsvjbhpf"]
 
-[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="1_cbwpt"]
+[ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Level_Resourse/level.gd" id="1_cbwpt"]
+[ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Level_Resourse/wave.gd" id="1_fmf32"]
+
+[sub_resource type="Resource" id="Resource_2kjee"]
+script = ExtResource("1_fmf32")
+Number_of_torch = 15
+Number_of_tnt = 6
+Number_of_barrel = 0
+Wave_delay = 3
+
+[sub_resource type="Resource" id="Resource_5tn71"]
+script = ExtResource("1_fmf32")
+Number_of_torch = 10
+Number_of_tnt = 4
+Number_of_barrel = 4
+Wave_delay = 2
+
+[sub_resource type="Resource" id="Resource_7xjt8"]
+script = ExtResource("1_fmf32")
+Number_of_torch = 5
+Number_of_tnt = 2
+Number_of_barrel = 4
+Wave_delay = 2
 
 [resource]
 script = ExtResource("1_cbwpt")
 Level_number = 9
 Level_Name = "Level 9 : Siege of the Goblins"
-Money_Required = 300
-Torch_Amount = 30
-TNT_Amount = 12
-Barrel_Amount = 8
+Money_Required = 400
+Wave1 = SubResource("Resource_2kjee")
+Wave2 = SubResource("Resource_5tn71")
+Wave3 = SubResource("Resource_7xjt8")
 Reward = ""

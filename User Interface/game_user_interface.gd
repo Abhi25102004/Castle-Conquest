@@ -3,11 +3,14 @@ extends CanvasLayer
 @onready var Placement_Buttons: GridContainer = $Middle/GridContainer
 @onready var Character_Buttons: HBoxContainer = $Bottom/HBoxContainer
 @onready var Money_Counter: Label = $Header/Label
-@onready var progress_bar: ProgressBar = $"Header/Progress Level/HBoxContainer2/ProgressBar"
+@onready var Wave_label: Label = $Header/Label2
+@onready var quite_button: Button = %"Quite Button"
+@onready var settings_button: Button = %"Settings Button"
 
 var cost : int = 0
 var Character_Scene : PackedScene = null
 var Money : int = Global.level_type.Money_Required
+var canRemove : bool = false
 
 func Placement_Button_Pressed(child : Button) -> void:
 	if !child.placed and Money >= cost:
@@ -18,27 +21,14 @@ func Placement_Button_Pressed(child : Button) -> void:
 			Money = (Money - cost) if (Money - cost) >= 0 else 0
 			Money_Counter.text = "Money : " + str(Money) 
 			Character_Scene = null
+			cost = 0
 	else:
 		child.placed = false
-		cost = child.Remove_Scene()
-		Money = (Money + cost) if (Money + cost) >= 0 else 0
-		Money_Counter.text = "Money : " + str(Money) 
-	cost = 0
+		child.Remove_Scene()
 
 func Add_Character(child : Button) -> void:
 	Character_Scene = child.Scene
 	cost = child.value
-
-func Increase_Money() -> void:
-	Money += randi_range(50,100)
-	Money_Counter.text = "Money : " + str(Money) 
-
-func Progress_Bar_Setter(number: int) -> void:
-	progress_bar.min_value = 0
-	progress_bar.max_value = number
-
-func Progress_Bar_Update(number: int) -> void:
-	progress_bar.value = number
 
 func _ready() -> void:
 	Money_Counter.text = "Money : " + str(Money) 
@@ -50,6 +40,13 @@ func _ready() -> void:
 	for child in Character_Buttons.get_children():
 		if child is Button and child.name in Global.Buttons:
 			child.visible = true
-		child.pressed.connect(Add_Character.bind(child))
+			child.pressed.connect(Add_Character.bind(child))
 	
-	%"Quite Button".pressed.connect(func(): get_tree().change_scene_to_file("res://User Interface/level_interface.tscn"))
+	Global.connect("Add_Money",func(extra : int):
+		Money += extra
+		Money_Counter.text = "Money : " + str(Money) 
+		)
+	
+	Global.connect("Update_Wave",func(text : String):
+		Wave_label.text = "Wave : " + text
+		)

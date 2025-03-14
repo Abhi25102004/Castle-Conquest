@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bw57kit6ars5y"]
 
 [ext_resource type="Texture2D" uid="uid://b16k7o0lk4hat" path="res://Assets/Resources/Trees/Tree.png" id="1_2ak02"]
-[ext_resource type="Script" path="res://Characters/Extras/tree.gd" id="1_d02y0"]
+[ext_resource type="Script" uid="uid://ougkqklqmynr" path="res://Characters/Extras/tree.gd" id="1_d02y0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mx6jm"]
 atlas = ExtResource("1_2ak02")
@@ -71,10 +71,12 @@ Cost = 60
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -48)
+scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_pc1vq")
 animation = &"Idle"
 
 [node name="HitBox" type="Area2D" parent="."]
+scale = Vector2(1.3, 1.3)
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]

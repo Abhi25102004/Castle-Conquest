@@ -1,24 +1,23 @@
 extends CanvasLayer
 
-@onready var Level_Grid: GridContainer = $PanelContainer/MarginContainer/VBoxContainer/GridContainer
-
-@export var Level_Value : Dictionary
-
-func On_Button_Pressed(number: int) -> void:
-	Global.level_type = Level_Value[number]
-	get_tree().change_scene_to_file("res://Test Scenes/test_world.tscn")
+@onready var Level_Grid: GridContainer = %"Levels Container"
+@onready var Animations: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	var Level_Completed : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
 	Global.Buttons = Level_Completed.Available_Buttons
-	for iter in range(1,11):
-		var levelButton : Button = preload("res://User Interface/Level_Button.tscn").instantiate()
-		if iter == 1 or iter-1 in Level_Completed.level_Played:
-			levelButton.text = Level_Value[iter].Level_Name
-			levelButton.pressed.connect(On_Button_Pressed.bind(iter))
+	for button in %"Levels Container".get_children():
+		if button.Level_number == 1 or button.Level_number - 1 in Level_Completed.level_Played:
+			button.pressed.connect(func():
+				Global.level_type = button.get("Level_data")
+				Animations.play("Switch_Animation")
+				await Animations.animation_finished
+				get_tree().change_scene_to_file("res://Test Scenes/test_world.tscn")
+				)
 		else:
-			levelButton.icon = preload("res://Assets/UI/Icons/Regular_10.png")
-		Level_Grid.add_child(levelButton)
+			button.icon = preload("res://Assets/UI/Icons/Regular_10.png")
 
 func Quit_Button() -> void:
+	Animations.play("Switch_Animation")
+	await Animations.animation_finished
 	get_tree().change_scene_to_file("res://Main Logic/start_scene.tscn")

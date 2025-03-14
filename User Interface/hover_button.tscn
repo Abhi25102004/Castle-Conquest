@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b5fdmhnpga6lt"]
 
 [ext_resource type="Texture2D" uid="uid://blar01e1veev0" path="res://Assets/UI/Pointers/02.png" id="1_7bpjg"]
-[ext_resource type="Script" path="res://User Interface/hover_button.gd" id="2_m7eh2"]
+[ext_resource type="Script" uid="uid://dwvs56kifkan1" path="res://User Interface/hover_button.gd" id="2_m7eh2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hh3bq"]
 

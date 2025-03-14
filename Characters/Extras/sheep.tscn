@@ -1,0 +1,143 @@
+[gd_scene load_steps=20 format=3 uid="uid://csqsfa62p8rw3"]
+
+[ext_resource type="Script" uid="uid://bd6e2opivnvy6" path="res://Characters/Extras/sheep.gd" id="1_4mfi6"]
+[ext_resource type="Texture2D" uid="uid://diuu4a0odfsus" path="res://Assets/Resources/Sheep/HappySheep_Bouncing.png" id="1_5ipoj"]
+[ext_resource type="Texture2D" uid="uid://bx67xwhwwlmvh" path="res://Assets/Resources/Sheep/HappySheep_Idle.png" id="2_fv3i4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7uw3"]
+atlas = ExtResource("1_5ipoj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhc74"]
+atlas = ExtResource("1_5ipoj")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hpe4"]
+atlas = ExtResource("1_5ipoj")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv0ku"]
+atlas = ExtResource("1_5ipoj")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_must2"]
+atlas = ExtResource("1_5ipoj")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm4ej"]
+atlas = ExtResource("1_5ipoj")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry1oe"]
+atlas = ExtResource("2_fv3i4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7am4"]
+atlas = ExtResource("2_fv3i4")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmkna"]
+atlas = ExtResource("2_fv3i4")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gobr5"]
+atlas = ExtResource("2_fv3i4")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkhtf"]
+atlas = ExtResource("2_fv3i4")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp0od"]
+atlas = ExtResource("2_fv3i4")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du5ld"]
+atlas = ExtResource("2_fv3i4")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilnb0"]
+atlas = ExtResource("2_fv3i4")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c45jk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7uw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhc74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hpe4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv0ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_must2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm4ej")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry1oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7am4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmkna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gobr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkhtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gp0od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du5ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilnb0")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtf5o"]
+radius = 14.999
+height = 39.9974
+
+[node name="Sheep" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_4mfi6")
+CharacterName = "sheep"
+Health = 80
+Cost = 40
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_c45jk")
+animation = &"Attack"
+
+[node name="HitBox" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+rotation = 1.55936
+shape = SubResource("CapsuleShape2D_wtf5o")
+
+[connection signal="area_entered" from="HitBox" to="." method="Enemy_Entered"]
+[connection signal="area_exited" from="HitBox" to="." method="Enemy_Exited"]

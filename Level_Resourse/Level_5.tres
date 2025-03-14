@@ -1,13 +1,35 @@
-[gd_resource type="Resource" script_class="Level_Information" load_steps=2 format=3 uid="uid://bstcapxlulbt4"]
+[gd_resource type="Resource" script_class="Level_Information" load_steps=6 format=3 uid="uid://bstcapxlulbt4"]
 
-[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="1_yfdrh"]
+[ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Level_Resourse/wave.gd" id="1_12dpc"]
+[ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Level_Resourse/level.gd" id="1_yfdrh"]
+
+[sub_resource type="Resource" id="Resource_d2wbt"]
+script = ExtResource("1_12dpc")
+Number_of_torch = 6
+Number_of_tnt = 2
+Number_of_barrel = 0
+Wave_delay = 6
+
+[sub_resource type="Resource" id="Resource_8j7fi"]
+script = ExtResource("1_12dpc")
+Number_of_torch = 4
+Number_of_tnt = 2
+Number_of_barrel = 0
+Wave_delay = 5
+
+[sub_resource type="Resource" id="Resource_wae3m"]
+script = ExtResource("1_12dpc")
+Number_of_torch = 4
+Number_of_tnt = 0
+Number_of_barrel = 2
+Wave_delay = 6
 
 [resource]
 script = ExtResource("1_yfdrh")
 Level_number = 5
 Level_Name = " Level 5 : Barrels of Chaos"
-Money_Required = 200
-Torch_Amount = 10
-TNT_Amount = 4
-Barrel_Amount = 2
+Money_Required = 300
+Wave1 = SubResource("Resource_d2wbt")
+Wave2 = SubResource("Resource_8j7fi")
+Wave3 = SubResource("Resource_wae3m")
 Reward = "Gold Mine"

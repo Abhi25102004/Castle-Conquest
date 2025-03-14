@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	rotation += Rotation_speed * delta
 	wait_time -= delta
 	if wait_time <= 0:
-		queue_free()
+		call_deferred("queue_free")
 
 func Remove_Arrow(area: Area2D) -> void:
 	if area.get_parent().has_method("Take_Damage_from_Goblin"):
@@ -21,4 +21,4 @@ func Remove_Arrow(area: Area2D) -> void:
 		area.get_parent().Take_Damage_from_Goblin(Attack)
 		Animations.play("Blast")
 		await Animations.animation_finished
-		queue_free()
+		call_deferred("queue_free")

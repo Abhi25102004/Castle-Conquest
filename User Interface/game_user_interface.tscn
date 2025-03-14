@@ -1,6 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://dj4natrlfejt7"]
+[gd_scene load_steps=33 format=3 uid="uid://dj4natrlfejt7"]
 
-[ext_resource type="Script" path="res://User Interface/game_user_interface.gd" id="1_h2gpb"]
+[ext_resource type="Script" uid="uid://buofsbrclxxfx" path="res://User Interface/game_user_interface.gd" id="1_h2gpb"]
 [ext_resource type="PackedScene" uid="uid://bchfui5nqukg" path="res://User Interface/custum_button.tscn" id="2_a7d2l"]
 [ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="2_beoc8"]
 [ext_resource type="Texture2D" uid="uid://bj8y5ygowc4pg" path="res://Assets/UI/Ribbons/Ribbon_Yellow_3Slides.png" id="2_ieb5n"]
@@ -19,44 +19,40 @@
 [ext_resource type="PackedScene" uid="uid://dyboryr0fcfy4" path="res://Characters/Knight/archer.tscn" id="10_nk7vq"]
 [ext_resource type="PackedScene" uid="uid://bw57kit6ars5y" path="res://Characters/Extras/tree.tscn" id="15_3xul8"]
 [ext_resource type="Texture2D" uid="uid://57hs0w3t5uq2" path="res://Assets/Resources/Trees/Tree_icon.png" id="15_wf20l"]
+[ext_resource type="PackedScene" uid="uid://cyn8c76kpfirk" path="res://Characters/Extras/tower.tscn" id="19_gkd4u"]
+[ext_resource type="PackedScene" uid="uid://csqsfa62p8rw3" path="res://Characters/Extras/sheep.tscn" id="19_hw3dj"]
+[ext_resource type="Texture2D" uid="uid://bskgyjt670uef" path="res://Assets/Resources/Sheep/Sheep_icon.png" id="20_iincq"]
+[ext_resource type="Texture2D" uid="uid://c5w4yr5s6d661" path="res://Assets/Resources/Gold Mine/GoldMine_Active.png" id="20_ljjiq"]
+[ext_resource type="Texture2D" uid="uid://b12vluoahns3l" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="21_3olcv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sn6tn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xijl"]
 texture = ExtResource("2_ieb5n")
-texture_margin_left = 70.0
-texture_margin_top = 20.0
-texture_margin_right = 70.0
-texture_margin_bottom = 40.0
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6h4ae"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bbhgb"]
 texture = ExtResource("3_2ja6n")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 25.0
+texture_margin_left = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uahuk"]
 texture = ExtResource("3_3uw0e")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 25.0
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 8.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wkcck"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6j1o"]
 texture = ExtResource("9_bwa5f")
-texture_margin_left = 70.0
-texture_margin_top = 20.0
-texture_margin_right = 70.0
-texture_margin_bottom = 30.0
-expand_margin_left = 10.0
-expand_margin_right = 30.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5n0sc"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5206"]
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hww5i"]
 
@@ -75,11 +71,13 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_sn6tn")
 [node name="Label" type="Label" parent="Header"]
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_beoc8")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 67
 theme_override_styles/normal = SubResource("StyleBoxTexture_3xijl")
 text = "Money : 0"
+horizontal_alignment = 3
+vertical_alignment = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Header"]
 layout_mode = 2
@@ -88,7 +86,7 @@ size_flags_vertical = 0
 
 [node name="Sound Button" type="Button" parent="Header/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(110, 110)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_bbhgb")
@@ -99,6 +97,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="TextureRect" type="TextureRect" parent="Header/HBoxContainer/Sound Button"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -109,7 +108,7 @@ texture = ExtResource("6_a4dss")
 
 [node name="Settings Button" type="Button" parent="Header/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(110, 110)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_bbhgb")
@@ -118,6 +117,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
 
 [node name="TextureRect" type="TextureRect" parent="Header/HBoxContainer/Settings Button"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -128,7 +128,7 @@ texture = ExtResource("7_o12hk")
 
 [node name="Quite Button" type="Button" parent="Header/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(110, 110)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_bbhgb")
@@ -137,6 +137,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
 
 [node name="TextureRect" type="TextureRect" parent="Header/HBoxContainer/Quite Button"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,36 +146,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_jacqb")
 
-[node name="Progress Level" type="PanelContainer" parent="Header"]
+[node name="Label2" type="Label" parent="Header"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_wkcck")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Header/Progress Level"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_constants/separation = 30
-
-[node name="Label" type="Label" parent="Header/Progress Level/HBoxContainer2"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 0
+size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_beoc8")
-theme_override_font_sizes/font_size = 50
-text = "Level Progress   "
-
-[node name="ProgressBar" type="ProgressBar" parent="Header/Progress Level/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_beoc8")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/background = SubResource("StyleBoxEmpty_5n0sc")
-theme_override_styles/fill = SubResource("StyleBoxEmpty_n5206")
-step = 1.0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_r6j1o")
+text = "Wave 1"
+horizontal_alignment = 3
+vertical_alignment = 3
 
 [node name="Middle" type="PanelContainer" parent="."]
 offset_left = 125.0
@@ -300,37 +282,32 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Bottom" type="PanelContainer" parent="."]
-offset_left = 654.0
-offset_top = 882.0
-offset_right = 1466.0
-offset_bottom = 1082.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.5
+offset_top = -175.0
+offset_right = 87.5
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 4
-size_flags_vertical = 8
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_cxqsq")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Bottom"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 4
 
 [node name="Pawn" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_beoc8")
 image = ExtResource("7_norpy")
 value = 50
 Scene = ExtResource("8_4jkkd")
-
-[node name="Tree" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
-visible = false
-layout_mode = 2
-image = ExtResource("15_wf20l")
-value = 60
-Scene = ExtResource("15_3xul8")
-
-[node name="Hut" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
-visible = false
-layout_mode = 2
-value = 125
 
 [node name="Archer" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
 visible = false
@@ -351,4 +328,36 @@ Scene = ExtResource("6_nsg1e")
 [node name="Tower" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
 visible = false
 layout_mode = 2
+icon = ExtResource("21_3olcv")
+icon_alignment = 1
+expand_icon = true
 value = 150
+Scene = ExtResource("19_gkd4u")
+
+[node name="Gold Mine" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_beoc8")
+icon = ExtResource("20_ljjiq")
+icon_alignment = 1
+expand_icon = true
+value = 75
+
+[node name="Sheep" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_beoc8")
+icon_alignment = 1
+expand_icon = true
+image = ExtResource("20_iincq")
+value = 40
+Scene = ExtResource("19_hw3dj")
+
+[node name="Tree" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+visible = false
+layout_mode = 2
+icon = ExtResource("15_wf20l")
+icon_alignment = 1
+expand_icon = true
+value = 60
+Scene = ExtResource("15_3xul8")

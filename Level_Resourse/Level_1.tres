@@ -1,13 +1,35 @@
-[gd_resource type="Resource" script_class="Level_Information" load_steps=2 format=3 uid="uid://bqcjuwar5w4u3"]
+[gd_resource type="Resource" script_class="Level_Information" load_steps=6 format=3 uid="uid://bqcjuwar5w4u3"]
 
-[ext_resource type="Script" path="res://Level_Resourse/level.gd" id="1_1h48h"]
+[ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Level_Resourse/level.gd" id="1_1h48h"]
+[ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Level_Resourse/wave.gd" id="1_178d8"]
+
+[sub_resource type="Resource" id="Resource_r1c1a"]
+script = ExtResource("1_178d8")
+Number_of_torch = 4
+Number_of_tnt = 0
+Number_of_barrel = 0
+Wave_delay = 10
+
+[sub_resource type="Resource" id="Resource_johuw"]
+script = ExtResource("1_178d8")
+Number_of_torch = 4
+Number_of_tnt = 0
+Number_of_barrel = 0
+Wave_delay = 7
+
+[sub_resource type="Resource" id="Resource_kjjtv"]
+script = ExtResource("1_178d8")
+Number_of_torch = 2
+Number_of_tnt = 0
+Number_of_barrel = 0
+Wave_delay = 5
 
 [resource]
 script = ExtResource("1_1h48h")
 Level_number = 1
 Level_Name = "Level 1 : The First Siege"
-Money_Required = 100
-Torch_Amount = 8
-TNT_Amount = 0
-Barrel_Amount = 0
+Money_Required = 200
+Wave1 = SubResource("Resource_r1c1a")
+Wave2 = SubResource("Resource_johuw")
+Wave3 = SubResource("Resource_kjjtv")
 Reward = "Archer"

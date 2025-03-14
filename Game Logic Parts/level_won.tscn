@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c2m87h560tipw"]
 
 [ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="1_646qr"]
-[ext_resource type="Script" path="res://Game Logic Parts/level_won.gd" id="1_o2a4b"]
+[ext_resource type="Script" uid="uid://dx0kt2733lmog" path="res://Game Logic Parts/level_won.gd" id="1_o2a4b"]
 [ext_resource type="Texture2D" uid="uid://1fex2qkbhxx8" path="res://Assets/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="2_qdued"]
 [ext_resource type="Texture2D" uid="uid://cjbvmdlb3gejl" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="3_jov4w"]
 [ext_resource type="Texture2D" uid="uid://dhs7u2icykmf8" path="res://Assets/Factions/Knights/Troops/Dead/Dead.png" id="4_jvrrt"]
@@ -333,8 +333,8 @@ tracks/13/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qudeo"]
 _data = {
-"RESET": SubResource("Animation_ngbbc"),
-"ready": SubResource("Animation_jngpb")
+&"RESET": SubResource("Animation_ngbbc"),
+&"ready": SubResource("Animation_jngpb")
 }
 
 [node name="Level Won" type="CanvasLayer"]
