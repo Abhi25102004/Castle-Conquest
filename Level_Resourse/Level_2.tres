@@ -33,3 +33,4 @@ Wave1 = SubResource("Resource_ueuvx")
 Wave2 = SubResource("Resource_gtttd")
 Wave3 = SubResource("Resource_xd5ui")
 Reward = "Tree"
+Game_Total_Enemies = 14

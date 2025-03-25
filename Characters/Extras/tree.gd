@@ -7,18 +7,18 @@ enum States { Idle, Attack }
 
 # variables
 var Knight : States = States.Idle
-var getingAttacked : bool = false
+var gettingAttacked : bool = false
 var Game_State : bool = true
 
 @export var CharacterName : String
-@export var Health : int
-@export var Cost : int
+@export var Health : float
+@export var Cost : float
 
 @onready var Animations: AnimatedSprite2D = $AnimatedSprite2D
 
 func Take_Damage_from_Goblin(Power : int) -> void:
 	Health -= Power
-	getingAttacked = true
+	gettingAttacked = true
 	if Health <= 0:
 		Character_Death()
 
@@ -29,13 +29,13 @@ func Character_Death() -> void:
 func Game_Loop() -> void :
 	match Knight:
 		States.Idle:
-			Knight = States.Attack if getingAttacked else Knight
+			Knight = States.Attack if gettingAttacked else Knight
 			Animations.play("Idle")
 		States.Attack:
 			Knight = States.Idle
 			Animations.play("Attack")
 			await Animations.animation_finished
-			getingAttacked = false
+			gettingAttacked = false
 	Game_State = true
 
 func _process(_delta: float) -> void:

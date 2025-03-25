@@ -58,16 +58,15 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xebhw"]
-radius = 63.0
-height = 150.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npe51"]
+size = Vector2(113.077, 60.7692)
 
 [node name="Tree" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_d02y0")
 CharacterName = "tree"
-Health = 300
-Cost = 60
+Health = 300.0
+Cost = 60.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -48)
@@ -80,5 +79,5 @@ scale = Vector2(1.3, 1.3)
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -48)
-shape = SubResource("CapsuleShape2D_xebhw")
+position = Vector2(1.15385, -3.46154)
+shape = SubResource("RectangleShape2D_npe51")

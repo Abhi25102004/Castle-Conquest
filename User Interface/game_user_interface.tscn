@@ -1,11 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://dj4natrlfejt7"]
+[gd_scene load_steps=43 format=3 uid="uid://dj4natrlfejt7"]
 
 [ext_resource type="Script" uid="uid://buofsbrclxxfx" path="res://User Interface/game_user_interface.gd" id="1_h2gpb"]
 [ext_resource type="PackedScene" uid="uid://bchfui5nqukg" path="res://User Interface/custum_button.tscn" id="2_a7d2l"]
 [ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="2_beoc8"]
-[ext_resource type="Texture2D" uid="uid://bj8y5ygowc4pg" path="res://Assets/UI/Ribbons/Ribbon_Yellow_3Slides.png" id="2_ieb5n"]
 [ext_resource type="Texture2D" uid="uid://cvuoaqvekvhyg" path="res://Assets/UI/Buttons/Button_Red.png" id="3_2ja6n"]
 [ext_resource type="Texture2D" uid="uid://drgcesc7p4043" path="res://Assets/UI/Buttons/Button_Red_Pressed.png" id="3_3uw0e"]
+[ext_resource type="Texture2D" uid="uid://cqv08os8pgxxy" path="res://Assets/UI/Ribbons/Ribbon_Blue_3Slides.png" id="3_56cii"]
+[ext_resource type="Texture2D" uid="uid://bqfpfffsw3ev7" path="res://Assets/Resources/Resources/G_Spawn.png" id="4_56cii"]
 [ext_resource type="Texture2D" uid="uid://cn1tffbh3q3ue" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/warrior_icon.png" id="5_4pvt4"]
 [ext_resource type="PackedScene" uid="uid://b5fdmhnpga6lt" path="res://User Interface/hover_button.tscn" id="5_fnbrd"]
 [ext_resource type="Texture2D" uid="uid://curimxwxr3tsd" path="res://Assets/UI/Icons/Regular_03.png" id="6_a4dss"]
@@ -14,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://c2sj7c687d2s3" path="res://Assets/UI/Icons/Regular_02.png" id="7_o12hk"]
 [ext_resource type="PackedScene" uid="uid://ceby6oqyqicd4" path="res://Characters/Knight/pawn.tscn" id="8_4jkkd"]
 [ext_resource type="Texture2D" uid="uid://dypndckq0k1en" path="res://Assets/UI/Icons/Regular_01.png" id="8_jacqb"]
-[ext_resource type="Texture2D" uid="uid://b821201aprn50" path="res://Assets/UI/Ribbons/Ribbon_Red_3Slides.png" id="9_bwa5f"]
 [ext_resource type="Texture2D" uid="uid://c2yo6sqssrx6q" path="res://Assets/Factions/Knights/Troops/Archer/Blue/Archer_icon.png" id="9_vn6de"]
 [ext_resource type="PackedScene" uid="uid://dyboryr0fcfy4" path="res://Characters/Knight/archer.tscn" id="10_nk7vq"]
 [ext_resource type="PackedScene" uid="uid://bw57kit6ars5y" path="res://Characters/Extras/tree.tscn" id="15_3xul8"]
@@ -27,11 +27,78 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sn6tn"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xijl"]
-texture = ExtResource("2_ieb5n")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5sup3"]
+texture = ExtResource("3_56cii")
+texture_margin_left = 65.0
+texture_margin_right = 65.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sup3"]
+atlas = ExtResource("4_56cii")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rev3i"]
+atlas = ExtResource("4_56cii")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4a3p"]
+atlas = ExtResource("4_56cii")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vgaw"]
+atlas = ExtResource("4_56cii")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbm3p"]
+atlas = ExtResource("4_56cii")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7emdd"]
+atlas = ExtResource("4_56cii")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns55m"]
+atlas = ExtResource("4_56cii")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fnphr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sup3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rev3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4a3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vgaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbm3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7emdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns55m")
+}],
+"loop": false,
+"name": &"Coin Added",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4a3p"]
+texture = ExtResource("3_56cii")
 texture_margin_left = 64.0
 texture_margin_right = 64.0
 texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ljjiq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56cii"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6h4ae"]
 
@@ -48,12 +115,6 @@ texture_margin_top = 4.0
 texture_margin_right = 5.0
 texture_margin_bottom = 8.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6j1o"]
-texture = ExtResource("9_bwa5f")
-texture_margin_left = 64.0
-texture_margin_right = 64.0
-texture_margin_bottom = 4.0
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hww5i"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxqsq"]
@@ -61,26 +122,91 @@ texture_margin_bottom = 4.0
 [node name="Game Logic" type="CanvasLayer"]
 script = ExtResource("1_h2gpb")
 
-[node name="Header" type="PanelContainer" parent="."]
+[node name="Header" type="Panel" parent="."]
+texture_filter = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 125.0
+offset_bottom = 135.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_sn6tn")
 
 [node name="Label" type="Label" parent="Header"]
+texture_filter = 1
+custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
+offset_right = 360.0
+offset_bottom = 135.0
 size_flags_horizontal = 0
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_beoc8")
-theme_override_font_sizes/font_size = 67
-theme_override_styles/normal = SubResource("StyleBoxTexture_3xijl")
-text = "Money : 0"
-horizontal_alignment = 3
-vertical_alignment = 3
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_5sup3")
+text = "1000"
+horizontal_alignment = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Header/Label"]
+texture_filter = 1
+position = Vector2(97, 32)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_fnphr")
+animation = &"Coin Added"
+frame = 6
+frame_progress = 1.0
+
+[node name="Panel" type="Panel" parent="Header"]
+texture_filter = 1
+custom_minimum_size = Vector2(400, 135)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_b4a3p")
+
+[node name="Lable" type="Label" parent="Header/Panel"]
+custom_minimum_size = Vector2(360, 135)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_right = 180.0
+offset_bottom = 135.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_beoc8")
+theme_override_font_sizes/font_size = 41
+text = "Stage Progress"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Header/Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -40.0
+offset_right = 8.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_beoc8")
+theme_override_font_sizes/font_size = 62
+theme_override_styles/background = SubResource("StyleBoxEmpty_ljjiq")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_56cii")
+step = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Header"]
 layout_mode = 2
+offset_left = 1582.0
+offset_right = 1920.0
+offset_bottom = 110.0
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
@@ -146,19 +272,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_jacqb")
 
-[node name="Label2" type="Label" parent="Header"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("2_beoc8")
-theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxTexture_r6j1o")
-text = "Wave 1"
-horizontal_alignment = 3
-vertical_alignment = 3
-
 [node name="Middle" type="PanelContainer" parent="."]
+texture_filter = 1
 offset_left = 125.0
 offset_top = 130.0
 offset_right = 1795.0
@@ -282,6 +397,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Bottom" type="PanelContainer" parent="."]
+texture_filter = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

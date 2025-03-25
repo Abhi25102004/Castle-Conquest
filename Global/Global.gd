@@ -4,7 +4,11 @@ extends Node
 @warning_ignore("unused_signal")
 signal Add_Money
 @warning_ignore("unused_signal")
-signal Update_Wave
+signal Remove_Money
+@warning_ignore("unused_signal")
+signal Progress
+@warning_ignore("unused_signal")
+signal SetUp
 
 # Global variables
 var level_type : Level_Information = preload("res://Level_Resourse/Level_1.tres")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=44 format=3 uid="uid://ceby6oqyqicd4"]
+[gd_scene load_steps=59 format=3 uid="uid://ceby6oqyqicd4"]
 
 [ext_resource type="Script" uid="uid://brmqqlh4xojhh" path="res://Characters/Knight/pawn.gd" id="1_8k5qk"]
 [ext_resource type="Texture2D" uid="uid://cjbvmdlb3gejl" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="1_31t5t"]
+[ext_resource type="Texture2D" uid="uid://dhs7u2icykmf8" path="res://Assets/Factions/Knights/Troops/Dead/Dead.png" id="3_8mubi"]
 [ext_resource type="Texture2D" uid="uid://cnpm5u5eptfne" path="res://Assets/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="3_n3cg5"]
 [ext_resource type="Texture2D" uid="uid://5scku73ljnl2" path="res://Assets/Factions/Knights/Troops/Pawn/Yellow/Pawn_Yellow.png" id="4_1jw6v"]
 
@@ -52,6 +53,62 @@ region = Rect2(768, 0, 192, 192)
 [sub_resource type="AtlasTexture" id="AtlasTexture_bw400"]
 atlas = ExtResource("1_31t5t")
 region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0pdr"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2wrh"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpdbv"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eegjl"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya8gi"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20h3q"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uf2e"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40v2t"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rml58"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qv7i"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqgcr"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vfes"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs086"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ids6p"]
+atlas = ExtResource("3_8mubi")
+region = Rect2(768, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jw6v"]
 atlas = ExtResource("3_n3cg5")
@@ -199,6 +256,53 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_r0pdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2wrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpdbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eegjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya8gi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20h3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uf2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40v2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rml58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qv7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqgcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vfes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs086")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ids6p")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1jw6v")
 }, {
 "duration": 1.0,
@@ -294,23 +398,27 @@ animations = [{
 radius = 19.0
 height = 52.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_88qho"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mubi"]
+size = Vector2(106.154, 53.0769)
 
-[node name="Pawn" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node")]
+[node name="Pawn" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node", "HitBox_node")]
 texture_filter = 1
 script = ExtResource("1_8k5qk")
 CharacterName = "pawn"
 Health = 100.0
 Attack = 20.0
 Attack_Speed = 1.0
-Cost = 50
+Cost = 50.0
 Animated_node = NodePath("AnimatedSprite2D")
 HurtBox_node = NodePath("Hurtbox")
+HitBox_node = NodePath("Hitbox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_5iy7o")
-animation = &"Yellow_Idle"
+animation = &"Death"
+frame = 13
+frame_progress = 1.0
 
 [node name="Hitbox" type="Area2D" parent="."]
 scale = Vector2(1.3, 1.3)
@@ -325,8 +433,5 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(66.9231, 0)
-shape = SubResource("CircleShape2D_88qho")
-
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurt_box_area_entered"]
-[connection signal="area_exited" from="Hurtbox" to="." method="_on_hurt_box_area_exited"]
+position = Vector2(23.8462, -0.384616)
+shape = SubResource("RectangleShape2D_8mubi")

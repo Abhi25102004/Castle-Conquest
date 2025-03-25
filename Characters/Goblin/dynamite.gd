@@ -1,7 +1,7 @@
 extends Node2D
 
 var Attack : int
-var Vertical_speed : int = 500
+var Vertical_speed : int = 550
 var Rotation_speed : int = 10
 var wait_time : float = 5
 

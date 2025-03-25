@@ -110,8 +110,8 @@ animations = [{
 radius = 26.9231
 height = 53.8462
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4eaa4"]
-radius = 33.9857
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jofvd"]
+size = Vector2(61.5385, 62.3077)
 
 [sub_resource type="Animation" id="Animation_g7pv5"]
 resource_name = "Explosion"
@@ -233,12 +233,12 @@ _data = {
 [node name="Barrel" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node") groups=["Enemy"]]
 texture_filter = 1
 script = ExtResource("1_7ooou")
-Health = 150
-Attack = 50
-Attack_Speed = 0.5
-Speed = 90
 CharacterName = "barrel"
+Health = 150
+Attack = 150.0
+Attack_Speed = 0.5
 Cost = 75
+Speed = 90.0
 Animated_node = NodePath("AnimatedSprite2D")
 HurtBox_node = NodePath("Hurtbox")
 
@@ -262,9 +262,9 @@ shape = SubResource("CapsuleShape2D_lpl6x")
 scale = Vector2(1.3, 1.3)
 collision_layer = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, 1.53846)
-shape = SubResource("CircleShape2D_4eaa4")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-3.07692, 1.92308)
+shape = SubResource("RectangleShape2D_jofvd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

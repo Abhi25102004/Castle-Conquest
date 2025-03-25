@@ -33,3 +33,4 @@ Wave1 = SubResource("Resource_716tt")
 Wave2 = SubResource("Resource_ppvll")
 Wave3 = SubResource("Resource_vun7c")
 Reward = "Sheep"
+Game_Total_Enemies = 24

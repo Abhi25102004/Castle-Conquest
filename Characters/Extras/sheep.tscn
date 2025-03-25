@@ -115,9 +115,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtf5o"]
-radius = 14.999
-height = 39.9974
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7vvg"]
+size = Vector2(33.0036, 43.0258)
 
 [node name="Sheep" type="Node2D"]
 texture_filter = 1
@@ -136,8 +135,9 @@ scale = Vector2(2, 2)
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0.468585, 0.503218)
 rotation = 1.55936
-shape = SubResource("CapsuleShape2D_wtf5o")
+shape = SubResource("RectangleShape2D_w7vvg")
 
 [connection signal="area_entered" from="HitBox" to="." method="Enemy_Entered"]
 [connection signal="area_exited" from="HitBox" to="." method="Enemy_Exited"]

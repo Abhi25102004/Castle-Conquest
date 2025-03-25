@@ -11,7 +11,8 @@ func HurtBox_Exited(area: Area2D) -> void:
 	Knight_Array.erase(area.get_parent())
 	
 func OnAttack() -> void:
-	var Dynamite_instance : Node2D = Dynamite.instantiate()
-	Dynamite_instance.Attack = Attack
-	Dynamite_instance.position = marker.position
-	call_deferred("add_child",Dynamite_instance)
+	if !Knight_Array.is_empty():
+		var Dynamite_instance : Node2D = Dynamite.instantiate()
+		Dynamite_instance.Attack = Attack
+		Dynamite_instance.position = marker.position
+		call_deferred("add_child",Dynamite_instance)

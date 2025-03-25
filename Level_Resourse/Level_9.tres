@@ -33,3 +33,4 @@ Wave1 = SubResource("Resource_2kjee")
 Wave2 = SubResource("Resource_5tn71")
 Wave3 = SubResource("Resource_7xjt8")
 Reward = ""
+Game_Total_Enemies = 50

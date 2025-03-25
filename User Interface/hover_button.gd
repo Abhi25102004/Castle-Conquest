@@ -2,19 +2,26 @@ extends Button
 
 @onready var marker: Marker2D = $Marker2D
 
-@export var Scene : PackedScene = null
-@export var placed : bool = false
+@export var isFree : bool = true
 
-func Add_Scene() -> void :
-	var character : Node2D = Scene.instantiate()
+func Add_Scene(character_scene : PackedScene) -> void:
+	if !isFree:
+		Remove()
+	Add(character_scene)
+
+func Remove_child() -> void:
+	if !isFree:
+		Remove()
+			
+func Add(character_scene : PackedScene) -> void:
+	var character : Node2D = character_scene.instantiate()
 	character.position = marker.position
 	add_child(character)
-	character.KnightDied.connect(Callable(self,"Set_Position_free"))
+	isFree = false
+	
+	character.KnightDied.connect(func(): isFree = true)
 
-func Remove_Scene() -> void:
+func Remove() -> void:
 	if get_child_count() == 2 and get_child(1) is Node2D:
-		Global.emit_signal("Add_Money",25)
+		Global.Add_Money.emit(25)
 		get_child(1).call_deferred("queue_free")
-
-func Set_Position_free() -> void:
-	placed = false

@@ -6,12 +6,12 @@ signal GoblinDied
 
 enum States { Idle, Run, Attack }
 
+@export var CharacterName : String
 @export var Health : float
 @export var Attack : float
 @export var Attack_Speed : float
+@export var Cost : float
 @export var Speed : float
-@export var CharacterName : String
-@export var Cost : int
 @export var Direction : int = -1
 
 var Goblin : States = States.Run
@@ -41,7 +41,8 @@ func Take_Damage_from_knight(Power : float) -> void:
 
 func Character_Death() -> void:
 	GoblinDied.emit()
-	Global.emit_signal("Add_Money",Cost)
+	Global.Add_Money.emit(Cost)
+	Global.Progress.emit()
 	call_deferred("queue_free")
 
 func Game_Loop(delta: float) -> void:
@@ -56,10 +57,11 @@ func Game_Loop(delta: float) -> void:
 			position.x += Speed * delta * Direction
 		States.Attack:
 			Goblin = States.Idle
-			await get_tree().create_timer(Attack_Speed).timeout
-			Animations.play("Attack")
-			await Animations.animation_finished
-			OnAttack()
+			if !Knight_Array.is_empty():
+				await get_tree().create_timer(Attack_Speed).timeout
+				Animations.play("Attack")
+				await Animations.animation_finished
+				OnAttack()
 	Game_State = true
 
 func _ready() -> void:

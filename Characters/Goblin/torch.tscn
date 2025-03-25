@@ -158,17 +158,18 @@ animations = [{
 radius = 19.0
 height = 56.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_htbbs"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfkhu"]
+size = Vector2(113.846, 65.3846)
 
 [node name="Torch" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node") groups=["Enemy"]]
 texture_filter = 1
 script = ExtResource("1_ykrxj")
-Health = 50
-Attack = 15
-Attack_Speed = 1.0
-Speed = 120
 CharacterName = "torch"
+Health = 80.0
+Attack = 15.0
+Attack_Speed = 1.0
 Cost = 30
+Speed = 120.0
 Animated_node = NodePath("Animations")
 HurtBox_node = NodePath("HurtBox")
 
@@ -193,9 +194,5 @@ scale = Vector2(1.3, 1.3)
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(-70, 0)
-rotation = -1.5659
-shape = SubResource("CircleShape2D_htbbs")
-
-[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
-[connection signal="area_exited" from="HurtBox" to="." method="_on_hurt_box_area_exited"]
+position = Vector2(-23.8462, -0.384617)
+shape = SubResource("RectangleShape2D_jfkhu")

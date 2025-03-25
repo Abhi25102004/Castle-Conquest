@@ -10,6 +10,7 @@ extends Node
 var current_level : Level_Information
 
 func Change_Scene() -> void:
+	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://User Interface/level_interface.tscn")
 
 func _ready() -> void:
@@ -47,34 +48,37 @@ func _ready() -> void:
 		)
 
 func Level_Won() -> void:
+	randomize()
 	label.text = [
-"Victory is thine!",
-"Thou hast prevailed!",
-"Glory is yours, brave one!",
-"A noble triumph!",
-"Huzzah! The battle is won!",
-"By steel and valor, thou art victorious!",
-"The land sings of thy deeds!"
-].pick_random()
+	"Victory is thine!",
+	"Thou hast prevailed!",
+	"Glory is yours, brave one!",
+	"A noble triumph!",
+	"Huzzah! The battle is won!",
+	"By steel and valor, thou art victorious!",
+	"The land sings of thy deeds!"
+	].pick_random()
 
 func Level_Lost() -> void:
+	randomize()
 	label.text = [
-"Thy quest hath faltered...",
-"Defeat stains thy banner...",
-"The enemy hath bested thee...",
-"Alas! Thy kingdom weeps...",
-"Honor lost, but not forgotten...",
-"A bitter loss, yet hope remains...",
-"Thy foes feast whilst thy warriors fall..."
-].pick_random()
+	"Thy quest hath faltered...",
+	"Defeat stains thy banner...",
+	"The enemy hath bested thee...",
+	"Alas! Thy kingdom weeps...",
+	"Honor lost, but not forgotten...",
+	"A bitter loss, yet hope remains...",
+	"Thy foes feast whilst thy warriors fall..."
+	].pick_random()
 
 func Please_Wait() -> void:
+	randomize()
 	label.text = [
-"Patience, noble one...",
-"Let time weave its course...",
-"A moment’s respite, sire...",
-"The fates must yet decide...",
-"The scrolls are being scribed...",
-"Hold fast, for destiny beckons...",
-"Thy journey shall resume anon..."
-].pick_random()
+	"Patience, noble one...",
+	"Let time weave its course...",
+	"A moment’s respite, sire...",
+	"The fates must yet decide...",
+	"The scrolls are being scribed...",
+	"Hold fast, for destiny beckons...",
+	"Thy journey shall resume anon..."
+	].pick_random()

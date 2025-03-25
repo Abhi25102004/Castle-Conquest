@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ycwicewcvawm"]
+[gd_scene load_steps=4 format=3 uid="uid://ycwicewcvawm"]
 
 [ext_resource type="Script" uid="uid://dk10vlntwgclf" path="res://Game Logic Parts/enemy.gd" id="1_r3obk"]
+[ext_resource type="PackedScene" uid="uid://cyktenwp3roo2" path="res://Game Logic Parts/enemy_area.tscn" id="2_yjgkq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m077e"]
 size = Vector2(67, 1081)
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_r3obk")
+Enemy_positions = Array[int]([221, 407, 593, 779])
 
 [node name="Danger Zone" type="Area2D" parent="."]
 collision_layer = 16
@@ -16,18 +18,20 @@ collision_mask = 2
 position = Vector2(35.5, 539.5)
 shape = SubResource("RectangleShape2D_m077e")
 
-[node name="Markers" type="Node2D" parent="."]
-
-[node name="Marker2D" type="Marker2D" parent="Markers"]
+[node name="Enemy Area" parent="." instance=ExtResource("2_yjgkq")]
 position = Vector2(2000, 221)
 
-[node name="Marker2D2" type="Marker2D" parent="Markers"]
+[node name="Enemy Area2" parent="." instance=ExtResource("2_yjgkq")]
 position = Vector2(2000, 407)
 
-[node name="Marker2D3" type="Marker2D" parent="Markers"]
+[node name="Enemy Area3" parent="." instance=ExtResource("2_yjgkq")]
 position = Vector2(2000, 593)
 
-[node name="Marker2D4" type="Marker2D" parent="Markers"]
+[node name="Enemy Area4" parent="." instance=ExtResource("2_yjgkq")]
 position = Vector2(2000, 779)
 
 [connection signal="area_entered" from="Danger Zone" to="." method="Danger_Area_Entered"]
+[connection signal="Update_Priority" from="Enemy Area" to="." method="Updated_Priority_Area1"]
+[connection signal="Update_Priority" from="Enemy Area2" to="." method="Updated_Priority_Area2"]
+[connection signal="Update_Priority" from="Enemy Area3" to="." method="Updated_Priority_Area3"]
+[connection signal="Update_Priority" from="Enemy Area4" to="." method="Updated_Priority_Area4"]

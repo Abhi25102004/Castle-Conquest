@@ -17,7 +17,7 @@ var Arrow_Scene : PackedScene = preload("res://Characters/Knight/arrow.tscn")
 @export var Health : float
 @export var Attack : float
 @export var Attack_Speed : float
-@export var Cost : int
+@export var Cost : float
 
 @export var HurtBox_node : Area2D
 
@@ -67,7 +67,7 @@ func Game_Loop() -> void :
 	Game_State = true
 
 func _ready() -> void:
-	
+	Picture.texture = Image_Dict.get(Global.Theme_color)
 	HurtBox.area_entered.connect(HurtBox_Entered)
 	HurtBox.area_exited.connect(HurtBox_Exited)
 

@@ -11,4 +11,5 @@ func HurtBox_Exited(area: Area2D) -> void:
 	GiveDamageToKnight.disconnect(Callable(area.get_parent(),"Take_Damage_from_Goblin"))
 	
 func OnAttack() -> void:
-	GiveDamageToKnight.emit(Attack)
+	if !Knight_Array.is_empty():
+		GiveDamageToKnight.emit(Attack)

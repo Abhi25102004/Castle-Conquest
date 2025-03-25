@@ -9,11 +9,11 @@ enum States { Idle, Attack }
 var Knight : States = States.Idle
 var getingAttacked : bool = false
 var Game_State : bool = true
+var Enemy : Goblin_Class = null
 
 @export var CharacterName : String
 @export var Health : int
 @export var Cost : int
-@export var Enemy : Goblin_Class = null
 
 @onready var Animations: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -25,9 +25,9 @@ func Take_Damage_from_Goblin(Power : int) -> void:
 
 func Character_Death() -> void:
 	KnightDied.emit()
-	Enemy.Health = Enemy.Health - randi_range(50,80)
-	Enemy.Speed = Enemy.Speed - randi_range(100,200)
-	Enemy.Attack = Enemy.Attack - randi_range(20,40)
+	Enemy.Health = Enemy.Health/2
+	Enemy.Speed = Enemy.Speed/2
+	Enemy.Attack = Enemy.Attack/2
 	call_deferred("queue_free")
 
 func Game_Loop() -> void :

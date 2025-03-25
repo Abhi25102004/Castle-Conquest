@@ -33,3 +33,4 @@ Wave1 = SubResource("Resource_d2wbt")
 Wave2 = SubResource("Resource_8j7fi")
 Wave3 = SubResource("Resource_wae3m")
 Reward = "Gold Mine"
+Game_Total_Enemies = 20

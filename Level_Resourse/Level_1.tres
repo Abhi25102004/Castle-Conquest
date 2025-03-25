@@ -33,3 +33,4 @@ Wave1 = SubResource("Resource_r1c1a")
 Wave2 = SubResource("Resource_johuw")
 Wave3 = SubResource("Resource_kjjtv")
 Reward = "Archer"
+Game_Total_Enemies = 10

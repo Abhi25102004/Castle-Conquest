@@ -11,19 +11,22 @@ enum States { Idle, Attack }
 var Knight : States = States.Idle
 var canAttack : bool = false
 var Game_State : bool = true
+var CharacterIsDead : bool = false
 var Goblin_Array : Array[Goblin_Class] = []
 
 @export var CharacterName : String
 @export var Health : float
 @export var Attack : float
 @export var Attack_Speed : float
-@export var Cost : int
+@export var Cost : float
 
 @export var Animated_node : AnimatedSprite2D
 @export var HurtBox_node : Area2D
+@export var HitBox_node : Area2D
 
 @onready var Animations: AnimatedSprite2D = Animated_node
 @onready var HurtBox: Area2D = HurtBox_node
+@onready var Hitbox : Area2D = HitBox_node
 
 func HurtBox_Entered(_area: Area2D) -> void:
 	pass
@@ -51,10 +54,11 @@ func Game_Loop() -> void :
 			Animations.play(Global.Theme_color + "_Idle")
 		States.Attack:
 			Knight = States.Idle
-			await get_tree().create_timer(Attack_Speed).timeout
-			Animations.play(Global.Theme_color + "_Attack")
-			await Animations.animation_finished
-			OnAttack()
+			if !Goblin_Array.is_empty():
+				await get_tree().create_timer(Attack_Speed).timeout
+				Animations.play(Global.Theme_color + "_Attack")
+				await Animations.animation_finished
+				OnAttack()
 	Game_State = true
 
 func _ready() -> void:

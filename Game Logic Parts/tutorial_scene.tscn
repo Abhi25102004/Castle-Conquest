@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://rb0uukbrg5uj"]
+
+[ext_resource type="Script" uid="uid://2vw0v8g6qctc" path="res://Game Logic Parts/tutorial_scene.gd" id="1_wob68"]
+
+[node name="Tutorial Scene" type="Node"]
+script = ExtResource("1_wob68")

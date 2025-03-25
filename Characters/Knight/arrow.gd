@@ -1,7 +1,7 @@
 extends Node2D
 
 var Attack : int
-var speed : int = 600
+var speed : int = 700
 var wait_time : float = 5
 var Direction : Vector2 = Vector2(1,0)
 
