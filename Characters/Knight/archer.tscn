@@ -1,7 +1,8 @@
-[gd_scene load_steps=50 format=3 uid="uid://dyboryr0fcfy4"]
+[gd_scene load_steps=65 format=3 uid="uid://dyboryr0fcfy4"]
 
 [ext_resource type="Script" uid="uid://he06hud6uvoh" path="res://Characters/Knight/archer.gd" id="1_a1f5v"]
 [ext_resource type="Texture2D" uid="uid://btok5hx82paj4" path="res://Assets/Factions/Knights/Troops/Archer/Blue/Archer_Blue.png" id="2_6h0nq"]
+[ext_resource type="Texture2D" uid="uid://dhs7u2icykmf8" path="res://Assets/Factions/Knights/Troops/Dead/Dead.png" id="3_3yrom"]
 [ext_resource type="Texture2D" uid="uid://du5mwssttbdsk" path="res://Assets/Factions/Knights/Troops/Archer/Red/Archer_Red.png" id="3_lcu8v"]
 [ext_resource type="Texture2D" uid="uid://bjcfma01c6tv" path="res://Assets/Factions/Knights/Troops/Archer/Yellow/Archer_Yellow.png" id="4_3yrom"]
 
@@ -60,6 +61,62 @@ region = Rect2(768, 0, 192, 192)
 [sub_resource type="AtlasTexture" id="AtlasTexture_73otw"]
 atlas = ExtResource("2_6h0nq")
 region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf4pv"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wa22"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbwmx"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4snd"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu5ds"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxyp1"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk6d1"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svywb"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk3rr"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwbha"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5gbu"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elv1u"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0akg"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mb5wx"]
+atlas = ExtResource("3_3yrom")
+region = Rect2(768, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8dg6"]
 atlas = ExtResource("3_lcu8v")
@@ -229,6 +286,53 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_yf4pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wa22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbwmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4snd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu5ds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxyp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk6d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svywb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk3rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwbha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5gbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elv1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0akg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mb5wx")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_j8dg6")
 }, {
 "duration": 1.0,
@@ -342,18 +446,13 @@ size = Vector2(660, 68.4615)
 [node name="Archer" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node")]
 texture_filter = 1
 script = ExtResource("1_a1f5v")
-CharacterName = "archer"
-Health = 80.0
-Attack = 25.0
-Attack_Speed = 1.2
-Cost = 75
 Animated_node = NodePath("AnimatedSprite2D")
 HurtBox_node = NodePath("Hurtbox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_tvbel")
-animation = &"Blue_Attack"
+animation = &"Blue_Idle"
 
 [node name="Hitbox" type="Area2D" parent="."]
 scale = Vector2(1.3, 1.3)

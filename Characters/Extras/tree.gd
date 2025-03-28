@@ -10,9 +10,8 @@ var Knight : States = States.Idle
 var gettingAttacked : bool = false
 var Game_State : bool = true
 
-@export var CharacterName : String
-@export var Health : float
-@export var Cost : float
+var Health : float = randf_range(299,301)
+var Cost : int = 60
 
 @onready var Animations: AnimatedSprite2D = $AnimatedSprite2D
 

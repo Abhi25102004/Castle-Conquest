@@ -16,3 +16,10 @@ func OnAttack() -> void:
 		Dynamite_instance.Attack = Attack
 		Dynamite_instance.position = marker.position
 		call_deferred("add_child",Dynamite_instance)
+
+func Stats_Setter() -> void:
+	Health = randf_range(79,81)
+	Attack = randf_range(19,21)
+	Attack_Speed = randf_range(0.9,1.1)
+	Cost = 50
+	Speed = randf_range(79,81)

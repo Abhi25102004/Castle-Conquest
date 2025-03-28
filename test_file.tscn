@@ -1,14 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bamiq8ho06v1n"]
+[gd_scene load_steps=7 format=3 uid="uid://bamiq8ho06v1n"]
 
-[ext_resource type="PackedScene" uid="uid://cyn8c76kpfirk" path="res://Characters/Extras/tower.tscn" id="1_1opec"]
+[ext_resource type="PackedScene" uid="uid://ceby6oqyqicd4" path="res://Characters/Knight/pawn.tscn" id="2_1opec"]
 [ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Goblin/torch.tscn" id="2_qo282"]
+[ext_resource type="PackedScene" uid="uid://dm7teraw3nh7c" path="res://Characters/Goblin/barrel.tscn" id="3_ivbe1"]
+[ext_resource type="PackedScene" uid="uid://dyboryr0fcfy4" path="res://Characters/Knight/archer.tscn" id="4_kru2f"]
+[ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Knight/warrior.tscn" id="5_m8wam"]
+[ext_resource type="PackedScene" uid="uid://d15snjy675c0u" path="res://Characters/Goblin/tnt.tscn" id="6_u1sxl"]
 
 [node name="TestFile" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Tower" parent="." instance=ExtResource("1_1opec")]
-position = Vector2(-663, 0)
-
 [node name="Torch" parent="." instance=ExtResource("2_qo282")]
-position = Vector2(832, -338)
+position = Vector2(-4, -6)
+
+[node name="Pawn" parent="." instance=ExtResource("2_1opec")]
+position = Vector2(-203, -131)
+
+[node name="Barrel" parent="." instance=ExtResource("3_ivbe1")]
+position = Vector2(70, 0)
+
+[node name="Archer" parent="." instance=ExtResource("4_kru2f")]
+position = Vector2(14, 168)
+
+[node name="Warrior" parent="." instance=ExtResource("5_m8wam")]
+position = Vector2(-232, 163)
+
+[node name="TNT" parent="." instance=ExtResource("6_u1sxl")]
+position = Vector2(374, 220)

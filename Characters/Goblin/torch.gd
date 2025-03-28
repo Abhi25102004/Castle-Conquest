@@ -13,3 +13,10 @@ func HurtBox_Exited(area: Area2D) -> void:
 func OnAttack() -> void:
 	if !Knight_Array.is_empty():
 		GiveDamageToKnight.emit(Attack)
+
+func Stats_Setter() -> void:
+	Health = randf_range(49,51)
+	Attack = randf_range(14,16)
+	Attack_Speed = randf_range(0.9,1.1)
+	Cost = 30
+	Speed = randf_range(119,121)

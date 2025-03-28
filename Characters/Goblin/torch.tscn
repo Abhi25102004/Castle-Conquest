@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://cr10cstnr5c7h"]
+[gd_scene load_steps=33 format=3 uid="uid://cr10cstnr5c7h"]
 
 [ext_resource type="Texture2D" uid="uid://1fex2qkbhxx8" path="res://Assets/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="1_qawj5"]
 [ext_resource type="Script" uid="uid://celgwbga7dy5s" path="res://Characters/Goblin/torch.gd" id="1_ykrxj"]
+[ext_resource type="Texture2D" uid="uid://bqfpfffsw3ev7" path="res://Assets/Resources/Resources/G_Spawn.png" id="3_fcqke"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_58aea"]
 atlas = ExtResource("1_qawj5")
@@ -26,6 +27,34 @@ region = Rect2(768, 384, 192, 192)
 [sub_resource type="AtlasTexture" id="AtlasTexture_t5c2v"]
 atlas = ExtResource("1_qawj5")
 region = Rect2(960, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpkwj"]
+atlas = ExtResource("3_fcqke")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ivcx"]
+atlas = ExtResource("3_fcqke")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvl2q"]
+atlas = ExtResource("3_fcqke")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rve70"]
+atlas = ExtResource("3_fcqke")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmsky"]
+atlas = ExtResource("3_fcqke")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6liy5"]
+atlas = ExtResource("3_fcqke")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87ykc"]
+atlas = ExtResource("3_fcqke")
+region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0mg8l"]
 atlas = ExtResource("1_qawj5")
@@ -106,6 +135,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kpkwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ivcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvl2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rve70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmsky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6liy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87ykc")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0mg8l")
 }, {
 "duration": 1.0,
@@ -164,12 +219,6 @@ size = Vector2(113.846, 65.3846)
 [node name="Torch" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node") groups=["Enemy"]]
 texture_filter = 1
 script = ExtResource("1_ykrxj")
-CharacterName = "torch"
-Health = 80.0
-Attack = 15.0
-Attack_Speed = 1.0
-Cost = 30
-Speed = 120.0
 Animated_node = NodePath("Animations")
 HurtBox_node = NodePath("HurtBox")
 

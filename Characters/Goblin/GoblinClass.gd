@@ -4,15 +4,14 @@ class_name Goblin_Class
 
 signal GoblinDied
 
-enum States { Idle, Run, Attack }
+enum States { Idle, Run, Attack, Death}
 
-@export var CharacterName : String
-@export var Health : float
-@export var Attack : float
-@export var Attack_Speed : float
-@export var Cost : float
-@export var Speed : float
-@export var Direction : int = -1
+var Health : float
+var Attack : float
+var Attack_Speed : float
+var Cost : float
+var Speed : float
+var Direction : int = -1
 
 var Goblin : States = States.Run
 var Game_State : bool = true
@@ -34,10 +33,11 @@ func HurtBox_Exited(_area: Area2D) -> void:
 func OnAttack() -> void:
 	pass
 
+func Stats_Setter() -> void:
+	pass
+
 func Take_Damage_from_knight(Power : float) -> void:
 	Health -= Power
-	if Health <= 0:
-		Character_Death()
 
 func Character_Death() -> void:
 	GoblinDied.emit()
@@ -47,6 +47,7 @@ func Character_Death() -> void:
 
 func Game_Loop(delta: float) -> void:
 	canAttack = true if !Knight_Array.is_empty() else false
+	Goblin = States.Death if Health <= 0 else Goblin
 	match Goblin:
 		States.Idle:
 			Goblin = States.Attack if canAttack else States.Run
@@ -62,9 +63,18 @@ func Game_Loop(delta: float) -> void:
 				Animations.play("Attack")
 				await Animations.animation_finished
 				OnAttack()
+		States.Death:
+			Animations.flip_h = false
+			Animations.play("Death")
+			await Animations.animation_finished
+			Global.Add_Money.emit(Cost)
+			Global.Progress.emit()
+			GoblinDied.emit()
+			call_deferred("queue_free")
 	Game_State = true
 
 func _ready() -> void:
+	Stats_Setter()
 	Health *= Global.Difficulty
 	Attack *= Global.Difficulty
 	HurtBox.area_entered.connect(HurtBox_Entered)

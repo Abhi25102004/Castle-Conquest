@@ -56,7 +56,7 @@ func Color_Change(color : String , Animations_image : AnimatedSprite2D) -> void:
 	await Animations_image.animation_finished
 	Animations_image.play("default")
 
-func Difficulty_Change(difficulty : int, Animations_image : AnimatedSprite2D) -> void:
+func Difficulty_Change(difficulty : float, Animations_image : AnimatedSprite2D) -> void:
 	Global.Difficulty = difficulty
 	match Global.Difficulty:
 		0.5:

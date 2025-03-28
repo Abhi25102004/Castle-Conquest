@@ -13,11 +13,11 @@ var Goblin_Array : Array[Goblin_Class] = []
 var Arrow_Scene : PackedScene = preload("res://Characters/Knight/arrow.tscn")
 
 @export var Image_Dict : Dictionary
-@export var CharacterName : String
-@export var Health : float
-@export var Attack : float
-@export var Attack_Speed : float
-@export var Cost : float
+
+var Health : float = randf_range(149,151)
+var Attack : float = randf_range(29,31)
+var Attack_Speed : float = randf_range(0.7,0.9)
+var Cost : int = 150
 
 @export var HurtBox_node : Area2D
 

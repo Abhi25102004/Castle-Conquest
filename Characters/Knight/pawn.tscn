@@ -401,24 +401,16 @@ height = 52.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mubi"]
 size = Vector2(106.154, 53.0769)
 
-[node name="Pawn" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node", "HitBox_node")]
+[node name="Pawn" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node")]
 texture_filter = 1
 script = ExtResource("1_8k5qk")
-CharacterName = "pawn"
-Health = 100.0
-Attack = 20.0
-Attack_Speed = 1.0
-Cost = 50.0
 Animated_node = NodePath("AnimatedSprite2D")
 HurtBox_node = NodePath("Hurtbox")
-HitBox_node = NodePath("Hitbox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_5iy7o")
-animation = &"Death"
-frame = 13
-frame_progress = 1.0
+animation = &"Blue_Attack"
 
 [node name="Hitbox" type="Area2D" parent="."]
 scale = Vector2(1.3, 1.3)
@@ -433,5 +425,5 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(23.8462, -0.384616)
+position = Vector2(30, -0.384616)
 shape = SubResource("RectangleShape2D_8mubi")

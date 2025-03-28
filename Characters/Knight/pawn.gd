@@ -13,3 +13,9 @@ func HurtBox_Exited(area: Area2D) -> void:
 func OnAttack() -> void:
 	if !Goblin_Array.is_empty():
 		GiveDamageToGoblin.emit(Attack)
+
+func Stats_Setter() -> void:
+	Health = randf_range(149,151)
+	Attack = randf_range(24,26)
+	Attack_Speed = randf_range(0.9,1.1)
+	Cost = 50
