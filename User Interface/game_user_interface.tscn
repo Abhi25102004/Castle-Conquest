@@ -133,7 +133,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_sn6tn")
 [node name="Label" type="Label" parent="Header"]
 texture_filter = 1
 custom_minimum_size = Vector2(360, 0)
-layout_mode = 2
+layout_mode = 1
 offset_right = 360.0
 offset_bottom = 135.0
 size_flags_horizontal = 0
@@ -153,49 +153,34 @@ animation = &"Coin Added"
 frame = 6
 frame_progress = 1.0
 
-[node name="Panel" type="Panel" parent="Header"]
+[node name="Panel" type="PanelContainer" parent="Header"]
 texture_filter = 1
 custom_minimum_size = Vector2(400, 135)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+offset_left = -325.5
+offset_right = 325.5
+offset_bottom = 139.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_b4a3p")
 
 [node name="Lable" type="Label" parent="Header/Panel"]
 custom_minimum_size = Vector2(360, 135)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -180.0
-offset_right = 180.0
-offset_bottom = 135.0
-grow_horizontal = 2
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("2_beoc8")
 theme_override_font_sizes/font_size = 41
-text = "Stage Progress"
+text = "Trial 1 : The Scouting Skirmish"
 horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="Header/Panel"]
 texture_filter = 1
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 8.0
-offset_top = -40.0
-offset_right = 8.0
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_beoc8")
 theme_override_font_sizes/font_size = 62
 theme_override_styles/background = SubResource("StyleBoxEmpty_ljjiq")
@@ -203,74 +188,57 @@ theme_override_styles/fill = SubResource("StyleBoxEmpty_56cii")
 step = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Header"]
-layout_mode = 2
-offset_left = 1582.0
-offset_right = 1920.0
-offset_bottom = 110.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -383.0
+offset_bottom = 125.0
+grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
 [node name="Sound Button" type="Button" parent="Header/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(110, 110)
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_bbhgb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bbhgb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
+icon = ExtResource("6_a4dss")
 icon_alignment = 1
+vertical_icon_alignment = 2
 expand_icon = true
-
-[node name="TextureRect" type="TextureRect" parent="Header/HBoxContainer/Sound Button"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_a4dss")
 
 [node name="Settings Button" type="Button" parent="Header/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(110, 110)
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_bbhgb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bbhgb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
-
-[node name="TextureRect" type="TextureRect" parent="Header/HBoxContainer/Settings Button"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_o12hk")
+icon = ExtResource("7_o12hk")
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
 
 [node name="Quite Button" type="Button" parent="Header/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(110, 110)
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_bbhgb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bbhgb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
-
-[node name="TextureRect" type="TextureRect" parent="Header/HBoxContainer/Quite Button"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_jacqb")
+icon = ExtResource("8_jacqb")
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
 
 [node name="Middle" type="PanelContainer" parent="."]
 texture_filter = 1

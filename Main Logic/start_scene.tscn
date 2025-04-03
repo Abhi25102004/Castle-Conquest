@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://ba0gtikn7kqqp"]
+[gd_scene load_steps=14 format=3 uid="uid://ba0gtikn7kqqp"]
 
 [ext_resource type="Texture2D" uid="uid://c3urdfdp3iala" path="res://Assets/UI/Buttons/Button_Hover_3Slides.png" id="1_dcj0t"]
 [ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="1_godbx"]
-[ext_resource type="Script" uid="uid://b4pmtpotvexkw" path="res://Main Logic/start_scene.gd" id="1_xiqam"]
+[ext_resource type="Script" uid="uid://b4pmtpotvexkw" path="res://Main Logic/start_scene.gd" id="1_olm3w"]
+[ext_resource type="PackedScene" uid="uid://bok83hvs5brc4" path="res://Main Logic/background_image.tscn" id="2_e5kvu"]
 [ext_resource type="Texture2D" uid="uid://6fphagbmpl0f" path="res://Assets/UI/Buttons/Button_Disable_3Slides.png" id="2_xo1ju"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlq3l"]
@@ -73,6 +74,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_olm3w"]
 resource_name = "Start"
@@ -128,6 +141,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xnddv"]
 _data = {
@@ -137,9 +162,12 @@ _data = {
 }
 
 [node name="Start Scene" type="CanvasLayer"]
-script = ExtResource("1_xiqam")
+script = ExtResource("1_olm3w")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background Image" parent="." instance=ExtResource("2_e5kvu")]
+
+[node name="Panel" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -147,23 +175,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hlq3l")
 
+[node name="Title" type="Label" parent="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_godbx")
+theme_override_font_sizes/font_size = 280
+text = "Castle Conquest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 visible = false
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -279.0
-offset_top = -454.0
-offset_right = 279.0
-offset_bottom = 454.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 8
+size_flags_vertical = 4
 
 [node name="Continue" type="Button" parent="Panel/VBoxContainer"]
 visible = false
@@ -241,20 +268,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_y7n20")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0f8fm")
 text = "Exit"
 icon_alignment = 1
-
-[node name="Title" type="Label" parent="Panel"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_godbx")
-theme_override_font_sizes/font_size = 280
-text = "Castle Conquest"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

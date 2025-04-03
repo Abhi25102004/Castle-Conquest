@@ -30,8 +30,4 @@ func Continue_Game() -> void:
 	get_tree().change_scene_to_file("res://User Interface/level_interface.tscn")
 
 func Quit_Game() -> void:
-	var SaveFile : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
-	SaveFile.Color_String = Global.Theme_color
-	SaveFile.Game_Difficulty = Global.Difficulty
-	ResourceSaver.save(SaveFile,"user://SaveFiles/Level_Details.tres")
 	get_tree().quit()

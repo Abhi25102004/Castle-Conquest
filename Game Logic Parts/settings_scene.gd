@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var red_animation: AnimatedSprite2D = %Red_Animation
 @onready var yellow_animation: AnimatedSprite2D = %Yellow_Animation
 @onready var purple_animation: AnimatedSprite2D = %Purple_Animation
-@onready var Color_Lable: Label = $"PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color/Label2"
+@onready var Color_Lable: Label = $"PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/Label2"
 @onready var Difficulty_Lable: Label = $"PanelContainer/MarginContainer/VBoxContainer/TabContainer/Game Difficulty/Label2"
 @onready var easy_animations: AnimatedSprite2D = %Easy_Animations
 @onready var medium_animations: AnimatedSprite2D = %Medium_Animations
@@ -15,13 +15,15 @@ func _ready() -> void:
 	
 	Color_Lable.text = "Current Color : " + Global.Theme_color
 	
+	var Difficulty_text : String = ""
 	match Global.Difficulty:
 		0.5:
-			Difficulty_Lable.text = "Current Difficulty : Easy"
-		1:
-			Difficulty_Lable.text = "Current Difficulty : Medium"
-		2:
-			Difficulty_Lable.text = "Current Difficulty : Hard"
+			Difficulty_text = "Easy"
+		1.0:
+			Difficulty_text = "Medium"
+		2.0:
+			Difficulty_text = "Hard"
+	Difficulty_Lable.text = "Current Difficulty : " + Difficulty_text
 	
 	%Blue.pressed.connect(func(): Color_Change("Blue",blue_animation))
 		
@@ -33,9 +35,9 @@ func _ready() -> void:
 	
 	%Easy.pressed.connect(func(): Difficulty_Change(0.5,easy_animations))
 		
-	%Medium.pressed.connect(func(): Difficulty_Change(1,easy_animations))
+	%Medium.pressed.connect(func(): Difficulty_Change(1.0,medium_animations))
 		
-	%Hard.pressed.connect(func(): Difficulty_Change(2,easy_animations))
+	%Hard.pressed.connect(func(): Difficulty_Change(2.0,hard_animations))
 	
 	%Quit.pressed.connect(func(): 
 		Animations.play_backwards("Entry")
@@ -58,13 +60,15 @@ func Color_Change(color : String , Animations_image : AnimatedSprite2D) -> void:
 
 func Difficulty_Change(difficulty : float, Animations_image : AnimatedSprite2D) -> void:
 	Global.Difficulty = difficulty
+	var Difficulty_text : String = ""
 	match Global.Difficulty:
 		0.5:
-			Difficulty_Lable.text = "Current Difficulty : Easy"
-		1:
-			Difficulty_Lable.text = "Current Difficulty : Medium"
-		2:
-			Difficulty_Lable.text = "Current Difficulty : Hard"
+			Difficulty_text = "Easy"
+		1.0:
+			Difficulty_text = "Medium"
+		2.0:
+			Difficulty_text = "Hard"
+	Difficulty_Lable.text = "Current Difficulty : " + Difficulty_text
 	var SaveFile : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
 	SaveFile.Game_Difficulty = difficulty
 	ResourceSaver.save(SaveFile,"user://SaveFiles/Level_Details.tres")

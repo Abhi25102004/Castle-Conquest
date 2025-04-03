@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var settings_button: Button = %"Settings Button"
 @onready var Animations: AnimatedSprite2D = $Header/Label/AnimatedSprite2D
 @onready var progress_bar: ProgressBar = $Header/Panel/ProgressBar
+@onready var Level_name: Label = $Header/Panel/Lable
 
 var cost : int = 0
 var Character_Scene : PackedScene = null
@@ -16,6 +17,7 @@ func _ready() -> void:
 	Money_Counter.text = str(Money)
 	progress_bar.max_value = Global.level_type.Game_Total_Enemies
 	progress_bar.value = 0
+	Level_name.text = Global.Level_Name
 	
 	for placement_button in Placement_Buttons.get_children():
 		if placement_button is Button:

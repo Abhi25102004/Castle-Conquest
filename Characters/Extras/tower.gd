@@ -16,7 +16,7 @@ var Arrow_Scene : PackedScene = preload("res://Characters/Knight/arrow.tscn")
 
 var Health : float = randf_range(149,151)
 var Attack : float = randf_range(29,31)
-var Attack_Speed : float = randf_range(0.7,0.9)
+var Attack_Speed : float = randf_range(1.4,1.6)
 var Cost : int = 150
 
 @export var HurtBox_node : Area2D
@@ -57,11 +57,11 @@ func Game_Loop() -> void :
 	match Knight:
 		States.Idle:
 			Knight = States.Attack if canAttack else Knight
-			animations.play("Idle")
+			animations.play(Global.Theme_color + "_Idle")
 		States.Attack:
 			Knight = States.Idle
 			await get_tree().create_timer(Attack_Speed).timeout
-			animations.play("Attack")
+			animations.play(Global.Theme_color + "_Attack")
 			await animations.animation_finished
 			OnAttack()
 	Game_State = true

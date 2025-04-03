@@ -1032,12 +1032,13 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_w2dfq")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxTexture_mr0gv")
-text = "Settings"
+text = "Options"
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_unselected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0.0156706, 0.11341, 0.173291, 1)
 theme_override_fonts/font = ExtResource("2_w2dfq")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_0rwo8")
@@ -1047,14 +1048,15 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_ahkvr")
 theme_override_styles/tab_selected = SubResource("StyleBoxTexture_yyice")
 theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_mgaw3")
 theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_lxusj")
-current_tab = 0
+current_tab = 1
 
-[node name="Player Color" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+[node name="Character Color" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_4uuu2")
 metadata/_tab_index = 0
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1075,7 +1077,7 @@ text = "Select The Color You Like :"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color"]
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1096,7 +1098,7 @@ text = "Current Color : Blue"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color"]
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color"]
 layout_mode = 2
 offset_left = 118.0
 offset_top = 530.0
@@ -1106,7 +1108,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 150
 
-[node name="Red" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color/VBoxContainer"]
+[node name="Red" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
@@ -1126,7 +1128,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_htqjw")
 text = "Red"
 expand_icon = true
 
-[node name="Blue" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color/VBoxContainer"]
+[node name="Blue" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
@@ -1145,7 +1147,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_htqjw")
 text = "Blue"
 expand_icon = true
 
-[node name="Yellow" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color/VBoxContainer"]
+[node name="Yellow" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
@@ -1164,7 +1166,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_htqjw")
 text = "Yellow"
 expand_icon = true
 
-[node name="Purple" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color/VBoxContainer"]
+[node name="Purple" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
@@ -1183,7 +1185,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_htqjw")
 text = "Purple"
 expand_icon = true
 
-[node name="Red_Animation" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color/VBoxContainer"]
+[node name="Red_Animation" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
 position = Vector2(141, -160)
 scale = Vector2(4, 4)
@@ -1193,7 +1195,7 @@ autoplay = "default"
 frame = 5
 frame_progress = 1.0
 
-[node name="Blue_Animation" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color/VBoxContainer"]
+[node name="Blue_Animation" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
 position = Vector2(582, -160)
 scale = Vector2(4, 4)
@@ -1201,7 +1203,7 @@ sprite_frames = SubResource("SpriteFrames_xxedr")
 animation = &"Attack"
 autoplay = "default"
 
-[node name="Yellow_Animation" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color/VBoxContainer"]
+[node name="Yellow_Animation" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
 position = Vector2(1053, -160)
 scale = Vector2(4, 4)
@@ -1209,7 +1211,7 @@ sprite_frames = SubResource("SpriteFrames_me215")
 animation = &"Attack"
 autoplay = "default"
 
-[node name="Purple_Animation" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Player Color/VBoxContainer"]
+[node name="Purple_Animation" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
 position = Vector2(1501, -160)
 scale = Vector2(4, 4)
@@ -1218,7 +1220,6 @@ animation = &"Attack"
 autoplay = "default"
 
 [node name="Game Difficulty" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ryf1k")
 metadata/_tab_index = 1
@@ -1363,7 +1364,7 @@ unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ypicx")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_l1ll8")

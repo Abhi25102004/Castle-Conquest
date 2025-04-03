@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Level_Information" load_steps=6 format=3 uid="uid://bqcjuwar5w4u3"]
+[gd_resource type="Resource" script_class="Level_Information" load_steps=7 format=3 uid="uid://bqcjuwar5w4u3"]
 
 [ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Level_Resourse/level.gd" id="1_1h48h"]
 [ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Level_Resourse/wave.gd" id="1_178d8"]
+[ext_resource type="PackedScene" uid="uid://bf22joai6fnrd" path="res://Map/level_1.tscn" id="1_ihfxg"]
 
 [sub_resource type="Resource" id="Resource_r1c1a"]
 script = ExtResource("1_178d8")
@@ -27,10 +28,10 @@ Wave_delay = 5
 [resource]
 script = ExtResource("1_1h48h")
 Level_number = 1
-Level_Name = "Level 1 : The First Siege"
 Money_Required = 200
 Wave1 = SubResource("Resource_r1c1a")
 Wave2 = SubResource("Resource_johuw")
 Wave3 = SubResource("Resource_kjjtv")
 Reward = "Archer"
 Game_Total_Enemies = 10
+Level_Scene = ExtResource("1_ihfxg")

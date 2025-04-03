@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bw57kit6ars5y"]
+[gd_scene load_steps=19 format=3 uid="uid://bw57kit6ars5y"]
 
 [ext_resource type="Texture2D" uid="uid://b16k7o0lk4hat" path="res://Assets/Resources/Trees/Tree.png" id="1_2ak02"]
 [ext_resource type="Script" uid="uid://ougkqklqmynr" path="res://Characters/Extras/tree.gd" id="1_d02y0"]
+[ext_resource type="Texture2D" uid="uid://d4esdueyv5xuh" path="res://Assets/Resources/Resources/W_Spawn.png" id="3_au0wn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mx6jm"]
 atlas = ExtResource("1_2ak02")
@@ -10,6 +11,34 @@ region = Rect2(0, 192, 192, 192)
 [sub_resource type="AtlasTexture" id="AtlasTexture_senmw"]
 atlas = ExtResource("1_2ak02")
 region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjuk6"]
+atlas = ExtResource("3_au0wn")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wefon"]
+atlas = ExtResource("3_au0wn")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrxxw"]
+atlas = ExtResource("3_au0wn")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsi3x"]
+atlas = ExtResource("3_au0wn")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3li0"]
+atlas = ExtResource("3_au0wn")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_petxf"]
+atlas = ExtResource("3_au0wn")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5f5s"]
+atlas = ExtResource("3_au0wn")
+region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hj317"]
 atlas = ExtResource("1_2ak02")
@@ -42,6 +71,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gjuk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wefon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrxxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsi3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3li0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_petxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5f5s")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_hj317")
 }, {
 "duration": 1.0,
@@ -61,18 +116,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npe51"]
 size = Vector2(113.077, 60.7692)
 
-[node name="Tree" type="Node2D"]
+[node name="Tree" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node", "HitBox_CollisionShape_node")]
 texture_filter = 1
 script = ExtResource("1_d02y0")
-CharacterName = "tree"
-Health = 300.0
-Cost = 60.0
+Animated_node = NodePath("AnimatedSprite2D")
+HurtBox_node = NodePath("HitBox")
+HitBox_CollisionShape_node = NodePath("HitBox/CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -48)
 scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_pc1vq")
-animation = &"Idle"
+animation = &"Death"
 
 [node name="HitBox" type="Area2D" parent="."]
 scale = Vector2(1.3, 1.3)

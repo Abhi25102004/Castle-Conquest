@@ -16,6 +16,6 @@ func OnAttack() -> void:
 
 func Stats_Setter() -> void:
 	Health = randf_range(199,201)
-	Attack = randf_range(39,41)
-	Attack_Speed = randf_range(1.4,1.6)
+	Attack = randf_range(34,36)
+	Attack_Speed = randf_range(0.7,0.9)
 	Cost = 100

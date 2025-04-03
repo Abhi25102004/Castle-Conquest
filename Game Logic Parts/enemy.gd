@@ -53,24 +53,20 @@ func Creater_Enemy() -> void:
 		randomize()
 		Enemy.global_position = Vector2(2000,Enemy_positions[Selection_array.pick_random()])
 		call_deferred("add_child",Enemy)
-		
 		Enemy.GoblinDied.connect(func():
 			Enemies_Killed += 1
 			if Total_Enemies == Enemies_Killed:
 				if Waves.is_empty():
-					await get_tree().create_timer(1.5).timeout
 					Level_Completed.emit()
 				else:
 					Start_adding_enemies()
 					Creater_Enemy()
 			)
-		
 		await get_tree().create_timer(Delay).timeout
 		Creater_Enemy()
 
 func Danger_Area_Entered(_area: Area2D) -> void:
 	get_tree().call_group("Enemy","Character_Death")
-	await get_tree().create_timer(1.5).timeout
 	Player_Lost.emit()
 
 func Updated_Priority_Area1(value : int) -> void:
@@ -84,3 +80,6 @@ func Updated_Priority_Area3(value : int) -> void:
 
 func Updated_Priority_Area4(value : int) -> void:
 	Priority_Array[3] = value
+
+func Enemy_Death_Zone_Entered(area: Area2D) -> void:
+	area.get_parent().call_deferred("queue_free")

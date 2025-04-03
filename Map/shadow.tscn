@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cofetvmgdc4dc"]
+
+[ext_resource type="Texture2D" uid="uid://doxb4qvv45dx4" path="res://Assets/Terrain/Ground/Shadows.png" id="1_pp8c3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pm0x1"]
+texture = ExtResource("1_pp8c3")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ytng8"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_pm0x1")
+
+[node name="Shadow" type="TileMapLayer"]
+tile_set = SubResource("TileSet_ytng8")

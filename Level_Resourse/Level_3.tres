@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Level_Information" load_steps=6 format=3 uid="uid://cfbdo4iu53vgd"]
+[gd_resource type="Resource" script_class="Level_Information" load_steps=7 format=3 uid="uid://cfbdo4iu53vgd"]
 
 [ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Level_Resourse/level.gd" id="1_c4ms1"]
+[ext_resource type="PackedScene" uid="uid://douy7tvl5ouew" path="res://Map/level_3.tscn" id="1_oct00"]
 [ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Level_Resourse/wave.gd" id="1_pej4v"]
 
 [sub_resource type="Resource" id="Resource_jn84o"]
@@ -27,10 +28,10 @@ Wave_delay = 6
 [resource]
 script = ExtResource("1_c4ms1")
 Level_number = 3
-Level_Name = "Level 3 : Explosive Trouble"
 Money_Required = 250
 Wave1 = SubResource("Resource_jn84o")
 Wave2 = SubResource("Resource_7tyb8")
 Wave3 = SubResource("Resource_mlhkg")
-Reward = "Tower"
+Reward = "Warrior"
 Game_Total_Enemies = 18
+Level_Scene = ExtResource("1_oct00")

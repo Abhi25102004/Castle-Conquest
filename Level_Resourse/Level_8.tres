@@ -27,7 +27,6 @@ Wave_delay = 2
 [resource]
 script = ExtResource("1_w4mcm")
 Level_number = 8
-Level_Name = "Level 8 : Blazing Inferno"
 Money_Required = 375
 Wave1 = SubResource("Resource_su74q")
 Wave2 = SubResource("Resource_a2jsi")

@@ -8,9 +8,6 @@ size = Vector2(159, 100)
 
 [node name="Gold Mine" type="Node2D"]
 script = ExtResource("1_ejd3x")
-CharacterName = "gold mine"
-Health = 100.0
-Cost = 75.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lsk5g")

@@ -27,7 +27,6 @@ Wave_delay = 1
 [resource]
 script = ExtResource("1_o7qn4")
 Level_number = 10
-Level_Name = "Level 10 : The Final Stand"
 Money_Required = 450
 Wave1 = SubResource("Resource_a7tnq")
 Wave2 = SubResource("Resource_emysr")

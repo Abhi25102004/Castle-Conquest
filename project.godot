@@ -23,7 +23,6 @@ Global="*res://Global/Global.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/size/initial_position_type=0
 window/size/always_on_top=true
 window/stretch/mode="viewport"
@@ -44,6 +43,7 @@ MouseClick={
 2d_physics/layer_3="Player Hurt Box"
 2d_physics/layer_4="Enemy Hurt Box"
 2d_physics/layer_5="Detection Area"
+2d_physics/layer_6="Null Area"
 
 [rendering]
 

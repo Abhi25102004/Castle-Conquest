@@ -2,8 +2,6 @@ extends Goblin_Class
 
 signal GiveDamageToKnight
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-
 func HurtBox_Entered(area: Area2D) -> void:
 	Knight_Array.append(area.get_parent())
 	GiveDamageToKnight.connect(Callable(area.get_parent(),"Take_Damage_from_Goblin"))
@@ -13,14 +11,14 @@ func HurtBox_Exited(area: Area2D) -> void:
 	GiveDamageToKnight.disconnect(Callable(area.get_parent(),"Take_Damage_from_Goblin"))
 	
 func OnAttack() -> void:
-	animation_player.play("Explosion")
-
-func Emit_Attack() -> void:
-	GiveDamageToKnight.emit(Attack)
+	if !Knight_Array.is_empty():
+		GiveDamageToKnight.emit(Attack)
+		GoblinDied.emit()
+		call_deferred("queue_free")
 
 func Stats_Setter() -> void:
-	Health = randf_range(119,121)
-	Attack = randf_range(99,101)
-	Attack_Speed = randf_range(1.1,1.3)
+	Health = randf_range(149,151)
+	Attack = 300
+	Attack_Speed = randf_range(0.4,0.6)
 	Cost = 75
-	Speed = randf_range(89,91)
+	Speed = randf_range(119,121)

@@ -27,7 +27,6 @@ Wave_delay = 2
 [resource]
 script = ExtResource("1_cbwpt")
 Level_number = 9
-Level_Name = "Level 9 : Siege of the Goblins"
 Money_Required = 400
 Wave1 = SubResource("Resource_2kjee")
 Wave2 = SubResource("Resource_5tn71")

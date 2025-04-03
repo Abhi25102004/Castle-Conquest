@@ -4,6 +4,7 @@ extends Node
 @onready var Enemy_node: Node2D = $Enemy
 @onready var Animations: AnimationPlayer = $AnimationPlayer
 @onready var label: Label = $Control/Label
+@onready var level_node: Node2D = $Level_Node
 
 @export var Level_list : Dictionary
 
@@ -15,6 +16,8 @@ func Change_Scene() -> void:
 
 func _ready() -> void:
 	Animations.play("Please Wait")
+	
+	level_node.add_child(Global.level_type.Level_Scene.instantiate())
 	
 	Enemy_node.Level_Completed.connect(func():
 		Animations.play("Level Won")

@@ -10,6 +10,7 @@ func _ready() -> void:
 		if button.Level_number == 1 or button.Level_number - 1 in Level_Completed.level_Played:
 			button.pressed.connect(func():
 				Global.level_type = button.get("Level_data")
+				Global.Level_Name = button.text
 				Animations.play("Switch_Animation")
 				await Animations.animation_finished
 				get_tree().change_scene_to_file("res://Test Scenes/test_world.tscn")

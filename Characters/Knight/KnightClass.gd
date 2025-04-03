@@ -4,7 +4,7 @@ class_name Knight_Class
 
 signal KnightDied
 
-# constant 
+# constant
 enum States { Idle, Attack, Death }
 
 # variables
@@ -15,15 +15,19 @@ var CharacterIsDead : bool = false
 var Goblin_Array : Array[Goblin_Class] = []
 
 var Health : float
+var Animation_String : String:
+	get = getAnimation_String
 var Attack : float
 var Attack_Speed : float
 var Cost : int
 
 @export var Animated_node : AnimatedSprite2D
 @export var HurtBox_node : Area2D
+@export var HitBox_CollisionShape_node : CollisionShape2D
 
 @onready var Animations: AnimatedSprite2D = Animated_node
 @onready var HurtBox: Area2D = HurtBox_node
+@onready var HitBox_CollisionShape : CollisionShape2D = HitBox_CollisionShape_node
 
 func HurtBox_Entered(_area: Area2D) -> void:
 	pass
@@ -39,23 +43,34 @@ func Stats_Setter() -> void:
 
 func Take_Damage_from_Goblin(Power : float) -> void:
 	Health -= Power
+	
+func getAnimation_String() -> String:
+	match Knight:
+		States.Idle:
+			return Global.Theme_color + "_Idle"
+		States.Attack:
+			return Global.Theme_color + "_Attack"
+		States.Death:
+			return "Death"
+	return ""
 
 func Game_Loop() -> void :
 	canAttack = true if !Goblin_Array.is_empty() else false
 	Knight = States.Death if Health <= 0 else Knight
 	match Knight:
 		States.Idle:
+			Animations.play(Animation_String)
 			Knight = States.Attack if canAttack else Knight
-			Animations.play(Global.Theme_color + "_Idle")
 		States.Attack:
-			Knight = States.Idle
 			if !Goblin_Array.is_empty():
 				await get_tree().create_timer(Attack_Speed).timeout
-				Animations.play(Global.Theme_color + "_Attack")
+				Animations.play(Animation_String)
 				await Animations.animation_finished
 				OnAttack()
+			Knight = States.Idle
 		States.Death:
-			Animations.play("Death")
+			HitBox_CollisionShape.disabled = true
+			Animations.play(Animation_String)
 			await Animations.animation_finished
 			KnightDied.emit()
 			call_deferred("queue_free")

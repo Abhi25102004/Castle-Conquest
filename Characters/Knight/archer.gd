@@ -18,7 +18,7 @@ func OnAttack() -> void:
 		call_deferred("add_child",Arrow)
 
 func Stats_Setter() -> void:
-	Health = randf_range(99,101)
-	Attack = randf_range(19,21)
+	Health = randf_range(79,81)
+	Attack = randf_range(24,26)
 	Attack_Speed = randf_range(1.1,1.3)
 	Cost = 75

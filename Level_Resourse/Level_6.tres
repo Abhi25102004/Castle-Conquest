@@ -27,7 +27,6 @@ Wave_delay = 4
 [resource]
 script = ExtResource("1_u3wqj")
 Level_number = 6
-Level_Name = "Level 6 : The Gold Rush"
 Money_Required = 325
 Wave1 = SubResource("Resource_716tt")
 Wave2 = SubResource("Resource_ppvll")

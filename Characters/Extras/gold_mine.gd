@@ -12,9 +12,8 @@ var Game_State : bool = true
 var CharacterIsDead : bool = false
 var Goblin_Array : Array[Goblin_Class] = []
 
-@export var CharacterName : String
-@export var Health : float
-@export var Cost : float
+var Health : float = randf_range(99,101)
+var Cost : int = 75
 
 @onready var Images: Sprite2D = $Sprite2D
 

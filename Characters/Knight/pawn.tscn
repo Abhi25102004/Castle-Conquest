@@ -1,10 +1,11 @@
-[gd_scene load_steps=59 format=3 uid="uid://ceby6oqyqicd4"]
+[gd_scene load_steps=72 format=3 uid="uid://ceby6oqyqicd4"]
 
 [ext_resource type="Script" uid="uid://brmqqlh4xojhh" path="res://Characters/Knight/pawn.gd" id="1_8k5qk"]
 [ext_resource type="Texture2D" uid="uid://cjbvmdlb3gejl" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="1_31t5t"]
 [ext_resource type="Texture2D" uid="uid://dhs7u2icykmf8" path="res://Assets/Factions/Knights/Troops/Dead/Dead.png" id="3_8mubi"]
 [ext_resource type="Texture2D" uid="uid://cnpm5u5eptfne" path="res://Assets/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="3_n3cg5"]
 [ext_resource type="Texture2D" uid="uid://5scku73ljnl2" path="res://Assets/Factions/Knights/Troops/Pawn/Yellow/Pawn_Yellow.png" id="4_1jw6v"]
+[ext_resource type="Texture2D" uid="uid://cfgrva4lan4jx" path="res://Assets/Factions/Knights/Troops/Pawn/Purple/Pawn_Purple.png" id="4_id43i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8dpde"]
 atlas = ExtResource("1_31t5t")
@@ -109,6 +110,54 @@ region = Rect2(640, 128, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ids6p"]
 atlas = ExtResource("3_8mubi")
 region = Rect2(768, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7ero"]
+atlas = ExtResource("4_id43i")
+region = Rect2(0, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqm6v"]
+atlas = ExtResource("4_id43i")
+region = Rect2(192, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rf7n"]
+atlas = ExtResource("4_id43i")
+region = Rect2(384, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v2f4"]
+atlas = ExtResource("4_id43i")
+region = Rect2(576, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a88kf"]
+atlas = ExtResource("4_id43i")
+region = Rect2(768, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdlqa"]
+atlas = ExtResource("4_id43i")
+region = Rect2(960, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaogs"]
+atlas = ExtResource("4_id43i")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyymq"]
+atlas = ExtResource("4_id43i")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35tuj"]
+atlas = ExtResource("4_id43i")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p200"]
+atlas = ExtResource("4_id43i")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdtg8"]
+atlas = ExtResource("4_id43i")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq0fh"]
+atlas = ExtResource("4_id43i")
+region = Rect2(960, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jw6v"]
 atlas = ExtResource("3_n3cg5")
@@ -303,6 +352,52 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_v7ero")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqm6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rf7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v2f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a88kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdlqa")
+}],
+"loop": false,
+"name": &"Purple_Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaogs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyymq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35tuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p200")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdtg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq0fh")
+}],
+"loop": true,
+"name": &"Purple_Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1jw6v")
 }, {
 "duration": 1.0,
@@ -401,16 +496,17 @@ height = 52.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mubi"]
 size = Vector2(106.154, 53.0769)
 
-[node name="Pawn" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node")]
+[node name="Pawn" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node", "HitBox_CollisionShape_node")]
 texture_filter = 1
 script = ExtResource("1_8k5qk")
 Animated_node = NodePath("AnimatedSprite2D")
 HurtBox_node = NodePath("Hurtbox")
+HitBox_CollisionShape_node = NodePath("Hitbox/CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_5iy7o")
-animation = &"Blue_Attack"
+animation = &"Purple_Idle"
 
 [node name="Hitbox" type="Area2D" parent="."]
 scale = Vector2(1.3, 1.3)

@@ -15,7 +15,7 @@ func OnAttack() -> void:
 		GiveDamageToKnight.emit(Attack)
 
 func Stats_Setter() -> void:
-	Health = randf_range(49,51)
+	Health = randf_range(79,81)
 	Attack = randf_range(14,16)
 	Attack_Speed = randf_range(0.9,1.1)
 	Cost = 30

@@ -27,7 +27,6 @@ Wave_delay = 3
 [resource]
 script = ExtResource("1_fdyi6")
 Level_number = 7
-Level_Name = "Level 7 : Sheep Mayhem"
 Money_Required = 450
 Wave1 = SubResource("Resource_htb8d")
 Wave2 = SubResource("Resource_p2wef")

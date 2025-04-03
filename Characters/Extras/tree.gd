@@ -1,43 +1,37 @@
-extends Node2D
+extends Knight_Class
 
-signal KnightDied
+func Stats_Setter() -> void:
+	Health = randf_range(299,301)
+	Attack = 0
+	Attack_Speed = 0
+	Cost = 60
 
-# constant 
-enum States { Idle, Attack }
-
-# variables
-var Knight : States = States.Idle
-var gettingAttacked : bool = false
-var Game_State : bool = true
-
-var Health : float = randf_range(299,301)
-var Cost : int = 60
-
-@onready var Animations: AnimatedSprite2D = $AnimatedSprite2D
-
-func Take_Damage_from_Goblin(Power : int) -> void:
+func Take_Damage_from_Goblin(Power : float) -> void:
+	Knight = States.Attack
 	Health -= Power
-	gettingAttacked = true
-	if Health <= 0:
-		Character_Death()
 
-func Character_Death() -> void:
-	KnightDied.emit()
-	queue_free()
+func getAnimation_String() -> String:
+	match Knight:
+		States.Idle:
+			return "Idle"
+		States.Attack:
+			return "Attack"
+		States.Death:
+			return "Death"
+	return ""
 
 func Game_Loop() -> void :
 	match Knight:
 		States.Idle:
-			Knight = States.Attack if gettingAttacked else Knight
-			Animations.play("Idle")
+			Animations.play(Animation_String)
 		States.Attack:
-			Knight = States.Idle
-			Animations.play("Attack")
+			await get_tree().create_timer(Attack_Speed).timeout
+			Animations.play(Animation_String)
 			await Animations.animation_finished
-			gettingAttacked = false
+			Knight = States.Idle
+		States.Death:
+			Animations.play(Animation_String)
+			await Animations.animation_finished
+			KnightDied.emit()
+			call_deferred("queue_free")
 	Game_State = true
-
-func _process(_delta: float) -> void:
-	if Game_State:
-		Game_State = false
-		Game_Loop()

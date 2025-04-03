@@ -20,9 +20,13 @@ var Knight_Array : Array[Node2D] = []
 
 @export var Animated_node : AnimatedSprite2D
 @export var HurtBox_node : Area2D
+@export var HitBox_CollisionShape_node : CollisionShape2D
+@export var HurtBox_CollisionShape_node : CollisionShape2D
 
 @onready var Animations: AnimatedSprite2D = Animated_node
 @onready var HurtBox: Area2D = HurtBox_node
+@onready var HitBox_CollisionShape: CollisionShape2D = HitBox_CollisionShape_node
+@onready var HurtBox_CollisionShape: CollisionShape2D = HurtBox_CollisionShape_node
 
 func HurtBox_Entered(_area: Area2D) -> void:
 	pass
@@ -39,31 +43,26 @@ func Stats_Setter() -> void:
 func Take_Damage_from_knight(Power : float) -> void:
 	Health -= Power
 
-func Character_Death() -> void:
-	GoblinDied.emit()
-	Global.Add_Money.emit(Cost)
-	Global.Progress.emit()
-	call_deferred("queue_free")
-
 func Game_Loop(delta: float) -> void:
 	canAttack = true if !Knight_Array.is_empty() else false
 	Goblin = States.Death if Health <= 0 else Goblin
 	match Goblin:
 		States.Idle:
-			Goblin = States.Attack if canAttack else States.Run
 			Animations.play("Idle")
+			Goblin = States.Attack if canAttack else States.Run
 		States.Run:
-			Goblin = States.Idle if canAttack else Goblin
 			Animations.play("Run")
 			position.x += Speed * delta * Direction
+			Goblin = States.Idle if canAttack else Goblin
 		States.Attack:
-			Goblin = States.Idle
 			if !Knight_Array.is_empty():
 				await get_tree().create_timer(Attack_Speed).timeout
 				Animations.play("Attack")
 				await Animations.animation_finished
 				OnAttack()
+			Goblin = States.Idle
 		States.Death:
+			HitBox_CollisionShape.disabled = true
 			Animations.flip_h = false
 			Animations.play("Death")
 			await Animations.animation_finished

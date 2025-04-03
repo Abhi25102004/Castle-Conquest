@@ -1,56 +1,46 @@
-extends Node2D
+extends Knight_Class
 
-signal KnightDied
+func Stats_Setter() -> void:
+	Health = randf_range(79,81)
+	Attack = 0
+	Attack_Speed = 0
+	Cost = 40
 
-# constant 
-enum States { Idle, Attack }
-
-# variables
-var Knight : States = States.Idle
-var getingAttacked : bool = false
-var Game_State : bool = true
-var Enemy : Goblin_Class = null
-
-@export var CharacterName : String
-@export var Health : int
-@export var Cost : int
-
-@onready var Animations: AnimatedSprite2D = $AnimatedSprite2D
-
-func Take_Damage_from_Goblin(Power : int) -> void:
+func Take_Damage_from_Goblin(Power : float) -> void:
+	Knight = States.Attack
 	Health -= Power
-	getingAttacked = true
-	if Health <= 0:
-		Character_Death()
 
-func Character_Death() -> void:
-	KnightDied.emit()
-	Enemy.Health = Enemy.Health/2
-	Enemy.Speed = Enemy.Speed/2
-	Enemy.Attack = Enemy.Attack/2
-	call_deferred("queue_free")
+func HurtBox_Entered(area: Area2D) -> void:
+	if area.get_parent() is Goblin_Class:
+		Goblin_Array.append(area.get_parent())
+
+func getAnimation_String() -> String:
+	match Knight:
+		States.Idle:
+			return "Idle"
+		States.Attack:
+			return "Attack"
+		States.Death:
+			return "Death"
+	return ""
 
 func Game_Loop() -> void :
 	match Knight:
 		States.Idle:
-			Knight = States.Attack if getingAttacked else Knight
-			Animations.play("Idle")
+			Animations.play(Animation_String)
 		States.Attack:
-			Knight = States.Idle
-			Animations.play("Attack")
+			await get_tree().create_timer(Attack_Speed).timeout
+			Animations.play(Animation_String)
 			await Animations.animation_finished
-			getingAttacked = false
+			Knight = States.Idle
+		States.Death:
+			HitBox_CollisionShape.disabled = true
+			Goblin_Array[0].HurtBox_CollisionShape.disabled = true
+			Goblin_Array[0].Direction = 1
+			Goblin_Array[0].Animations.flip_h = false
+			Animations.play(Animation_String)
+			Animations.scale = Vector2(1.3,1.3)
+			await Animations.animation_finished
+			KnightDied.emit()
+			call_deferred("queue_free")
 	Game_State = true
-
-func _process(_delta: float) -> void:
-	if Game_State:
-		Game_State = false
-		Game_Loop()
-
-func Enemy_Entered(area: Area2D) -> void:
-	if area.get_parent() is Goblin_Class:
-		Enemy = area.get_parent()
-
-func Enemy_Exited(area: Area2D) -> void:
-	if area.get_parent() is Goblin_Class:
-		Enemy = null

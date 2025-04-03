@@ -18,8 +18,8 @@ func OnAttack() -> void:
 		call_deferred("add_child",Dynamite_instance)
 
 func Stats_Setter() -> void:
-	Health = randf_range(79,81)
-	Attack = randf_range(19,21)
-	Attack_Speed = randf_range(0.9,1.1)
+	Health = randf_range(99,101)
+	Attack = randf_range(29,31)
+	Attack_Speed = randf_range(0.5,0.7)
 	Cost = 50
 	Speed = randf_range(79,81)

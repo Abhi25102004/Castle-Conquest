@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://cfbdo4iu53vgd" path="res://Level_Resourse/Level_3.tres" id="4_w7mfx"]
 [ext_resource type="Resource" uid="uid://cv676bwaem3j3" path="res://Level_Resourse/Level_4.tres" id="5_lcbma"]
 [ext_resource type="Resource" uid="uid://bstcapxlulbt4" path="res://Level_Resourse/Level_5.tres" id="6_3pwfb"]
+[ext_resource type="Texture2D" uid="uid://dypndckq0k1en" path="res://Assets/UI/Icons/Regular_01.png" id="7_a1xi6"]
 [ext_resource type="Resource" uid="uid://by8jm2qdqv8yu" path="res://Level_Resourse/Level_6.tres" id="7_sxegx"]
 [ext_resource type="Resource" uid="uid://br2takgi8cgn8" path="res://Level_Resourse/Level_7.tres" id="8_3d6et"]
 [ext_resource type="Resource" uid="uid://j5u2hj8rju2u" path="res://Level_Resourse/Level_8.tres" id="9_fju5b"]
@@ -16,7 +17,6 @@
 [ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="13_fxl5o"]
 [ext_resource type="Texture2D" uid="uid://cvuoaqvekvhyg" path="res://Assets/UI/Buttons/Button_Red.png" id="13_glgw5"]
 [ext_resource type="Texture2D" uid="uid://drgcesc7p4043" path="res://Assets/UI/Buttons/Button_Red_Pressed.png" id="14_48ctu"]
-[ext_resource type="Texture2D" uid="uid://q10aixmkmhq5" path="res://Assets/UI/Icons/Pressed_01.png" id="14_oyvw4"]
 [ext_resource type="PackedScene" uid="uid://bdper8mpsojr3" path="res://User Interface/Level_Button.tscn" id="18_a1xi6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jd7ps"]
@@ -187,23 +187,17 @@ vertical_alignment = 3
 texture_filter = 1
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_stretch_ratio = 0.52
 theme_override_styles/focus = SubResource("StyleBoxTexture_1sivj")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_xoq1b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xoq1b")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wuo7t")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xoq1b")
+icon = ExtResource("7_a1xi6")
+icon_alignment = 1
+vertical_icon_alignment = 2
 expand_icon = true
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/Quit"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_oyvw4")
 
 [node name="Levels Container" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -213,70 +207,70 @@ columns = 2
 
 [node name="Level 1" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Chapter 1 : The First Siege"
+text = "Trial 1 : The Scouting Skirmish"
 icon_alignment = 0
 Level_number = 1
 Level_data = ExtResource("2_nqvcr")
 
 [node name="Level 2" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Chapter 2 : Goblin Assault"
+text = "Trial 2 : 	Siege at Dusk"
 icon_alignment = 0
 Level_number = 2
 Level_data = ExtResource("3_uy40g")
 
 [node name="Level 3" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Chapter 3 : Explosive Trouble"
+text = "Trial 3 : The Greenwood Stand"
 icon_alignment = 0
 Level_number = 3
 Level_data = ExtResource("4_w7mfx")
 
 [node name="Level 4" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Chapter 4 : Towers and Tactics"
+text = "Trial 4 : Clash of Blades"
 icon_alignment = 0
 Level_number = 4
 Level_data = ExtResource("5_lcbma")
 
 [node name="Level 5" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Chapter 5 : Barrels of Chaos"
+text = "Trial 5 : The Goblin Horde"
 icon_alignment = 0
 Level_number = 5
 Level_data = ExtResource("6_3pwfb")
 
 [node name="Level 6" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Chapter 6 : The Gold Rush"
+text = "Trial 6 : The Iron Bastion"
 icon_alignment = 0
 Level_number = 6
 Level_data = ExtResource("7_sxegx")
 
 [node name="Level 7" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Chapter 7 : Sheep Mayhem"
+text = "Trial 7 : Wrath of the Wild"
 icon_alignment = 0
 Level_number = 7
 Level_data = ExtResource("8_3d6et")
 
 [node name="Level 8" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Chapter 8 : Blazing Inferno"
+text = "Trial 8 : Ember and Ash"
 icon_alignment = 0
 Level_number = 8
 Level_data = ExtResource("9_fju5b")
 
 [node name="Level 9" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Chapter 9 : Siege of the Goblins"
+text = "Trial 9 : The King’s Reckoning"
 icon_alignment = 0
 Level_number = 9
 Level_data = ExtResource("10_xqaor")
 
 [node name="Level 10" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Chapter 10 : The Final Stand"
+text = "Trial 10 : The Crown’s Last Hope"
 icon_alignment = 0
 Level_number = 10
 Level_data = ExtResource("11_u5yem")
