@@ -1,30 +1,17 @@
-extends Node2D
-
-signal KnightDied
-
-# constant 
-enum States { Idle, Attack }
-
-# variables
-var Knight : States = States.Idle
-var canAttack : bool = false
-var Game_State : bool = true
-var CharacterIsDead : bool = false
-var Goblin_Array : Array[Goblin_Class] = []
-
-var Health : float = randf_range(99,101)
-var Cost : int = 75
+extends Knight_Class
 
 @onready var Images: Sprite2D = $Sprite2D
 
-func Take_Damage_from_Goblin(Power : float) -> void:
-	Health -= Power
-	if Health <= 0:
-		Character_Death()
+func Stats_Setter() -> void:
+	Health = 75
+	Attack = 0
+	Attack_Speed = 0
+	Cost = 75	
+	Character_value = 3
 
-func Character_Death() -> void:
-	KnightDied.emit()
-	call_deferred("queue_free")
+
+func Game_Loop() -> void :
+	pass
 
 func _ready() -> void:
 	await get_tree().create_timer(5).timeout

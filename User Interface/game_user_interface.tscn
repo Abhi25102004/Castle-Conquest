@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dj4natrlfejt7"]
+[gd_scene load_steps=45 format=3 uid="uid://dj4natrlfejt7"]
 
 [ext_resource type="Script" uid="uid://buofsbrclxxfx" path="res://User Interface/game_user_interface.gd" id="1_h2gpb"]
 [ext_resource type="PackedScene" uid="uid://bchfui5nqukg" path="res://User Interface/custum_button.tscn" id="2_a7d2l"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cqv08os8pgxxy" path="res://Assets/UI/Ribbons/Ribbon_Blue_3Slides.png" id="3_56cii"]
 [ext_resource type="Texture2D" uid="uid://bqfpfffsw3ev7" path="res://Assets/Resources/Resources/G_Spawn.png" id="4_56cii"]
 [ext_resource type="Texture2D" uid="uid://cn1tffbh3q3ue" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/warrior_icon.png" id="5_4pvt4"]
+[ext_resource type="FontFile" uid="uid://drwi4ulb0gmau" path="res://Fonts/SpectralSC-Regular.ttf" id="5_5sup3"]
 [ext_resource type="PackedScene" uid="uid://b5fdmhnpga6lt" path="res://User Interface/hover_button.tscn" id="5_fnbrd"]
 [ext_resource type="Texture2D" uid="uid://curimxwxr3tsd" path="res://Assets/UI/Icons/Regular_03.png" id="6_a4dss"]
 [ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Knight/warrior.tscn" id="6_nsg1e"]
@@ -24,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bskgyjt670uef" path="res://Assets/Resources/Sheep/Sheep_icon.png" id="20_iincq"]
 [ext_resource type="Texture2D" uid="uid://c5w4yr5s6d661" path="res://Assets/Resources/Gold Mine/GoldMine_Active.png" id="20_ljjiq"]
 [ext_resource type="Texture2D" uid="uid://b12vluoahns3l" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="21_3olcv"]
+[ext_resource type="PackedScene" uid="uid://dabep56arwg2w" path="res://Characters/Extras/gold_mine.tscn" id="21_56cii"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sn6tn"]
 
@@ -96,9 +98,9 @@ texture_margin_left = 64.0
 texture_margin_right = 64.0
 texture_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ljjiq"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56cii"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5sup3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6h4ae"]
 
@@ -138,7 +140,7 @@ offset_right = 360.0
 offset_bottom = 135.0
 size_flags_horizontal = 0
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("2_beoc8")
+theme_override_fonts/font = ExtResource("5_5sup3")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_5sup3")
 text = "1000"
@@ -146,7 +148,7 @@ horizontal_alignment = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Header/Label"]
 texture_filter = 1
-position = Vector2(97, 32)
+position = Vector2(81, 40)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_fnphr")
 animation = &"Coin Added"
@@ -160,32 +162,33 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -325.5
-offset_right = 325.5
-offset_bottom = 139.0
+offset_left = -265.5
+offset_right = 265.5
+offset_bottom = 135.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_b4a3p")
 
-[node name="Lable" type="Label" parent="Header/Panel"]
-custom_minimum_size = Vector2(360, 135)
+[node name="VBoxContainer" type="VBoxContainer" parent="Header/Panel"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("2_beoc8")
-theme_override_font_sizes/font_size = 41
-text = "Trial 1 : The Scouting Skirmish"
+theme_override_constants/separation = -30
+
+[node name="Label" type="Label" parent="Header/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_5sup3")
+theme_override_font_sizes/font_size = 50
+text = "Level Progress"
 horizontal_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Header/Panel"]
-texture_filter = 1
+[node name="ProgressBar" type="ProgressBar" parent="Header/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_beoc8")
-theme_override_font_sizes/font_size = 62
-theme_override_styles/background = SubResource("StyleBoxEmpty_ljjiq")
-theme_override_styles/fill = SubResource("StyleBoxEmpty_56cii")
-step = 1.0
+theme_override_fonts/font = ExtResource("5_5sup3")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/background = SubResource("StyleBoxEmpty_56cii")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_5sup3")
+value = 100.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Header"]
 layout_mode = 1
@@ -386,7 +389,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 
 [node name="Pawn" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_beoc8")
 image = ExtResource("7_norpy")
@@ -394,23 +396,37 @@ value = 50
 Scene = ExtResource("8_4jkkd")
 
 [node name="Archer" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_beoc8")
 image = ExtResource("9_vn6de")
 value = 75
 Scene = ExtResource("10_nk7vq")
 
+[node name="Tree" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+layout_mode = 2
+icon = ExtResource("15_wf20l")
+icon_alignment = 1
+expand_icon = true
+value = 60
+Scene = ExtResource("15_3xul8")
+
 [node name="Warrior" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_beoc8")
 image = ExtResource("5_4pvt4")
 value = 100
 Scene = ExtResource("6_nsg1e")
 
+[node name="Gold Mine" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_beoc8")
+icon = ExtResource("20_ljjiq")
+icon_alignment = 1
+expand_icon = true
+value = 75
+Scene = ExtResource("21_56cii")
+
 [node name="Tower" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
-visible = false
 layout_mode = 2
 icon = ExtResource("21_3olcv")
 icon_alignment = 1
@@ -418,17 +434,7 @@ expand_icon = true
 value = 150
 Scene = ExtResource("19_gkd4u")
 
-[node name="Gold Mine" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
-visible = false
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_beoc8")
-icon = ExtResource("20_ljjiq")
-icon_alignment = 1
-expand_icon = true
-value = 75
-
 [node name="Sheep" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_beoc8")
 icon_alignment = 1
@@ -436,12 +442,3 @@ expand_icon = true
 image = ExtResource("20_iincq")
 value = 40
 Scene = ExtResource("19_hw3dj")
-
-[node name="Tree" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]
-visible = false
-layout_mode = 2
-icon = ExtResource("15_wf20l")
-icon_alignment = 1
-expand_icon = true
-value = 60
-Scene = ExtResource("15_3xul8")

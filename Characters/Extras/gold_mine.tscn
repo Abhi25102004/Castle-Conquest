@@ -10,9 +10,12 @@ size = Vector2(159, 100)
 script = ExtResource("1_ejd3x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -25)
 texture = ExtResource("1_lsk5g")
 
 [node name="HitBox" type="Area2D" parent="."]
+position = Vector2(0, -25)
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]

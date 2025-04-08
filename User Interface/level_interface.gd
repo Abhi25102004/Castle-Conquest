@@ -16,6 +16,7 @@ func _ready() -> void:
 				get_tree().change_scene_to_file("res://Test Scenes/test_world.tscn")
 				)
 		else:
+			button.text = ""
 			button.icon = preload("res://Assets/UI/Icons/Regular_10.png")
 
 func Quit_Button() -> void:

@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var Animations: AnimationPlayer = $AnimationPlayer
+@onready var continue_button: Button = $Panel/MarginContainer/VBoxContainer/VBoxContainer/Continue
 
 func _ready() -> void:
 	var directory = DirAccess.open("user://")
@@ -8,7 +9,7 @@ func _ready() -> void:
 		directory.make_dir_recursive("user://SaveFiles")
 	else:
 		if FileAccess.file_exists("user://SaveFiles/Level_Details.tres"):
-			$Panel/VBoxContainer/Continue.visible = true
+			continue_button.visible = true
 
 func Start_New_Game() -> void:
 	var SaveFile: Level_Selection = Level_Selection.new()

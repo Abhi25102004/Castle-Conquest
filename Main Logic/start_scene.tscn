@@ -1,13 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba0gtikn7kqqp"]
+[gd_scene load_steps=16 format=3 uid="uid://ba0gtikn7kqqp"]
 
 [ext_resource type="Texture2D" uid="uid://c3urdfdp3iala" path="res://Assets/UI/Buttons/Button_Hover_3Slides.png" id="1_dcj0t"]
 [ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="1_godbx"]
 [ext_resource type="Script" uid="uid://b4pmtpotvexkw" path="res://Main Logic/start_scene.gd" id="1_olm3w"]
-[ext_resource type="PackedScene" uid="uid://bok83hvs5brc4" path="res://Main Logic/background_image.tscn" id="2_e5kvu"]
+[ext_resource type="PackedScene" uid="uid://bok83hvs5brc4" path="res://Main Logic/background_image.tscn" id="2_dov56"]
 [ext_resource type="Texture2D" uid="uid://6fphagbmpl0f" path="res://Assets/UI/Buttons/Button_Disable_3Slides.png" id="2_xo1ju"]
+[ext_resource type="FontFile" uid="uid://bytma58a8bj82" path="res://Fonts/PirataOne-Regular.ttf" id="3_e5kvu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlq3l"]
-bg_color = Color(0.501845, 0.632409, 0.607038, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dov56"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xnddv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u773t"]
 
@@ -15,7 +17,7 @@ bg_color = Color(0.501845, 0.632409, 0.607038, 1)
 texture = ExtResource("1_dcj0t")
 texture_margin_left = 7.0
 texture_margin_right = 7.0
-texture_margin_bottom = 8.0
+texture_margin_bottom = 12.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7n20"]
 texture = ExtResource("2_xo1ju")
@@ -29,19 +31,19 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate")
+tracks/0/path = NodePath("Panel/MarginContainer/VBoxContainer/Title:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Panel/Title:self_modulate")
+tracks/1/path = NodePath("Panel/MarginContainer/VBoxContainer/VBoxContainer:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -53,7 +55,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Panel/VBoxContainer:visible")
+tracks/2/path = NodePath("ColorRect:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -65,7 +67,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Panel/VBoxContainer:modulate")
+tracks/3/path = NodePath("ColorRect:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -74,77 +76,66 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Panel:self_modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_olm3w"]
 resource_name = "Start"
-length = 3.0
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/Title:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel/VBoxContainer:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.96667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Panel/VBoxContainer:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(2, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_e5kvu"]
-resource_name = "transition"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate")
+tracks/0/path = NodePath("Panel/MarginContainer/VBoxContainer/Title:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Panel:self_modulate")
+tracks/1/path = NodePath("Panel/MarginContainer/VBoxContainer/VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_e5kvu"]
+resource_name = "transition"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -164,103 +155,115 @@ _data = {
 [node name="Start Scene" type="CanvasLayer"]
 script = ExtResource("1_olm3w")
 
-[node name="Background Image" parent="." instance=ExtResource("2_e5kvu")]
+[node name="Background Image" parent="." instance=ExtResource("2_dov56")]
 
 [node name="Panel" type="PanelContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_hlq3l")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dov56")
 
-[node name="Title" type="Label" parent="Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("1_godbx")
-theme_override_font_sizes/font_size = 280
+theme_override_font_sizes/font_size = 240
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xnddv")
 text = "Castle Conquest"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-visible = false
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+size_flags_stretch_ratio = 2.0
+
+[node name="Continue" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(700, 190)
+layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Continue" type="Button" parent="Panel/VBoxContainer"]
-visible = false
-texture_filter = 1
-custom_minimum_size = Vector2(700, 250)
-layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 0
 theme_override_colors/font_hover_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_focus_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_pressed_color = Color(0.117647, 0.227451, 0.541176, 1)
-theme_override_fonts/font = ExtResource("1_godbx")
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("3_e5kvu")
+theme_override_font_sizes/font_size = 100
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u773t")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_0f8fm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0f8fm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_y7n20")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0f8fm")
-text = "Resume"
+text = "Continue"
 icon_alignment = 1
 
-[node name="New Game" type="Button" parent="Panel/VBoxContainer"]
+[node name="New Game" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(700, 250)
+custom_minimum_size = Vector2(700, 190)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_colors/font_hover_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_focus_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_pressed_color = Color(0.117647, 0.227451, 0.541176, 1)
-theme_override_fonts/font = ExtResource("1_godbx")
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("3_e5kvu")
+theme_override_font_sizes/font_size = 100
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u773t")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_0f8fm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0f8fm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_y7n20")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0f8fm")
-text = "New Quest"
+text = "New Game"
 icon_alignment = 1
 
-[node name="Settings" type="Button" parent="Panel/VBoxContainer"]
+[node name="Settings" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(700, 250)
+custom_minimum_size = Vector2(700, 190)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_colors/font_hover_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_focus_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_pressed_color = Color(0.117647, 0.227451, 0.541176, 1)
-theme_override_fonts/font = ExtResource("1_godbx")
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("3_e5kvu")
+theme_override_font_sizes/font_size = 100
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u773t")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_0f8fm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0f8fm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_y7n20")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0f8fm")
-text = "Options"
+text = "Settings"
 icon_alignment = 1
 
-[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
+[node name="Quit" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(700, 250)
+custom_minimum_size = Vector2(700, 190)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_colors/font_hover_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_focus_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_pressed_color = Color(0.117647, 0.227451, 0.541176, 1)
-theme_override_fonts/font = ExtResource("1_godbx")
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("3_e5kvu")
+theme_override_font_sizes/font_size = 100
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u773t")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_0f8fm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0f8fm")
@@ -269,13 +272,25 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_0f8fm")
 text = "Exit"
 icon_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0, 0, 0, 1)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_xnddv")
 }
 autoplay = "Start"
 
-[connection signal="pressed" from="Panel/VBoxContainer/Continue" to="." method="Continue_Game"]
-[connection signal="pressed" from="Panel/VBoxContainer/New Game" to="." method="Start_New_Game"]
-[connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="Game_Settings"]
-[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="Quit_Game"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/VBoxContainer/Continue" to="." method="Continue_Game"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/VBoxContainer/New Game" to="." method="Start_New_Game"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/VBoxContainer/Settings" to="." method="Game_Settings"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/VBoxContainer/Quit" to="." method="Quit_Game"]

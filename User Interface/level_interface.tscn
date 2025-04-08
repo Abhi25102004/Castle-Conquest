@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://de1ax3bkck65i"]
+[gd_scene load_steps=39 format=3 uid="uid://de1ax3bkck65i"]
 
 [ext_resource type="Texture2D" uid="uid://blrqsrn1o40l3" path="res://Assets/UI/Banners/Carved_9Slides.png" id="1_7wi20"]
 [ext_resource type="Script" uid="uid://buba3jibuxwqe" path="res://User Interface/level_interface.gd" id="1_cnmvk"]
 [ext_resource type="Resource" uid="uid://bqcjuwar5w4u3" path="res://Level_Resourse/Level_1.tres" id="2_nqvcr"]
 [ext_resource type="Texture2D" uid="uid://b821201aprn50" path="res://Assets/UI/Ribbons/Ribbon_Red_3Slides.png" id="2_os1vf"]
+[ext_resource type="FontFile" uid="uid://drwi4ulb0gmau" path="res://Fonts/SpectralSC-Regular.ttf" id="3_2lhvk"]
 [ext_resource type="Resource" uid="uid://bghf2y55owda6" path="res://Level_Resourse/Level_2.tres" id="3_uy40g"]
 [ext_resource type="Resource" uid="uid://cfbdo4iu53vgd" path="res://Level_Resourse/Level_3.tres" id="4_w7mfx"]
 [ext_resource type="Resource" uid="uid://cv676bwaem3j3" path="res://Level_Resourse/Level_4.tres" id="5_lcbma"]
@@ -12,12 +13,21 @@
 [ext_resource type="Resource" uid="uid://by8jm2qdqv8yu" path="res://Level_Resourse/Level_6.tres" id="7_sxegx"]
 [ext_resource type="Resource" uid="uid://br2takgi8cgn8" path="res://Level_Resourse/Level_7.tres" id="8_3d6et"]
 [ext_resource type="Resource" uid="uid://j5u2hj8rju2u" path="res://Level_Resourse/Level_8.tres" id="9_fju5b"]
+[ext_resource type="Texture2D" uid="uid://djp2d31y2dyu1" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Blue_Pawn_icon.png" id="9_slx5t"]
 [ext_resource type="Resource" uid="uid://cwl0hdsvjbhpf" path="res://Level_Resourse/Level_9.tres" id="10_xqaor"]
+[ext_resource type="Texture2D" uid="uid://c2yo6sqssrx6q" path="res://Assets/Factions/Knights/Troops/Archer/Blue/Archer_icon.png" id="11_2lhvk"]
 [ext_resource type="Resource" uid="uid://btnmtu7io6mgj" path="res://Level_Resourse/Level_10.tres" id="11_u5yem"]
-[ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="13_fxl5o"]
+[ext_resource type="Texture2D" uid="uid://57hs0w3t5uq2" path="res://Assets/Resources/Trees/Tree_icon.png" id="13_4mx7g"]
 [ext_resource type="Texture2D" uid="uid://cvuoaqvekvhyg" path="res://Assets/UI/Buttons/Button_Red.png" id="13_glgw5"]
 [ext_resource type="Texture2D" uid="uid://drgcesc7p4043" path="res://Assets/UI/Buttons/Button_Red_Pressed.png" id="14_48ctu"]
+[ext_resource type="Texture2D" uid="uid://cn1tffbh3q3ue" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/warrior_icon.png" id="15_a6ule"]
+[ext_resource type="Texture2D" uid="uid://c5w4yr5s6d661" path="res://Assets/Resources/Gold Mine/GoldMine_Active.png" id="17_ouwdb"]
 [ext_resource type="PackedScene" uid="uid://bdper8mpsojr3" path="res://User Interface/Level_Button.tscn" id="18_a1xi6"]
+[ext_resource type="Texture2D" uid="uid://b12vluoahns3l" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="19_8trj0"]
+[ext_resource type="Texture2D" uid="uid://bskgyjt670uef" path="res://Assets/Resources/Sheep/Sheep_icon.png" id="21_4k2mx"]
+[ext_resource type="Texture2D" uid="uid://df4vsht08c4ui" path="res://Assets/Factions/Goblins/Buildings/Wood_House/Goblin_House_Destroyed.png" id="23_2lhvk"]
+[ext_resource type="Texture2D" uid="uid://ctl2rt4e2nnj0" path="res://Assets/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Destroyed.png" id="25_2lhvk"]
+[ext_resource type="Texture2D" uid="uid://bx3tt16ncjlxm" path="res://Assets/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="27_51n1b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jd7ps"]
 texture = ExtResource("1_7wi20")
@@ -31,7 +41,7 @@ texture_margin_right = 3.0
 texture = ExtResource("2_os1vf")
 texture_margin_left = 64.0
 texture_margin_right = 64.0
-texture_margin_bottom = 6.0
+texture_margin_bottom = 12.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1sivj"]
 
@@ -176,12 +186,11 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_e7xwm")
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("13_fxl5o")
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("3_2lhvk")
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_1fsc0")
-text = "Trials"
-horizontal_alignment = 3
-vertical_alignment = 3
+text = "Level"
+horizontal_alignment = 1
 
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
 texture_filter = 1
@@ -203,75 +212,66 @@ expand_icon = true
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-columns = 2
+columns = 5
 
 [node name="Level 1" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Trial 1 : The Scouting Skirmish"
-icon_alignment = 0
+icon = ExtResource("9_slx5t")
 Level_number = 1
 Level_data = ExtResource("2_nqvcr")
 
 [node name="Level 2" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Trial 2 : 	Siege at Dusk"
-icon_alignment = 0
+icon = ExtResource("11_2lhvk")
 Level_number = 2
 Level_data = ExtResource("3_uy40g")
 
 [node name="Level 3" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Trial 3 : The Greenwood Stand"
-icon_alignment = 0
+icon = ExtResource("13_4mx7g")
 Level_number = 3
 Level_data = ExtResource("4_w7mfx")
 
 [node name="Level 4" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Trial 4 : Clash of Blades"
-icon_alignment = 0
+icon = ExtResource("15_a6ule")
 Level_number = 4
 Level_data = ExtResource("5_lcbma")
 
 [node name="Level 5" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Trial 5 : The Goblin Horde"
-icon_alignment = 0
+icon = ExtResource("17_ouwdb")
 Level_number = 5
 Level_data = ExtResource("6_3pwfb")
 
 [node name="Level 6" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Trial 6 : The Iron Bastion"
-icon_alignment = 0
+icon = ExtResource("19_8trj0")
 Level_number = 6
 Level_data = ExtResource("7_sxegx")
 
 [node name="Level 7" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Trial 7 : Wrath of the Wild"
-icon_alignment = 0
+icon = ExtResource("21_4k2mx")
 Level_number = 7
 Level_data = ExtResource("8_3d6et")
 
 [node name="Level 8" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Trial 8 : Ember and Ash"
-icon_alignment = 0
+icon = ExtResource("23_2lhvk")
+vertical_icon_alignment = 0
 Level_number = 8
 Level_data = ExtResource("9_fju5b")
 
 [node name="Level 9" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Trial 9 : The King’s Reckoning"
-icon_alignment = 0
+icon = ExtResource("25_2lhvk")
 Level_number = 9
 Level_data = ExtResource("10_xqaor")
 
 [node name="Level 10" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("18_a1xi6")]
 layout_mode = 2
-text = "Trial 10 : The Crown’s Last Hope"
-icon_alignment = 0
+icon = ExtResource("27_51n1b")
 Level_number = 10
 Level_data = ExtResource("11_u5yem")
 

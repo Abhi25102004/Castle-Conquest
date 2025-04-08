@@ -2,20 +2,11 @@
 
 [ext_resource type="Script" uid="uid://0cew7k38if2u" path="res://Game Logic Parts/enemy_area.gd" id="1_31j7t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_61xxl"]
-size = Vector2(1920, 182)
+[sub_resource type="CircleShape2D" id="CircleShape2D_31j7t"]
 
 [node name="Enemy Area" type="Area2D"]
 collision_layer = 16
 script = ExtResource("1_31j7t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-960, 0)
-shape = SubResource("RectangleShape2D_61xxl")
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[connection signal="area_entered" from="." to="." method="Area_Entered"]
-[connection signal="area_exited" from="." to="." method="Area_Exited"]
-[connection signal="timeout" from="Timer" to="." method="Timeout"]
+shape = SubResource("CircleShape2D_31j7t")

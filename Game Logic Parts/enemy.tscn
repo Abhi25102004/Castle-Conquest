@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ycwicewcvawm"]
+[gd_scene load_steps=9 format=3 uid="uid://ycwicewcvawm"]
 
 [ext_resource type="Script" uid="uid://dk10vlntwgclf" path="res://Game Logic Parts/enemy.gd" id="1_r3obk"]
-[ext_resource type="PackedScene" uid="uid://cyktenwp3roo2" path="res://Game Logic Parts/enemy_area.tscn" id="2_yjgkq"]
+[ext_resource type="Script" uid="uid://0cew7k38if2u" path="res://Game Logic Parts/enemy_area.gd" id="2_yjgkq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m077e"]
 size = Vector2(67, 1081)
@@ -9,9 +9,20 @@ size = Vector2(67, 1081)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjgkq"]
 size = Vector2(50, 1080)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwh6i"]
+size = Vector2(1920, 182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7xd5"]
+size = Vector2(1920, 182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evq7y"]
+size = Vector2(1920, 182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rg2le"]
+size = Vector2(1920, 182)
+
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_r3obk")
-Enemy_positions = Array[int]([217, 405, 591, 775])
 
 [node name="Danger Zone" type="Area2D" parent="."]
 collision_layer = 16
@@ -21,18 +32,6 @@ collision_mask = 2
 position = Vector2(35.5, 539.5)
 shape = SubResource("RectangleShape2D_m077e")
 
-[node name="Enemy Area" parent="." instance=ExtResource("2_yjgkq")]
-position = Vector2(2000, 221)
-
-[node name="Enemy Area2" parent="." instance=ExtResource("2_yjgkq")]
-position = Vector2(2000, 407)
-
-[node name="Enemy Area3" parent="." instance=ExtResource("2_yjgkq")]
-position = Vector2(2000, 593)
-
-[node name="Enemy Area4" parent="." instance=ExtResource("2_yjgkq")]
-position = Vector2(2000, 779)
-
 [node name="Enemy Death Zone" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
@@ -41,9 +40,43 @@ collision_mask = 2
 position = Vector2(2152, 536)
 shape = SubResource("RectangleShape2D_yjgkq")
 
+[node name="Enemy AI area" type="Node2D" parent="."]
+
+[node name="Enemy_Area" type="Area2D" parent="Enemy AI area"]
+collision_layer = 16
+script = ExtResource("2_yjgkq")
+metadata/_custom_type_script = "uid://0cew7k38if2u"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy AI area/Enemy_Area"]
+position = Vector2(960, 221)
+shape = SubResource("RectangleShape2D_mwh6i")
+
+[node name="Enemy_Area2" type="Area2D" parent="Enemy AI area"]
+collision_layer = 16
+script = ExtResource("2_yjgkq")
+metadata/_custom_type_script = "uid://0cew7k38if2u"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy AI area/Enemy_Area2"]
+position = Vector2(960, 407)
+shape = SubResource("RectangleShape2D_g7xd5")
+
+[node name="Enemy_Area3" type="Area2D" parent="Enemy AI area"]
+collision_layer = 16
+script = ExtResource("2_yjgkq")
+metadata/_custom_type_script = "uid://0cew7k38if2u"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy AI area/Enemy_Area3"]
+position = Vector2(960, 593)
+shape = SubResource("RectangleShape2D_evq7y")
+
+[node name="Enemy_Area4" type="Area2D" parent="Enemy AI area"]
+collision_layer = 16
+script = ExtResource("2_yjgkq")
+metadata/_custom_type_script = "uid://0cew7k38if2u"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy AI area/Enemy_Area4"]
+position = Vector2(960, 779)
+shape = SubResource("RectangleShape2D_rg2le")
+
 [connection signal="area_entered" from="Danger Zone" to="." method="Danger_Area_Entered"]
-[connection signal="Update_Priority" from="Enemy Area" to="." method="Updated_Priority_Area1"]
-[connection signal="Update_Priority" from="Enemy Area2" to="." method="Updated_Priority_Area2"]
-[connection signal="Update_Priority" from="Enemy Area3" to="." method="Updated_Priority_Area3"]
-[connection signal="Update_Priority" from="Enemy Area4" to="." method="Updated_Priority_Area4"]
 [connection signal="area_entered" from="Enemy Death Zone" to="." method="Enemy_Death_Zone_Entered"]

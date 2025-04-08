@@ -1,27 +1,37 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdper8mpsojr3"]
+[gd_scene load_steps=10 format=3 uid="uid://bdper8mpsojr3"]
 
-[ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="1_mafcr"]
+[ext_resource type="FontFile" uid="uid://drwi4ulb0gmau" path="res://Fonts/SpectralSC-Regular.ttf" id="1_aya0a"]
 [ext_resource type="Texture2D" uid="uid://360wulbaji4d" path="res://Assets/UI/Buttons/Button_Blue_9Slides.png" id="2_tw4xl"]
 [ext_resource type="Texture2D" uid="uid://d3ddxrvv066bp" path="res://Assets/UI/Buttons/Button_Blue_9Slides_Pressed.png" id="3_eyvxx"]
 [ext_resource type="Script" uid="uid://dcajr2g0khlts" path="res://User Interface/level_button.gd" id="4_sfml1"]
+[ext_resource type="Texture2D" uid="uid://b821201aprn50" path="res://Assets/UI/Ribbons/Ribbon_Red_3Slides.png" id="5_h2dot"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hl72"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1qo3e"]
 texture = ExtResource("2_tw4xl")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 30.0
+texture_margin_left = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iwqx"]
 texture = ExtResource("3_eyvxx")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 30.0
+texture_margin_left = 4.0
+texture_margin_top = 1.0
+texture_margin_right = 4.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aya0a"]
+texture = ExtResource("5_h2dot")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+texture_margin_bottom = 3.0
 
 [node name="Level_Button" type="Button"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 400)
+offset_right = 300.0
+offset_bottom = 400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
@@ -29,7 +39,6 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_mafcr")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0hl72")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_1qo3e")
@@ -39,3 +48,23 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_1qo3e")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("4_sfml1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -149.0
+offset_top = -145.0
+offset_right = 149.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_aya0a")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_aya0a")
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 3

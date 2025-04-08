@@ -29,4 +29,4 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_unwqw")
 script = ExtResource("2_m7eh2")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(91, 87)
+position = Vector2(91, 91)

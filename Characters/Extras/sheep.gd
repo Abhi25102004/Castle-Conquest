@@ -1,10 +1,12 @@
 extends Knight_Class
 
 func Stats_Setter() -> void:
-	Health = randf_range(79,81)
+	Health = 50
 	Attack = 0
 	Attack_Speed = 0
-	Cost = 40
+	Cost = 40	
+	Character_value = 3
+
 
 func Take_Damage_from_Goblin(Power : float) -> void:
 	Knight = States.Attack

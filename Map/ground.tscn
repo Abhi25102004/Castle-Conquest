@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxsvfs5krxu7w"]
+[gd_scene load_steps=6 format=3 uid="uid://dxsvfs5krxu7w"]
 
 [ext_resource type="Texture2D" uid="uid://cypkcbr8hpugl" path="res://Assets/Terrain/Ground/Tilemap_Flat.png" id="1_wsl0p"]
 [ext_resource type="Texture2D" uid="uid://dpc6fxe877ett" path="res://Assets/Terrain/Ground/Tilemap_Elevation.png" id="2_cb4hd"]
-[ext_resource type="Texture2D" uid="uid://doxb4qvv45dx4" path="res://Assets/Terrain/Ground/Shadows.png" id="3_s8i1x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5vnj"]
 texture = ExtResource("1_wsl0p")
@@ -202,12 +201,6 @@ texture_region_size = Vector2i(64, 64)
 2:7/0 = 0
 3:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ss5q"]
-texture = ExtResource("3_s8i1x")
-texture_region_size = Vector2i(64, 64)
-0:0/size_in_atlas = Vector2i(3, 3)
-0:0/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_bol8e"]
 tile_size = Vector2i(64, 64)
 terrain_set_0/mode = 0
@@ -217,7 +210,6 @@ terrain_set_0/terrain_1/name = " Dead_Grass"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_s5vnj")
 sources/1 = SubResource("TileSetAtlasSource_tc6f4")
-sources/2 = SubResource("TileSetAtlasSource_6ss5q")
 
 [node name="Ground" type="TileMapLayer"]
 tile_set = SubResource("TileSet_bol8e")

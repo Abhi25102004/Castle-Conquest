@@ -1,10 +1,12 @@
 extends Knight_Class
 
 func Stats_Setter() -> void:
-	Health = randf_range(299,301)
+	Health = 300
 	Attack = 0
 	Attack_Speed = 0
-	Cost = 60
+	Cost = 60	
+	Character_value = 5
+
 
 func Take_Damage_from_Goblin(Power : float) -> void:
 	Knight = States.Attack
@@ -20,7 +22,7 @@ func getAnimation_String() -> String:
 			return "Death"
 	return ""
 
-func Game_Loop() -> void :
+func Game_Loop() -> void:
 	match Knight:
 		States.Idle:
 			Animations.play(Animation_String)

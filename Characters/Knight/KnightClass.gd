@@ -20,6 +20,7 @@ var Animation_String : String:
 var Attack : float
 var Attack_Speed : float
 var Cost : int
+var Character_value : int
 
 @export var Animated_node : AnimatedSprite2D
 @export var HurtBox_node : Area2D
@@ -62,8 +63,8 @@ func Game_Loop() -> void :
 			Animations.play(Animation_String)
 			Knight = States.Attack if canAttack else Knight
 		States.Attack:
+			await get_tree().create_timer(Attack_Speed).timeout
 			if !Goblin_Array.is_empty():
-				await get_tree().create_timer(Attack_Speed).timeout
 				Animations.play(Animation_String)
 				await Animations.animation_finished
 				OnAttack()

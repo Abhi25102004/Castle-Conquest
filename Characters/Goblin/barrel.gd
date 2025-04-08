@@ -17,8 +17,8 @@ func OnAttack() -> void:
 		call_deferred("queue_free")
 
 func Stats_Setter() -> void:
-	Health = randf_range(149,151)
-	Attack = 300
-	Attack_Speed = randf_range(0.4,0.6)
-	Cost = 75
+	Health = 120
+	Attack = 30
+	Attack_Speed = randf_range(1.1,1.3)
+	Cost = 85
 	Speed = randf_range(119,121)

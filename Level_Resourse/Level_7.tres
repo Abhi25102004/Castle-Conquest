@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Level_Information" load_steps=6 format=3 uid="uid://br2takgi8cgn8"]
+[gd_resource type="Resource" script_class="Level_Information" load_steps=7 format=3 uid="uid://br2takgi8cgn8"]
 
+[ext_resource type="PackedScene" uid="uid://b2salupcg08a6" path="res://Map/level_7.tscn" id="1_4qmtg"]
 [ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Level_Resourse/level.gd" id="1_fdyi6"]
 [ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Level_Resourse/wave.gd" id="1_uovgo"]
 
@@ -33,3 +34,4 @@ Wave2 = SubResource("Resource_p2wef")
 Wave3 = SubResource("Resource_6td3g")
 Reward = ""
 Game_Total_Enemies = 33
+Level_Scene = ExtResource("1_4qmtg")

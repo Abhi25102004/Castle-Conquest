@@ -1,20 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://bi367bqvb1tm6"]
+[gd_scene load_steps=14 format=3 uid="uid://bi367bqvb1tm6"]
 
 [ext_resource type="PackedScene" uid="uid://dj4natrlfejt7" path="res://User Interface/game_user_interface.tscn" id="1_6yk4e"]
 [ext_resource type="Script" uid="uid://cdt5uqhinbfbu" path="res://Test Scenes/test_world.gd" id="1_mp6vc"]
-[ext_resource type="Resource" uid="uid://bqcjuwar5w4u3" path="res://Level_Resourse/Level_1.tres" id="2_ead2u"]
-[ext_resource type="Resource" uid="uid://bghf2y55owda6" path="res://Level_Resourse/Level_2.tres" id="3_jsv4o"]
-[ext_resource type="Resource" uid="uid://cfbdo4iu53vgd" path="res://Level_Resourse/Level_3.tres" id="4_6tqxl"]
 [ext_resource type="PackedScene" uid="uid://ycwicewcvawm" path="res://Game Logic Parts/enemy.tscn" id="4_phieu"]
-[ext_resource type="Resource" uid="uid://cv676bwaem3j3" path="res://Level_Resourse/Level_4.tres" id="5_kjgj8"]
-[ext_resource type="Resource" uid="uid://bstcapxlulbt4" path="res://Level_Resourse/Level_5.tres" id="6_jmxya"]
-[ext_resource type="Resource" uid="uid://by8jm2qdqv8yu" path="res://Level_Resourse/Level_6.tres" id="7_tbb6k"]
-[ext_resource type="Resource" uid="uid://br2takgi8cgn8" path="res://Level_Resourse/Level_7.tres" id="8_yrpsc"]
-[ext_resource type="Resource" uid="uid://j5u2hj8rju2u" path="res://Level_Resourse/Level_8.tres" id="9_eynhx"]
-[ext_resource type="Resource" uid="uid://cwl0hdsvjbhpf" path="res://Level_Resourse/Level_9.tres" id="10_erwo0"]
-[ext_resource type="Resource" uid="uid://btnmtu7io6mgj" path="res://Level_Resourse/Level_10.tres" id="11_u2qw7"]
 [ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="15_ag7nc"]
-[ext_resource type="Texture2D" uid="uid://cjbvmdlb3gejl" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="16_k8olj"]
+[ext_resource type="Texture2D" uid="uid://cpbudvygxm040" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="16_0y5yx"]
 [ext_resource type="Texture2D" uid="uid://dhs7u2icykmf8" path="res://Assets/Factions/Knights/Troops/Dead/Dead.png" id="17_nml8a"]
 [ext_resource type="Texture2D" uid="uid://1fex2qkbhxx8" path="res://Assets/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="18_0y5yx"]
 
@@ -40,6 +30,30 @@ tracks/1/path = NodePath("Game User Interface:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Effects/Sprite2D3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Effects/Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -122,7 +136,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.9, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-98.9999, 346), Vector2(-98.9999, 346), Vector2(860, 346)]
+"values": [Vector2(-120, 346), Vector2(-120, 346), Vector2(860, 346)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -297,7 +311,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.9, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-90, 350), Vector2(-90, 350), Vector2(860, 346)]
+"values": [Vector2(-120, 350), Vector2(-120, 350), Vector2(860, 346)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -719,18 +733,6 @@ _data = {
 
 [node name="Main_Scene" type="Node"]
 script = ExtResource("1_mp6vc")
-Level_list = {
-1: ExtResource("2_ead2u"),
-2: ExtResource("3_jsv4o"),
-3: ExtResource("4_6tqxl"),
-4: ExtResource("5_kjgj8"),
-5: ExtResource("6_jmxya"),
-6: ExtResource("7_tbb6k"),
-7: ExtResource("8_yrpsc"),
-8: ExtResource("9_eynhx"),
-9: ExtResource("10_erwo0"),
-10: ExtResource("11_u2qw7")
-}
 
 [node name="Game User Interface" parent="." instance=ExtResource("1_6yk4e")]
 visible = false
@@ -781,9 +783,9 @@ vertical_alignment = 1
 texture_filter = 1
 position = Vector2(-98.9999, 346)
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("16_k8olj")
+texture = ExtResource("16_0y5yx")
 hframes = 6
-vframes = 6
+vframes = 8
 frame = 6
 
 [node name="Sprite2D2" type="Sprite2D" parent="Effects"]

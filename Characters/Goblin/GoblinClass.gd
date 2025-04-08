@@ -55,8 +55,8 @@ func Game_Loop(delta: float) -> void:
 			position.x += Speed * delta * Direction
 			Goblin = States.Idle if canAttack else Goblin
 		States.Attack:
+			await get_tree().create_timer(Attack_Speed).timeout
 			if !Knight_Array.is_empty():
-				await get_tree().create_timer(Attack_Speed).timeout
 				Animations.play("Attack")
 				await Animations.animation_finished
 				OnAttack()

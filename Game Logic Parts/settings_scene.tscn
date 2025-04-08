@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://blrqsrn1o40l3" path="res://Assets/UI/Banners/Carved_9Slides.png" id="1_g01yx"]
 [ext_resource type="Script" uid="uid://cfii3vysa2t85" path="res://Game Logic Parts/settings_scene.gd" id="1_jxo46"]
 [ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Fonts/IMFellEnglish-Regular.ttf" id="2_w2dfq"]
+[ext_resource type="FontFile" uid="uid://drwi4ulb0gmau" path="res://Fonts/SpectralSC-Regular.ttf" id="3_htqjw"]
 [ext_resource type="Texture2D" uid="uid://b821201aprn50" path="res://Assets/UI/Ribbons/Ribbon_Red_3Slides.png" id="4_du0l0"]
 [ext_resource type="Texture2D" uid="uid://bl6n8f03qlv8m" path="res://Assets/UI/Buttons/Button_Blue_3Slides.png" id="4_w2dfq"]
 [ext_resource type="Texture2D" uid="uid://xq5t7rdal6q5" path="res://Assets/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="6_4uuu2"]
@@ -10,8 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://drgcesc7p4043" path="res://Assets/UI/Buttons/Button_Red_Pressed.png" id="7_4uuu2"]
 [ext_resource type="Texture2D" uid="uid://c725wy8h0p7ix" path="res://Assets/UI/Buttons/Button_Red_3Slides.png" id="7_ypicx"]
 [ext_resource type="Texture2D" uid="uid://q10aixmkmhq5" path="res://Assets/UI/Icons/Pressed_01.png" id="8_0rwo8"]
-[ext_resource type="Texture2D" uid="uid://d3ddxrvv066bp" path="res://Assets/UI/Buttons/Button_Blue_9Slides_Pressed.png" id="8_3fhuk"]
-[ext_resource type="Texture2D" uid="uid://360wulbaji4d" path="res://Assets/UI/Buttons/Button_Blue_9Slides.png" id="9_ahkvr"]
+[ext_resource type="FontFile" uid="uid://bytma58a8bj82" path="res://Fonts/PirataOne-Regular.ttf" id="8_htqjw"]
 [ext_resource type="Texture2D" uid="uid://cnpm5u5eptfne" path="res://Assets/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="10_yyice"]
 [ext_resource type="Texture2D" uid="uid://cjbvmdlb3gejl" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="11_mgaw3"]
 [ext_resource type="Texture2D" uid="uid://5scku73ljnl2" path="res://Assets/Factions/Knights/Troops/Pawn/Yellow/Pawn_Yellow.png" id="12_lxusj"]
@@ -68,17 +68,17 @@ texture_margin_bottom = 25.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w2uj7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_htqjw"]
-texture = ExtResource("9_ahkvr")
+texture = ExtResource("4_w2dfq")
 texture_margin_left = 6.0
 texture_margin_right = 6.0
-texture_margin_bottom = 6.0
+texture_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2uj7"]
-texture = ExtResource("8_3fhuk")
+texture = ExtResource("6_4uuu2")
 texture_margin_left = 5.0
-texture_margin_top = 2.0
+texture_margin_top = 4.0
 texture_margin_right = 5.0
-texture_margin_bottom = 7.0
+texture_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htqjw"]
 
@@ -1025,21 +1025,24 @@ theme_override_constants/margin_bottom = 13
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_w2dfq")
+theme_override_fonts/font = ExtResource("3_htqjw")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxTexture_mr0gv")
-text = "Options"
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_unselected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0.0156706, 0.11341, 0.173291, 1)
-theme_override_fonts/font = ExtResource("2_w2dfq")
+theme_override_fonts/font = ExtResource("3_htqjw")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_0rwo8")
 theme_override_styles/tab_disabled = SubResource("StyleBoxEmpty_l1ll8")
@@ -1063,17 +1066,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -566.5
-offset_top = -398.0
-offset_right = 566.5
-offset_bottom = -274.0
+offset_left = -735.5
+offset_top = -404.5
+offset_right = 735.5
+offset_bottom = -251.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("2_w2dfq")
-theme_override_font_sizes/font_size = 70
-text = "Select The Color You Like :"
+theme_override_fonts/font = ExtResource("3_htqjw")
+theme_override_font_sizes/font_size = 80
+text = "Pick Your Favourite Colour"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1085,15 +1088,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -580.0
-offset_top = -328.0
+offset_top = -324.5
 offset_right = 580.0
-offset_bottom = -200.0
+offset_bottom = -171.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("2_w2dfq")
-theme_override_font_sizes/font_size = 70
+theme_override_fonts/font = ExtResource("3_htqjw")
+theme_override_font_sizes/font_size = 80
 text = "Current Color : Blue"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1118,7 +1121,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_w2dfq")
+theme_override_fonts/font = ExtResource("8_htqjw")
 theme_override_font_sizes/font_size = 83
 theme_override_styles/focus = SubResource("StyleBoxEmpty_w2uj7")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_htqjw")
@@ -1138,7 +1141,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_w2dfq")
+theme_override_fonts/font = ExtResource("8_htqjw")
 theme_override_font_sizes/font_size = 83
 theme_override_styles/focus = SubResource("StyleBoxEmpty_htqjw")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
@@ -1157,7 +1160,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_w2dfq")
+theme_override_fonts/font = ExtResource("8_htqjw")
 theme_override_font_sizes/font_size = 83
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fw26d")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
@@ -1176,7 +1179,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_w2dfq")
+theme_override_fonts/font = ExtResource("8_htqjw")
 theme_override_font_sizes/font_size = 83
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ynw32")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
@@ -1190,10 +1193,7 @@ unique_name_in_owner = true
 position = Vector2(141, -160)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_drbh1")
-animation = &"Attack"
 autoplay = "default"
-frame = 5
-frame_progress = 1.0
 
 [node name="Blue_Animation" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
@@ -1231,15 +1231,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -722.5
-offset_top = -400.0
-offset_right = 722.5
-offset_bottom = -272.0
+offset_left = -924.0
+offset_top = -389.0
+offset_right = 924.0
+offset_bottom = -251.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_w2dfq")
-theme_override_font_sizes/font_size = 70
-text = "Select the difficulty of your choice :"
+theme_override_fonts/font = ExtResource("3_htqjw")
+theme_override_font_sizes/font_size = 80
+text = "Choose the level of difficulty you want"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1251,13 +1251,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -722.5
-offset_top = -328.0
+offset_top = -324.5
 offset_right = 722.5
-offset_bottom = -200.0
+offset_bottom = -171.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_w2dfq")
-theme_override_font_sizes/font_size = 70
+theme_override_fonts/font = ExtResource("3_htqjw")
+theme_override_font_sizes/font_size = 80
 text = "Current Difficulty : Easy"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1270,9 +1270,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -600.0
-offset_top = -96.0
+offset_top = -40.0
 offset_right = 600.0
-offset_bottom = 512.0
+offset_bottom = 568.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 150

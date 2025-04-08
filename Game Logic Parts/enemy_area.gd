@@ -1,19 +1,23 @@
 extends Area2D
 
+class_name Enemy_Area
+
 signal Update_Priority
 
 var Current_Characters : Array[Node2D]
-var Total_value : float
-@onready var timer: Timer = $Timer
 
-func Area_Entered(area: Area2D) -> void:
-	Current_Characters.append(area.get_parent())
+@onready var timer: Timer = Timer.new()
 
-func Area_Exited(area: Area2D) -> void:
-	Current_Characters.erase(area.get_parent())
-
-func Timeout() -> void:
-	Total_value = 0
-	for character in Current_Characters:
-		Total_value += character.Health
-	Update_Priority.emit(Total_value)
+func _ready() -> void:
+	add_child(timer)
+	self.area_entered.connect(func(area: Area2D):Current_Characters.append(area.get_parent()))
+	self.area_exited.connect(func(area: Area2D):Current_Characters.erase(area.get_parent()))
+	timer.timeout.connect(func():
+		var Total_value : float = 0
+		for character in Current_Characters:
+			if character is Knight_Class:
+				Total_value += character.Health * character.Character_value
+		Update_Priority.emit(Total_value)
+		timer.start()
+		)
+	timer.start()
