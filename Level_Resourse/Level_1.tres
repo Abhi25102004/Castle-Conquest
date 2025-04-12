@@ -6,32 +6,30 @@
 
 [sub_resource type="Resource" id="Resource_r1c1a"]
 script = ExtResource("1_178d8")
-Number_of_torch = 4
+Number_of_torch = 2
 Number_of_tnt = 0
 Number_of_barrel = 0
-Wave_delay = 10
 
 [sub_resource type="Resource" id="Resource_johuw"]
-script = ExtResource("1_178d8")
-Number_of_torch = 4
-Number_of_tnt = 0
-Number_of_barrel = 0
-Wave_delay = 7
-
-[sub_resource type="Resource" id="Resource_kjjtv"]
 script = ExtResource("1_178d8")
 Number_of_torch = 2
 Number_of_tnt = 0
 Number_of_barrel = 0
-Wave_delay = 5
+
+[sub_resource type="Resource" id="Resource_kjjtv"]
+script = ExtResource("1_178d8")
+Number_of_torch = 1
+Number_of_tnt = 0
+Number_of_barrel = 0
 
 [resource]
 script = ExtResource("1_1h48h")
 Level_number = 1
-Money_Required = 200
+Money_Required = 150
 Wave1 = SubResource("Resource_r1c1a")
 Wave2 = SubResource("Resource_johuw")
 Wave3 = SubResource("Resource_kjjtv")
 Reward = "Archer"
-Game_Total_Enemies = 10
+Game_Total_Enemies = 5
 Level_Scene = ExtResource("1_ihfxg")
+Level_Delay = 6.0

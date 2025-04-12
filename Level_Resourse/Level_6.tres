@@ -6,32 +6,30 @@
 
 [sub_resource type="Resource" id="Resource_716tt"]
 script = ExtResource("1_2ciah")
-Number_of_torch = 6
+Number_of_torch = 4
 Number_of_tnt = 2
 Number_of_barrel = 0
-Wave_delay = 5
 
 [sub_resource type="Resource" id="Resource_ppvll"]
 script = ExtResource("1_2ciah")
-Number_of_torch = 5
+Number_of_torch = 4
 Number_of_tnt = 2
 Number_of_barrel = 1
-Wave_delay = 4
 
 [sub_resource type="Resource" id="Resource_vun7c"]
 script = ExtResource("1_2ciah")
 Number_of_torch = 4
 Number_of_tnt = 2
 Number_of_barrel = 2
-Wave_delay = 4
 
 [resource]
 script = ExtResource("1_u3wqj")
 Level_number = 6
-Money_Required = 325
+Money_Required = 250
 Wave1 = SubResource("Resource_716tt")
 Wave2 = SubResource("Resource_ppvll")
 Wave3 = SubResource("Resource_vun7c")
 Reward = "Sheep"
-Game_Total_Enemies = 24
+Game_Total_Enemies = 21
 Level_Scene = ExtResource("1_7abts")
+Level_Delay = 3.8

@@ -18,8 +18,18 @@ func OnAttack() -> void:
 		call_deferred("add_child",Arrow)
 
 func Stats_Setter() -> void:
-	Health = 100
-	Attack = 20
-	Attack_Speed = randf_range(1.1,1.3)
-	Cost = 75	
+	Cost = 75
 	Character_value = 3
+	match Global.Difficulty:
+		"Easy":
+			Health = 80
+			Attack = 20
+			Attack_Speed = 0.8
+		"Medium":
+			Health = 80
+			Attack = 18
+			Attack_Speed = 0.9
+		"Hard":
+			Health = 75
+			Attack = 16
+			Attack_Speed = 1

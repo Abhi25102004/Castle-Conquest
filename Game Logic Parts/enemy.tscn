@@ -44,6 +44,7 @@ shape = SubResource("RectangleShape2D_yjgkq")
 
 [node name="Enemy_Area" type="Area2D" parent="Enemy AI area"]
 collision_layer = 16
+collision_mask = 3
 script = ExtResource("2_yjgkq")
 metadata/_custom_type_script = "uid://0cew7k38if2u"
 
@@ -53,6 +54,7 @@ shape = SubResource("RectangleShape2D_mwh6i")
 
 [node name="Enemy_Area2" type="Area2D" parent="Enemy AI area"]
 collision_layer = 16
+collision_mask = 3
 script = ExtResource("2_yjgkq")
 metadata/_custom_type_script = "uid://0cew7k38if2u"
 
@@ -62,6 +64,7 @@ shape = SubResource("RectangleShape2D_g7xd5")
 
 [node name="Enemy_Area3" type="Area2D" parent="Enemy AI area"]
 collision_layer = 16
+collision_mask = 3
 script = ExtResource("2_yjgkq")
 metadata/_custom_type_script = "uid://0cew7k38if2u"
 
@@ -71,6 +74,7 @@ shape = SubResource("RectangleShape2D_evq7y")
 
 [node name="Enemy_Area4" type="Area2D" parent="Enemy AI area"]
 collision_layer = 16
+collision_mask = 3
 script = ExtResource("2_yjgkq")
 metadata/_custom_type_script = "uid://0cew7k38if2u"
 

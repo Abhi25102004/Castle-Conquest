@@ -10,6 +10,8 @@ func _ready() -> void:
 	else:
 		if FileAccess.file_exists("user://SaveFiles/Level_Details.tres"):
 			continue_button.visible = true
+		else:
+			continue_button.visible = false
 
 func Start_New_Game() -> void:
 	var SaveFile: Level_Selection = Level_Selection.new()

@@ -461,19 +461,19 @@ HurtBox_node = NodePath("Hurtbox")
 HitBox_CollisionShape_node = NodePath("Hitbox/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -49.615)
+position = Vector2(0, -102.615)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_oasfs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -121)
+position = Vector2(0, -171)
 scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_t2cu0")
 animation = &"Blue_Idle"
 
 [node name="Hitbox" type="Area2D" parent="."]
-position = Vector2(0, -25)
+position = Vector2(0, -83)
 scale = Vector2(1.3, 1.3)
 collision_mask = 8
 
@@ -482,7 +482,7 @@ position = Vector2(-0.384614, 5.38462)
 shape = SubResource("RectangleShape2D_5o36m")
 
 [node name="Hurtbox" type="Area2D" parent="."]
-position = Vector2(0, -25)
+position = Vector2(0, -73)
 scale = Vector2(1.3, 1.3)
 collision_layer = 4
 collision_mask = 2
@@ -492,4 +492,4 @@ position = Vector2(316.539, 0)
 shape = SubResource("RectangleShape2D_wqkgk")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(51, -108)
+position = Vector2(51, -156)

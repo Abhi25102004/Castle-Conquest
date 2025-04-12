@@ -21,7 +21,7 @@ var Current_wave : Wave
 var Enemies_instance_array : Array[Goblin_Class]
 
 # Delay between spawning enemies
-var Delay : int
+var Delay : float = Global.level_type.Level_Delay
 
 # Marker to track spawning progress (optional usage)
 var Marker : int
@@ -65,7 +65,6 @@ func Start_adding_enemies() -> void:
 
 	# Get the next wave (last in list)
 	Current_wave = Waves.pop_back() as Wave
-	Delay = Current_wave.Wave_delay
 
 	# Preload and queue enemy instances based on wave configuration
 	for i in range(Current_wave.Number_of_torch):
@@ -110,6 +109,7 @@ func Creater_Enemy() -> void:
 			Enemies_Killed += 1
 			if Total_Enemies == Enemies_Killed:
 				if Waves.is_empty():
+					await get_tree().create_timer(1).timeout
 					Level_Completed.emit()
 				else:
 					Start_adding_enemies()

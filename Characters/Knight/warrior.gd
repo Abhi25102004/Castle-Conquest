@@ -15,8 +15,18 @@ func OnAttack() -> void:
 		GiveDamageToGoblin.emit(Attack)
 
 func Stats_Setter() -> void:
-	Health = 200
-	Attack = 40
-	Attack_Speed = randf_range(1.4,1.6)
 	Cost = 100
 	Character_value = 4
+	match Global.Difficulty:
+		"Easy":
+			Health = 180
+			Attack = 40
+			Attack_Speed = 1.2
+		"Medium":
+			Health = 160
+			Attack = 35
+			Attack_Speed = 1.3
+		"Hard":
+			Health = 150
+			Attack = 30
+			Attack_Speed = 1.4

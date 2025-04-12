@@ -14,16 +14,7 @@ extends CanvasLayer
 func _ready() -> void:
 	
 	Color_Lable.text = "Current Color : " + Global.Theme_color
-	
-	var Difficulty_text : String = ""
-	match Global.Difficulty:
-		0.5:
-			Difficulty_text = "Easy"
-		1.0:
-			Difficulty_text = "Medium"
-		2.0:
-			Difficulty_text = "Hard"
-	Difficulty_Lable.text = "Current Difficulty : " + Difficulty_text
+	Difficulty_Lable.text = "Current Difficulty : " + Global.Difficulty
 	
 	%Blue.pressed.connect(func(): Color_Change("Blue",blue_animation))
 		
@@ -33,11 +24,11 @@ func _ready() -> void:
 		
 	%Purple.pressed.connect(func(): Color_Change("Purple",purple_animation))
 	
-	%Easy.pressed.connect(func(): Difficulty_Change(0.5,easy_animations))
+	%Easy.pressed.connect(func(): Difficulty_Change("Easy",easy_animations))
 		
-	%Medium.pressed.connect(func(): Difficulty_Change(1.0,medium_animations))
+	%Medium.pressed.connect(func(): Difficulty_Change("Medium",medium_animations))
 		
-	%Hard.pressed.connect(func(): Difficulty_Change(2.0,hard_animations))
+	%Hard.pressed.connect(func(): Difficulty_Change("Hard",hard_animations))
 	
 	%Quit.pressed.connect(func(): 
 		Animations.play_backwards("Entry")
@@ -58,17 +49,9 @@ func Color_Change(color : String , Animations_image : AnimatedSprite2D) -> void:
 	await Animations_image.animation_finished
 	Animations_image.play("default")
 
-func Difficulty_Change(difficulty : float, Animations_image : AnimatedSprite2D) -> void:
+func Difficulty_Change(difficulty : String, Animations_image : AnimatedSprite2D) -> void:
 	Global.Difficulty = difficulty
-	var Difficulty_text : String = ""
-	match Global.Difficulty:
-		0.5:
-			Difficulty_text = "Easy"
-		1.0:
-			Difficulty_text = "Medium"
-		2.0:
-			Difficulty_text = "Hard"
-	Difficulty_Lable.text = "Current Difficulty : " + Difficulty_text
+	Difficulty_Lable.text = "Current Difficulty : " + difficulty
 	var SaveFile : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
 	SaveFile.Game_Difficulty = difficulty
 	ResourceSaver.save(SaveFile,"user://SaveFiles/Level_Details.tres")

@@ -10,3 +10,4 @@ class_name Level_Information
 @export var Reward : String = ""
 @export var Game_Total_Enemies : int = 0
 @export var Level_Scene : PackedScene = preload("res://Map/level_1.tscn")
+@export var Level_Delay : float = 1

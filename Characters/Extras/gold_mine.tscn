@@ -1,18 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dabep56arwg2w"]
+[gd_scene load_steps=5 format=3 uid="uid://dabep56arwg2w"]
 
 [ext_resource type="Script" uid="uid://bqj7v4rov2ch3" path="res://Characters/Extras/gold_mine.gd" id="1_ejd3x"]
 [ext_resource type="Texture2D" uid="uid://c5w4yr5s6d661" path="res://Assets/Resources/Gold Mine/GoldMine_Active.png" id="1_lsk5g"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ejd3x"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsk5g"]
 size = Vector2(159, 100)
 
-[node name="Gold Mine" type="Node2D"]
+[node name="Gold Mine" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node", "HitBox_CollisionShape_node")]
 script = ExtResource("1_ejd3x")
+Animated_node = NodePath("AnimatedSprite2D")
+HurtBox_node = NodePath("HitBox")
+HitBox_CollisionShape_node = NodePath("HitBox/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -25)
 texture = ExtResource("1_lsk5g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ejd3x")
 
 [node name="HitBox" type="Area2D" parent="."]
 position = Vector2(0, -25)

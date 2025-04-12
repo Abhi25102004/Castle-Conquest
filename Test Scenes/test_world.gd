@@ -81,9 +81,7 @@ func Level_Won() -> void:
 		"Success found its way to you.",
 		"There was no denying your dominance.",
 		"The contest saw you as the victor.",
-		"Against the competition, you stood undefeated.",
 		"A glorious win marked your journey.",
-		"In the end, it was your name written in glory."
 	].pick_random()
 
 # Shows a random message when the player loses

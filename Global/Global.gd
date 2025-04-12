@@ -15,5 +15,5 @@ var level_type : Level_Information = preload("res://Level_Resourse/Level_1.tres"
 var Level_Name : String = ""
 var Buttons : Array[String] = ["Pawn"]
 var Theme_color : String = "Blue"
-var Difficulty : float = 1
+var Difficulty : String = "Easy"
 var Setting_Last_Scene : String = "res://Main Logic/start_scene.tscn"
