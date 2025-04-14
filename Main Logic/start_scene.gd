@@ -13,10 +13,18 @@ func _ready() -> void:
 		else:
 			continue_button.visible = false
 
+func Save_file() -> void:
+	var SaveFile : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
+	Global.Theme_color = SaveFile.Color_String
+	Global.Difficulty = SaveFile.Game_Difficulty
+	Animations.play("transition")
+	await Animations.animation_finished
+
 func Start_New_Game() -> void:
 	var SaveFile: Level_Selection = Level_Selection.new()
 	ResourceSaver.save(SaveFile, "user://SaveFiles/Level_Details.tres")
-	Continue_Game()
+	await Save_file()
+	get_tree().change_scene_to_file("res://Game Logic Parts/tutorial_scene.tscn")
 
 func Game_Settings() -> void:
 	Animations.play("transition")
@@ -25,11 +33,7 @@ func Game_Settings() -> void:
 	get_tree().change_scene_to_file("res://Game Logic Parts/settings_scene.tscn")
 
 func Continue_Game() -> void:
-	var SaveFile : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
-	Global.Theme_color = SaveFile.Color_String
-	Global.Difficulty = SaveFile.Game_Difficulty
-	Animations.play("transition")
-	await Animations.animation_finished
+	await Save_file()
 	get_tree().change_scene_to_file("res://User Interface/level_interface.tscn")
 
 func Quit_Game() -> void:

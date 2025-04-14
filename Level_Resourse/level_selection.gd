@@ -7,3 +7,8 @@ class_name Level_Selection
 @export var Available_Buttons: Array[String] = ["Pawn"]
 @export var Game_Difficulty : String = "Easy"
 @export var Color_String : String = "Blue"
+@export var Difficulty_played : Dictionary[String,Array] = {
+	"Easy" : [],
+	"Medium" : [],
+	"Hard" : [],
+}

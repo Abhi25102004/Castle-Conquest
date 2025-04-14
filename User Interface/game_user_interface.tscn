@@ -122,9 +122,11 @@ texture_margin_bottom = 8.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxqsq"]
 
 [node name="Game Logic" type="CanvasLayer"]
+layer = 0
 script = ExtResource("1_h2gpb")
 
 [node name="Header" type="Panel" parent="."]
+z_index = 1
 texture_filter = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -133,6 +135,7 @@ grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_sn6tn")
 
 [node name="Label" type="Label" parent="Header"]
+z_index = 1
 texture_filter = 1
 custom_minimum_size = Vector2(360, 0)
 layout_mode = 1
@@ -368,15 +371,16 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Bottom" type="PanelContainer" parent="."]
+z_index = 1
 texture_filter = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -87.5
+offset_left = -624.5
 offset_top = -175.0
-offset_right = 87.5
+offset_right = 624.5
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -385,7 +389,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_cxqsq")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Bottom"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Pawn" parent="Bottom/HBoxContainer" instance=ExtResource("2_a7d2l")]

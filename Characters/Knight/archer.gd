@@ -15,11 +15,12 @@ func OnAttack() -> void:
 		var Arrow : Node2D = Arrow_Scene.instantiate()
 		Arrow.position = marker.position
 		Arrow.Attack = Attack
-		call_deferred("add_child",Arrow)
+		call_deferred("add_child", Arrow)
 
 func Stats_Setter() -> void:
 	Cost = 75
 	Character_value = 3
+
 	match Global.Difficulty:
 		"Easy":
 			Health = 80

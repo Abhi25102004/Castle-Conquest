@@ -1,4 +1,4 @@
-[gd_scene load_steps=154 format=3 uid="uid://dnnbh6lw50yrh"]
+[gd_scene load_steps=156 format=3 uid="uid://dnnbh6lw50yrh"]
 
 [ext_resource type="Texture2D" uid="uid://blrqsrn1o40l3" path="res://Assets/UI/Banners/Carved_9Slides.png" id="1_g01yx"]
 [ext_resource type="Script" uid="uid://cfii3vysa2t85" path="res://Game Logic Parts/settings_scene.gd" id="1_jxo46"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bxr05ksimpx1p" path="res://Assets/Factions/Goblins/Troops/TNT/Red/TNT_Red.png" id="15_w2uj7"]
 [ext_resource type="Texture2D" uid="uid://4g3fdh6lf88h" path="res://Assets/Factions/Goblins/Troops/Barrel/Red/Barrel_Red.png" id="16_htqjw"]
 [ext_resource type="Texture2D" uid="uid://dgk633v0v2hiv" path="res://Assets/Effects/Explosion/Explosions.png" id="17_w2uj7"]
+[ext_resource type="PackedScene" uid="uid://inwgmp56g3ik" path="res://User Interface/achievement_panel.tscn" id="18_htqjw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_owiii"]
 texture = ExtResource("1_g01yx")
@@ -871,6 +872,8 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5igf3"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ypicx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1ll8"]
@@ -1043,7 +1046,7 @@ size_flags_vertical = 3
 theme_override_colors/font_unselected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0.0156706, 0.11341, 0.173291, 1)
 theme_override_fonts/font = ExtResource("3_htqjw")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 40
 theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_0rwo8")
 theme_override_styles/tab_disabled = SubResource("StyleBoxEmpty_l1ll8")
 theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_3fhuk")
@@ -1051,7 +1054,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_ahkvr")
 theme_override_styles/tab_selected = SubResource("StyleBoxTexture_yyice")
 theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_mgaw3")
 theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_lxusj")
-current_tab = 1
+current_tab = 2
 
 [node name="Character Color" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
 visible = false
@@ -1220,6 +1223,7 @@ animation = &"Attack"
 autoplay = "default"
 
 [node name="Game Difficulty" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ryf1k")
 metadata/_tab_index = 1
@@ -1358,6 +1362,50 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_dei1s")
 animation = &"Attack"
 autoplay = "default"
+
+[node name="Achievement" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5igf3")
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+
+[node name="Achievement_Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/VBoxContainer" instance=ExtResource("18_htqjw")]
+layout_mode = 2
+Number = 1
+Name = "1. First Blood"
+Description = "Defeat your first goblin and defend the castle! : Complete Level 1"
+
+[node name="Achievement_Panel2" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/VBoxContainer" instance=ExtResource("18_htqjw")]
+layout_mode = 2
+Number = 2
+Name = "2. Halfway Hero"
+Description = "You've proven your mettle. The realm is halfway safe! : Complete Level 5"
+
+[node name="Achievement_Panel3" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/VBoxContainer" instance=ExtResource("18_htqjw")]
+layout_mode = 2
+Number = 3
+Name = "3. Squire's Triumph"
+Description = "The journey was light, but victory is still sweet. : Complete the Game in Easy Mode"
+
+[node name="Achievement_Panel4" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/VBoxContainer" instance=ExtResource("18_htqjw")]
+layout_mode = 2
+Number = 4
+Name = "4. Knight of the Realm"
+Description = "You've fought bravely and emerged victorious. : Complete the Game in Medium Mode"
+
+[node name="Achievement_Panel5" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/VBoxContainer" instance=ExtResource("18_htqjw")]
+layout_mode = 2
+Number = 5
+Name = "5. Champion of Castle Conquest"
+Description = "Only legends stand where you stand now. Glory is yours! : Complete the Game in Hard Mode"
 
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true

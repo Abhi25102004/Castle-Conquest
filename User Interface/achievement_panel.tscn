@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://inwgmp56g3ik"]
+
+[ext_resource type="Script" uid="uid://duwhb8l35u6p5" path="res://User Interface/achievement_panel.gd" id="1_51v5a"]
+[ext_resource type="FontFile" uid="uid://bytma58a8bj82" path="res://Fonts/PirataOne-Regular.ttf" id="1_pvmbc"]
+[ext_resource type="FontFile" uid="uid://drwi4ulb0gmau" path="res://Fonts/SpectralSC-Regular.ttf" id="2_51v5a"]
+[ext_resource type="Texture2D" uid="uid://c3urdfdp3iala" path="res://Assets/UI/Buttons/Button_Hover_3Slides.png" id="4_8umxb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8umxb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44i54"]
+texture = ExtResource("4_8umxb")
+texture_margin_left = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 14.0
+
+[node name="Achievement_Panel" type="PanelContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8umxb")
+script = ExtResource("1_51v5a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Achievement_name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_pvmbc")
+theme_override_font_sizes/font_size = 70
+text = "First Blood"
+vertical_alignment = 1
+
+[node name="Achievement_description" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_51v5a")
+theme_override_font_sizes/font_size = 35
+text = "Defeat your first goblin and defend the castle! :: Complete Level 1"
+vertical_alignment = 1
+
+[node name="Completed" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(2.40654e-06, 0, 0.734316, 1)
+theme_override_fonts/font = ExtResource("2_51v5a")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_44i54")
+text = "Completed"

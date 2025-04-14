@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://bamiq8ho06v1n"]
 
-[ext_resource type="PackedScene" uid="uid://dabep56arwg2w" path="res://Characters/Extras/gold_mine.tscn" id="1_1opec"]
+[ext_resource type="PackedScene" uid="uid://csqsfa62p8rw3" path="res://Characters/Extras/sheep.tscn" id="2_1opec"]
 [ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Goblin/torch.tscn" id="2_qo282"]
 
 [node name="TestFile" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Gold Mine" parent="." instance=ExtResource("1_1opec")]
-
 [node name="Torch" parent="." instance=ExtResource("2_qo282")]
 position = Vector2(784, 0)
+
+[node name="Sheep" parent="." instance=ExtResource("2_1opec")]
+position = Vector2(-257, 0)

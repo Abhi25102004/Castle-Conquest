@@ -4,11 +4,11 @@ signal GiveDamageToGoblin
 
 func HurtBox_Entered(area: Area2D) -> void:
 	Goblin_Array.append(area.get_parent())
-	GiveDamageToGoblin.connect(Callable(area.get_parent(),"Take_Damage_from_knight"))
+	GiveDamageToGoblin.connect(Callable(area.get_parent(), "Take_Damage_from_knight"))
 
 func HurtBox_Exited(area: Area2D) -> void:
 	Goblin_Array.erase(area.get_parent())
-	GiveDamageToGoblin.disconnect(Callable(area.get_parent(),"Take_Damage_from_knight"))
+	GiveDamageToGoblin.disconnect(Callable(area.get_parent(), "Take_Damage_from_knight"))
 
 func OnAttack() -> void:
 	if !Goblin_Array.is_empty():
@@ -17,6 +17,7 @@ func OnAttack() -> void:
 func Stats_Setter() -> void:
 	Cost = 50
 	Character_value = 2
+
 	match Global.Difficulty:
 		"Easy":
 			Health = 100
