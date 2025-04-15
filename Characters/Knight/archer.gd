@@ -4,6 +4,16 @@ var Arrow_Scene : PackedScene = preload("res://Characters/Knight/arrow.tscn")
 
 @onready var marker: Marker2D = $Marker2D
 
+func getAnimation_String() -> String:
+	match Knight:
+		States.Idle:
+			return Global.Theme_color + "_Idle"
+		States.Attack:
+			return Global.Theme_color + "_Attack"
+		States.Death:
+			return "Death"
+	return ""
+
 func HurtBox_Exited(area: Area2D) -> void:
 	Goblin_Array.erase(area.get_parent())
 
@@ -19,7 +29,6 @@ func OnAttack() -> void:
 
 func Stats_Setter() -> void:
 	Cost = 75
-	Character_value = 3
 
 	match Global.Difficulty:
 		"Easy":

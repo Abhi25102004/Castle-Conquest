@@ -5,7 +5,6 @@ func Stats_Setter() -> void:
 	Attack = 0
 	Attack_Speed = 0
 	Cost = 40
-	Character_value = 3
 
 func Take_Damage_from_Goblin(Power : float) -> void:
 	Knight = States.Attack

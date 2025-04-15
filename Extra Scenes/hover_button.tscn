@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5fdmhnpga6lt"]
+
+[ext_resource type="Texture2D" uid="uid://blar01e1veev0" path="res://Assets/UI/Pointers/02.png" id="1_7bpjg"]
+[ext_resource type="Script" uid="uid://dwvs56kifkan1" path="res://Extra Scenes/hover_button.gd" id="2_m7eh2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hh3bq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dweex"]
+texture = ExtResource("1_7bpjg")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_es5wj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unwqw"]
+
+[node name="Hover_Button" type="Button"]
+custom_minimum_size = Vector2(182, 182)
+offset_right = 182.0
+offset_bottom = 182.0
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hh3bq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dweex")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_es5wj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_unwqw")
+script = ExtResource("2_m7eh2")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(91, 91)

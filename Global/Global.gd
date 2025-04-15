@@ -10,7 +10,7 @@ signal Progress
 signal SetUp
 
 
-var level_type : Level_Information = preload("res://Level_Resourse/Level_1.tres")
+var level_type : Level_Information = preload("res://Level Scenes and Data/Level Resources/Level_1.tres")
 
 var Level_Name : String = ""
 
@@ -20,4 +20,4 @@ var Theme_color : String = "Blue"
 
 var Difficulty : String = "Easy"
 
-var Setting_Last_Scene : String = "res://Main Logic/start_scene.tscn"
+var Setting_Last_Scene : String = "res://Main Game Scenes/start_scene.tscn"

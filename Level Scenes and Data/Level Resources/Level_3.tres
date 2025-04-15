@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Level_Information" load_steps=7 format=3 uid="uid://cfbdo4iu53vgd"]
+
+[ext_resource type="PackedScene" uid="uid://douy7tvl5ouew" path="res://Level Scenes and Data/Level Map/level_3.tscn" id="1_lwm4y"]
+[ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Custome Resources/wave.gd" id="2_o31ik"]
+[ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Custome Resources/level.gd" id="3_lh451"]
+
+[sub_resource type="Resource" id="Resource_jn84o"]
+script = ExtResource("2_o31ik")
+Number_of_torch = 4
+Number_of_tnt = 0
+Number_of_barrel = 0
+
+[sub_resource type="Resource" id="Resource_7tyb8"]
+script = ExtResource("2_o31ik")
+Number_of_torch = 3
+Number_of_tnt = 1
+Number_of_barrel = 0
+
+[sub_resource type="Resource" id="Resource_mlhkg"]
+script = ExtResource("2_o31ik")
+Number_of_torch = 3
+Number_of_tnt = 2
+Number_of_barrel = 0
+
+[resource]
+script = ExtResource("3_lh451")
+Level_number = 3
+Money_Required = 200
+Wave1 = SubResource("Resource_jn84o")
+Wave2 = SubResource("Resource_7tyb8")
+Wave3 = SubResource("Resource_mlhkg")
+Reward = "Warrior"
+Game_Total_Enemies = 13
+Level_Scene = ExtResource("1_lwm4y")
+Level_Delay = 5.0

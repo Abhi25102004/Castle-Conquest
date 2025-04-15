@@ -1,8 +1,7 @@
 extends Knight_Class
 
 func Stats_Setter() -> void:
-	Cost = 60
-	Character_value = 5
+	Cost = 6
 	Attack = 0
 	Attack_Speed = 0
 

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Level_Information" load_steps=7 format=3 uid="uid://bghf2y55owda6"]
+
+[ext_resource type="PackedScene" uid="uid://ci718ch0ho0qf" path="res://Level Scenes and Data/Level Map/level_2.tscn" id="1_xxd1a"]
+[ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Custome Resources/wave.gd" id="2_7nd3c"]
+[ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Custome Resources/level.gd" id="3_h352b"]
+
+[sub_resource type="Resource" id="Resource_ueuvx"]
+script = ExtResource("2_7nd3c")
+Number_of_torch = 3
+Number_of_tnt = 0
+Number_of_barrel = 0
+
+[sub_resource type="Resource" id="Resource_gtttd"]
+script = ExtResource("2_7nd3c")
+Number_of_torch = 3
+Number_of_tnt = 0
+Number_of_barrel = 0
+
+[sub_resource type="Resource" id="Resource_xd5ui"]
+script = ExtResource("2_7nd3c")
+Number_of_torch = 2
+Number_of_tnt = 1
+Number_of_barrel = 0
+
+[resource]
+script = ExtResource("3_h352b")
+Level_number = 2
+Money_Required = 175
+Wave1 = SubResource("Resource_ueuvx")
+Wave2 = SubResource("Resource_gtttd")
+Wave3 = SubResource("Resource_xd5ui")
+Reward = "Tree"
+Game_Total_Enemies = 9
+Level_Scene = ExtResource("1_xxd1a")
+Level_Delay = 5.5

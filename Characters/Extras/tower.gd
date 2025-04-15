@@ -34,7 +34,6 @@ func Stats_Setter() -> void:
 	Attack = 30
 	Attack_Speed = randf_range(0.7, 0.9)
 	Cost = 75
-	Character_value = 5
 
 func _ready() -> void:
 	picutre.texture = Image_Dict.get(Global.Theme_color)

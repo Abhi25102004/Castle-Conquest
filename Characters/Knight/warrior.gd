@@ -16,7 +16,6 @@ func OnAttack() -> void:
 
 func Stats_Setter() -> void:
 	Cost = 100
-	Character_value = 4
 
 	match Global.Difficulty:
 		"Easy":
