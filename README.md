@@ -1,38 +1,75 @@
-# Castle Conquest: A Strategic Medieval Battle Game
+# 🏰 Castle Conquest: A Strategic Medieval Battle Game
 
-## Overview
+Welcome to **Castle Conquest**, a pixel-art tower defense game where medieval strategy meets monster-slaying mayhem! Defend your kingdom from waves of goblin invaders using a variety of unique units, smart placement, and tactical upgrades. 👑⚔️
 
-**Castle Conquest** is a 2D tower defense game developed using the Godot Engine. Set in a medieval fantasy world, the game blends kingdom-building, resource management, and tactical combat. Players must defend their castle from goblin invasions while strategically managing resources and units.
+---
 
-## Features
-- **Tactical Combat:** Deploy different units with unique abilities against waves of goblins.
-- **Resource Management:** Collect coins and strategically spend them on units and structures.
-- **Challenging Enemies:** Face different enemy types with unique attack patterns.
-- **Engaging Medieval Theme:** Pixel-art medieval setting with a mix of strategy and action.
+## 🎮 About the Game
 
-## Game play Mechanics
+In **Castle Conquest**, players must:
 
-### Player Units:
+- Strategically **place defenders** on the battlefield (Pawns, Warriors, Archers, and more)
+- Use **coin resources** wisely to deploy and upgrade units
+- Defend the bridge from waves of **Torch-wielding goblins, explosive barrels**, and more
+- Progress through **10 handcrafted levels**, unlocking new units and facing tougher enemies
+- Play through **Easy, Medium, and Hard modes** for increasing challenge
 
-- **Pawn:** Basic melee unit with low health and moderate attack.
-- **Warrior:** Stronger melee unit with increased damage and durability.
-- **Archer:** Long-range unit with moderate attack speed.
-- **Tree:** Defensive unit that blocks enemies.
-- **Hut:** Generates coins over time to fund unit deployment.
-- **Tower:** Upgrades archers to shoot in multiple directions.
+Inspired by classics like _Plants vs. Zombies_, but reimagined with a **medieval fantasy twist**, Castle Conquest combines fun, strategy, and pixel-perfect charm.
 
-### Enemy Types:
+---
 
-- **Torch:** Standard melee goblin with moderate speed.
-- **TNT:** Explosive goblin that deals area damage.
-- **Barrel:** Slow-moving goblin that explodes on impact.
+## 📅 Full Release
 
-### Other Elements:
+🛠️ **The full version of the game will be released at the end of this month.**
 
-- **Sheep:** Causes enemies to change lanes and slows them down.
-- **Gold Mine:** Provides a one-time large coin drop before disappearing.
-- **Castle:** Main structure that must be protected to win the game.
+The upcoming full release will include:
 
-## Installation
+- All 10 levels with balanced difficulty
+- Three difficulty modes: Easy, Medium, Hard
+- Unlockable units and strategic gameplay depth
+- 5 Achievements
+- Smooth tutorial experience
+- Final wave system, music, credits, and polish
 
-**Coming Soon**
+Stay tuned by starring ⭐ this repo or following updates!
+
+---
+
+## 🧑‍💻 Developed Using
+
+- [Godot Engine](https://godotengine.org/) – Lightweight, open-source game engine
+- Aseprite – For pixel art and animation
+- Tiled Map Editor – For map and tile design
+- Git & GitHub – For version control and collaboration
+
+---
+
+## ✨ Credits
+
+### 👨‍💻 Development & Design
+
+**Abhishek** – Game Designer, Programmer, Level Designer
+
+### 🎨 Art Assets
+
+- Pixel frog
+
+### 🎵 Music & Sound
+
+-
+
+### 👥 Playtesting
+
+- **Sushil** – Game Testing
+
+### 💬 Special Thanks
+
+- The [Godot Engine](https://godotengine.org) Community
+- Indie game development communities on Discord & Reddit
+- You – for checking out and supporting this game ❤️
+
+---
+
+## 📥 How to Play (Demo Version)
+
+- [Pre-release](https://github.com/Abhi25102004/Castle-Conquest/releases/tag/v0.0.1)
