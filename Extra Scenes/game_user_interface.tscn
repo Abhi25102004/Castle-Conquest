@@ -98,7 +98,7 @@ texture_margin_left = 64.0
 texture_margin_right = 64.0
 texture_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56cii"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dhlm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5sup3"]
 
@@ -173,7 +173,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_b4a3p")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Header/Panel"]
 layout_mode = 2
-theme_override_constants/separation = -30
+theme_override_constants/separation = -40
 
 [node name="Label" type="Label" parent="Header/Panel/VBoxContainer"]
 layout_mode = 2
@@ -187,11 +187,13 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(105, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("5_5sup3")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/background = SubResource("StyleBoxEmpty_56cii")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/background = SubResource("StyleBoxEmpty_8dhlm")
 theme_override_styles/fill = SubResource("StyleBoxEmpty_5sup3")
-value = 100.0
+max_value = 32.0
+step = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Header"]
 layout_mode = 1

@@ -2,8 +2,13 @@ extends CanvasLayer
 
 @onready var Level_Grid: GridContainer = %"Levels Container"
 @onready var Animations: AnimationPlayer = $AnimationPlayer
+@onready var color_animations: AnimatedSprite2D = $PanelContainer/MarginContainer/VBoxContainer/PanelContainer/Color
+@onready var difficulty_animations: AnimatedSprite2D = $PanelContainer/MarginContainer/VBoxContainer/PanelContainer/Difficulty
 
 func _ready() -> void:
+	color_animations.play(Global.Theme_color)
+	difficulty_animations.play(Global.Difficulty)
+	
 	var Level_Completed : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
 	Global.Buttons = Level_Completed.Available_Buttons
 	for button in %"Levels Container".get_children():

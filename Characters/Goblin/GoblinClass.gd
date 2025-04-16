@@ -75,7 +75,6 @@ func Game_Loop(delta: float) -> void:
 			Animations.play("Death")
 			await Animations.animation_finished
 			Global.Add_Money.emit(Cost)
-			Global.Progress.emit()
 			GoblinDied.emit()
 			call_deferred("queue_free")
 

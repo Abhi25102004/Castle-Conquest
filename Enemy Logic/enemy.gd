@@ -26,6 +26,8 @@ var Total_Enemies : int
 
 var Enemies_Killed : int
 
+var Total_Enemies_killed : int
+
 var Selection_array : Array[int]
 
 @onready var EnemeyAI: Node2D = $"Enemy AI area"
@@ -40,7 +42,6 @@ func _ready() -> void:
 	Start_adding_enemies()
 
 func Start_adding_enemies() -> void:
-	Total_Enemies = 0
 	Enemies_Killed = 0
 	Enemies_instance_array = []
 
@@ -52,7 +53,6 @@ func Start_adding_enemies() -> void:
 		Enemies_instance_array.append(preload("res://Characters/Goblin/tnt.tscn").instantiate())
 	for i in range(Current_wave.Number_of_barrel):
 		Enemies_instance_array.append(preload("res://Characters/Goblin/barrel.tscn").instantiate())
-
 	Total_Enemies = Current_wave.Number_of_torch + Current_wave.Number_of_tnt + Current_wave.Number_of_barrel
 
 func Add_Enemies() -> void:
@@ -75,10 +75,12 @@ func Creater_Enemy() -> void:
 		call_deferred("add_child", Enemy)
 
 		Enemy.GoblinDied.connect(func():
+			Global.Progress.emit()
 			Enemies_Killed += 1
+			Total_Enemies_killed += 1
 			if Total_Enemies == Enemies_Killed:
-				if Waves.is_empty():
-					await get_tree().create_timer(1.2).timeout
+				if Total_Enemies_killed == Global.level_type.Game_Total_Enemies:
+					await get_tree().create_timer(1.5).timeout
 					Level_Completed.emit()
 				else:
 					Start_adding_enemies()

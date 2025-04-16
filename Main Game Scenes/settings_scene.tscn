@@ -1058,9 +1058,10 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_ahkvr")
 theme_override_styles/tab_selected = SubResource("StyleBoxTexture_yyice")
 theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_mgaw3")
 theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_lxusj")
-current_tab = 0
+current_tab = 2
 
 [node name="Character Color" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_4uuu2")
 metadata/_tab_index = 0
@@ -1365,7 +1366,6 @@ autoplay = "default"
 frame = 5
 
 [node name="Achievement" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5igf3")
 metadata/_tab_index = 2
