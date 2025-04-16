@@ -75,9 +75,9 @@ func Creater_Enemy() -> void:
 		call_deferred("add_child", Enemy)
 
 		Enemy.GoblinDied.connect(func():
-			Global.Progress.emit()
 			Enemies_Killed += 1
 			Total_Enemies_killed += 1
+			Global.Progress.emit(Total_Enemies_killed)
 			if Total_Enemies == Enemies_Killed:
 				if Total_Enemies_killed == Global.level_type.Game_Total_Enemies:
 					await get_tree().create_timer(1.5).timeout

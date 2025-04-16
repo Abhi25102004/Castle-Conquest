@@ -177,7 +177,7 @@ theme_override_constants/separation = -40
 
 [node name="Label" type="Label" parent="Header/Panel/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 1
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("5_5sup3")
 theme_override_font_sizes/font_size = 50
 text = "Level Progress"
@@ -188,12 +188,14 @@ custom_minimum_size = Vector2(105, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+size_flags_stretch_ratio = 3.0
 theme_override_fonts/font = ExtResource("5_5sup3")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 35
 theme_override_styles/background = SubResource("StyleBoxEmpty_8dhlm")
 theme_override_styles/fill = SubResource("StyleBoxEmpty_5sup3")
 max_value = 32.0
 step = 1.0
+value = 21.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Header"]
 layout_mode = 1
@@ -294,9 +296,6 @@ layout_mode = 2
 [node name="Hover_Button10" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
-[node name="Hover_Button11" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
-layout_mode = 2
-
 [node name="Hover_Button12" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
@@ -370,6 +369,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Hover_Button36" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
+layout_mode = 2
+
+[node name="Hover_Button11" parent="Middle/GridContainer" instance=ExtResource("5_fnbrd")]
 layout_mode = 2
 
 [node name="Bottom" type="PanelContainer" parent="."]

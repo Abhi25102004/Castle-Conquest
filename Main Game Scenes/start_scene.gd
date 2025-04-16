@@ -9,15 +9,18 @@ func _ready() -> void:
 		directory.make_dir_recursive("user://SaveFiles")
 	else:
 		if FileAccess.file_exists("user://SaveFiles/Level_Details.tres"):
+			var SaveFile : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
+			Global.Theme_color = SaveFile.Color_String
+			Global.Difficulty = SaveFile.Game_Difficulty
 			continue_button.visible = true
 		else:
 			continue_button.visible = false
 
 func Save_file() -> void:
+	Animations.play("transition")
 	var SaveFile : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
 	Global.Theme_color = SaveFile.Color_String
 	Global.Difficulty = SaveFile.Game_Difficulty
-	Animations.play("transition")
 	await Animations.animation_finished
 
 func Start_New_Game() -> void:

@@ -55,6 +55,6 @@ func _ready() -> void:
 		Money_Counter.text = str(Money)
 	)
 
-	Global.Progress.connect(func():
-		progress_bar.value += 1
+	Global.Progress.connect(func(value : int):
+		progress_bar.value = value
 		)
