@@ -13,7 +13,10 @@ var current_level : Level_Information
 func Change_Scene() -> void:
 	if not is_inside_tree():
 		return
-	get_tree().change_scene_to_file("res://Main Game Scenes/level_interface.tscn")
+	if Global.level_type.Level_number == 10:
+		get_tree().change_scene_to_file("res://Main Game Scenes/end_credit_scene.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Main Game Scenes/level_interface.tscn")
 
 func _ready() -> void:
 	Animations.play("Please Wait")

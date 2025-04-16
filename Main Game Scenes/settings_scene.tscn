@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://inwgmp56g3ik" path="res://Extra Scenes/achievement_panel.tscn" id="18_wjq6d"]
 [ext_resource type="Texture2D" uid="uid://cvuoaqvekvhyg" path="res://Assets/UI/Buttons/Button_Red.png" id="19_mi5i3"]
 [ext_resource type="Texture2D" uid="uid://drgcesc7p4043" path="res://Assets/UI/Buttons/Button_Red_Pressed.png" id="20_ydal0"]
-[ext_resource type="Texture2D" uid="uid://q10aixmkmhq5" path="res://Assets/UI/Icons/Pressed_01.png" id="21_lurii"]
+[ext_resource type="Texture2D" uid="uid://dypndckq0k1en" path="res://Assets/UI/Icons/Regular_01.png" id="21_iwiu4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_owiii"]
 texture = ExtResource("2_ph84v")
@@ -70,16 +70,17 @@ texture_margin_bottom = 24.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_htqjw"]
 texture = ExtResource("7_4cdi8")
-texture_margin_left = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 8.0
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 25.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2uj7"]
 texture = ExtResource("6_gqglc")
-texture_margin_left = 5.0
-texture_margin_top = 4.0
-texture_margin_right = 5.0
-texture_margin_bottom = 8.0
+texture_margin_left = 30.0
+texture_margin_top = 13.0
+texture_margin_right = 30.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htqjw"]
 
@@ -1057,10 +1058,9 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_ahkvr")
 theme_override_styles/tab_selected = SubResource("StyleBoxTexture_yyice")
 theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_mgaw3")
 theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_lxusj")
-current_tab = 2
+current_tab = 0
 
 [node name="Character Color" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_4uuu2")
 metadata/_tab_index = 0
@@ -1119,7 +1119,7 @@ theme_override_constants/separation = 150
 
 [node name="Red" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -1128,7 +1128,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_0e66w")
-theme_override_font_sizes/font_size = 83
+theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_w2uj7")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_htqjw")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
@@ -1139,7 +1139,7 @@ expand_icon = true
 
 [node name="Blue" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -1148,7 +1148,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_0e66w")
-theme_override_font_sizes/font_size = 83
+theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_htqjw")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_w2uj7")
@@ -1158,7 +1158,7 @@ expand_icon = true
 
 [node name="Yellow" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -1167,7 +1167,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_0e66w")
-theme_override_font_sizes/font_size = 83
+theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fw26d")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_w2uj7")
@@ -1177,7 +1177,7 @@ expand_icon = true
 
 [node name="Purple" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -1186,7 +1186,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_0e66w")
-theme_override_font_sizes/font_size = 83
+theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ynw32")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_w2uj7")
@@ -1286,7 +1286,7 @@ theme_override_constants/separation = 150
 
 [node name="Easy" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Game Difficulty/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -1295,7 +1295,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("13_2cqpb")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fltpi")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_w2uj7")
@@ -1306,7 +1306,7 @@ expand_icon = true
 
 [node name="Medium" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Game Difficulty/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -1315,7 +1315,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("13_2cqpb")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_78k84")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_w2uj7")
@@ -1325,7 +1325,7 @@ expand_icon = true
 
 [node name="Hard" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Game Difficulty/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -1334,7 +1334,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("13_2cqpb")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7elnp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_w2uj7")
@@ -1347,26 +1347,25 @@ unique_name_in_owner = true
 position = Vector2(149, 0)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_q2skf")
-animation = &"Attack"
 autoplay = "default"
 
 [node name="Medium_Animations" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Game Difficulty/VBoxContainer"]
 unique_name_in_owner = true
-position = Vector2(605, 0)
+position = Vector2(637, 0)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_7c5yb")
-animation = &"Attack"
 autoplay = "default"
 
 [node name="Hard_Animations" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Game Difficulty/VBoxContainer"]
 unique_name_in_owner = true
-position = Vector2(1045, 40)
+position = Vector2(1093, 16)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_dei1s")
-animation = &"Attack"
 autoplay = "default"
+frame = 5
 
 [node name="Achievement" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5igf3")
 metadata/_tab_index = 2
@@ -1433,8 +1432,9 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_l1ll8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3fhuk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ahkvr")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ryf1k")
-icon = ExtResource("21_lurii")
+icon = ExtResource("21_iwiu4")
 icon_alignment = 1
+vertical_icon_alignment = 2
 expand_icon = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
