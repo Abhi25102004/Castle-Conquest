@@ -11,7 +11,7 @@ var Image_Dict : Dictionary = {
 }
 
 @onready var marker: Marker2D = $Marker2D
-@onready var picutre : Sprite2D = $Sprite2D
+@onready var picutre : Sprite2D = $TowerImage
 
 func HurtBox_Exited(area: Area2D) -> void:
 	Goblin_Array.erase(area.get_parent())

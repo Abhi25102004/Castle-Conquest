@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dj4natrlfejt7"]
+[gd_scene load_steps=46 format=3 uid="uid://dj4natrlfejt7"]
 
 [ext_resource type="Script" uid="uid://buofsbrclxxfx" path="res://Extra Scenes/game_user_interface.gd" id="1_h2gpb"]
 [ext_resource type="PackedScene" uid="uid://bchfui5nqukg" path="res://Extra Scenes/custum_button.tscn" id="2_a7d2l"]
@@ -9,9 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bqfpfffsw3ev7" path="res://Assets/Resources/Resources/G_Spawn.png" id="4_56cii"]
 [ext_resource type="Texture2D" uid="uid://cn1tffbh3q3ue" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/warrior_icon.png" id="5_4pvt4"]
 [ext_resource type="FontFile" uid="uid://drwi4ulb0gmau" path="res://Assets/Fonts/SpectralSC-Regular.ttf" id="5_5sup3"]
+[ext_resource type="PackedScene" uid="uid://bj6iqb2ck4h4s" path="res://Extra Scenes/sfx.tscn" id="5_301xm"]
 [ext_resource type="PackedScene" uid="uid://b5fdmhnpga6lt" path="res://Extra Scenes/hover_button.tscn" id="5_fnbrd"]
-[ext_resource type="Texture2D" uid="uid://curimxwxr3tsd" path="res://Assets/UI/Icons/Regular_03.png" id="6_a4dss"]
 [ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Knight/warrior.tscn" id="6_nsg1e"]
+[ext_resource type="AudioStream" uid="uid://pbv005cefv42" path="res://Sounds/Coins.wav" id="6_y1sbs"]
 [ext_resource type="Texture2D" uid="uid://djp2d31y2dyu1" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Blue_Pawn_icon.png" id="7_norpy"]
 [ext_resource type="Texture2D" uid="uid://c2sj7c687d2s3" path="res://Assets/UI/Icons/Regular_02.png" id="7_o12hk"]
 [ext_resource type="PackedScene" uid="uid://ceby6oqyqicd4" path="res://Characters/Knight/pawn.tscn" id="8_4jkkd"]
@@ -158,6 +159,12 @@ animation = &"Coin Added"
 frame = 6
 frame_progress = 1.0
 
+[node name="SFX" parent="Header/Label/AnimatedSprite2D" instance=ExtResource("5_301xm")]
+position = Vector2(-54, -26.6667)
+scale = Vector2(0.666667, 0.666667)
+stream = ExtResource("6_y1sbs")
+volume_db = 20.0
+
 [node name="Panel" type="PanelContainer" parent="Header"]
 texture_filter = 1
 custom_minimum_size = Vector2(400, 135)
@@ -202,25 +209,11 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -383.0
+offset_left = -254.0
 offset_bottom = 125.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
-
-[node name="Sound Button" type="Button" parent="Header/HBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(125, 125)
-layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_bbhgb")
-theme_override_styles/hover = SubResource("StyleBoxTexture_bbhgb")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
-theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
-icon = ExtResource("6_a4dss")
-icon_alignment = 1
-vertical_icon_alignment = 2
-expand_icon = true
 
 [node name="Settings Button" type="Button" parent="Header/HBoxContainer"]
 unique_name_in_owner = true

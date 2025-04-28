@@ -80,7 +80,7 @@ func Creater_Enemy() -> void:
 			Global.Progress.emit(Total_Enemies_killed)
 			if Total_Enemies == Enemies_Killed:
 				if Total_Enemies_killed == Global.level_type.Game_Total_Enemies:
-					await get_tree().create_timer(1.5).timeout
+					await get_tree().create_timer(1).timeout
 					Level_Completed.emit()
 				else:
 					Start_adding_enemies()
@@ -91,7 +91,6 @@ func Creater_Enemy() -> void:
 		Creater_Enemy()
 
 func Danger_Area_Entered(_area: Area2D) -> void:
-	get_tree().call_group("Enemy", "Character_Death")
 	Player_Lost.emit()
 
 func Enemy_Death_Zone_Entered(area: Area2D) -> void:

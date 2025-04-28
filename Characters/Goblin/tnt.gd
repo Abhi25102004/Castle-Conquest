@@ -30,6 +30,6 @@ func Stats_Setter() -> void:
 			Attack = 30
 			Attack_Speed = 1.3
 		"Hard":
-			Health = 90
-			Attack = 35
-			Attack_Speed = 1.2
+			Health = 85
+			Attack = 32
+			Attack_Speed = 1.25

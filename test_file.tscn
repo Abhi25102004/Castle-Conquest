@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://bamiq8ho06v1n"]
 
-[ext_resource type="PackedScene" uid="uid://csqsfa62p8rw3" path="res://Characters/Extras/sheep.tscn" id="2_1opec"]
-[ext_resource type="PackedScene" uid="uid://cr10cstnr5c7h" path="res://Characters/Goblin/torch.tscn" id="2_qo282"]
+[ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Knight/warrior.tscn" id="1_1opec"]
+[ext_resource type="PackedScene" uid="uid://dm7teraw3nh7c" path="res://Characters/Goblin/barrel.tscn" id="2_qo282"]
 
 [node name="TestFile" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Torch" parent="." instance=ExtResource("2_qo282")]
-position = Vector2(784, 0)
+[node name="Warrior" parent="." instance=ExtResource("1_1opec")]
+position = Vector2(-336, 0)
 
-[node name="Sheep" parent="." instance=ExtResource("2_1opec")]
-position = Vector2(-257, 0)
+[node name="Barrel" parent="." instance=ExtResource("2_qo282")]
+position = Vector2(480, 0)

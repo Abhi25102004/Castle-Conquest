@@ -18,6 +18,7 @@ config/icon="res://Assets/Factions/Knights/Buildings/Castle/Castle_Blue.png"
 [autoload]
 
 Global="*res://Global/Global.gd"
+MainMusic="*res://Main Game Scenes/main_music.tscn"
 
 [display]
 

@@ -19,11 +19,11 @@ var Cost : int
 var Animation_String : String:
 	get = getAnimation_String
 
-@export var Animated_node : AnimatedSprite2D
+@export var Animated_node : AnimationPlayer
 @export var HurtBox_node : Area2D
 @export var HitBox_CollisionShape_node : CollisionShape2D
 
-@onready var Animations: AnimatedSprite2D = Animated_node
+@onready var Animations: AnimationPlayer = Animated_node
 @onready var HurtBox: Area2D = HurtBox_node
 @onready var HitBox_CollisionShape : CollisionShape2D = HitBox_CollisionShape_node
 

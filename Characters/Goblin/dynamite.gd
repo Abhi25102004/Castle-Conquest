@@ -5,7 +5,8 @@ var Vertical_speed : int = 550
 var Rotation_speed : int = 10
 var wait_time : float = 5
 
-@onready var Animations: AnimatedSprite2D = $AnimatedSprite2D
+@onready var Animations: AnimationPlayer = $AnimationPlayer
+
 
 func _process(delta: float) -> void:
 	position += Vector2(-1,0) * Vertical_speed * delta

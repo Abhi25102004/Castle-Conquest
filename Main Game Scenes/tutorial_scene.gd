@@ -11,7 +11,7 @@ var Instruction : Array[String] = [
 	"Instruction:\nUse the buttons below to select a character. Each character costs a specific amount of coins to deploy.\n\nClick to continue...",
 	"Instruction:\nYou can track your goblin kills at the top center of the screen.\n\nClick to continue...",
 	"Instruction:\nTry combining different units to create a balanced defense. Mix economy, defense, and offense.\n\nClick to continue...",
-	"Instruction:\nYour current coin amount is displayed at the top left. Earn more coins by eliminating goblins.\n\nClick to continue...",
+	"Instruction:\nYour current coin amount is displayed at the top left. Earn more coins by eliminating goblins or by removing the units that you have placed.\n\nClick to continue...",
 	"Instruction:\nSome characters attack enemies, while others defend or generate coins. Use them wisely.\n\nClick to continue...",
 	"Instruction:\nEach level gets progressively harder. Spend your coins wisely and keep upgrading your defense.\n\nClick to continue...",
 	"Instruction:\nIf a goblin crosses the bridge, you lose! Keep your lanes secure at all times.\n\nClick to continue...",

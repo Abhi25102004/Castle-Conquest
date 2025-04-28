@@ -13,7 +13,7 @@ func _ready() -> void:
 	achievement_name.text = Name
 	achievement_description.text = Description
 	
-	var SaveFile : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
+	var SaveFile : Level_Selection = ResourceLoader.load("user://Level_Details.tres")
 	
 	match Number:
 		1:

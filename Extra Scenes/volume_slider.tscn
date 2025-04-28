@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://tc6a716qwnp1"]
+
+[ext_resource type="Script" uid="uid://bda2ns8lopkhu" path="res://Extra Scenes/volume_slider.gd" id="1_nqa0s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqa0s"]
+bg_color = Color(0.95265, 0.728278, 0.178342, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 5.0
+expand_margin_top = 25.0
+expand_margin_right = 5.0
+expand_margin_bottom = 25.0
+shadow_size = 1
+shadow_offset = Vector2(1.5, 2.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwqpy"]
+bg_color = Color(0.382736, 0.402579, 0.946167, 1)
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 20.0
+expand_margin_bottom = 20.0
+
+[node name="Volume Slider" type="HSlider"]
+custom_minimum_size = Vector2(500, 150)
+offset_right = 8.0
+offset_bottom = 16.0
+theme_override_constants/center_grabber = 1
+theme_override_styles/slider = SubResource("StyleBoxFlat_nqa0s")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_rwqpy")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_rwqpy")
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("1_nqa0s")

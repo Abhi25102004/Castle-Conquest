@@ -1,64 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bukfya2ci67ek"]
+[gd_scene load_steps=9 format=3 uid="uid://bukfya2ci67ek"]
 
 [ext_resource type="FontFile" uid="uid://bytma58a8bj82" path="res://Assets/Fonts/PirataOne-Regular.ttf" id="1_1vmvc"]
 [ext_resource type="Script" uid="uid://cunloggsk7hc1" path="res://Main Game Scenes/end_credit_scene.gd" id="1_ou50d"]
 [ext_resource type="FontFile" uid="uid://drwi4ulb0gmau" path="res://Assets/Fonts/SpectralSC-Regular.ttf" id="2_ou50d"]
-[ext_resource type="FontFile" uid="uid://dhvgvm1luvtiu" path="res://Assets/Fonts/Cinzel-VariableFont_wght.ttf" id="4_wj3kk"]
-
-[sub_resource type="Animation" id="Animation_wj3kk"]
-resource_name = "Start"
-length = 33.1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Credit:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(3, 33.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(460, 601.975), Vector2(460, -6419)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Control/Title:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(33.1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"change_scene"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Credit:theme_override_fonts/font")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(2.5, 19.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("2_ou50d"), ExtResource("4_wj3kk")]
-}
 
 [sub_resource type="Animation" id="Animation_jikll"]
 length = 0.001
@@ -98,11 +42,272 @@ tracks/2/keys = {
 "update": 1,
 "values": [ExtResource("2_ou50d")]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Credit:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["\"Congratulations, Defender of the Realm!
+
+You’ve stood your ground, fended off goblins, and protected the kingdom from its first great threat.
+
+Your journey has laid the foundation of hope, and the realm owes you its gratitude.
+
+But greater dangers loom on the horizon…
+
+Think you're ready for a stiffer challenge?  
+Try Medium mode next, or unlock all achievements!
+
+⚔️ Your story has just begun. Prepare for the trials ahead!
+\""]
+}
+
+[sub_resource type="Animation" id="Animation_ou50d"]
+resource_name = "Medium"
+length = 50.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Credit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(460, 1080), Vector2(460, -6419)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Title:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Credit:theme_override_fonts/font")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ou50d")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Credit:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Glory to the Brave Strategist!
+
+Through cunning tactics and unwavering bravery, you’ve overcome a mighty challenge. The goblin forces were fierce — but you were fiercer.
+
+The kingdom now hails you as a true Hero of Castle Conquest.
+
+But in the shadows, the strongest foes still stir...
+
+Will you dare to face the ultimate challenge in Hard Mode?  
+Master every achievement and cement your legacy!
+
+Greatness awaits. Are you ready to seize it?"]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(30),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"change_scene"],
+"method": &"call_deferred"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_yrg8h"]
+resource_name = "Hard"
+length = 50.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Credit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(460, 1070), Vector2(460, -6419)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Title:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Credit:theme_override_fonts/font")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ou50d")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Credit:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HAIL TO THE TRUE CHAMPION OF CASTLE CONQUEST!
+
+You have faced the fiercest foes, survived relentless waves, and conquered against all odds. Your defense was impenetrable, your strategy unmatched.
+
+Legends will sing of your name — for you are the Eternal Guardian of the Realm.
+
+But even in peace, the wise remain vigilant...
+
+Will you chase glory once more?  
+Or perfect your run, unlock every achievement, and leave your mark forever?
+
+You’ve beaten the impossible. Now become unstoppable.
+"]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(30),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"change_scene"],
+"method": &"call_deferred"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_wj3kk"]
+resource_name = "Easy"
+length = 50.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Credit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(460, 1040), Vector2(460, -6419)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Title:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Credit:theme_override_fonts/font")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ou50d")]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(30),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"change_scene"],
+"method": &"call_deferred"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Credit:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Congratulations, Defender of the Realm!
+
+You’ve stood your ground, fended off goblins, and protected the kingdom from its first great threat.
+
+Your journey has laid the foundation of hope, and the realm owes you its gratitude.
+
+But greater dangers loom on the horizon…
+
+Think you're ready for a stiffer challenge?  
+Try Medium mode next, or unlock all achievements!
+
+Your story has just begun. Prepare for the trials ahead!"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yrg8h"]
 _data = {
-&"RESET": SubResource("Animation_jikll"),
-&"Start": SubResource("Animation_wj3kk")
+&"Easy": SubResource("Animation_wj3kk"),
+&"Hard": SubResource("Animation_yrg8h"),
+&"Medium": SubResource("Animation_ou50d"),
+&"RESET": SubResource("Animation_jikll")
 }
 
 [node name="End Credit Scene" type="Node"]
@@ -152,68 +357,30 @@ vertical_alignment = 1
 [node name="Credit" type="Label" parent="Control"]
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -500.0
-offset_top = -6959.0
+offset_top = 1083.0
 offset_right = 500.0
-offset_bottom = 258.0
+offset_bottom = 3645.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_ou50d")
 theme_override_font_sizes/font_size = 60
-text = "You have conquered every battle, defended the bridge, and pushed back the goblin hordes!
+text = "\"Congratulations, Defender of the Realm!
 
-The kingdom is safe once more, thanks to your courage, strategy, and relentless spirit.
+You’ve stood your ground, fended off goblins, and protected the kingdom from its first great threat.
 
-From humble beginnings as a lone defender to the ultimate Champion of Castle Conquest, your journey has become legend.
+Your journey has laid the foundation of hope, and the realm owes you its gratitude.
 
-But peace is never eternal... Dark forces may rise again.
+But greater dangers loom on the horizon…
 
-Will you rise to the challenge once more?
-Perhaps try a harder difficulty... or aim for all achievements?
+Think you're ready for a stiffer challenge?  
+Try Medium mode next, or unlock all achievements!
 
-Your story doesn't end here — it has only just begun.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CASTLE CONQUEST - CREDITS
-
-Game Designer
-Abhishek
-
-Lead Developer
-Abhishek
-
-Pixel Art & Assets
-Pixel Frog
-
-Music & Sound Effects
-
-Playtesting
-Sushil
-
-Special Thanks
-Godot Engine Community
-All the brave defenders who played this game!
-
-A Game Made With Love and Passion
-From a humble idea... to a legendary conquest."
+⚔️ Your story has just begun. Prepare for the trials ahead!
+\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -222,4 +389,3 @@ autowrap_mode = 3
 libraries = {
 &"": SubResource("AnimationLibrary_yrg8h")
 }
-autoplay = "Start"

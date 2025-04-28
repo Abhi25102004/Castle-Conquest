@@ -505,7 +505,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_i2k5r"]
-resource_name = "Switch_Animation"
+resource_name = "Switch_Scene"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -535,7 +535,7 @@ tracks/1/keys = {
 _data = {
 &"Entery": SubResource("Animation_slx5t"),
 &"RESET": SubResource("Animation_a1xi6"),
-&"Switch_Animation": SubResource("Animation_i2k5r")
+&"Switch_Scene": SubResource("Animation_i2k5r")
 }
 
 [node name="Level Interface" type="CanvasLayer"]
@@ -615,22 +615,21 @@ frame = 1
 frame_progress = 0.293423
 
 [node name="Difficulty" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
-position = Vector2(256, 56)
+position = Vector2(296, 56)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_aih7x")
 animation = &"Medium"
 flip_h = true
 
 [node name="Color label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
-texture_filter = 1
 layout_mode = 0
-offset_left = 32.0
+offset_left = 20.0
 offset_top = 104.0
-offset_right = 151.0
-offset_bottom = 129.0
+offset_right = 157.0
+offset_bottom = 144.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_holmf")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 30
 text = "Player Color:"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -638,13 +637,13 @@ vertical_alignment = 1
 [node name="Difficulty label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 184.0
+offset_left = 220.0
 offset_top = 104.0
-offset_right = 331.0
-offset_bottom = 129.0
+offset_right = 386.0
+offset_bottom = 144.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_holmf")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 30
 text = "Game Difficulty:"
 horizontal_alignment = 1
 vertical_alignment = 1

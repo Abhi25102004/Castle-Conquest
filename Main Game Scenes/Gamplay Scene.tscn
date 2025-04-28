@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bi367bqvb1tm6"]
+[gd_scene load_steps=19 format=3 uid="uid://bi367bqvb1tm6"]
 
 [ext_resource type="Script" uid="uid://cdt5uqhinbfbu" path="res://Main Game Scenes/Gamplay Scene.gd" id="1_fpc22"]
 [ext_resource type="PackedScene" uid="uid://dj4natrlfejt7" path="res://Extra Scenes/game_user_interface.tscn" id="2_cnr0n"]
@@ -7,10 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://cpbudvygxm040" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="5_o2aix"]
 [ext_resource type="Texture2D" uid="uid://dhs7u2icykmf8" path="res://Assets/Factions/Knights/Troops/Dead/Dead.png" id="6_4ikdh"]
 [ext_resource type="Texture2D" uid="uid://1fex2qkbhxx8" path="res://Assets/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="7_yms8u"]
+[ext_resource type="PackedScene" uid="uid://dlot5q3ykfot5" path="res://Main Game Scenes/battle_music.tscn" id="8_cnr0n"]
+[ext_resource type="AudioStream" uid="uid://cun3q8jfme60c" path="res://Sounds/Running.wav" id="9_st4ll"]
+[ext_resource type="AudioStream" uid="uid://bqvno4jvm0ryx" path="res://Sounds/Fire Explosion Sound effect  Fire Blast Sound Effect #3 @WsnSolutions.mp3" id="10_4ikdh"]
+[ext_resource type="AudioStream" uid="uid://mqsfwuyeb3pk" path="res://Sounds/War Horn!.mp3" id="10_4lxrx"]
+[ext_resource type="AudioStream" uid="uid://bky52j1161151" path="res://Sounds/SWORD SLASH SOUND EFFECT  NO COPYRIGHT.mp3" id="10_o2aix"]
 
 [sub_resource type="Animation" id="Animation_0twuo"]
 resource_name = "Exit"
-length = 1.5
+length = 1.1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -39,7 +44,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Effects/Sprite2D3:visible")
+tracks/2/path = NodePath("Effects/Goblin:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -51,7 +56,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Effects/Sprite2D:visible")
+tracks/3/path = NodePath("Effects/Warrior:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -71,6 +76,32 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Battle Music:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-40.0, -80.0]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Play_Song"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_ag7nc"]
@@ -96,11 +127,14 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"Level_Lost"
+}, {
+"args": [],
+"method": &"Play_Song"
 }]
 }
 tracks/2/type = "value"
@@ -130,7 +164,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Effects/Sprite2D:frame_coords")
+tracks/4/path = NodePath("Effects/Warrior:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -142,19 +176,19 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Effects/Sprite2D:position")
+tracks/5/path = NodePath("Effects/Warrior:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.9, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-120, 346), Vector2(-120, 346), Vector2(860, 346)]
+"values": [Vector2(-140, 460), Vector2(-140, 460), Vector2(860, 460)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Effects/Sprite2D2:scale")
+tracks/6/path = NodePath("Effects/Death:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -166,19 +200,19 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Effects/Sprite2D2:position")
+tracks/7/path = NodePath("Effects/Death:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(860, 346)]
+"values": [Vector2(860, 460)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Effects/Sprite2D2:visible")
+tracks/8/path = NodePath("Effects/Death:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -190,7 +224,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Effects/Sprite2D:visible")
+tracks/9/path = NodePath("Effects/Warrior:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -202,7 +236,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Effects/Sprite2D2:frame_coords")
+tracks/10/path = NodePath("Effects/Death:frame_coords")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -214,19 +248,19 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Effects/Sprite2D3:position")
+tracks/11/path = NodePath("Effects/Goblin:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0, 0.9, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(2053, 346), Vector2(2053, 346), Vector2(1060, 346)]
+"values": [Vector2(2053, 460), Vector2(2053, 460), Vector2(1060, 460)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Effects/Sprite2D3:frame_coords")
+tracks/12/path = NodePath("Effects/Goblin:frame_coords")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -238,7 +272,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Effects/Sprite2D3:visible")
+tracks/13/path = NodePath("Effects/Goblin:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -250,7 +284,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Effects/Sprite2D2:flip_h")
+tracks/14/path = NodePath("Effects/Death:flip_h")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -270,6 +304,49 @@ tracks/15/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/16/type = "audio"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Audio")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"clips": [{
+"end_offset": 8.00613,
+"start_offset": 0.0,
+"stream": ExtResource("9_st4ll")
+}, {
+"end_offset": 0.879056,
+"start_offset": 5.30559,
+"stream": ExtResource("10_4ikdh")
+}],
+"times": PackedFloat32Array(0.9, 3.3)
+}
+tracks/16/use_blend = true
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Battle Music:volume_db")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Audio:volume_db")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [20.0]
 }
 
 [sub_resource type="Animation" id="Animation_0y5yx"]
@@ -295,11 +372,14 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"Level_Won"
+}, {
+"args": [],
+"method": &"Play_Song"
 }]
 }
 tracks/2/type = "value"
@@ -329,19 +409,19 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Effects/Sprite2D:position")
+tracks/4/path = NodePath("Effects/Warrior:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.9, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-120, 350), Vector2(-120, 350), Vector2(860, 346)]
+"values": [Vector2(-140, 460), Vector2(-140, 460), Vector2(860, 460)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Effects/Sprite2D:frame_coords")
+tracks/5/path = NodePath("Effects/Warrior:frame_coords")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -353,19 +433,19 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Effects/Sprite2D3:position")
+tracks/6/path = NodePath("Effects/Goblin:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.9, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(2035, 346), Vector2(2035, 346), Vector2(1060, 346)]
+"values": [Vector2(2035, 460), Vector2(2035, 460), Vector2(1060, 460)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Effects/Sprite2D:visible")
+tracks/7/path = NodePath("Effects/Warrior:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -377,7 +457,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Effects/Sprite2D3:visible")
+tracks/8/path = NodePath("Effects/Goblin:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -389,7 +469,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Effects/Sprite2D3:frame_coords")
+tracks/9/path = NodePath("Effects/Goblin:frame_coords")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -401,7 +481,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Effects/Sprite2D2:frame_coords")
+tracks/10/path = NodePath("Effects/Death:frame_coords")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -413,19 +493,19 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Effects/Sprite2D2:position")
+tracks/11/path = NodePath("Effects/Death:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(3.6),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1060, 346)]
+"values": [Vector2(1060, 460)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Effects/Sprite2D2:visible")
+tracks/12/path = NodePath("Effects/Death:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -437,7 +517,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Effects/Sprite2D2:flip_h")
+tracks/13/path = NodePath("Effects/Death:flip_h")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -458,10 +538,53 @@ tracks/14/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Battle Music:volume_db")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/16/type = "audio"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Audio")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"clips": [{
+"end_offset": 8.00613,
+"start_offset": 0.0,
+"stream": ExtResource("9_st4ll")
+}, {
+"end_offset": 1.18388,
+"start_offset": 3.07229,
+"stream": ExtResource("10_o2aix")
+}],
+"times": PackedFloat32Array(0.9, 3.15486)
+}
+tracks/16/use_blend = true
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Audio:volume_db")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [20.0]
+}
 
 [sub_resource type="Animation" id="Animation_k8olj"]
 resource_name = "Please Wait"
-length = 5.0
+length = 7.5
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -494,7 +617,7 @@ tracks/2/path = NodePath("Enemy")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(5),
+"times": PackedFloat32Array(7.2),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -508,29 +631,32 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"Please_Wait"
+}, {
+"args": [],
+"method": &"Pause_Song"
 }]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Effects/Sprite2D:position")
+tracks/4/path = NodePath("Effects/Warrior:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-90, 350), Vector2(2080, 350)]
+"values": [Vector2(-140, 460), Vector2(2080, 460)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Effects/Sprite2D:visible")
+tracks/5/path = NodePath("Effects/Warrior:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -542,7 +668,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Effects/Sprite2D:frame_coords")
+tracks/6/path = NodePath("Effects/Warrior:frame_coords")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -566,7 +692,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Effects/Sprite2D2:visible")
+tracks/8/path = NodePath("Effects/Death:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -578,7 +704,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Effects/Sprite2D3:visible")
+tracks/9/path = NodePath("Effects/Goblin:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -598,6 +724,63 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Battle Music")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(7.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Audio")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 5.89853,
+"start_offset": 0.0,
+"stream": ExtResource("9_st4ll")
+}, {
+"end_offset": 5.59745,
+"start_offset": 0.0,
+"stream": ExtResource("10_4lxrx")
+}],
+"times": PackedFloat32Array(0, 4.8)
+}
+tracks/12/use_blend = true
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Audio:volume_db")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 4.2, 4.8, 5, 6.7, 7.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -80.0, 20.0, 5.0, -80.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Battle Music:volume_db")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(7.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
 }
 
 [sub_resource type="Animation" id="Animation_nml8a"]
@@ -629,19 +812,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Effects/Sprite2D:position")
+tracks/2/path = NodePath("Effects/Warrior:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-98.9999, 346)]
+"values": [Vector2(-139, 346)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Effects/Sprite2D:visible")
+tracks/3/path = NodePath("Effects/Warrior:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -653,7 +836,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Effects/Sprite2D:frame_coords")
+tracks/4/path = NodePath("Effects/Warrior:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -677,7 +860,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Effects/Sprite2D2:scale")
+tracks/6/path = NodePath("Effects/Death:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -689,7 +872,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Effects/Sprite2D2:position")
+tracks/7/path = NodePath("Effects/Death:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -701,7 +884,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Effects/Sprite2D2:visible")
+tracks/8/path = NodePath("Effects/Death:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -713,7 +896,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Effects/Sprite2D2:frame_coords")
+tracks/9/path = NodePath("Effects/Death:frame_coords")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -725,19 +908,19 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Effects/Sprite2D3:position")
+tracks/10/path = NodePath("Effects/Goblin:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-108, 245)]
+"values": [Vector2(-258, 245)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Effects/Sprite2D3:visible")
+tracks/11/path = NodePath("Effects/Goblin:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -749,7 +932,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Effects/Sprite2D3:frame_coords")
+tracks/12/path = NodePath("Effects/Goblin:frame_coords")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -761,7 +944,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Effects/Sprite2D2:flip_h")
+tracks/13/path = NodePath("Effects/Death:flip_h")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -781,6 +964,30 @@ tracks/14/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Battle Music:volume_db")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Audio:volume_db")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0y5yx"]
@@ -827,29 +1034,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -919.5
+offset_top = 22.5
+offset_right = 919.5
+offset_bottom = 169.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_4lxrx")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 115
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Effects" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Effects"]
+[node name="Warrior" type="Sprite2D" parent="Effects"]
 texture_filter = 1
-position = Vector2(-98.9999, 346)
-scale = Vector2(2.5, 2.5)
+position = Vector2(-139, 346)
+scale = Vector2(3, 3)
 texture = ExtResource("5_o2aix")
 hframes = 6
 vframes = 8
 frame = 6
 
-[node name="Sprite2D2" type="Sprite2D" parent="Effects"]
+[node name="Death" type="Sprite2D" parent="Effects"]
 visible = false
 texture_filter = 1
 position = Vector2(990, 346)
@@ -859,15 +1066,21 @@ flip_h = true
 hframes = 7
 vframes = 2
 
-[node name="Sprite2D3" type="Sprite2D" parent="Effects"]
+[node name="Goblin" type="Sprite2D" parent="Effects"]
 texture_filter = 1
-position = Vector2(-108, 245)
-scale = Vector2(2.5, 2.5)
+position = Vector2(-258, 245)
+scale = Vector2(3, 3)
 texture = ExtResource("7_yms8u")
 flip_h = true
 hframes = 7
 vframes = 5
 frame = 7
+
+[node name="Battle Music" parent="." instance=ExtResource("8_cnr0n")]
+volume_db = 0.0
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+volume_db = -80.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

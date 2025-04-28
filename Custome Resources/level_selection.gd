@@ -12,3 +12,8 @@ class_name Level_Selection
 	"Medium" : [],
 	"Hard" : [],
 }
+@export var Audio : Dictionary[String,float] = {
+	"Master" : 1,
+	"Music" : 1,
+	"Sound effects" : 1
+	}

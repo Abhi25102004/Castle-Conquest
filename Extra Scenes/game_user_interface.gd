@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var quite_button: Button = %"Quite Button"
 @onready var settings_button: Button = %"Settings Button"
 @onready var Animations: AnimatedSprite2D = $Header/Label/AnimatedSprite2D
+@onready var sfx: AudioStreamPlayer2D = $Header/Label/AnimatedSprite2D/SFX
 @onready var progress_bar: ProgressBar = $Header/Panel/VBoxContainer/ProgressBar
 
 var cost : int = 0
@@ -46,6 +47,7 @@ func _ready() -> void:
 
 	Global.connect("Add_Money", func(extra : int):
 		Animations.play("Coin Added")
+		sfx.play()
 		Money += extra
 		Money_Counter.text = str(Money)
 	)

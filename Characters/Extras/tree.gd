@@ -11,7 +11,7 @@ func Stats_Setter() -> void:
 		"Medium":
 			Health = 280
 		"Hard":
-			Health = 250
+			Health = 260
 
 func Take_Damage_from_Goblin(Power : float) -> void:
 	Knight = States.Attack

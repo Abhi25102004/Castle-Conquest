@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=3 uid="uid://dnnbh6lw50yrh"]
+[gd_scene load_steps=209 format=3 uid="uid://dnnbh6lw50yrh"]
 
 [ext_resource type="Script" uid="uid://cfii3vysa2t85" path="res://Main Game Scenes/settings_scene.gd" id="1_iwiu4"]
 [ext_resource type="Texture2D" uid="uid://blrqsrn1o40l3" path="res://Assets/UI/Banners/Carved_9Slides.png" id="2_ph84v"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://inwgmp56g3ik" path="res://Extra Scenes/achievement_panel.tscn" id="18_wjq6d"]
 [ext_resource type="Texture2D" uid="uid://cvuoaqvekvhyg" path="res://Assets/UI/Buttons/Button_Red.png" id="19_mi5i3"]
 [ext_resource type="Texture2D" uid="uid://drgcesc7p4043" path="res://Assets/UI/Buttons/Button_Red_Pressed.png" id="20_ydal0"]
+[ext_resource type="PackedScene" uid="uid://tc6a716qwnp1" path="res://Extra Scenes/volume_slider.tscn" id="21_4cdi8"]
 [ext_resource type="Texture2D" uid="uid://dypndckq0k1en" path="res://Assets/UI/Icons/Regular_01.png" id="21_iwiu4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_owiii"]
@@ -904,6 +905,390 @@ texture_margin_left = 7.0
 texture_margin_right = 7.0
 texture_margin_bottom = 7.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvhtc"]
+atlas = ExtResource("10_gump3")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljjth"]
+atlas = ExtResource("10_gump3")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc2aq"]
+atlas = ExtResource("10_gump3")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hwyn"]
+atlas = ExtResource("10_gump3")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbyi7"]
+atlas = ExtResource("10_gump3")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h7jj"]
+atlas = ExtResource("10_gump3")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htt8b"]
+atlas = ExtResource("12_lwpbv")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrwxh"]
+atlas = ExtResource("12_lwpbv")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro65m"]
+atlas = ExtResource("12_lwpbv")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irl2q"]
+atlas = ExtResource("12_lwpbv")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yio5"]
+atlas = ExtResource("12_lwpbv")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q6tg"]
+atlas = ExtResource("12_lwpbv")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jnfj"]
+atlas = ExtResource("9_bgtbd")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ki5l"]
+atlas = ExtResource("9_bgtbd")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl05t"]
+atlas = ExtResource("9_bgtbd")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi6on"]
+atlas = ExtResource("9_bgtbd")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqalc"]
+atlas = ExtResource("9_bgtbd")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8n6m1"]
+atlas = ExtResource("9_bgtbd")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxlby"]
+atlas = ExtResource("11_3g5u5")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faoi7"]
+atlas = ExtResource("11_3g5u5")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5btn"]
+atlas = ExtResource("11_3g5u5")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2421w"]
+atlas = ExtResource("11_3g5u5")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpwks"]
+atlas = ExtResource("11_3g5u5")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yiws"]
+atlas = ExtResource("11_3g5u5")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iwiu4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvhtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljjth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc2aq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hwyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbyi7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h7jj")
+}],
+"loop": true,
+"name": &"Blue",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htt8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrwxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro65m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irl2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yio5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q6tg")
+}],
+"loop": true,
+"name": &"Purple",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jnfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ki5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl05t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi6on")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqalc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8n6m1")
+}],
+"loop": true,
+"name": &"Red",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxlby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_faoi7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5btn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2421w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpwks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yiws")
+}],
+"loop": true,
+"name": &"Yellow",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyss4"]
+atlas = ExtResource("14_e4kxv")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47pc1"]
+atlas = ExtResource("14_e4kxv")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkjai"]
+atlas = ExtResource("14_e4kxv")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c633u"]
+atlas = ExtResource("14_e4kxv")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjk2i"]
+atlas = ExtResource("14_e4kxv")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g62m"]
+atlas = ExtResource("14_e4kxv")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv68e"]
+atlas = ExtResource("14_e4kxv")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r07wy"]
+atlas = ExtResource("16_582av")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5ub4"]
+atlas = ExtResource("16_582av")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mhit"]
+atlas = ExtResource("16_582av")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdt8c"]
+atlas = ExtResource("16_582av")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg500"]
+atlas = ExtResource("16_582av")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcto8"]
+atlas = ExtResource("16_582av")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlh44"]
+atlas = ExtResource("16_582av")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awlgk"]
+atlas = ExtResource("16_582av")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uqt1"]
+atlas = ExtResource("16_582av")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3biil"]
+atlas = ExtResource("16_582av")
+region = Rect2(384, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpmmt"]
+atlas = ExtResource("16_582av")
+region = Rect2(512, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrcl0"]
+atlas = ExtResource("16_582av")
+region = Rect2(640, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k64ot"]
+atlas = ExtResource("15_gn1fr")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvch2"]
+atlas = ExtResource("15_gn1fr")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fafdg"]
+atlas = ExtResource("15_gn1fr")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8puhv"]
+atlas = ExtResource("15_gn1fr")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsawb"]
+atlas = ExtResource("15_gn1fr")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj6db"]
+atlas = ExtResource("15_gn1fr")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ph84v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyss4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47pc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkjai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c633u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjk2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g62m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv68e")
+}],
+"loop": true,
+"name": &"Easy",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r07wy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5ub4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mhit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdt8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg500")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcto8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlh44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awlgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uqt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3biil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpmmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrcl0")
+}],
+"loop": true,
+"name": &"Hard",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k64ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvch2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fafdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8puhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsawb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj6db")
+}],
+"loop": true,
+"name": &"Medium",
+"speed": 10.0
+}]
+
 [sub_resource type="Animation" id="Animation_3fhuk"]
 resource_name = "Entry"
 tracks/0/type = "value"
@@ -1012,7 +1397,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.720398, 0.565148, 0.549581, 1)
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="Panel" parent="."]
 modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 anchors_preset = 15
@@ -1023,7 +1408,12 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_owiii")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 13
 theme_override_constants/margin_top = 13
 theme_override_constants/margin_right = 13
@@ -1058,10 +1448,9 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_ahkvr")
 theme_override_styles/tab_selected = SubResource("StyleBoxTexture_yyice")
 theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_mgaw3")
 theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_lxusj")
-current_tab = 2
+current_tab = 0
 
 [node name="Character Color" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_4uuu2")
 metadata/_tab_index = 0
@@ -1084,27 +1473,6 @@ size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("3_u1s01")
 theme_override_font_sizes/font_size = 80
 text = "Pick Your Favourite Colour"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -580.0
-offset_top = -324.5
-offset_right = 580.0
-offset_bottom = -171.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("3_u1s01")
-theme_override_font_sizes/font_size = 80
-text = "Current Color : Blue"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1247,26 +1615,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_u1s01")
 theme_override_font_sizes/font_size = 80
-text = "Choose the level of difficulty you want"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Game Difficulty"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -722.5
-offset_top = -324.5
-offset_right = 722.5
-offset_bottom = -171.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_u1s01")
-theme_override_font_sizes/font_size = 80
-text = "Current Difficulty : Easy"
+text = "Choose the difficulty you want"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1366,6 +1715,7 @@ autoplay = "default"
 frame = 5
 
 [node name="Achievement" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5igf3")
 metadata/_tab_index = 2
@@ -1420,6 +1770,56 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_iwiu4")
 metadata/_tab_index = 3
 
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -2
+
+[node name="Master" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_u1s01")
+theme_override_font_sizes/font_size = 80
+text = "Master :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume Slider" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer" instance=ExtResource("21_4cdi8")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+Bus_name = "Master"
+
+[node name="Music" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_u1s01")
+theme_override_font_sizes/font_size = 80
+text = "Music :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume Slider2" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer" instance=ExtResource("21_4cdi8")]
+layout_mode = 2
+size_flags_horizontal = 4
+Bus_name = "Music"
+
+[node name="Sfx" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_u1s01")
+theme_override_font_sizes/font_size = 80
+text = "Sound Effects :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume Slider3" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer" instance=ExtResource("21_4cdi8")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+Bus_name = "Sound effects"
+
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
 visible = false
@@ -1436,6 +1836,52 @@ icon = ExtResource("21_iwiu4")
 icon_alignment = 1
 vertical_icon_alignment = 2
 expand_icon = true
+
+[node name="Color" type="AnimatedSprite2D" parent="PanelContainer"]
+texture_filter = 1
+position = Vector2(88, 64)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_iwiu4")
+animation = &"Blue"
+
+[node name="Difficulty" type="AnimatedSprite2D" parent="PanelContainer"]
+texture_filter = 1
+position = Vector2(296, 56)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_ph84v")
+animation = &"Medium"
+flip_h = true
+
+[node name="Color label" type="Label" parent="PanelContainer"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 21.0
+offset_top = 109.0
+offset_right = 158.0
+offset_bottom = 149.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_0e66w")
+theme_override_font_sizes/font_size = 30
+text = "Player Color:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Difficulty label" type="Label" parent="PanelContainer"]
+texture_filter = 1
+layout_mode = 1
+offset_left = 216.0
+offset_top = 104.0
+offset_right = 382.0
+offset_bottom = 144.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_0e66w")
+theme_override_font_sizes/font_size = 30
+text = "Game Difficulty:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mqsfwuyeb3pk"
+path="res://.godot/imported/War Horn!.mp3-40ba3944656e876d9b22ea762f995af0.mp3str"
+
+[deps]
+
+source_file="res://Sounds/War Horn!.mp3"
+dest_files=["res://.godot/imported/War Horn!.mp3-40ba3944656e876d9b22ea762f995af0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

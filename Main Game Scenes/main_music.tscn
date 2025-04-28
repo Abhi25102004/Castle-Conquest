@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://y65lrjkn1yu4"]
+
+[ext_resource type="AudioStream" uid="uid://w5vlfyted1de" path="res://Sounds/Medieval Song Village Consort [No Copyright Music].mp3" id="1_kkdou"]
+
+[node name="Main Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_kkdou")
+volume_db = -20.0
+bus = &"Music"

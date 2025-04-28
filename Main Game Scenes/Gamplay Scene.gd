@@ -10,13 +10,10 @@ extends Node
 
 var current_level : Level_Information
 
-func Change_Scene() -> void:
+func Change_Scene(Change_file: String) -> void:
 	if not is_inside_tree():
 		return
-	if Global.level_type.Level_number == 10:
-		get_tree().change_scene_to_file("res://Main Game Scenes/end_credit_scene.tscn")
-	else:
-		get_tree().change_scene_to_file("res://Main Game Scenes/level_interface.tscn")
+	get_tree().change_scene_to_file(Change_file)
 
 func _ready() -> void:
 	Animations.play("Please Wait")
@@ -26,7 +23,7 @@ func _ready() -> void:
 	Enemy_node.Level_Completed.connect(func():
 		Animations.play("Level Won")
 		
-		var SaveFile : Level_Selection = ResourceLoader.load("user://SaveFiles/Level_Details.tres")
+		var SaveFile : Level_Selection = ResourceLoader.load("user://Level_Details.tres")
 		
 		if Global.level_type.Level_number not in SaveFile.level_Played:
 			SaveFile.level_Played.append(Global.level_type.Level_number)
@@ -37,29 +34,33 @@ func _ready() -> void:
 		if Global.level_type.Reward != "" and Global.level_type.Reward not in SaveFile.Available_Buttons:
 			SaveFile.Available_Buttons.append(Global.level_type.Reward)
 
-		ResourceSaver.save(SaveFile,"user://SaveFiles/Level_Details.tres")
+		ResourceSaver.save(SaveFile,"user://Level_Details.tres")
 		
 		await Animations.animation_finished
-		call_deferred("Change_Scene")
+		
+		if Global.level_type.Level_number == 10:
+			call_deferred("Change_Scene", "res://Main Game Scenes/end_credit_scene.tscn")
+		else:
+			call_deferred("Change_Scene", "res://Main Game Scenes/level_interface.tscn")
 	)
 
 	Enemy_node.Player_Lost.connect(func():
 		Animations.play("Level Lost")
 		await Animations.animation_finished
-		call_deferred("Change_Scene")
+		call_deferred("Change_Scene", "res://Main Game Scenes/level_interface.tscn")
 	)
 
 	Game_user_interface.quite_button.pressed.connect(func(): 
 		Animations.play("Exit")
 		await Animations.animation_finished
-		get_tree().change_scene_to_file("res://Main Game Scenes/level_interface.tscn")
+		call_deferred("Change_Scene", "res://Main Game Scenes/level_interface.tscn")
 	)
 
 	Game_user_interface.settings_button.pressed.connect(func():
 		Animations.play("Exit")
 		await Animations.animation_finished
 		Global.Setting_Last_Scene = "res://Main Game Scenes/Gamplay Scene.tscn"
-		get_tree().change_scene_to_file("res://Main Game Scenes/settings_scene.tscn")
+		call_deferred("Change_Scene", "res://Main Game Scenes/settings_scene.tscn")
 	)
 
 func Level_Won() -> void:
@@ -104,3 +105,12 @@ func Please_Wait() -> void:
 		"Give me a moment, if you don’t mind.",
 		"Patience would mean a lot right now."
 	].pick_random()
+
+func Add_Battle_Music() -> void:
+	call_deferred("add_child",preload("res://Main Game Scenes/battle_music.tscn").instantiate())
+
+func Play_Song() -> void:
+	MainMusic.play()
+
+func Pause_Song() -> void:
+	MainMusic.stop()

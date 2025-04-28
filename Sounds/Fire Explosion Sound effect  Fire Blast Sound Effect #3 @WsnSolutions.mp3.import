@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqvno4jvm0ryx"
+path="res://.godot/imported/Fire Explosion Sound effect  Fire Blast Sound Effect #3 @WsnSolutions.mp3-7cfbc88ad1ea6a6b49eb3c3278e1ac35.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Fire Explosion Sound effect  Fire Blast Sound Effect #3 @WsnSolutions.mp3"
+dest_files=["res://.godot/imported/Fire Explosion Sound effect  Fire Blast Sound Effect #3 @WsnSolutions.mp3-7cfbc88ad1ea6a6b49eb3c3278e1ac35.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

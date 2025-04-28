@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://guks7gcv4kg5"
+path="res://.godot/imported/Minecraft TNT Explosion - Sound Effect (HD).mp3-4842ae592c15aac8782fa2633d4b22f7.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Minecraft TNT Explosion - Sound Effect (HD).mp3"
+dest_files=["res://.godot/imported/Minecraft TNT Explosion - Sound Effect (HD).mp3-4842ae592c15aac8782fa2633d4b22f7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

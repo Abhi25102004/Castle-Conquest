@@ -9,6 +9,7 @@ signal Progress
 @warning_ignore("unused_signal")
 signal SetUp
 
+var Game_Starts : bool = true
 
 var level_type : Level_Information = preload("res://Level Scenes and Data/Level Resources/Level_1.tres")
 

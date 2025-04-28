@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qv5bty0mqddr"
+path="res://.godot/imported/[Non Copyrighted Music] @Miguel Johnson - Good Day To Die [Epic].mp3-3b2aed9ab34a9ec21e2bf22c6d036237.mp3str"
+
+[deps]
+
+source_file="res://Sounds/[Non Copyrighted Music] @Miguel Johnson - Good Day To Die [Epic].mp3"
+dest_files=["res://.godot/imported/[Non Copyrighted Music] @Miguel Johnson - Good Day To Die [Epic].mp3-3b2aed9ab34a9ec21e2bf22c6d036237.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
