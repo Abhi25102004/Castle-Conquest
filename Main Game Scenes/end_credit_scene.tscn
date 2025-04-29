@@ -4,71 +4,8 @@
 [ext_resource type="Script" uid="uid://cunloggsk7hc1" path="res://Main Game Scenes/end_credit_scene.gd" id="1_ou50d"]
 [ext_resource type="FontFile" uid="uid://drwi4ulb0gmau" path="res://Assets/Fonts/SpectralSC-Regular.ttf" id="2_ou50d"]
 
-[sub_resource type="Animation" id="Animation_jikll"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Credit:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(460, 1083)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Control/Title:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Control/Credit:theme_override_fonts/font")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_ou50d")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Credit:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["\"Congratulations, Defender of the Realm!
-
-You’ve stood your ground, fended off goblins, and protected the kingdom from its first great threat.
-
-Your journey has laid the foundation of hope, and the realm owes you its gratitude.
-
-But greater dangers loom on the horizon…
-
-Think you're ready for a stiffer challenge?  
-Try Medium mode next, or unlock all achievements!
-
-⚔️ Your story has just begun. Prepare for the trials ahead!
-\""]
-}
-
-[sub_resource type="Animation" id="Animation_ou50d"]
-resource_name = "Medium"
+[sub_resource type="Animation" id="Animation_wj3kk"]
+resource_name = "Easy"
 length = 50.0
 step = 0.1
 tracks/0/type = "value"
@@ -81,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(3, 50),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(460, 1080), Vector2(460, -6419)]
+"values": [Vector2(460, 1040), Vector2(460, -6419)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -107,42 +44,42 @@ tracks/2/keys = {
 "update": 1,
 "values": [ExtResource("2_ou50d")]
 }
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Credit:text")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Glory to the Brave Strategist!
-
-Through cunning tactics and unwavering bravery, you’ve overcome a mighty challenge. The goblin forces were fierce — but you were fiercer.
-
-The kingdom now hails you as a true Hero of Castle Conquest.
-
-But in the shadows, the strongest foes still stir...
-
-Will you dare to face the ultimate challenge in Hard Mode?  
-Master every achievement and cement your legacy!
-
-Greatness awaits. Are you ready to seize it?"]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(30),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"change_scene"],
 "method": &"call_deferred"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Credit:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Congratulations, Defender of the Realm!
+
+You’ve stood your ground, fended off goblins, and protected the kingdom from its first great threat.
+
+Your journey has laid the foundation of hope, and the realm owes you its gratitude.
+
+But greater dangers loom on the horizon…
+
+Think you're ready for a stiffer challenge?  
+Try Medium mode next, or unlock all achievements!
+
+Your story has just begun. Prepare for the trials ahead!"]
 }
 
 [sub_resource type="Animation" id="Animation_yrg8h"]
@@ -224,8 +161,8 @@ tracks/4/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_wj3kk"]
-resource_name = "Easy"
+[sub_resource type="Animation" id="Animation_ou50d"]
+resource_name = "Medium"
 length = 50.0
 step = 0.1
 tracks/0/type = "value"
@@ -238,7 +175,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(3, 50),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(460, 1040), Vector2(460, -6419)]
+"values": [Vector2(460, 1080), Vector2(460, -6419)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -264,13 +201,36 @@ tracks/2/keys = {
 "update": 1,
 "values": [ExtResource("2_ou50d")]
 }
-tracks/3/type = "method"
+tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath(".")
+tracks/3/path = NodePath("Control/Credit:text")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Glory to the Brave Strategist!
+
+Through cunning tactics and unwavering bravery, you’ve overcome a mighty challenge. The goblin forces were fierce — but you were fiercer.
+
+The kingdom now hails you as a true Hero of Castle Conquest.
+
+But in the shadows, the strongest foes still stir...
+
+Will you dare to face the ultimate challenge in Hard Mode?  
+Master every achievement and cement your legacy!
+
+Greatness awaits. Are you ready to seize it?"]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(30),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -278,17 +238,56 @@ tracks/3/keys = {
 "method": &"call_deferred"
 }]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Control/Credit:text")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+
+[sub_resource type="Animation" id="Animation_jikll"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Credit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(460, 1083)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Title:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Credit:theme_override_fonts/font")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Congratulations, Defender of the Realm!
+"values": [ExtResource("2_ou50d")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Credit:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["\"Congratulations, Defender of the Realm!
 
 You’ve stood your ground, fended off goblins, and protected the kingdom from its first great threat.
 
@@ -299,7 +298,8 @@ But greater dangers loom on the horizon…
 Think you're ready for a stiffer challenge?  
 Try Medium mode next, or unlock all achievements!
 
-Your story has just begun. Prepare for the trials ahead!"]
+⚔️ Your story has just begun. Prepare for the trials ahead!
+\""]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yrg8h"]

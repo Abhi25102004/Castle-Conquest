@@ -82,11 +82,15 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
 "end_offset": 0.90066,
 "start_offset": 0.706796,
 "stream": ExtResource("5_wkgd6")
 }],
-"times": PackedFloat32Array(0.1)
+"times": PackedFloat32Array(0, 0.1)
 }
 tracks/5/use_blend = true
 
@@ -227,6 +231,7 @@ _data = {
 }
 
 [node name="Dynamite" type="Node2D"]
+z_index = 2
 texture_filter = 1
 script = ExtResource("1_tdrhq")
 

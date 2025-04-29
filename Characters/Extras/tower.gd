@@ -3,13 +3,6 @@ extends Knight_Class
 
 var Arrow_Scene : PackedScene = preload("res://Characters/Knight/arrow.tscn")
 
-var Image_Dict : Dictionary = {
-	"Blue" : preload("res://Assets/Factions/Knights/Buildings/Tower/Tower_Blue.png"),
-	"Red" : preload("res://Assets/Factions/Knights/Buildings/Tower/Tower_Red.png"),
-	"Yellow" : preload("res://Assets/Factions/Knights/Buildings/Tower/Tower_Yellow.png"),
-	"Purple" : preload("res://Assets/Factions/Knights/Buildings/Tower/Tower_Purple.png")
-}
-
 @onready var marker: Marker2D = $Marker2D
 @onready var picutre : Sprite2D = $TowerImage
 
@@ -34,9 +27,3 @@ func Stats_Setter() -> void:
 	Attack = 30
 	Attack_Speed = randf_range(0.7, 0.9)
 	Cost = 75
-
-func _ready() -> void:
-	picutre.texture = Image_Dict.get(Global.Theme_color)
-	Stats_Setter()
-	HurtBox.area_entered.connect(HurtBox_Entered)
-	HurtBox.area_exited.connect(HurtBox_Exited)

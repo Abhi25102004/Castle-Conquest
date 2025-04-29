@@ -73,11 +73,15 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
 "end_offset": 0.97906,
 "start_offset": 5.30559,
 "stream": ExtResource("4_3ivcx")
 }],
-"times": PackedFloat32Array(0.1)
+"times": PackedFloat32Array(0, 0.1)
 }
 tracks/4/use_blend = true
 tracks/5/type = "value"
@@ -362,6 +366,7 @@ _data = {
 }
 
 [node name="Torch" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node", "HitBox_CollisionShape_node", "HurtBox_CollisionShape_node")]
+z_index = 1
 texture_filter = 1
 script = ExtResource("1_ykrxj")
 Animated_node = NodePath("AnimationPlayer")

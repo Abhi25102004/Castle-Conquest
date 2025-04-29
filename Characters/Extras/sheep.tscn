@@ -69,17 +69,29 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "clips": [{
-"end_offset": 1.76859,
-"start_offset": 0.65314,
+"end_offset": 1.75097,
+"start_offset": 0.697862,
 "stream": ExtResource("3_ueb2x")
 }, {
-"end_offset": 0.815814,
-"start_offset": 1.48117,
+"end_offset": 0.905278,
+"start_offset": 1.34422,
 "stream": ExtResource("3_ueb2x")
 }],
-"times": PackedFloat32Array(0, 0.207156)
+"times": PackedFloat32Array(0, 0.2)
 }
 tracks/4/use_blend = true
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
 
 [sub_resource type="Animation" id="Animation_w5awd"]
 resource_name = "Death"
@@ -132,6 +144,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [2]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.3, 1.3)]
 }
 
 [sub_resource type="Animation" id="Animation_30rof"]
@@ -187,6 +211,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [2]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
 
 [sub_resource type="Animation" id="Animation_vxoft"]
 length = 0.001
@@ -238,6 +274,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [2]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ywfpd"]
 _data = {
@@ -248,6 +296,7 @@ _data = {
 }
 
 [node name="Sheep" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node", "HitBox_CollisionShape_node")]
+z_index = 1
 texture_filter = 1
 script = ExtResource("1_4mfi6")
 Animated_node = NodePath("AnimationPlayer")
@@ -256,7 +305,7 @@ HitBox_CollisionShape_node = NodePath("HitBox/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -25)
-scale = Vector2(1.3, 1.3)
+scale = Vector2(2, 2)
 texture = ExtResource("5_ueb2x")
 hframes = 8
 vframes = 2

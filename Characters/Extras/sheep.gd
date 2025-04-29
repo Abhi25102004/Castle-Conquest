@@ -44,11 +44,10 @@ func Game_Loop() -> void :
 		States.Death:
 			HitBox_CollisionShape.disabled = true
 			if !Goblin_Array.is_empty():
-				Goblin_Array[0].HurtBox_CollisionShape.disabled = true
-				Goblin_Array[0].Direction = 1
-				Goblin_Array[0].Animations.flip_h = false
+				Goblin_Array[0].Attack = 1
+				Goblin_Array[0].Health = 1
+				Goblin_Array[0].Speed = 80
 			Animations.play(Animation_String)
-			Animations.scale = Vector2(1.3, 1.3)
 			await Animations.animation_finished
 			KnightDied.emit()
 			call_deferred("queue_free")

@@ -76,11 +76,15 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
 "end_offset": 1.20485,
 "start_offset": 3.07466,
 "stream": ExtResource("4_8n4gi")
 }],
-"times": PackedFloat32Array(0.1)
+"times": PackedFloat32Array(0, 0.1)
 }
 tracks/4/use_blend = true
 
@@ -251,11 +255,15 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
 "end_offset": 1.20485,
 "start_offset": 3.07466,
 "stream": ExtResource("4_8n4gi")
 }],
-"times": PackedFloat32Array(0.1)
+"times": PackedFloat32Array(0, 0.1)
 }
 tracks/4/use_blend = true
 
@@ -424,11 +432,15 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
 "end_offset": 1.20485,
 "start_offset": 3.07466,
 "stream": ExtResource("4_8n4gi")
 }],
-"times": PackedFloat32Array(0.1)
+"times": PackedFloat32Array(0, 0.1)
 }
 tracks/4/use_blend = true
 
@@ -546,11 +558,15 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
 "end_offset": 1.20485,
 "start_offset": 3.07466,
 "stream": ExtResource("4_8n4gi")
 }],
-"times": PackedFloat32Array(0.1)
+"times": PackedFloat32Array(0, 0.1)
 }
 tracks/4/use_blend = true
 
@@ -623,6 +639,7 @@ _data = {
 }
 
 [node name="Warrior" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node", "HitBox_CollisionShape_node")]
+z_index = 1
 texture_filter = 1
 script = ExtResource("1_emuw8")
 Animated_node = NodePath("AnimationPlayer")

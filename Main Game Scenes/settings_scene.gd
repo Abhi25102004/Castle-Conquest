@@ -27,7 +27,6 @@ func _ready() -> void:
 	%Hard.pressed.connect(func(): Difficulty_Change("Hard", hard_animations))
 
 	%Quit.pressed.connect(func():
-		MainMusic.stop()
 		Animations.play_backwards("Entry")
 		await Animations.animation_finished
 		call_deferred("Change_Scene")

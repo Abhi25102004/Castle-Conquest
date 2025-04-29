@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dm7teraw3nh7c"]
+[gd_scene load_steps=15 format=3 uid="uid://dm7teraw3nh7c"]
 
 [ext_resource type="Texture2D" uid="uid://4g3fdh6lf88h" path="res://Assets/Factions/Goblins/Troops/Barrel/Red/Barrel_Red.png" id="1_6nhee"]
 [ext_resource type="Script" uid="uid://brb4ry5dj4nba" path="res://Characters/Goblin/barrel.gd" id="1_7ooou"]
 [ext_resource type="Texture2D" uid="uid://dgk633v0v2hiv" path="res://Assets/Effects/Explosion/Explosions.png" id="2_w7tfw"]
 [ext_resource type="PackedScene" uid="uid://bj6iqb2ck4h4s" path="res://Extra Scenes/sfx.tscn" id="3_nx463"]
+[ext_resource type="Texture2D" uid="uid://bqfpfffsw3ev7" path="res://Assets/Resources/Resources/G_Spawn.png" id="6_nx463"]
 [ext_resource type="AudioStream" uid="uid://guks7gcv4kg5" path="res://Sounds/Minecraft TNT Explosion - Sound Effect (HD).mp3" id="6_sluek"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lpl6x"]
@@ -73,21 +74,94 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "clips": [{
-"end_offset": 5.34235,
+"end_offset": 5.29792,
 "start_offset": 0.461379,
 "stream": ExtResource("6_sluek")
 }, {
-"end_offset": 1.03773,
-"start_offset": 4.19519,
+"end_offset": 1.01363,
+"start_offset": 4.19434,
 "stream": ExtResource("6_sluek")
 }],
-"times": PackedFloat32Array(0, 0.3)
+"times": PackedFloat32Array(0, 0.299145)
 }
 tracks/4/use_blend = true
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_rw1ba"]
 resource_name = "Death"
+length = 0.7
 step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_nx463")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_oa4hi"]
 resource_name = "Idle"
@@ -141,6 +215,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:centered")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_cosr8"]
 length = 0.001
@@ -191,6 +277,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:centered")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_krunw"]
@@ -245,6 +355,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l5chf"]
 _data = {
@@ -256,6 +378,7 @@ _data = {
 }
 
 [node name="Barrel" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node", "HitBox_CollisionShape_node", "HurtBox_CollisionShape_node")]
+z_index = 1
 texture_filter = 1
 script = ExtResource("1_7ooou")
 Animated_node = NodePath("AnimationPlayer")

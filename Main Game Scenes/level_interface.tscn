@@ -30,12 +30,12 @@
 [ext_resource type="Resource" uid="uid://by8jm2qdqv8yu" path="res://Level Scenes and Data/Level Resources/Level_6.tres" id="20_hbyi7"]
 [ext_resource type="Texture2D" uid="uid://bskgyjt670uef" path="res://Assets/Resources/Sheep/Sheep_icon.png" id="21_7h7jj"]
 [ext_resource type="Resource" uid="uid://br2takgi8cgn8" path="res://Level Scenes and Data/Level Resources/Level_7.tres" id="22_htt8b"]
-[ext_resource type="Texture2D" uid="uid://df4vsht08c4ui" path="res://Assets/Factions/Goblins/Buildings/Wood_House/Goblin_House_Destroyed.png" id="23_yrwxh"]
 [ext_resource type="Resource" uid="uid://j5u2hj8rju2u" path="res://Level Scenes and Data/Level Resources/Level_8.tres" id="24_ro65m"]
-[ext_resource type="Texture2D" uid="uid://ctl2rt4e2nnj0" path="res://Assets/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Destroyed.png" id="25_irl2q"]
 [ext_resource type="Resource" uid="uid://cwl0hdsvjbhpf" path="res://Level Scenes and Data/Level Resources/Level_9.tres" id="26_1yio5"]
 [ext_resource type="Texture2D" uid="uid://bx3tt16ncjlxm" path="res://Assets/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="27_0q6tg"]
 [ext_resource type="Resource" uid="uid://btnmtu7io6mgj" path="res://Level Scenes and Data/Level Resources/Level_10.tres" id="28_2jnfj"]
+[ext_resource type="Texture2D" uid="uid://r7xpgp2vgr3i" path="res://Assets/Factions/Knights/Buildings/House/House_Blue.png" id="31_holmf"]
+[ext_resource type="Texture2D" uid="uid://d0qhkieb8ms3u" path="res://Assets/Factions/Goblins/Buildings/Wood_House/Goblin_House.png" id="33_4uro5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jd7ps"]
 texture = ExtResource("2_aih7x")
@@ -698,13 +698,14 @@ Level_data = ExtResource("22_htt8b")
 
 [node name="Level 8" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
-icon = ExtResource("23_yrwxh")
+icon = ExtResource("31_holmf")
+vertical_icon_alignment = 0
 Level_number = 8
 Level_data = ExtResource("24_ro65m")
 
 [node name="Level 9" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
-icon = ExtResource("25_irl2q")
+icon = ExtResource("33_4uro5")
 Level_number = 9
 Level_data = ExtResource("26_1yio5")
 

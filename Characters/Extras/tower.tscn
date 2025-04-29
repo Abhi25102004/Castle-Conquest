@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cyn8c76kpfirk"]
+[gd_scene load_steps=26 format=3 uid="uid://cyn8c76kpfirk"]
 
 [ext_resource type="Texture2D" uid="uid://b12vluoahns3l" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="1_oasfs"]
 [ext_resource type="Script" uid="uid://bio7osnrwno7p" path="res://Characters/Extras/tower.gd" id="1_t4mlm"]
@@ -7,8 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://dt5dpppnp486" path="res://Sounds/ARROW SOUND EFFECT - FREE.mp3" id="5_bkhgo"]
 [ext_resource type="Texture2D" uid="uid://dhs7u2icykmf8" path="res://Assets/Factions/Knights/Troops/Dead/Dead.png" id="6_1al3m"]
 [ext_resource type="Texture2D" uid="uid://du5mwssttbdsk" path="res://Assets/Factions/Knights/Troops/Archer/Red/Archer_Red.png" id="7_y5qjp"]
+[ext_resource type="Texture2D" uid="uid://sl45hg566wjp" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Purple.png" id="8_kc1sn"]
 [ext_resource type="Texture2D" uid="uid://bjcfma01c6tv" path="res://Assets/Factions/Knights/Troops/Archer/Yellow/Archer_Yellow.png" id="8_lft8p"]
 [ext_resource type="Texture2D" uid="uid://c7giout48v0py" path="res://Assets/Factions/Knights/Troops/Archer/Purple/Archer_Purlple.png" id="8_y5qjp"]
+[ext_resource type="Texture2D" uid="uid://ckcsaihcnfdmf" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Red.png" id="10_60qlc"]
+[ext_resource type="Texture2D" uid="uid://dx6yk8gmqod8v" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Yellow.png" id="12_gqcnt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5o36m"]
 size = Vector2(74.6154, 90.7692)
@@ -111,6 +114,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TowerImage:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_oasfs")]
+}
 
 [sub_resource type="Animation" id="Animation_eklqw"]
 resource_name = "Blue_Idle"
@@ -188,6 +203,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TowerImage:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_oasfs")]
 }
 
 [sub_resource type="Animation" id="Animation_lft8p"]
@@ -362,6 +389,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TowerImage:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_kc1sn")]
+}
 
 [sub_resource type="Animation" id="Animation_fmk2d"]
 resource_name = "Purple_Idle"
@@ -440,6 +479,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TowerImage:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_kc1sn")]
+}
 
 [sub_resource type="Animation" id="Animation_y5qjp"]
 length = 0.001
@@ -514,6 +565,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TowerImage:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_oasfs")]
 }
 
 [sub_resource type="Animation" id="Animation_t2cu0"]
@@ -611,6 +674,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TowerImage:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_60qlc")]
+}
 
 [sub_resource type="Animation" id="Animation_gqcnt"]
 resource_name = "Red_Idle"
@@ -688,6 +763,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TowerImage:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_60qlc")]
 }
 
 [sub_resource type="Animation" id="Animation_60qlc"]
@@ -785,6 +872,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TowerImage:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_gqcnt")]
+}
 
 [sub_resource type="Animation" id="Animation_r6gjt"]
 resource_name = "Yellow_Idle"
@@ -863,6 +962,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TowerImage:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_gqcnt")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5o36m"]
 _data = {
@@ -879,6 +990,7 @@ _data = {
 }
 
 [node name="Tower" type="Node2D" node_paths=PackedStringArray("Animated_node", "HurtBox_node", "HitBox_CollisionShape_node")]
+z_index = 1
 texture_filter = 1
 script = ExtResource("1_t4mlm")
 Animated_node = NodePath("AnimationPlayer")

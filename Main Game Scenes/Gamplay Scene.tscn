@@ -313,6 +313,10 @@ tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
 "end_offset": 8.00613,
 "start_offset": 0.0,
 "stream": ExtResource("9_st4ll")
@@ -321,7 +325,7 @@ tracks/16/keys = {
 "start_offset": 5.30559,
 "stream": ExtResource("10_4ikdh")
 }],
-"times": PackedFloat32Array(0.9, 3.3)
+"times": PackedFloat32Array(0, 0.9, 3.3)
 }
 tracks/16/use_blend = true
 tracks/17/type = "value"
@@ -558,6 +562,10 @@ tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
 "end_offset": 8.00613,
 "start_offset": 0.0,
 "stream": ExtResource("9_st4ll")
@@ -566,7 +574,7 @@ tracks/16/keys = {
 "start_offset": 3.07229,
 "stream": ExtResource("10_o2aix")
 }],
-"times": PackedFloat32Array(0.9, 3.15486)
+"times": PackedFloat32Array(0, 0.9, 3.15486)
 }
 tracks/16/use_blend = true
 tracks/17/type = "value"
