@@ -34,17 +34,19 @@ func _ready() -> void:
 				cost = 0
 			)
 
-	for character_button in Character_Buttons.get_children():
-		if character_button.name in Global.Buttons:
-			character_button.visible = true
-			character_button.pressed.connect(func():
-				await get_tree().process_frame
-				Character_Scene = character_button.Scene
-				cost = character_button.value
-			)
+	var Available_button : bool = true
+	for selection_button in Character_Buttons.get_children():
+		if Available_button and selection_button.name != Global.level_type.Reward:
+				selection_button.visible = true
+				selection_button.pressed.connect(func():
+					await get_tree().process_frame
+					Character_Scene = selection_button.Scene
+					cost = selection_button.value
+					)
 		else:
-			character_button.visible = false
-
+			Available_button = false
+			selection_button.visible = false
+			
 	Global.connect("Add_Money", func(extra : int):
 		Animations.play("Coin Added")
 		sfx.play()

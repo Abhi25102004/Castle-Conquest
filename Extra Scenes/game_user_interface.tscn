@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dj4natrlfejt7"]
+[gd_scene load_steps=47 format=3 uid="uid://dj4natrlfejt7"]
 
 [ext_resource type="Script" uid="uid://buofsbrclxxfx" path="res://Extra Scenes/game_user_interface.gd" id="1_h2gpb"]
 [ext_resource type="PackedScene" uid="uid://bchfui5nqukg" path="res://Extra Scenes/custum_button.tscn" id="2_a7d2l"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b5fdmhnpga6lt" path="res://Extra Scenes/hover_button.tscn" id="5_fnbrd"]
 [ext_resource type="PackedScene" uid="uid://07wwdrpvw6nx" path="res://Characters/Knight/warrior.tscn" id="6_nsg1e"]
 [ext_resource type="AudioStream" uid="uid://pbv005cefv42" path="res://Sounds/Coins.wav" id="6_y1sbs"]
+[ext_resource type="PackedScene" uid="uid://de1cr6thpqrcj" path="res://Extra Scenes/sound.tscn" id="7_301xm"]
 [ext_resource type="Texture2D" uid="uid://djp2d31y2dyu1" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Blue_Pawn_icon.png" id="7_norpy"]
 [ext_resource type="Texture2D" uid="uid://c2sj7c687d2s3" path="res://Assets/UI/Icons/Regular_02.png" id="7_o12hk"]
 [ext_resource type="PackedScene" uid="uid://ceby6oqyqicd4" path="res://Characters/Knight/pawn.tscn" id="8_4jkkd"]
@@ -215,6 +216,9 @@ grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
+[node name="Sound" parent="Header/HBoxContainer" instance=ExtResource("7_301xm")]
+layout_mode = 2
+
 [node name="Settings Button" type="Button" parent="Header/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
@@ -368,7 +372,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Bottom" type="PanelContainer" parent="."]
-z_index = 1
+z_index = 3
 texture_filter = 1
 anchors_preset = 7
 anchor_left = 0.5

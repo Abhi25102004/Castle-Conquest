@@ -4,33 +4,33 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqa0s"]
 bg_color = Color(0.95265, 0.728278, 0.178342, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 7
-corner_radius_top_right = 7
-corner_radius_bottom_right = 7
-corner_radius_bottom_left = 7
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 expand_margin_left = 5.0
-expand_margin_top = 25.0
+expand_margin_top = 60.0
 expand_margin_right = 5.0
-expand_margin_bottom = 25.0
+expand_margin_bottom = 60.0
 shadow_size = 1
 shadow_offset = Vector2(1.5, 2.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwqpy"]
 bg_color = Color(0.382736, 0.402579, 0.946167, 1)
-corner_radius_top_left = 5
-corner_radius_bottom_left = 5
-expand_margin_top = 20.0
-expand_margin_bottom = 20.0
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 50.0
+expand_margin_bottom = 50.0
 
 [node name="Volume Slider" type="HSlider"]
-custom_minimum_size = Vector2(500, 150)
-offset_right = 8.0
-offset_bottom = 16.0
+custom_minimum_size = Vector2(600, 200)
+offset_right = 868.0
+offset_bottom = 200.0
 theme_override_constants/center_grabber = 1
 theme_override_styles/slider = SubResource("StyleBoxFlat_nqa0s")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_rwqpy")

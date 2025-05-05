@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://de1cr6thpqrcj"]
+
+[ext_resource type="Texture2D" uid="uid://cvuoaqvekvhyg" path="res://Assets/UI/Buttons/Button_Red.png" id="1_bxs2e"]
+[ext_resource type="Texture2D" uid="uid://drgcesc7p4043" path="res://Assets/UI/Buttons/Button_Red_Pressed.png" id="2_wqy2s"]
+[ext_resource type="Texture2D" uid="uid://curimxwxr3tsd" path="res://Assets/UI/Icons/Regular_03.png" id="3_qjfba"]
+[ext_resource type="Script" uid="uid://ca8ubdo5r3svr" path="res://Extra Scenes/sound.gd" id="4_wqy2s"]
+[ext_resource type="Texture2D" uid="uid://mmxm5ibjtx2o" path="res://Assets/UI/Icons/Pressed_03.png" id="5_qjfba"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6h4ae"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bbhgb"]
+texture = ExtResource("1_bxs2e")
+texture_margin_left = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uahuk"]
+texture = ExtResource("2_wqy2s")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 8.0
+
+[node name="Sound" type="Button"]
+texture_filter = 1
+custom_minimum_size = Vector2(125, 125)
+offset_right = 125.0
+offset_bottom = 125.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h4ae")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_bbhgb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bbhgb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uahuk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bbhgb")
+icon = ExtResource("5_qjfba")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_wqy2s")
+Mute_icon = ExtResource("5_qjfba")
+Unmute_icon = ExtResource("3_qjfba")

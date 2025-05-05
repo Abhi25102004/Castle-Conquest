@@ -8,9 +8,6 @@ func _ready() -> void:
 		Save_file()
 		continue_button.visible = true
 	else:
-		var SaveFile: Level_Selection = Level_Selection.new()
-		ResourceSaver.save(SaveFile, "user://Level_Details.tres")
-		Save_file()
 		continue_button.visible = false
 	
 	if Global.Game_Starts:
@@ -24,12 +21,14 @@ func Save_file() -> void:
 	var SaveFile : Level_Selection = ResourceLoader.load("user://Level_Details.tres")
 	Global.Theme_color = SaveFile.Color_String
 	Global.Difficulty = SaveFile.Game_Difficulty
-	Global.Buttons = SaveFile.Available_Buttons
 	for Bus_name in SaveFile.Audio:
 		var Bus_index : int = AudioServer.get_bus_index(Bus_name)
 		AudioServer.set_bus_volume_db(Bus_index,linear_to_db(SaveFile.Audio[Bus_name]))
 	
 func Start_New_Game() -> void:
+	var SaveFile: Level_Selection = Level_Selection.new()
+	ResourceSaver.save(SaveFile, "user://Level_Details.tres")
+	Save_file()
 	Animations.play("transition")
 	await Animations.animation_finished
 	call_deferred("Change_Scene", "res://Main Game Scenes/tutorial_scene.tscn")

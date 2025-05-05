@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://cb7ji7hh00n20"]
+
+[ext_resource type="FontFile" uid="uid://bytma58a8bj82" path="res://Assets/Fonts/PirataOne-Regular.ttf" id="1_cy3il"]
+[ext_resource type="Script" uid="uid://qfu0hmcr1qr8" path="res://Extra Scenes/resolution_button.gd" id="1_ryynn"]
+[ext_resource type="Texture2D" uid="uid://bl6n8f03qlv8m" path="res://Assets/UI/Buttons/Button_Blue_3Slides.png" id="2_2swq0"]
+[ext_resource type="Texture2D" uid="uid://xq5t7rdal6q5" path="res://Assets/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="3_6iq87"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w2uj7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_htqjw"]
+texture = ExtResource("2_2swq0")
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2uj7"]
+texture = ExtResource("3_6iq87")
+texture_margin_left = 30.0
+texture_margin_top = 13.0
+texture_margin_right = 30.0
+texture_margin_bottom = 20.0
+
+[node name="Resolution Button" type="Button"]
+offset_right = 352.0
+offset_bottom = 139.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_cy3il")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w2uj7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_htqjw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w2uj7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_htqjw")
+expand_icon = true
+script = ExtResource("1_ryynn")

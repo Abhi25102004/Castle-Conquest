@@ -6,10 +6,6 @@ extends Node
 @onready var label: Label = $Control/Label
 @onready var level_node: Node2D = $Level_Node
 
-@export var Level_list : Dictionary
-
-var current_level : Level_Information
-
 func Change_Scene(Change_file: String) -> void:
 	if not is_inside_tree():
 		return

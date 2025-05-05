@@ -87,7 +87,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 1.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-40.0, -80.0]
+"values": [-10.0, -80.0]
 }
 tracks/6/type = "method"
 tracks/6/imported = false
@@ -338,7 +338,7 @@ tracks/17/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -80.0]
+"values": [-10.0, -80.0]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
@@ -552,7 +552,7 @@ tracks/15/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -80.0]
+"values": [-10.0, -80.0]
 }
 tracks/16/type = "audio"
 tracks/16/imported = false
@@ -785,10 +785,10 @@ tracks/14/path = NodePath("Battle Music:volume_db")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(7.2),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 7.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-20.0]
+"values": [-80.0, -10.0]
 }
 
 [sub_resource type="Animation" id="Animation_nml8a"]
@@ -983,7 +983,7 @@ tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [-10.0]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
@@ -1026,6 +1026,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
+z_index = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1036,6 +1037,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="Control"]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1054,6 +1056,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Effects" type="Node2D" parent="."]
+z_index = 3
 
 [node name="Warrior" type="Sprite2D" parent="Effects"]
 texture_filter = 1
@@ -1085,7 +1088,6 @@ vframes = 5
 frame = 7
 
 [node name="Battle Music" parent="." instance=ExtResource("8_cnr0n")]
-volume_db = 0.0
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 volume_db = -80.0

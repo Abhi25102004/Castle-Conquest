@@ -1,4 +1,4 @@
-[gd_scene load_steps=209 format=3 uid="uid://dnnbh6lw50yrh"]
+[gd_scene load_steps=217 format=3 uid="uid://dnnbh6lw50yrh"]
 
 [ext_resource type="Script" uid="uid://cfii3vysa2t85" path="res://Main Game Scenes/settings_scene.gd" id="1_iwiu4"]
 [ext_resource type="Texture2D" uid="uid://blrqsrn1o40l3" path="res://Assets/UI/Banners/Carved_9Slides.png" id="2_ph84v"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://cjbvmdlb3gejl" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="10_gump3"]
 [ext_resource type="Texture2D" uid="uid://5scku73ljnl2" path="res://Assets/Factions/Knights/Troops/Pawn/Yellow/Pawn_Yellow.png" id="11_3g5u5"]
 [ext_resource type="Texture2D" uid="uid://cfgrva4lan4jx" path="res://Assets/Factions/Knights/Troops/Pawn/Purple/Pawn_Purple.png" id="12_lwpbv"]
-[ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Assets/Fonts/IMFellEnglish-Regular.ttf" id="13_2cqpb"]
 [ext_resource type="Texture2D" uid="uid://1fex2qkbhxx8" path="res://Assets/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="14_e4kxv"]
 [ext_resource type="Texture2D" uid="uid://bxr05ksimpx1p" path="res://Assets/Factions/Goblins/Troops/TNT/Red/TNT_Red.png" id="15_gn1fr"]
 [ext_resource type="Texture2D" uid="uid://4g3fdh6lf88h" path="res://Assets/Factions/Goblins/Troops/Barrel/Red/Barrel_Red.png" id="16_582av"]
@@ -21,7 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://cvuoaqvekvhyg" path="res://Assets/UI/Buttons/Button_Red.png" id="19_mi5i3"]
 [ext_resource type="Texture2D" uid="uid://drgcesc7p4043" path="res://Assets/UI/Buttons/Button_Red_Pressed.png" id="20_ydal0"]
 [ext_resource type="PackedScene" uid="uid://tc6a716qwnp1" path="res://Extra Scenes/volume_slider.tscn" id="21_4cdi8"]
+[ext_resource type="Texture2D" uid="uid://djp2d31y2dyu1" path="res://Assets/Factions/Knights/Troops/Pawn/Blue/Blue_Pawn_icon.png" id="21_gqglc"]
 [ext_resource type="Texture2D" uid="uid://dypndckq0k1en" path="res://Assets/UI/Icons/Regular_01.png" id="21_iwiu4"]
+[ext_resource type="Texture2D" uid="uid://c2yo6sqssrx6q" path="res://Assets/Factions/Knights/Troops/Archer/Blue/Archer_icon.png" id="22_4cdi8"]
+[ext_resource type="Texture2D" uid="uid://cn1tffbh3q3ue" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/warrior_icon.png" id="23_0e66w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_owiii"]
 texture = ExtResource("2_ph84v")
@@ -30,11 +32,11 @@ texture_margin_top = 1.0
 texture_margin_right = 4.0
 texture_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mr0gv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lx0c2"]
 texture = ExtResource("4_a70dy")
-texture_margin_left = 63.0
-texture_margin_right = 63.0
-texture_margin_bottom = 8.0
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+texture_margin_bottom = 12.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0rwo8"]
 
@@ -64,6 +66,12 @@ texture_margin_left = 30.0
 texture_margin_top = 9.0
 texture_margin_right = 30.0
 texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5igf3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0e66w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgtbd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4uuu2"]
 
@@ -874,9 +882,15 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5igf3"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ph84v"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwiu4"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lx0c2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u1s01"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gqglc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cdi8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ypicx"]
 
@@ -1428,7 +1442,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_u1s01")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxTexture_mr0gv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lx0c2")
 text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1448,12 +1462,65 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_ahkvr")
 theme_override_styles/tab_selected = SubResource("StyleBoxTexture_yyice")
 theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_mgaw3")
 theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_lxusj")
-current_tab = 0
+current_tab = 2
+
+[node name="Achievement" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5igf3")
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0e66w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bgtbd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 7
+
+[node name="Achievement_Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer/VBoxContainer" instance=ExtResource("18_wjq6d")]
+layout_mode = 2
+Number = 1
+Name = "1. First Blood"
+Description = "Defeat your first goblin and defend the castle! : Complete Level 1"
+
+[node name="Achievement_Panel2" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer/VBoxContainer" instance=ExtResource("18_wjq6d")]
+layout_mode = 2
+Number = 2
+Name = "2. Halfway Hero"
+Description = "You've proven your mettle. The realm is halfway safe! : Complete Level 5"
+
+[node name="Achievement_Panel3" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer/VBoxContainer" instance=ExtResource("18_wjq6d")]
+layout_mode = 2
+Number = 3
+Name = "3. Squire's Triumph"
+Description = "The journey was light, but victory is still sweet. : Complete the Game in Easy Mode"
+
+[node name="Achievement_Panel4" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer/VBoxContainer" instance=ExtResource("18_wjq6d")]
+layout_mode = 2
+Number = 4
+Name = "4. Knight of the Realm"
+Description = "You've fought bravely and emerged victorious. : Complete the Game in Medium Mode"
+
+[node name="Achievement_Panel5" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer/VBoxContainer" instance=ExtResource("18_wjq6d")]
+layout_mode = 2
+Number = 5
+Name = "5. Champion of Castle Conquest"
+Description = "Only legends stand where you stand now. Glory is yours! : Complete the Game in Hard Mode"
 
 [node name="Character Color" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_4uuu2")
-metadata/_tab_index = 0
+metadata/_tab_index = 1
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Character Color"]
 layout_mode = 1
@@ -1595,10 +1662,9 @@ animation = &"Attack"
 autoplay = "default"
 
 [node name="Game Difficulty" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ryf1k")
-metadata/_tab_index = 1
+metadata/_tab_index = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Game Difficulty"]
 layout_mode = 1
@@ -1644,7 +1710,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("13_2cqpb")
+theme_override_fonts/font = ExtResource("8_0e66w")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fltpi")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
@@ -1664,7 +1730,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("13_2cqpb")
+theme_override_fonts/font = ExtResource("8_0e66w")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_78k84")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
@@ -1683,7 +1749,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("13_2cqpb")
+theme_override_fonts/font = ExtResource("8_0e66w")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7elnp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_htqjw")
@@ -1714,110 +1780,109 @@ sprite_frames = SubResource("SpriteFrames_dei1s")
 autoplay = "default"
 frame = 5
 
-[node name="Achievement" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+[node name="Sound" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_5igf3")
-metadata/_tab_index = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 7
-
-[node name="Achievement_Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer/VBoxContainer" instance=ExtResource("18_wjq6d")]
-layout_mode = 2
-Number = 1
-Name = "1. First Blood"
-Description = "Defeat your first goblin and defend the castle! : Complete Level 1"
-
-[node name="Achievement_Panel2" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer/VBoxContainer" instance=ExtResource("18_wjq6d")]
-layout_mode = 2
-Number = 2
-Name = "2. Halfway Hero"
-Description = "You've proven your mettle. The realm is halfway safe! : Complete Level 5"
-
-[node name="Achievement_Panel3" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer/VBoxContainer" instance=ExtResource("18_wjq6d")]
-layout_mode = 2
-Number = 3
-Name = "3. Squire's Triumph"
-Description = "The journey was light, but victory is still sweet. : Complete the Game in Easy Mode"
-
-[node name="Achievement_Panel4" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer/VBoxContainer" instance=ExtResource("18_wjq6d")]
-layout_mode = 2
-Number = 4
-Name = "4. Knight of the Realm"
-Description = "You've fought bravely and emerged victorious. : Complete the Game in Medium Mode"
-
-[node name="Achievement_Panel5" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer/VBoxContainer" instance=ExtResource("18_wjq6d")]
-layout_mode = 2
-Number = 5
-Name = "5. Champion of Castle Conquest"
-Description = "Only legends stand where you stand now. Glory is yours! : Complete the Game in Hard Mode"
-
-[node name="Sounds" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_iwiu4")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ph84v")
 metadata/_tab_index = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = -2
 
-[node name="Master" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_u1s01")
-theme_override_font_sizes/font_size = 80
-text = "Master :"
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lx0c2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 430
+
+[node name="Master" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_0e66w")
+theme_override_font_sizes/font_size = 125
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u1s01")
+text = "Master : "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Volume Slider" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer" instance=ExtResource("21_4cdi8")]
+[node name="Volume Slider" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer/PanelContainer/HBoxContainer" instance=ExtResource("21_4cdi8")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("21_gqglc")
+theme_override_icons/grabber_highlight = ExtResource("21_gqglc")
+theme_override_icons/grabber_disabled = ExtResource("21_gqglc")
 Bus_name = "Master"
 
-[node name="Music" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_u1s01")
-theme_override_font_sizes/font_size = 80
-text = "Music :"
-horizontal_alignment = 1
-vertical_alignment = 1
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gqglc")
 
-[node name="Volume Slider2" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer" instance=ExtResource("21_4cdi8")]
-layout_mode = 2
-size_flags_horizontal = 4
-Bus_name = "Music"
-
-[node name="Sfx" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_u1s01")
-theme_override_font_sizes/font_size = 80
-text = "Sound Effects :"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Volume Slider3" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sounds/VBoxContainer" instance=ExtResource("21_4cdi8")]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer/PanelContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 461
+
+[node name="Music" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer/PanelContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_0e66w")
+theme_override_font_sizes/font_size = 125
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u1s01")
+text = "Music : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume Slider2" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer/PanelContainer2/HBoxContainer2" instance=ExtResource("21_4cdi8")]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_icons/grabber = ExtResource("22_4cdi8")
+theme_override_icons/grabber_highlight = ExtResource("22_4cdi8")
+theme_override_icons/grabber_disabled = ExtResource("22_4cdi8")
+Bus_name = "Music"
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4cdi8")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 130
+
+[node name="Sfx" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer/PanelContainer3/HBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_0e66w")
+theme_override_font_sizes/font_size = 125
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u1s01")
+text = "Sound Effects : "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume Slider3" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Sound/VBoxContainer/PanelContainer3/HBoxContainer3" instance=ExtResource("21_4cdi8")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("23_0e66w")
+theme_override_icons/grabber_highlight = ExtResource("23_0e66w")
+theme_override_icons/grabber_disabled = ExtResource("23_0e66w")
 Bus_name = "Sound effects"
 
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer"]

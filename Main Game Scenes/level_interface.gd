@@ -18,7 +18,6 @@ func _ready() -> void:
 		if button.Level_number == 1 or button.Level_number - 1 in Level_Available:
 			button.pressed.connect(func():
 				Global.level_type = button.get("Level_data")
-				Global.Level_Name = button.text
 				Animations.play("Switch_Scene")
 				await Animations.animation_finished
 				call_deferred("Change_Scene","res://Main Game Scenes/Gamplay Scene.tscn")
