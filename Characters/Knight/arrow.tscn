@@ -7,7 +7,7 @@
 size = Vector2(13.8462, 12.3077)
 
 [node name="Arrow" type="Node2D"]
-z_index = 2
+z_index = 1
 texture_filter = 1
 script = ExtResource("1_x4pyy")
 

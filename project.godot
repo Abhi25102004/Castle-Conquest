@@ -24,7 +24,7 @@ MainMusic="*res://Main Game Scenes/main_music.tscn"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
+window/size/mode=2
 window/size/initial_position_type=0
 window/size/always_on_top=true
 window/stretch/mode="viewport"
@@ -51,3 +51,4 @@ MouseClick={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

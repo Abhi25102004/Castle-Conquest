@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bi367bqvb1tm6"]
 
-[ext_resource type="Script" uid="uid://cdt5uqhinbfbu" path="res://Main Game Scenes/Gamplay Scene.gd" id="1_fpc22"]
+[ext_resource type="Script" uid="uid://cdt5uqhinbfbu" path="res://Main Game Scenes/Gameplay Scene.gd" id="1_fpc22"]
 [ext_resource type="PackedScene" uid="uid://dj4natrlfejt7" path="res://Extra Scenes/game_user_interface.tscn" id="2_cnr0n"]
 [ext_resource type="PackedScene" uid="uid://ycwicewcvawm" path="res://Enemy Logic/enemy.tscn" id="3_st4ll"]
 [ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Assets/Fonts/IMFellEnglish-Regular.ttf" id="4_4lxrx"]

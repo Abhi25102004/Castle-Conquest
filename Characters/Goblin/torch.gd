@@ -17,6 +17,7 @@ func OnAttack() -> void:
 func Stats_Setter() -> void:
 	Cost = 50
 	Speed = randf_range(119, 121)
+	
 	match Global.Difficulty:
 		"Easy":
 			Health = 80

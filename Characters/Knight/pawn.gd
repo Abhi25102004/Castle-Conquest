@@ -16,7 +16,7 @@ func OnAttack() -> void:
 
 func Stats_Setter() -> void:
 	Cost = 50
-
+	
 	match Global.Difficulty:
 		"Easy":
 			Health = 100

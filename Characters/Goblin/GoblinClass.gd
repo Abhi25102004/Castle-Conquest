@@ -70,7 +70,7 @@ func Game_Loop(delta: float) -> void:
 			Goblin = States.Idle
 
 		States.Death:
-			HitBox_CollisionShape.disabled = true
+			HitBox_CollisionShape.set_deferred("disable",true)
 			Animations.play("Death")
 			await Animations.animation_finished
 			Global.Add_Money.emit(Cost)

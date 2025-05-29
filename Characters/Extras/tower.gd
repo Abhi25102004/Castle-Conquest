@@ -4,7 +4,6 @@ extends Knight_Class
 var Arrow_Scene : PackedScene = preload("res://Characters/Knight/arrow.tscn")
 
 @onready var marker: Marker2D = $Marker2D
-@onready var picutre : Sprite2D = $TowerImage
 
 func HurtBox_Exited(area: Area2D) -> void:
 	Goblin_Array.erase(area.get_parent())

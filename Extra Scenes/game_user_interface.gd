@@ -8,6 +8,10 @@ extends CanvasLayer
 @onready var Animations: AnimatedSprite2D = $Header/Label/AnimatedSprite2D
 @onready var sfx: AudioStreamPlayer2D = $Header/Label/AnimatedSprite2D/SFX
 @onready var progress_bar: ProgressBar = $Header/Panel/VBoxContainer/ProgressBar
+@onready var Header_label: Label = $Header/Panel/VBoxContainer/Label
+@onready var score: Label = $Header/Panel/VBoxContainer/Score
+
+var Endless_Score : int = 0
 
 var cost : int = 0
 
@@ -16,6 +20,13 @@ var Character_Scene : PackedScene = null
 var Money : int = Global.level_type.Money_Required
 
 func _ready() -> void:
+	if Global.Endless:
+		Header_label.text = "Endless Mode"
+		progress_bar.visible = false
+	else:
+		Header_label.text = "Level Progress"
+		score.visible = false
+	
 	Money_Counter.text = str(Money)
 
 	progress_bar.max_value = Global.level_type.Game_Total_Enemies
@@ -60,5 +71,8 @@ func _ready() -> void:
 	)
 
 	Global.Progress.connect(func(value : int):
-		progress_bar.value = value
+		if !Global.Endless:
+			progress_bar.value = value
+		else:
+			score.text = "Score : " + str(value)
 		)

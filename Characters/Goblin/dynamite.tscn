@@ -231,7 +231,7 @@ _data = {
 }
 
 [node name="Dynamite" type="Node2D"]
-z_index = 2
+z_index = 1
 texture_filter = 1
 script = ExtResource("1_tdrhq")
 

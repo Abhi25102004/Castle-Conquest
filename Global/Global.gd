@@ -18,3 +18,5 @@ var Theme_color : String = "Blue"
 var Difficulty : String = "Easy"
 
 var Setting_Last_Scene : String = "res://Main Game Scenes/start_scene.tscn"
+
+var Endless : bool = false

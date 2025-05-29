@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://ba0gtikn7kqqp"]
+[gd_scene load_steps=22 format=3 uid="uid://ba0gtikn7kqqp"]
 
 [ext_resource type="Script" uid="uid://b4pmtpotvexkw" path="res://Main Game Scenes/start_scene.gd" id="1_qnikr"]
+[ext_resource type="Resource" uid="uid://qrmr1y64w421" path="res://Level Scenes and Data/Level Resources/Level_0.tres" id="2_old3f"]
 [ext_resource type="FontFile" uid="uid://ckokmluf2sw7q" path="res://Assets/Fonts/IMFellEnglish-Regular.ttf" id="3_56mj1"]
 [ext_resource type="FontFile" uid="uid://bytma58a8bj82" path="res://Assets/Fonts/PirataOne-Regular.ttf" id="4_moonm"]
 [ext_resource type="Texture2D" uid="uid://c3urdfdp3iala" path="res://Assets/UI/Buttons/Button_Hover_3Slides.png" id="5_lf3jf"]
@@ -665,6 +666,7 @@ _data = {
 
 [node name="Start Scene" type="CanvasLayer"]
 script = ExtResource("1_qnikr")
+Tutorial_level = ExtResource("2_old3f")
 
 [node name="Background Image" parent="." instance=ExtResource("6_old3f")]
 
@@ -690,11 +692,13 @@ size_flags_vertical = 4
 theme_override_constants/separation = 10
 
 [node name="Continue" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(700, 220)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_hover_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_focus_color = Color(0.117647, 0.227451, 0.541176, 1)
@@ -715,6 +719,7 @@ custom_minimum_size = Vector2(700, 220)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_hover_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_focus_color = Color(0.117647, 0.227451, 0.541176, 1)
@@ -735,6 +740,7 @@ custom_minimum_size = Vector2(700, 220)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_hover_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_focus_color = Color(0.117647, 0.227451, 0.541176, 1)
@@ -755,6 +761,7 @@ custom_minimum_size = Vector2(700, 220)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_hover_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_color = Color(0.117647, 0.227451, 0.541176, 1)
 theme_override_colors/font_focus_color = Color(0.117647, 0.227451, 0.541176, 1)

@@ -13,6 +13,8 @@ extends CanvasLayer
 @onready var medium_animations: AnimatedSprite2D = %Medium_Animations
 @onready var hard_animations: AnimatedSprite2D = %Hard_Animations
 
+@onready var Achievement_container: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/TabContainer/Achievement/ScrollContainer/VBoxContainer
+
 func _ready() -> void:
 	color_animations.play(Global.Theme_color)
 	difficulty_animations.play(Global.Difficulty)
@@ -27,20 +29,33 @@ func _ready() -> void:
 	%Hard.pressed.connect(func(): Difficulty_Change("Hard", hard_animations))
 
 	%Quit.pressed.connect(func():
+		%Quit.disabled = true
 		Animations.play_backwards("Entry")
 		await Animations.animation_finished
 		call_deferred("Change_Scene")
 	)
+	
+	var Achievement_list : Achievement_Save = ResourceLoader.load("user://Achievement_File.tres")
+	var Achievement_Dict : Dictionary = Achievement_list.Achievements
+	var Achievement_scene : PackedScene = preload("res://Extra Scenes/achievement_panel.tscn")
+	for numbers in Achievement_Dict.keys():
+		var Achievement_Struct : Dictionary = Achievement_Dict.get(numbers)
+		var Achievement : PanelContainer = Achievement_scene.instantiate()
+		Achievement.name_ = Achievement_Struct.get("name")
+		Achievement.description = Achievement_Struct.get("description")
+		Achievement.completed_ = Achievement_Struct.get("completed")
+		Achievement_container.add_child(Achievement)
 
 func Change_Scene() -> void:
-	get_tree().change_scene_to_file(Global.Setting_Last_Scene)
+	if is_inside_tree():
+		get_tree().change_scene_to_file(Global.Setting_Last_Scene)
 
 func Color_Change(color : String , Animations_image : AnimatedSprite2D) -> void:
 	Global.Theme_color = color
 
-	var SaveFile : Level_Selection = ResourceLoader.load("user://Level_Details.tres")
-	SaveFile.Color_String = color
-	ResourceSaver.save(SaveFile,"user://Level_Details.tres")
+	var Settings_File : Settings_Save = ResourceLoader.load("user://Settings_File.tres")
+	Settings_File.Player_Colour = color
+	ResourceSaver.save(Settings_File,"user://Settings_File.tres")
 	
 	Animations_image.play("Attack")
 	await Animations_image.animation_finished
@@ -51,9 +66,9 @@ func Difficulty_Change(difficulty : String, Animations_image : AnimatedSprite2D)
 	Global.Difficulty = difficulty
 	Global.Setting_Last_Scene = "res://Main Game Scenes/level_interface.tscn"
 	
-	var SaveFile : Level_Selection = ResourceLoader.load("user://Level_Details.tres")
-	SaveFile.Game_Difficulty = difficulty
-	ResourceSaver.save(SaveFile,"user://Level_Details.tres")
+	var Settings_File : Settings_Save = ResourceLoader.load("user://Settings_File.tres")
+	Settings_File.Game_Mode = difficulty
+	ResourceSaver.save(Settings_File,"user://Settings_File.tres")
 	
 	Animations_image.play("Attack")
 	await Animations_image.animation_finished

@@ -21,5 +21,5 @@ func Add(character_scene : PackedScene) -> void:
 
 func Remove() -> void:
 	if get_child_count() == 2 and get_child(1) is Node2D:
-		Global.Add_Money.emit(get_child(1).Cost)
+		Global.Add_Money.emit(get_child(1).Cost if !Global.Difficulty == "Easy" else 30)
 		get_child(1).call_deferred("queue_free")

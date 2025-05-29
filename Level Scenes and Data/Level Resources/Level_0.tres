@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Level_Information" load_steps=7 format=3 uid="uid://qrmr1y64w421"]
+
+[ext_resource type="PackedScene" uid="uid://bf22joai6fnrd" path="res://Level Scenes and Data/Level Map/level_1.tscn" id="1_8iba5"]
+[ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Custome Resources/level.gd" id="2_3ucgg"]
+[ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Custome Resources/wave.gd" id="2_stvma"]
+
+[sub_resource type="Resource" id="Resource_8uqhc"]
+script = ExtResource("2_stvma")
+Number_of_torch = 1
+Number_of_tnt = 0
+Number_of_barrel = 0
+metadata/_custom_type_script = "uid://chmng04gde7le"
+
+[sub_resource type="Resource" id="Resource_508sp"]
+script = ExtResource("2_stvma")
+Number_of_torch = 0
+Number_of_tnt = 0
+Number_of_barrel = 0
+metadata/_custom_type_script = "uid://chmng04gde7le"
+
+[sub_resource type="Resource" id="Resource_56rdv"]
+script = ExtResource("2_stvma")
+Number_of_torch = 0
+Number_of_tnt = 0
+Number_of_barrel = 0
+metadata/_custom_type_script = "uid://chmng04gde7le"
+
+[resource]
+script = ExtResource("2_3ucgg")
+Level_number = 0
+Money_Required = 100
+Wave1 = SubResource("Resource_8uqhc")
+Wave2 = SubResource("Resource_508sp")
+Wave3 = SubResource("Resource_56rdv")
+Reward = ""
+Game_Total_Enemies = 1
+Level_Scene = ExtResource("1_8iba5")
+Level_Delay = 1.0
+metadata/_custom_type_script = "uid://b0flymt60xya7"

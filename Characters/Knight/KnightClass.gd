@@ -73,7 +73,7 @@ func Game_Loop() -> void :
 			Knight = States.Idle
 
 		States.Death:
-			HitBox_CollisionShape.disabled = true
+			HitBox_CollisionShape.set_deferred("disable",true)
 			Animations.play(Animation_String)
 			await Animations.animation_finished
 			KnightDied.emit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://de1ax3bkck65i"]
+[gd_scene load_steps=107 format=3 uid="uid://de1ax3bkck65i"]
 
 [ext_resource type="Script" uid="uid://buba3jibuxwqe" path="res://Main Game Scenes/level_interface.gd" id="1_odqu1"]
 [ext_resource type="Texture2D" uid="uid://blrqsrn1o40l3" path="res://Assets/UI/Banners/Carved_9Slides.png" id="2_aih7x"]
@@ -25,6 +25,8 @@
 [ext_resource type="FontFile" uid="uid://bytma58a8bj82" path="res://Assets/Fonts/PirataOne-Regular.ttf" id="15_holmf"]
 [ext_resource type="Resource" uid="uid://cv676bwaem3j3" path="res://Level Scenes and Data/Level Resources/Level_4.tres" id="16_hvhtc"]
 [ext_resource type="Texture2D" uid="uid://c5w4yr5s6d661" path="res://Assets/Resources/Gold Mine/GoldMine_Active.png" id="17_ljjth"]
+[ext_resource type="Texture2D" uid="uid://c725wy8h0p7ix" path="res://Assets/UI/Buttons/Button_Red_3Slides.png" id="17_o2djt"]
+[ext_resource type="Texture2D" uid="uid://dl320rwekprfv" path="res://Assets/UI/Buttons/Button_Red_3Slides_Pressed.png" id="18_8mpjy"]
 [ext_resource type="Resource" uid="uid://bstcapxlulbt4" path="res://Level Scenes and Data/Level Resources/Level_5.tres" id="18_fc2aq"]
 [ext_resource type="Texture2D" uid="uid://b12vluoahns3l" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="19_1hwyn"]
 [ext_resource type="Resource" uid="uid://by8jm2qdqv8yu" path="res://Level Scenes and Data/Level Resources/Level_6.tres" id="20_hbyi7"]
@@ -36,6 +38,7 @@
 [ext_resource type="Resource" uid="uid://btnmtu7io6mgj" path="res://Level Scenes and Data/Level Resources/Level_10.tres" id="28_2jnfj"]
 [ext_resource type="Texture2D" uid="uid://r7xpgp2vgr3i" path="res://Assets/Factions/Knights/Buildings/House/House_Blue.png" id="31_holmf"]
 [ext_resource type="Texture2D" uid="uid://d0qhkieb8ms3u" path="res://Assets/Factions/Goblins/Buildings/Wood_House/Goblin_House.png" id="33_4uro5"]
+[ext_resource type="PackedScene" uid="uid://inwgmp56g3ik" path="res://Extra Scenes/achievement_panel.tscn" id="37_4uro5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jd7ps"]
 texture = ExtResource("2_aih7x")
@@ -450,6 +453,36 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hvhtc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ljjth"]
+texture = ExtResource("17_o2djt")
+texture_margin_left = 30.0
+texture_margin_top = 8.0
+texture_margin_right = 30.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fc2aq"]
+texture = ExtResource("17_o2djt")
+texture_margin_left = 30.0
+texture_margin_top = 8.0
+texture_margin_right = 30.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1hwyn"]
+texture = ExtResource("18_8mpjy")
+texture_margin_left = 25.0
+texture_margin_top = 15.0
+texture_margin_right = 25.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hbyi7"]
+texture = ExtResource("17_o2djt")
+texture_margin_left = 30.0
+texture_margin_top = 8.0
+texture_margin_right = 30.0
+texture_margin_bottom = 24.0
+
 [sub_resource type="Animation" id="Animation_slx5t"]
 resource_name = "Entery"
 tracks/0/type = "value"
@@ -471,10 +504,27 @@ tracks/1/path = NodePath("PanelContainer:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4uro5"]
+resource_name = "Notification"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Achievement_Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -184), Vector2(0, 0), Vector2(0, 0), Vector2(0, -184)]
 }
 
 [sub_resource type="Animation" id="Animation_a1xi6"]
@@ -489,7 +539,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -501,7 +551,19 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Achievement_Panel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -184)]
 }
 
 [sub_resource type="Animation" id="Animation_i2k5r"]
@@ -534,6 +596,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_slx5t"]
 _data = {
 &"Entery": SubResource("Animation_slx5t"),
+&"Notification": SubResource("Animation_4uro5"),
 &"RESET": SubResource("Animation_a1xi6"),
 &"Switch_Scene": SubResource("Animation_i2k5r")
 }
@@ -542,6 +605,7 @@ _data = {
 script = ExtResource("1_odqu1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -550,6 +614,7 @@ grow_vertical = 2
 color = Color(0.552443, 0.518842, 0.441169, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -648,6 +713,33 @@ text = "Game Difficulty:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Endless Mode" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 354.0
+offset_right = 766.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_holmf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hvhtc")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ljjth")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fc2aq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1hwyn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hbyi7")
+text = "Endless Mode
+High Score : 0"
+autowrap_mode = 2
+
 [node name="Levels Container" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -715,10 +807,13 @@ icon = ExtResource("27_0q6tg")
 Level_number = 10
 Level_data = ExtResource("28_2jnfj")
 
+[node name="Achievement_Panel" parent="." instance=ExtResource("37_4uro5")]
+offset_top = -184.0
+offset_bottom = -4.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_slx5t")
 }
-autoplay = "Entery"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/Quit" to="." method="Quit_Button"]
