@@ -12,6 +12,6 @@ class_name Settings_Save
 
 @export var Player_Colour : String = "Blue"
 
-@export var Scree_Size : String = ""
+@export var Scree_Size : String = "FullScreen"
 
 @export var continue_available : bool = false

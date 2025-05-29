@@ -33,6 +33,7 @@ func Save_file() -> void:
 	var Saved_settings_file : Settings_Save = ResourceLoader.load("user://Settings_File.tres")
 	Global.Theme_color = Saved_settings_file.Player_Colour
 	Global.Difficulty = Saved_settings_file.Game_Mode
+	Global.Screen = Saved_settings_file.Scree_Size
 	for Bus_name in Saved_settings_file.Sound_Controller:
 		var Bus_index : int = AudioServer.get_bus_index(Bus_name)
 		AudioServer.set_bus_volume_db(Bus_index,linear_to_db(Saved_settings_file.Sound_Controller[Bus_name]))

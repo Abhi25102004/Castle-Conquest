@@ -79,8 +79,13 @@ func Add_Enemies() -> void:
 func Enemy_Killed() -> void:
 	Total_Enemies_killed += 1
 	if Global.Endless:
+		match Total_Enemies_killed:
+			25:
+				Global.Difficulty = "Medium"
+			50:
+				Global.Difficulty = "Hard"
 		Global.Progress.emit(Total_Enemies_killed * 10)
-		if Delay != 0.1:
+		if Delay > 2:
 			Delay -= 0.1
 	else:
 		Enemies_Killed += 1

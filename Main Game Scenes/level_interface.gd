@@ -30,7 +30,7 @@ func _ready() -> void:
 	endless_mode.pressed.connect(func():
 		endless_mode.disabled = true
 		Global.Endless = true
-		Global.Difficulty = "Medium"
+		Global.Difficulty = "Easy"
 		Global.level_type = preload("res://Level Scenes and Data/Level Resources/Endless_Mode.tres")
 		call_deferred("Change_Scene","res://Main Game Scenes/Gameplay Scene.tscn")
 		)
