@@ -1,22 +1,22 @@
 [gd_resource type="Resource" script_class="Level_Information" load_steps=7 format=3 uid="uid://cv676bwaem3j3"]
 
-[ext_resource type="PackedScene" uid="uid://rjfs7qhxhjbx" path="res://Level Scenes and Data/Level Map/level_4.tscn" id="1_l2td6"]
+[ext_resource type="PackedScene" uid="uid://ci718ch0ho0qf" path="res://Level Scenes and Data/Level Map/level_2.tscn" id="1_l2td6"]
 [ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Custome Resources/wave.gd" id="2_srjyr"]
 [ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Custome Resources/level.gd" id="3_fd6w4"]
 
-[sub_resource type="Resource" id="Resource_2bvhn"]
+[sub_resource type="Resource" id="Resource_ueuvx"]
 script = ExtResource("2_srjyr")
 Number_of_torch = 4
 Number_of_tnt = 1
 Number_of_barrel = 0
 
-[sub_resource type="Resource" id="Resource_srqk6"]
+[sub_resource type="Resource" id="Resource_gtttd"]
 script = ExtResource("2_srjyr")
 Number_of_torch = 4
 Number_of_tnt = 2
 Number_of_barrel = 0
 
-[sub_resource type="Resource" id="Resource_3mw78"]
+[sub_resource type="Resource" id="Resource_xd5ui"]
 script = ExtResource("2_srjyr")
 Number_of_torch = 4
 Number_of_tnt = 2
@@ -25,11 +25,11 @@ Number_of_barrel = 0
 [resource]
 script = ExtResource("3_fd6w4")
 Level_number = 4
-Money_Required = 200
-Wave1 = SubResource("Resource_2bvhn")
-Wave2 = SubResource("Resource_srqk6")
-Wave3 = SubResource("Resource_3mw78")
-Reward = "Gold Mine"
+Money_Required = 175
+Wave1 = SubResource("Resource_ueuvx")
+Wave2 = SubResource("Resource_gtttd")
+Wave3 = SubResource("Resource_xd5ui")
+Reward = "Tree"
 Game_Total_Enemies = 17
 Level_Scene = ExtResource("1_l2td6")
-Level_Delay = 4.5
+Level_Delay = 5.5

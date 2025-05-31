@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://chmng04gde7le"
 
 [resource]
 script = ExtResource("2_68ujx")
-Level_number = 0
+Level_number = -1
 Money_Required = 200
 Wave1 = SubResource("Resource_g5re3")
 Wave2 = SubResource("Resource_r87jp")

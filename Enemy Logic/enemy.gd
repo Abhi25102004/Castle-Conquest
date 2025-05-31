@@ -36,6 +36,8 @@ var Enemy_array : Array[PackedScene] = [
 	preload("res://Characters/Goblin/barrel.tscn")
 ]
 
+var Save : SaveFile = ResourceLoader.load("user://Save_File.tres")
+
 @onready var Enemy_AI: Node2D = $"Enemy AI area"
 
 func _ready() -> void:
@@ -79,11 +81,9 @@ func Add_Enemies() -> void:
 func Enemy_Killed() -> void:
 	Total_Enemies_killed += 1
 	if Global.Endless:
-		match Total_Enemies_killed:
-			25:
-				Global.Difficulty = "Medium"
-			50:
-				Global.Difficulty = "Hard"
+		if Save.Endless_High_Score < Total_Enemies_killed * 10:
+			Save.Endless_High_Score = Total_Enemies_killed * 10
+			ResourceSaver.save(Save,"user://Save_File.tres")
 		Global.Progress.emit(Total_Enemies_killed * 10)
 		if Delay > 2:
 			Delay -= 0.1
@@ -113,10 +113,6 @@ func Create_Enemy() -> void:
 		Create_Enemy()
 
 func Danger_Area_Entered(_area: Area2D) -> void:
-	var Save : SaveFile = ResourceLoader.load("user://Save_File.tres")
-	if Save.Endless_High_Score < Total_Enemies_killed * 10:
-		Save.Endless_High_Score = Total_Enemies_killed * 10
-		ResourceSaver.save(Save,"user://Save_File.tres")
 	Player_Lost.emit()
 
 func Enemy_Death_Zone_Entered(area: Area2D) -> void:

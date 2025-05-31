@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Level_Information" load_steps=7 format=3 uid="uid://cwhvapi4jrn6u"]
+
+[ext_resource type="PackedScene" uid="uid://4gsacxmjf2a8" path="res://Level Scenes and Data/Level Map/level_9.tscn" id="1_tc1gf"]
+[ext_resource type="Script" uid="uid://chmng04gde7le" path="res://Custome Resources/wave.gd" id="2_443c3"]
+[ext_resource type="Script" uid="uid://b0flymt60xya7" path="res://Custome Resources/level.gd" id="2_tc1gf"]
+
+[sub_resource type="Resource" id="Resource_2kjee"]
+script = ExtResource("2_443c3")
+Number_of_torch = 7
+Number_of_tnt = 7
+Number_of_barrel = 5
+
+[sub_resource type="Resource" id="Resource_5tn71"]
+script = ExtResource("2_443c3")
+Number_of_torch = 7
+Number_of_tnt = 7
+Number_of_barrel = 6
+
+[sub_resource type="Resource" id="Resource_7xjt8"]
+script = ExtResource("2_443c3")
+Number_of_torch = 7
+Number_of_tnt = 7
+Number_of_barrel = 6
+
+[resource]
+script = ExtResource("2_tc1gf")
+Level_number = 18
+Money_Required = 275
+Wave1 = SubResource("Resource_2kjee")
+Wave2 = SubResource("Resource_5tn71")
+Wave3 = SubResource("Resource_7xjt8")
+Reward = ""
+Game_Total_Enemies = 59
+Level_Scene = ExtResource("1_tc1gf")
+Level_Delay = 2.5
+metadata/_custom_type_script = "uid://b0flymt60xya7"

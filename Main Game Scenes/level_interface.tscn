@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://de1ax3bkck65i"]
+[gd_scene load_steps=126 format=3 uid="uid://de1ax3bkck65i"]
 
 [ext_resource type="Script" uid="uid://buba3jibuxwqe" path="res://Main Game Scenes/level_interface.gd" id="1_odqu1"]
 [ext_resource type="Texture2D" uid="uid://blrqsrn1o40l3" path="res://Assets/UI/Banners/Carved_9Slides.png" id="2_aih7x"]
@@ -24,21 +24,40 @@
 [ext_resource type="Texture2D" uid="uid://cn1tffbh3q3ue" path="res://Assets/Factions/Knights/Troops/Warrior/Blue/warrior_icon.png" id="15_8mpjy"]
 [ext_resource type="FontFile" uid="uid://bytma58a8bj82" path="res://Assets/Fonts/PirataOne-Regular.ttf" id="15_holmf"]
 [ext_resource type="Resource" uid="uid://cv676bwaem3j3" path="res://Level Scenes and Data/Level Resources/Level_4.tres" id="16_hvhtc"]
-[ext_resource type="Texture2D" uid="uid://c5w4yr5s6d661" path="res://Assets/Resources/Gold Mine/GoldMine_Active.png" id="17_ljjth"]
 [ext_resource type="Texture2D" uid="uid://c725wy8h0p7ix" path="res://Assets/UI/Buttons/Button_Red_3Slides.png" id="17_o2djt"]
 [ext_resource type="Texture2D" uid="uid://dl320rwekprfv" path="res://Assets/UI/Buttons/Button_Red_3Slides_Pressed.png" id="18_8mpjy"]
 [ext_resource type="Resource" uid="uid://bstcapxlulbt4" path="res://Level Scenes and Data/Level Resources/Level_5.tres" id="18_fc2aq"]
-[ext_resource type="Texture2D" uid="uid://b12vluoahns3l" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="19_1hwyn"]
 [ext_resource type="Resource" uid="uid://by8jm2qdqv8yu" path="res://Level Scenes and Data/Level Resources/Level_6.tres" id="20_hbyi7"]
-[ext_resource type="Texture2D" uid="uid://bskgyjt670uef" path="res://Assets/Resources/Sheep/Sheep_icon.png" id="21_7h7jj"]
+[ext_resource type="Texture2D" uid="uid://bpdhu1wm8tnnu" path="res://Assets/Factions/Knights/Troops/Pawn/Red/Pawn_Choping.png" id="21_fc2aq"]
 [ext_resource type="Resource" uid="uid://br2takgi8cgn8" path="res://Level Scenes and Data/Level Resources/Level_7.tres" id="22_htt8b"]
 [ext_resource type="Resource" uid="uid://j5u2hj8rju2u" path="res://Level Scenes and Data/Level Resources/Level_8.tres" id="24_ro65m"]
+[ext_resource type="Texture2D" uid="uid://dxwjqa4i3bb55" path="res://Assets/Factions/Knights/Troops/Archer/Red/Archer_Red_icon.png" id="25_fi6on"]
 [ext_resource type="Resource" uid="uid://cwl0hdsvjbhpf" path="res://Level Scenes and Data/Level Resources/Level_9.tres" id="26_1yio5"]
-[ext_resource type="Texture2D" uid="uid://bx3tt16ncjlxm" path="res://Assets/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="27_0q6tg"]
+[ext_resource type="Texture2D" uid="uid://xuonrk4nrtgo" path="res://Assets/Resources/Trees/Tree_Left.png" id="28_1hwyn"]
 [ext_resource type="Resource" uid="uid://btnmtu7io6mgj" path="res://Level Scenes and Data/Level Resources/Level_10.tres" id="28_2jnfj"]
-[ext_resource type="Texture2D" uid="uid://r7xpgp2vgr3i" path="res://Assets/Factions/Knights/Buildings/House/House_Blue.png" id="31_holmf"]
-[ext_resource type="Texture2D" uid="uid://d0qhkieb8ms3u" path="res://Assets/Factions/Goblins/Buildings/Wood_House/Goblin_House.png" id="33_4uro5"]
+[ext_resource type="Texture2D" uid="uid://c5w4yr5s6d661" path="res://Assets/Resources/Gold Mine/GoldMine_Active.png" id="33_0q6tg"]
+[ext_resource type="Texture2D" uid="uid://dat51gphqpva5" path="res://Assets/Factions/Knights/Troops/Warrior/Red/Warrior_Red_icon.png" id="33_rqalc"]
+[ext_resource type="Texture2D" uid="uid://ijrd3qbhieee" path="res://Assets/Resources/Gold Mine/GoldMine_Inactive.png" id="35_2jnfj"]
 [ext_resource type="PackedScene" uid="uid://inwgmp56g3ik" path="res://Extra Scenes/achievement_panel.tscn" id="37_4uro5"]
+[ext_resource type="Texture2D" uid="uid://b12vluoahns3l" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="37_8ki5l"]
+[ext_resource type="Resource" uid="uid://dmq4pfhhroa3h" path="res://Level Scenes and Data/Level Resources/Level_11.tres" id="39_htt8b"]
+[ext_resource type="Texture2D" uid="uid://ckcsaihcnfdmf" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Red.png" id="39_pl05t"]
+[ext_resource type="Resource" uid="uid://txkpmxt5awjc" path="res://Level Scenes and Data/Level Resources/Level_12.tres" id="40_yrwxh"]
+[ext_resource type="Texture2D" uid="uid://bskgyjt670uef" path="res://Assets/Resources/Sheep/Sheep_icon.png" id="41_fi6on"]
+[ext_resource type="Resource" uid="uid://cj4y2eapa3eu3" path="res://Level Scenes and Data/Level Resources/Level_13.tres" id="41_ro65m"]
+[ext_resource type="Resource" uid="uid://begklc2qnwobw" path="res://Level Scenes and Data/Level Resources/Level_14.tres" id="42_irl2q"]
+[ext_resource type="Resource" uid="uid://b6bgu68fl8172" path="res://Level Scenes and Data/Level Resources/Level_15.tres" id="43_1yio5"]
+[ext_resource type="Resource" uid="uid://cn07omdrwgi2x" path="res://Level Scenes and Data/Level Resources/Level_16.tres" id="44_0q6tg"]
+[ext_resource type="Resource" uid="uid://o7f37h174r8" path="res://Level Scenes and Data/Level Resources/Level_17.tres" id="45_2jnfj"]
+[ext_resource type="Resource" uid="uid://cwhvapi4jrn6u" path="res://Level Scenes and Data/Level Resources/Level_18.tres" id="46_8ki5l"]
+[ext_resource type="Texture2D" uid="uid://c7x2fipbdvovf" path="res://Assets/Factions/Goblins/Troops/Torch/Red/Torch_Red_icon.png" id="46_8n6m1"]
+[ext_resource type="Texture2D" uid="uid://k8f8hu8vhsi6" path="res://Assets/Deco/18.png" id="46_rqalc"]
+[ext_resource type="Resource" uid="uid://djqle0gr2l8ty" path="res://Level Scenes and Data/Level Resources/Level_19.tres" id="47_pl05t"]
+[ext_resource type="Texture2D" uid="uid://d0qhkieb8ms3u" path="res://Assets/Factions/Goblins/Buildings/Wood_House/Goblin_House.png" id="48_8n6m1"]
+[ext_resource type="Resource" uid="uid://0q52t0jju1vb" path="res://Level Scenes and Data/Level Resources/Level_20.tres" id="48_fi6on"]
+[ext_resource type="Texture2D" uid="uid://cm0qwhoi05uae" path="res://Assets/Factions/Goblins/Troops/TNT/Red/TNT_Red_icon.png" id="48_hxlby"]
+[ext_resource type="Texture2D" uid="uid://cdsj0032r3u52" path="res://Assets/Factions/Knights/Buildings/Castle/Castle_Red.png" id="50_hxlby"]
+[ext_resource type="Texture2D" uid="uid://bx3tt16ncjlxm" path="res://Assets/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="52_faoi7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jd7ps"]
 texture = ExtResource("2_aih7x")
@@ -740,72 +759,137 @@ text = "Endless Mode
 High Score : 0"
 autowrap_mode = 2
 
-[node name="Levels Container" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Levels Container" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 5
 
-[node name="Level 1" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
+[node name="Level 1" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
 icon = ExtResource("9_holmf")
 Level_number = 1
 Level_data = ExtResource("10_4uro5")
 
-[node name="Level 2" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
+[node name="Level 2" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
-icon = ExtResource("11_aqvhq")
+icon = ExtResource("21_fc2aq")
 Level_number = 2
 Level_data = ExtResource("12_mwhdv")
 
-[node name="Level 3" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
+[node name="Level 3" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
-icon = ExtResource("13_dtimb")
+icon = ExtResource("11_aqvhq")
 Level_number = 3
 Level_data = ExtResource("14_o2djt")
 
-[node name="Level 4" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
+[node name="Level 4" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
-icon = ExtResource("15_8mpjy")
+icon = ExtResource("25_fi6on")
 Level_number = 4
 Level_data = ExtResource("16_hvhtc")
 
-[node name="Level 5" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
+[node name="Level 5" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
-icon = ExtResource("17_ljjth")
+icon = ExtResource("13_dtimb")
 Level_number = 5
 Level_data = ExtResource("18_fc2aq")
 
-[node name="Level 6" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
+[node name="Level 6" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
-icon = ExtResource("19_1hwyn")
+icon = ExtResource("28_1hwyn")
 Level_number = 6
 Level_data = ExtResource("20_hbyi7")
 
-[node name="Level 7" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
+[node name="Level 7" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
-icon = ExtResource("21_7h7jj")
+icon = ExtResource("15_8mpjy")
 Level_number = 7
 Level_data = ExtResource("22_htt8b")
 
-[node name="Level 8" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
+[node name="Level 8" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
-icon = ExtResource("31_holmf")
-vertical_icon_alignment = 0
+icon = ExtResource("33_rqalc")
 Level_number = 8
 Level_data = ExtResource("24_ro65m")
 
-[node name="Level 9" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
+[node name="Level 9" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
-icon = ExtResource("33_4uro5")
+icon = ExtResource("33_0q6tg")
 Level_number = 9
 Level_data = ExtResource("26_1yio5")
 
-[node name="Level 10" parent="PanelContainer/MarginContainer/VBoxContainer/Levels Container" instance=ExtResource("8_qoji5")]
+[node name="Level 10" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
 layout_mode = 2
-icon = ExtResource("27_0q6tg")
+icon = ExtResource("35_2jnfj")
 Level_number = 10
 Level_data = ExtResource("28_2jnfj")
+
+[node name="Level 11" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
+layout_mode = 2
+icon = ExtResource("37_8ki5l")
+Level_number = 11
+Level_data = ExtResource("39_htt8b")
+
+[node name="Level 12" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
+layout_mode = 2
+icon = ExtResource("39_pl05t")
+Level_number = 12
+Level_data = ExtResource("40_yrwxh")
+
+[node name="Level 13" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
+layout_mode = 2
+icon = ExtResource("41_fi6on")
+Level_number = 13
+Level_data = ExtResource("41_ro65m")
+
+[node name="Level 14" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
+layout_mode = 2
+icon = ExtResource("41_fi6on")
+Level_number = 14
+Level_data = ExtResource("42_irl2q")
+
+[node name="Level 15" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
+layout_mode = 2
+icon = ExtResource("46_8n6m1")
+Level_number = 15
+Level_data = ExtResource("43_1yio5")
+
+[node name="Level 16" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
+layout_mode = 2
+icon = ExtResource("48_hxlby")
+Level_number = 16
+Level_data = ExtResource("44_0q6tg")
+
+[node name="Level 17" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
+layout_mode = 2
+icon = ExtResource("46_rqalc")
+vertical_icon_alignment = 0
+Level_number = 17
+Level_data = ExtResource("45_2jnfj")
+
+[node name="Level 18" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
+layout_mode = 2
+icon = ExtResource("48_8n6m1")
+Level_number = 18
+Level_data = ExtResource("46_8ki5l")
+
+[node name="Level 19" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
+layout_mode = 2
+icon = ExtResource("50_hxlby")
+Level_number = 19
+Level_data = ExtResource("47_pl05t")
+
+[node name="Level 20" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/Levels Container" instance=ExtResource("8_qoji5")]
+layout_mode = 2
+icon = ExtResource("52_faoi7")
+Level_number = 20
+Level_data = ExtResource("48_fi6on")
 
 [node name="Achievement_Panel" parent="." instance=ExtResource("37_4uro5")]
 offset_top = -184.0

@@ -40,16 +40,16 @@ func _ready() -> void:
 					if 1 in Save.level_Played:
 						Achievement_list.Achievements[numbers]["completed"] = true
 				2:
-					if 5 in Save.level_Played:
+					if 10 in Save.level_Played:
 						Achievement_list.Achievements[numbers]["completed"] = true
 				3:
-					if Save.Difficulty_played["Easy"].size() == 10:
+					if Save.Difficulty_played["Easy"].size() == 20:
 						Achievement_list.Achievements[numbers]["completed"] = true
 				4:
-					if Save.Difficulty_played["Medium"].size() == 10:
+					if Save.Difficulty_played["Medium"].size() == 20:
 						Achievement_list.Achievements[numbers]["completed"] = true
 				5:
-					if Save.Difficulty_played["Hard"].size() == 10:
+					if Save.Difficulty_played["Hard"].size() == 20:
 						Achievement_list.Achievements[numbers]["completed"] = true
 			
 			ResourceSaver.save(Achievement_list,"user://Achievement_File.tres")
