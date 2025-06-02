@@ -57,7 +57,7 @@ func _ready() -> void:
 		await Animations.animation_finished
 		
 
-		if Global.level_type.Level_number == 10:
+		if Global.level_type.Level_number == 20:
 			call_deferred("Change_Scene", "res://Main Game Scenes/end_credit_scene.tscn")
 		else:
 			call_deferred("Change_Scene", "res://Main Game Scenes/level_interface.tscn")
