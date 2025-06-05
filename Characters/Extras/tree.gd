@@ -4,6 +4,7 @@ func Stats_Setter() -> void:
 	Cost = 6
 	Attack = 0
 	Attack_Speed = 0
+	Points = 3
 
 	match Global.Difficulty:
 		"Easy":

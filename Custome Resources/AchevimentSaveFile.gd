@@ -13,7 +13,7 @@ class_name Achievement_Save
 		"completed": false,
 		"notified": false,
 		"name": "2. Halfway Hero",
-		"description": "You've proven your mettle. The realm is halfway safe! : Complete Level 5"
+		"description": "You've proven your mettle. The realm is halfway safe! : Complete Level 10"
 	},
 	3: {
 		"completed": false,

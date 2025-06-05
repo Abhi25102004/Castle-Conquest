@@ -6,20 +6,20 @@
 
 [sub_resource type="Resource" id="Resource_ueuvx"]
 script = ExtResource("2_srjyr")
-Number_of_torch = 4
-Number_of_tnt = 1
+Number_of_torch = 3
+Number_of_tnt = 0
 Number_of_barrel = 0
 
 [sub_resource type="Resource" id="Resource_gtttd"]
 script = ExtResource("2_srjyr")
-Number_of_torch = 4
-Number_of_tnt = 2
+Number_of_torch = 3
+Number_of_tnt = 0
 Number_of_barrel = 0
 
 [sub_resource type="Resource" id="Resource_xd5ui"]
 script = ExtResource("2_srjyr")
-Number_of_torch = 4
-Number_of_tnt = 2
+Number_of_torch = 2
+Number_of_tnt = 1
 Number_of_barrel = 0
 
 [resource]
@@ -30,6 +30,6 @@ Wave1 = SubResource("Resource_ueuvx")
 Wave2 = SubResource("Resource_gtttd")
 Wave3 = SubResource("Resource_xd5ui")
 Reward = "Tree"
-Game_Total_Enemies = 17
+Game_Total_Enemies = 9
 Level_Scene = ExtResource("1_l2td6")
-Level_Delay = 5.5
+Level_Delay = 5.7

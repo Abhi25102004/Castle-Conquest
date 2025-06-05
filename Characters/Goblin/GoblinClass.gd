@@ -11,6 +11,7 @@ var Attack_Speed : float
 var Cost : float
 var Speed : float
 var Direction : int = -1
+var Points : int
 
 var Goblin : States = States.Run
 var Game_State : bool = true

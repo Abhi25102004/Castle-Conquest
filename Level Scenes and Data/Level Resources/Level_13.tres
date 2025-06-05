@@ -6,21 +6,21 @@
 
 [sub_resource type="Resource" id="Resource_htb8d"]
 script = ExtResource("2_q63sn")
-Number_of_torch = 5
-Number_of_tnt = 4
-Number_of_barrel = 3
+Number_of_torch = 3
+Number_of_tnt = 3
+Number_of_barrel = 1
 
 [sub_resource type="Resource" id="Resource_p2wef"]
 script = ExtResource("2_q63sn")
-Number_of_torch = 5
-Number_of_tnt = 5
-Number_of_barrel = 3
+Number_of_torch = 4
+Number_of_tnt = 4
+Number_of_barrel = 2
 
 [sub_resource type="Resource" id="Resource_6td3g"]
 script = ExtResource("2_q63sn")
-Number_of_torch = 5
-Number_of_tnt = 5
-Number_of_barrel = 4
+Number_of_torch = 3
+Number_of_tnt = 3
+Number_of_barrel = 2
 
 [resource]
 script = ExtResource("2_bsylm")
@@ -30,7 +30,7 @@ Wave1 = SubResource("Resource_htb8d")
 Wave2 = SubResource("Resource_p2wef")
 Wave3 = SubResource("Resource_6td3g")
 Reward = ""
-Game_Total_Enemies = 39
+Game_Total_Enemies = 25
 Level_Scene = ExtResource("1_bsylm")
-Level_Delay = 3.5
+Level_Delay = 4.8
 metadata/_custom_type_script = "uid://b0flymt60xya7"

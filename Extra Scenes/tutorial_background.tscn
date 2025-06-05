@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpayfc1pihtvp"]
+
+[ext_resource type="AudioStream" uid="uid://b6kjwbiqm3oyp" path="res://Sounds/Rachel's Secret, Medieval Tavern Music(No Copyright Music)  Fantasy Medieval Music.mp3" id="1_83w7e"]
+
+[node name="Tutorial Background" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_83w7e")
+volume_db = 5.0

@@ -25,10 +25,10 @@ func _ready() -> void:
 		for character in Current_Characters:
 			if character is Knight_Class:
 				if character.Health > 0:
-					Total_value += character.Health
+					Total_value += character.Health * character.Points
 			elif character is Goblin_Class:
 				if character.Health > 0:
-					Total_value += character.Health
+					Total_value += character.Health * character.Points
 
 		Update_Priority.emit(Total_value)
 

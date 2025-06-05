@@ -26,3 +26,4 @@ func Stats_Setter() -> void:
 	Attack = 30
 	Attack_Speed = randf_range(0.7, 0.9)
 	Cost = 75
+	Points = 7

@@ -7,6 +7,7 @@ func Stats_Setter() -> void:
 	Attack = 0
 	Attack_Speed = 0
 	Cost = 75
+	Points = 2
 
 func Game_Loop() -> void :
 	pass

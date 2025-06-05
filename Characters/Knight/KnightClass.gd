@@ -16,6 +16,7 @@ var Health : float
 var Attack : float
 var Attack_Speed : float
 var Cost : int
+var Points : int
 
 var Animation_String : String:
 	get = getAnimation_String

@@ -20,6 +20,7 @@ func Stats_Setter() -> void:
 	Cost = 100
 	Speed = randf_range(119, 121)
 	Attack_Speed = 0
+	Points = 5
 	
 	match Global.Difficulty:
 		"Easy":

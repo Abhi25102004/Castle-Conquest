@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c2rek4q6jm314"]
+[gd_scene load_steps=73 format=3 uid="uid://c2rek4q6jm314"]
 
 [ext_resource type="PackedScene" uid="uid://ddakdr1q66exb" path="res://Map/tutorial_background.tscn" id="1_1gxbc"]
 [ext_resource type="Script" uid="uid://dk4yce32sucbf" path="res://Extra Scenes/tutorial.gd" id="1_t230b"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://drq3ci62555cx" path="res://Assets/Factions/Knights/Buildings/Tower/Tower_Destroyed.png" id="19_pehuw"]
 [ext_resource type="Texture2D" uid="uid://c725wy8h0p7ix" path="res://Assets/UI/Buttons/Button_Red_3Slides.png" id="19_qsq1m"]
 [ext_resource type="Texture2D" uid="uid://dl320rwekprfv" path="res://Assets/UI/Buttons/Button_Red_3Slides_Pressed.png" id="20_3x5wx"]
+[ext_resource type="PackedScene" uid="uid://dlot5q3ykfot5" path="res://Main Game Scenes/battle_music.tscn" id="23_8isc0"]
+[ext_resource type="PackedScene" uid="uid://bpayfc1pihtvp" path="res://Extra Scenes/tutorial_background.tscn" id="23_akb8e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8xckl"]
 atlas = ExtResource("3_rqshp")
@@ -1864,6 +1866,40 @@ tracks/62/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/63/type = "method"
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/path = NodePath("Battle Music")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/keys = {
+"times": PackedFloat32Array(63, 63.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
+}
+tracks/64/type = "method"
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/path = NodePath("Tutorial Background_music")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/keys = {
+"times": PackedFloat32Array(0, 57),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wmhhm"]
 _data = {
@@ -2089,7 +2125,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("7_ghywi")
 hframes = 7
 vframes = 5
-frame = 7
+frame = 6
 
 [node name="TNT" type="Sprite2D" parent="Story Character"]
 visible = false
@@ -2135,7 +2171,6 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("13_t1ekd")
 hframes = 6
 vframes = 8
-frame = 12
 
 [node name="Game Logic" parent="." instance=ExtResource("14_pehuw")]
 
@@ -2147,6 +2182,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1850.0
+offset_right = 1850.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -2226,6 +2263,10 @@ text = "Skip"
 
 [node name="Camera2D" type="Camera2D" parent="Main Label"]
 position = Vector2(970, 543)
+
+[node name="Battle Music" parent="." instance=ExtResource("23_8isc0")]
+
+[node name="Tutorial Background_music" parent="." instance=ExtResource("23_akb8e")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

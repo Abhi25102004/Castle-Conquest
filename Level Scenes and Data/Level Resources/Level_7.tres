@@ -6,21 +6,21 @@
 
 [sub_resource type="Resource" id="Resource_2bvhn"]
 script = ExtResource("2_va82x")
-Number_of_torch = 3
-Number_of_tnt = 3
-Number_of_barrel = 1
+Number_of_torch = 4
+Number_of_tnt = 1
+Number_of_barrel = 0
 
 [sub_resource type="Resource" id="Resource_srqk6"]
 script = ExtResource("2_va82x")
 Number_of_torch = 4
-Number_of_tnt = 4
-Number_of_barrel = 2
+Number_of_tnt = 2
+Number_of_barrel = 0
 
 [sub_resource type="Resource" id="Resource_3mw78"]
 script = ExtResource("2_va82x")
-Number_of_torch = 3
-Number_of_tnt = 3
-Number_of_barrel = 2
+Number_of_torch = 4
+Number_of_tnt = 2
+Number_of_barrel = 0
 
 [resource]
 script = ExtResource("3_28l1o")
@@ -30,6 +30,6 @@ Wave1 = SubResource("Resource_2bvhn")
 Wave2 = SubResource("Resource_srqk6")
 Wave3 = SubResource("Resource_3mw78")
 Reward = "Gold Mine"
-Game_Total_Enemies = 25
+Game_Total_Enemies = 17
 Level_Scene = ExtResource("1_71oax")
-Level_Delay = 4.5
+Level_Delay = 5.4

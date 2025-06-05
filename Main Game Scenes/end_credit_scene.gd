@@ -13,7 +13,7 @@ func _ready() -> void:
 	var Settings_File : Settings_Save = ResourceLoader.load("user://Settings_File.tres")
 	match Global.Difficulty:
 		"Easy":
-			Settings_File.Game_Difficulty = "Medium"
+			Settings_File.Game_Mode = "Medium"
 		"Medium":
-			Settings_File.Game_Difficulty = "Hard"
-	ResourceSaver.save(Settings_File)
+			Settings_File.Game_Mode = "Hard"
+	ResourceSaver.save(Settings_File,"user://Settings_File.tres")
