@@ -48,8 +48,8 @@ Stay tuned by starring ⭐ this repo or following updates!
 
 ### 👨‍💻 Development & Design
 
-**Abhishek** – Game Designer, Programmer, Level Designer
-**Sushil** - Testing
+- **Abhishek** – Game Designer, Programmer, Level Designer
+- **Sushil** - Testing
 
 ### 🎨 Art Assets
 
