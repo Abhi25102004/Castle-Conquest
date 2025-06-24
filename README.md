@@ -52,24 +52,11 @@ Stay tuned by starring ⭐ this repo or following updates!
 
 ### 🎨 Art Assets
 
-- Pixel frog
-
-### 🎵 Music & Sound
-
--
-
-### 👥 Playtesting
-
-- **Sushil** – Game Testing
-
-### 💬 Special Thanks
-
-- The [Godot Engine](https://godotengine.org) Community
-- Indie game development communities on Discord & Reddit
-- You – for checking out and supporting this game ❤️
+- [Pixel frog](https://pixelfrog-assets.itch.io/)
 
 ---
 
-## 📥 How to Play (Demo Version)
+## 📥 Downloads
 
-- [Pre-release](https://github.com/Abhi25102004/Castle-Conquest/releases/tag/v0.0.1)
+- [Windows](https://github.com/Abhi25102004/Castle-Conquest/releases/download/v1.0.0/Castle.Conquest.apk)
+- [Android](https://github.com/Abhi25102004/Castle-Conquest/releases/download/v1.0.0/Castle.Conquest.exe)
