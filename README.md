@@ -49,10 +49,11 @@ Stay tuned by starring ⭐ this repo or following updates!
 ### 👨‍💻 Development & Design
 
 **Abhishek** – Game Designer, Programmer, Level Designer
+**Sushil** - Testing
 
 ### 🎨 Art Assets
 
-- [Pixel frog](https://pixelfrog-assets.itch.io/)
+[Pixel frog](https://pixelfrog-assets.itch.io/)
 
 ---
 
